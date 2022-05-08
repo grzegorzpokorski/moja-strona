@@ -1,8 +1,10 @@
 import Header from "../components/Header";
 import Main from "../components/Main";
 import Hero from "../components/Hero";
+import OfferList from "../components/OfferList";
 
-import heroImage from "./../public/images/hero.webp";
+import heroImage from "../public/images/hero.webp";
+import { offerList } from "../data/content/offerList";
 
 const Home = () => {
   return (
@@ -33,7 +35,7 @@ const Home = () => {
         />
       </Header>
       <Main>
-        <p>home</p>
+        <OfferList items={offerList} withMarginTop />
       </Main>
     </>
   );

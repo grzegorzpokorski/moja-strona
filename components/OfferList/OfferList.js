@@ -1,7 +1,6 @@
 import Link from "../Link";
 
 const OfferList = ({ items, withMarginTop }) => {
-  console.log(items);
   return (
     <ul
       className={`flex flex-col lg:grid md:grid-cols-2 xl:grid-cols-3 gap-6 ${
