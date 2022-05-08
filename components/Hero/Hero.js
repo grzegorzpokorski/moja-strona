@@ -3,7 +3,7 @@ import Button from "./../Button";
 
 const Hero = ({ title, description, buttons, image, bgColor, isHome }) => {
   return (
-    <section className={`py-12 md:py-24 ${bgColor ? bgColor : "bg-white"}`}>
+    <section className={`py-12 md:py-18 ${bgColor ? bgColor : "bg-white"}`}>
       <div className="container mx-auto px-3 flex flex-col md:flex-row items-center gap-3">
         <header className="md:w-1/2 flex flex-col gap-3 text-center md:text-left items-center md:items-start">
           {isHome ? (

@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Main from "../components/Main";
 import Hero from "../components/Hero";
 
 import heroImage from "./../public/images/hero.webp";
@@ -32,7 +33,9 @@ const Home = () => {
           isHome
         />
       </Header>
-      <main id="tresc" className="mt-[4.375rem] lg:mt-36"></main>
+      <Main>
+        <p>home</p>
+      </Main>
       <Footer />
     </>
   );
