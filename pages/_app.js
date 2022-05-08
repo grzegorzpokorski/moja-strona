@@ -4,8 +4,14 @@ config.autoAddCss = false;
 
 import "./../styles/style.scss";
 
+import Layaut from "../components/Layaut";
+
 const MyApp = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />;
+  return (
+    <Layaut>
+      <Component {...pageProps} />
+    </Layaut>
+  );
 };
 
 export default MyApp;

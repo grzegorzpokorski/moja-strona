@@ -11,6 +11,7 @@ const Layaut = ({ children }) => {
         Przejdź do treści
       </a>
       {children}
+      <Footer />
     </>
   );
 };
