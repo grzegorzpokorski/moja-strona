@@ -7,7 +7,7 @@ import Logo from "../Logo";
 import Hamburger from "../Hamburger";
 import MainMenu from "../MainMenu";
 
-const Header = () => {
+const Header = ({ children }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSticky] = useStickyElement();
 
@@ -22,7 +22,6 @@ const Header = () => {
     if (pathname === "/") {
       setIsHome(true);
     }
-    console.log(isHome);
   }, [pathname]);
 
   return (
@@ -46,6 +45,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+      {children && <div className="mt-[4.375rem] lg:mt-36">{children}</div>}
     </header>
   );
 };
