@@ -13,8 +13,12 @@ const Home = () => {
       <MainHeader>
         <Hero
           title="Projekuję oraz tworzę nowoczesne strony internetowe"
-          description="Zachęcam do zapoznania się z moją ofertą oraz do kontaktu. Zróbmy
-              razem coś niesamowitego!"
+          description={
+            <p>
+              Zachęcam do zapoznania się z moją ofertą oraz do kontaktu. Zróbmy
+              razem coś niesamowitego!
+            </p>
+          }
           buttons={[
             {
               label: "Zobacz ofertę",
