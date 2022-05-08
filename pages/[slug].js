@@ -1,10 +1,10 @@
-import Header from "../components/Header";
+import MainHeader from "../components/MainHeader";
 import Main from "../components/Main";
 
 const Page = () => {
   return (
     <>
-      <Header />
+      <MainHeader />
       <Main withMarginTop>
         <p>page depends on slug</p>
       </Main>

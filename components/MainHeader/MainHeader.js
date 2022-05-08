@@ -7,7 +7,7 @@ import Logo from "../Logo";
 import Hamburger from "../Hamburger";
 import MainMenu from "../MainMenu";
 
-const Header = ({ children }) => {
+const MainHeader = ({ children }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSticky] = useStickyElement();
 
@@ -50,4 +50,4 @@ const Header = ({ children }) => {
   );
 };
 
-export default Header;
+export default MainHeader;

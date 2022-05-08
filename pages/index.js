@@ -1,7 +1,8 @@
-import Header from "../components/Header";
+import MainHeader from "../components/MainHeader";
 import Main from "../components/Main";
 import Hero from "../components/Hero";
 import OfferList from "../components/OfferList";
+import SectionWithHeader from "../components/SectionWithHeader";
 
 import heroImage from "../public/images/hero.webp";
 import { offerList } from "../data/content/offerList";
@@ -9,7 +10,7 @@ import { offerList } from "../data/content/offerList";
 const Home = () => {
   return (
     <>
-      <Header>
+      <MainHeader>
         <Hero
           title="Projekuję oraz tworzę nowoczesne strony internetowe"
           description="Zachęcam do zapoznania się z moją ofertą oraz do kontaktu. Zróbmy
@@ -33,9 +34,16 @@ const Home = () => {
           }}
           isHome
         />
-      </Header>
+      </MainHeader>
       <Main>
-        <OfferList items={offerList} withMarginTop />
+        <SectionWithHeader
+          bgColor="bg-black"
+          subTitle="Oferta"
+          title="W czym się specjalizuje?"
+          description="Gdyby zachodziła konieczność przeprowadzenia zabiegu na otwartym sercu, powierzyłbyś swoje zdrowie i życie mechanikowi? Między innymi dlatego warto korzystać z usług specjalisty."
+        >
+          <OfferList items={offerList} withMarginTop />
+        </SectionWithHeader>
       </Main>
     </>
   );
