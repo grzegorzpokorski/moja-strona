@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -10,7 +11,7 @@ const Home = () => {
         Przejdź do treści
       </a>
       <Header isHome logoAsTitle />
-      <main id="tresc"></main>
+      <main id="tresc" className="mt-[4.375rem] lg:mt-36"></main>
       <Footer isHome />
     </>
   );

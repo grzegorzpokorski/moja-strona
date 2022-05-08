@@ -1,4 +1,5 @@
 const Logo = ({ isHome, isTitle }) => {
+  console.log(isHome);
   return (
     <a href={`${isHome ? "#" : "/"}`}>
       {isTitle ? (

@@ -6,7 +6,7 @@ import Logo from "../Logo";
 import Hamburger from "../Hamburger";
 import MainMenu from "../MainMenu";
 
-const Header = ({ isHome, logoAsTitle, children }) => {
+const Header = ({ isHome, logoAsTitle }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSticky] = useStickyElement();
 
@@ -34,11 +34,6 @@ const Header = ({ isHome, logoAsTitle, children }) => {
           </div>
         </div>
       </div>
-      {children && (
-        <section className="mt-[4.375rem] lg:mt-36 bg-green">
-          {children}
-        </section>
-      )}
     </header>
   );
 };
