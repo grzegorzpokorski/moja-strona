@@ -1,11 +1,11 @@
 import MainHeader from "../components/MainHeader";
 import Main from "../components/Main";
 import Hero from "../components/Hero";
-import OfferList from "../components/OfferList";
-import SectionWithHeader from "../components/SectionWithHeader";
+import BoxesList from "../components/BoxesList";
 
 import heroImage from "../public/images/hero.webp";
 import { offerList } from "../data/content/offerList";
+import { pageFeatures } from "../data/content/pageFeatures";
 
 const Home = () => {
   return (
@@ -36,14 +36,14 @@ const Home = () => {
         />
       </MainHeader>
       <Main>
-        <SectionWithHeader
-          bgColor="bg-black"
-          subTitle="Oferta"
+        <BoxesList
+          items={offerList}
+          subtitle="Oferta"
           title="W czym się specjalizuje?"
           description="Gdyby zachodziła konieczność przeprowadzenia zabiegu na otwartym sercu, powierzyłbyś swoje zdrowie i życie mechanikowi? Między innymi dlatego warto korzystać z usług specjalisty."
-        >
-          <OfferList items={offerList} withMarginTop />
-        </SectionWithHeader>
+          withMarginTop
+          bgColor="bg-whiteGreen"
+        />
       </Main>
     </>
   );

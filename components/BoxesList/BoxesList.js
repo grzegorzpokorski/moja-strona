@@ -1,24 +1,26 @@
 import Section from "../Section";
 import Header from "../Header";
+import List from "./parts/List";
 
-const SectionWithHeader = ({
-  bgColor,
-  children,
-  subTitle,
+const OfferList = ({
+  items,
+  subtitle,
   title,
   description,
+  withMarginTop,
+  bgColor,
 }) => {
   return (
     <Section bgColor={bgColor}>
       <Header
-        subTitle={subTitle}
+        subtitle={subtitle}
         title={title}
         description={description}
         centered
       />
-      {children}
+      <List items={items} withMarginTop={withMarginTop} />
     </Section>
   );
 };
 
-export default SectionWithHeader;
+export default OfferList;
