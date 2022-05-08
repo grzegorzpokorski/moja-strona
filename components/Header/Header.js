@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 import useStickyElement from "../../hooks/useStickyElement";
 
@@ -6,13 +7,24 @@ import Logo from "../Logo";
 import Hamburger from "../Hamburger";
 import MainMenu from "../MainMenu";
 
-const Header = ({ isHome, logoAsTitle }) => {
+const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSticky] = useStickyElement();
 
   const handleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
+
+  const [isHome, setIsHome] = useState(false);
+  const { pathname } = useRouter();
+
+  useEffect(() => {
+    if (pathname === "/") {
+      setIsHome(true);
+    }
+    console.log(isHome);
+  }, [pathname]);
+
   return (
     <header className="relative">
       <div
@@ -24,7 +36,7 @@ const Header = ({ isHome, logoAsTitle }) => {
         <div className="container mx-auto px-3">
           <div className="flex flex-col lg:flex-row gap-3 items-center lg:justify-between">
             <div className="flex flex-row justify-between items-center w-full lg:w-auto">
-              <Logo isHome={isHome} isTitle={logoAsTitle} />
+              <Logo isHome={isHome} isTitle={isHome} />
               <Hamburger
                 handleMobileMenu={handleMobileMenu}
                 isOpen={mobileMenuOpen}

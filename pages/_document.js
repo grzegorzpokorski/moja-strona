@@ -1,8 +1,9 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Layaut from "../components/Layaut";
 
 export default function Document() {
   return (
-    <Html>
+    <Html className="scroll-smooth">
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -16,7 +17,9 @@ export default function Document() {
         />
       </Head>
       <body>
-        <Main />
+        <Layaut>
+          <Main />
+        </Layaut>
         <NextScript />
       </body>
     </Html>

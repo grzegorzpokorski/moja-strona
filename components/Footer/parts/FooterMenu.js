@@ -1,12 +1,14 @@
+import Link from "next/link";
+
 const FooterMenu = ({ items }) => {
   return (
     <ul className="flex flex-col md:flex-row items-center gap-3">
       {items &&
         items.map((item, i) => (
           <li key={`footer-nav-item-${i}`}>
-            <a href={item.href} className="hover:underline">
-              {item.label}
-            </a>
+            <Link href={item.href}>
+              <a className="hover:underline">{item.label}</a>
+            </Link>
           </li>
         ))}
     </ul>
