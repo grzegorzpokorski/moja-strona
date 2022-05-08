@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Button from "./../Button";
 
 const Hero = ({ title, description, buttons, image, bgColor, isHome }) => {
   return (
-    <section className={`py-12 md:py-32 ${bgColor ? bgColor : "bg-white"}`}>
+    <section className={`py-12 md:py-24 ${bgColor ? bgColor : "bg-white"}`}>
       <div className="container mx-auto px-3 flex flex-col md:flex-row items-center gap-3">
         <header className="md:w-1/2 flex flex-col gap-3 text-center md:text-left items-center md:items-start">
           {isHome ? (
@@ -23,7 +24,9 @@ const Hero = ({ title, description, buttons, image, bgColor, isHome }) => {
             </div>
           )}
         </header>
-        <picture className="w-full md:w-1/2"></picture>
+        <picture className="w-full md:w-1/2">
+          <Image src={image.src} alt={image.alt} objectFit="cover" priority />
+        </picture>
       </div>
     </section>
   );
