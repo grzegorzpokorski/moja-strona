@@ -1,5 +1,7 @@
+import Header from "../../components/Header";
+
 const Blog = () => {
-  return <p>all blog posts</p>;
+  return <Header></Header>;
 };
 
 export default Blog;
