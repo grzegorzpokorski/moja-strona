@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import MainHeader from "./../../components/MainHeader";
 import Main from "./../../components/Main";
+import Post from "./../../components/Post";
 
 import { getPostBySlug, getSlugs } from "../../provider/posts";
 
@@ -9,7 +10,7 @@ const Blog = ({ post }) => {
     <>
       <MainHeader />
       <Main withMarginTop>
-        <p>{post.meta.title}</p>
+        <Post {...post} />
       </Main>
     </>
   );
