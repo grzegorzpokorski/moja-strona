@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "../../Link";
 
 const FooterMenu = ({ items }) => {
   return (
@@ -6,8 +6,8 @@ const FooterMenu = ({ items }) => {
       {items &&
         items.map((item, i) => (
           <li key={`footer-nav-item-${i}`}>
-            <Link href={item.href}>
-              <a className="hover:underline">{item.label}</a>
+            <Link href={item.href} className="hover:underline">
+              {item.label}
             </Link>
           </li>
         ))}

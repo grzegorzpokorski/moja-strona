@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "../../Link";
 
 const DropdownMenu = ({ items }) => {
   return (
@@ -6,10 +6,11 @@ const DropdownMenu = ({ items }) => {
       {items &&
         items.map((item, i) => (
           <li key={`dropdown-item-${i}`} className="pt-4">
-            <Link href={item.href}>
-              <a className="block text-gray-500 lg:text-gray-800 hover:text-green border-l-2 border-transparent hover:border-green px-4 transition-all duration-300">
-                {item.label}
-              </a>
+            <Link
+              href={item.href}
+              className="block text-gray-500 lg:text-gray-800 hover:text-green border-l-2 border-transparent hover:border-green px-4 transition-all duration-300"
+            >
+              {item.label}
             </Link>
           </li>
         ))}
