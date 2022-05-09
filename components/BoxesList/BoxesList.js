@@ -1,25 +1,15 @@
-import Section from "../Section";
-import Header from "../Header";
-import List from "./parts/List";
+import ListItem from "./parts/ListItem";
 
-const OfferList = ({
-  items,
-  subtitle,
-  title,
-  description,
-  withMarginTop,
-  bgColor,
-}) => {
+const OfferList = ({ items, withMarginTop }) => {
   return (
-    <Section bgColor={bgColor}>
-      <Header
-        subtitle={subtitle}
-        title={title}
-        description={description}
-        centered
-      />
-      <List items={items} withMarginTop={withMarginTop} />
-    </Section>
+    <ul
+      className={`flex flex-col lg:grid md:grid-cols-2 xl:grid-cols-3 gap-6 ${
+        withMarginTop && "mt-12 md:mt-24"
+      }`}
+    >
+      {items &&
+        items.map((item, i) => <ListItem key={`list-item-${i}`} {...item} />)}
+    </ul>
   );
 };
 

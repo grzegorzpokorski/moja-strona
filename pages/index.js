@@ -1,9 +1,11 @@
 import MainHeader from "../components/MainHeader";
 import Main from "../components/Main";
 import Hero from "../components/Hero";
-import BoxesList from "../components/BoxesList";
 import Banner from "../components/Banner/Banner";
 import ContentWithImage from "../components/ContentWithImage/ContentWithImage";
+import Section from "../components/Section";
+import Header from "../components/Header";
+import BoxesList from "../components/BoxesList";
 
 import heroImage from "../public/images/hero.webp";
 import { offerList } from "../data/content/offerList";
@@ -42,14 +44,15 @@ const Home = () => {
         />
       </MainHeader>
       <Main>
-        <BoxesList
-          items={offerList}
-          subtitle="Oferta"
-          title="W czym się specjalizuje?"
-          description="Gdyby zachodziła konieczność przeprowadzenia zabiegu na otwartym sercu, powierzyłbyś swoje zdrowie i życie mechanikowi? Między innymi dlatego warto korzystać z usług specjalisty."
-          withMarginTop
-          bgColor="bg-whiteGreen"
-        />
+        <Section bgColor="bg-whiteGreen">
+          <Header
+            subtitle="Oferta"
+            title="W czym się specjalizuje?"
+            description="Gdyby zachodziła konieczność przeprowadzenia zabiegu na otwartym sercu, powierzyłbyś swoje zdrowie i życie mechanikowi? Między innymi dlatego warto korzystać z usług specjalisty."
+            centered
+          />
+          <BoxesList items={offerList} withMarginTop />
+        </Section>
         {servicesList &&
           servicesList.map((item, i) =>
             i % 2 ? (

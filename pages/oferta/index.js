@@ -3,6 +3,8 @@ import Main from "../../components/Main";
 import BoxesList from "../../components/BoxesList";
 import Banner from "../../components/Banner/Banner";
 import ContentWithImage from "../../components/ContentWithImage/ContentWithImage";
+import Section from "../../components/Section";
+import Header from "../../components/Header";
 
 import { offerList } from "../../data/content/offerList";
 import { servicesList } from "../../data/content/servicesList";
@@ -10,16 +12,26 @@ import { servicesList } from "../../data/content/servicesList";
 const Oferta = () => {
   return (
     <>
-      <MainHeader />
-      <Main withMarginTop>
-        <BoxesList
-          items={offerList}
-          subtitle="Oferta"
-          title="W czym się specjalizuje?"
-          description="Gdyby zachodziła konieczność przeprowadzenia zabiegu na otwartym sercu, powierzyłbyś swoje zdrowie i życie mechanikowi? Między innymi dlatego warto korzystać z usług specjalisty."
-          withMarginTop
-          bgColor="bg-whiteGreen"
-        />
+      <MainHeader>
+        <Section bgColor="bg-whiteGreen">
+          <Header
+            subtitle="Oferta"
+            title="W czym się specjalizuje?"
+            description="Gdyby zachodziła konieczność przeprowadzenia zabiegu na otwartym sercu, powierzyłbyś swoje zdrowie i życie mechanikowi? Między innymi dlatego warto korzystać z usług specjalisty."
+            centered
+            titleAsH1
+          />
+          <BoxesList
+            items={offerList}
+            subtitle="Oferta"
+            title="W czym się specjalizuje?"
+            description="Gdyby zachodziła konieczność przeprowadzenia zabiegu na otwartym sercu, powierzyłbyś swoje zdrowie i życie mechanikowi? Między innymi dlatego warto korzystać z usług specjalisty."
+            withMarginTop
+            bgColor="bg-whiteGreen"
+          />
+        </Section>
+      </MainHeader>
+      <Main>
         {servicesList &&
           servicesList.map((item, i) =>
             i % 2 ? (

@@ -1,10 +1,18 @@
-const Header = ({ subtitle, title, description, centered }) => {
+const Header = ({ subtitle, title, description, centered, titleAsH1 }) => {
   return (
-    <header className="text-center w-full md:w-4/6 mx-auto flex flex-col gap-4">
+    <header
+      className={`w-full md:w-4/6 mr-auto flex flex-col gap-4 ${
+        centered && "text-center mx-auto"
+      }`}
+    >
       {subtitle && (
         <span className="text-green uppercase font-bold">{subtitle}</span>
       )}
-      {title && (
+      {titleAsH1 ? (
+        <h1 className="font-bold text-3xl md:text-4xl text-customGray">
+          {title}
+        </h1>
+      ) : (
         <h2 className="font-bold text-3xl md:text-4xl text-customGray">
           {title}
         </h2>
