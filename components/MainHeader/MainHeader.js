@@ -24,6 +24,33 @@ const MainHeader = ({ children }) => {
     }
   }, [pathname]);
 
+  useEffect(() => {
+    const handleEscapeKey = ({ key }) => {
+      key && key === "Escape" && setMobileMenuOpen(false);
+    };
+
+    const handleClick = ({ target }) => {
+      const navbar = document.getElementById("navbar");
+
+      do {
+        if (target == navbar) return;
+        target = target.parentNode;
+      } while (target != null);
+
+      setMobileMenuOpen(false);
+    };
+
+    if (mobileMenuOpen) {
+      window.addEventListener("keydown", handleEscapeKey);
+      window.addEventListener("click", handleClick);
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleEscapeKey);
+      window.removeEventListener("click", handleClick);
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <header className="relative">
       <div
