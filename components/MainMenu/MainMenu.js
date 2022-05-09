@@ -15,7 +15,7 @@ const MainMenu = ({ isVisible }) => {
           mainMenu.map((item, i) => (
             <li
               key={`main-menu-item-${i}`}
-              className={`${item.childrens && "relative dropdown-wrapper"}`}
+              className={`${item.childrens ? "relative dropdown-wrapper" : ""}`}
             >
               {item.button ? (
                 <Link
