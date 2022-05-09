@@ -6,6 +6,7 @@ const Page = () => {
     <>
       <MainHeader />
       <Main withMarginTop>
+        <h1>temp placeholder page</h1>
         <p>page depends on slug</p>
       </Main>
     </>

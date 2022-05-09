@@ -5,7 +5,7 @@ const Post = ({ featureImage, title, excerpt, date, category, slug }) => {
   return (
     <li className="bg-white drop-shadow-xl border-2 border-greenLight">
       <article>
-        <Link href="/blog/${slug}">
+        <Link href={`/blog/${slug}`}>
           <picture className="w-full h-72 max-h-72 overflow-hidden relative block">
             <Image
               src={featureImage.src}
@@ -18,7 +18,7 @@ const Post = ({ featureImage, title, excerpt, date, category, slug }) => {
         <header className="p-8 flex flex-col gap-3">
           <span className="flex flex-row items-center gap-3">
             <Link
-              href={`/blog/category/${category}`}
+              href={`/blog/kategoria/${category}`}
               className="text-green hover:underline"
             >
               {category}

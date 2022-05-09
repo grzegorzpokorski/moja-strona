@@ -9,7 +9,6 @@ import BoxesList from "../components/BoxesList";
 import PostsGrid from "../components/PostsGrid";
 
 import heroImage from "../public/images/hero.webp";
-import placeholderImage from "../public/images/people.webp";
 import { offerList } from "../data/content/offerList";
 import { servicesList } from "../data/content/servicesList";
 
@@ -46,38 +45,6 @@ const Home = () => {
         />
       </MainHeader>
       <Main>
-        <Section bgColor="bg-whiteGreen">
-          <Header title="Artykuły, ciekawostki z świata stron internetowych i nie tylko" />
-          <PostsGrid
-            posts={[
-              {
-                featureImage: {
-                  src: placeholderImage,
-                  alt: "hello image",
-                },
-                title: "Czy w dzisiejszych czasach",
-                excerpt:
-                  "Excerpt Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque molestie ligula, quis ultrices mauris vestibulum vel. Maecenas sit amet leo scelerisque, sagittis odio eu, malesuada arcu. ",
-                category: "Marketing",
-                date: "2022.05.09",
-                slug: "czy-warto-prowadzic-bloga",
-              },
-              {
-                featureImage: {
-                  src: placeholderImage,
-                  alt: "hello image",
-                },
-                title: "Wspaniały tytuł do testowego posta",
-                excerpt:
-                  "Excerpt2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque molestie ligula, quis ultrices mauris vestibulum vel. Maecenas sit amet leo scelerisque, sagittis odio eu, malesuada arcu. ",
-                category: "Programowanie",
-                date: "2022.04.20",
-                slug: "test",
-              },
-            ]}
-            withMarginTop
-          />
-        </Section>
         <Section bgColor="bg-whiteGreen">
           <Header
             subtitle="Oferta"
