@@ -10,6 +10,7 @@ const Post = ({ featureImage, title, excerpt, date, category, slug }) => {
             <Image
               src={featureImage.src}
               alt={featureImage.alt}
+              placeholder="blur"
               className="object-cover object-center w-full h-full hover:scale-105 transition-all duration-300"
             />
           </picture>
