@@ -3,7 +3,7 @@ import Layaut from "../components/Layaut";
 
 export default function Document() {
   return (
-    <Html className="scroll-smooth">
+    <Html>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
