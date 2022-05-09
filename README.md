@@ -1,3 +1,3 @@
 webpage based on nextjs
 
-working in progress
+work in progress
