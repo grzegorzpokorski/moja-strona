@@ -2,11 +2,12 @@ import MainHeader from "../components/MainHeader";
 import Main from "../components/Main";
 import Hero from "../components/Hero";
 import BoxesList from "../components/BoxesList";
+import Banner from "../components/Banner/Banner";
+import ContentWithImage from "../components/ContentWithImage/ContentWithImage";
 
 import heroImage from "../public/images/hero.webp";
 import { offerList } from "../data/content/offerList";
-import { pageFeatures } from "../data/content/pageFeatures";
-import Banner from "../components/Banner/Banner";
+import { servicesList } from "../data/content/servicesList";
 
 const Home = () => {
   return (
@@ -49,6 +50,18 @@ const Home = () => {
           withMarginTop
           bgColor="bg-whiteGreen"
         />
+        {servicesList &&
+          servicesList.map((item, i) =>
+            i % 2 ? (
+              <ContentWithImage
+                key={item.title}
+                {...item}
+                bgColor="bg-whiteGreen"
+              />
+            ) : (
+              <ContentWithImage key={item.title} {...item} reverse />
+            )
+          )}
         <Banner
           title="Zbuduj swoją wysokiej klasy stronę internetową ze mną!"
           description="Chętnie pomogę zrealizować Twój projekt."
