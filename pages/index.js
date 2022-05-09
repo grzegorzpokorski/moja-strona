@@ -6,6 +6,7 @@ import BoxesList from "../components/BoxesList";
 import heroImage from "../public/images/hero.webp";
 import { offerList } from "../data/content/offerList";
 import { pageFeatures } from "../data/content/pageFeatures";
+import Banner from "../components/Banner/Banner";
 
 const Home = () => {
   return (
@@ -47,6 +48,23 @@ const Home = () => {
           description="Gdyby zachodziła konieczność przeprowadzenia zabiegu na otwartym sercu, powierzyłbyś swoje zdrowie i życie mechanikowi? Między innymi dlatego warto korzystać z usług specjalisty."
           withMarginTop
           bgColor="bg-whiteGreen"
+        />
+        <Banner
+          title="Zbuduj swoją wysokiej klasy stronę internetową ze mną!"
+          description="Chętnie pomogę zrealizować Twój projekt."
+          buttons={[
+            {
+              label: "Skontaktuj się ze mną",
+              href: "/kontakt",
+              customClasses: "bg-white hover:bg-whiteGreen text-gray-800",
+            },
+            {
+              label: "Poczytaj mój blog",
+              href: "/blog",
+              customClasses:
+                "bg-transparent hover:bg-whiteGreen text-white hover:text-gray-800 border-2 border-white",
+            },
+          ]}
         />
       </Main>
     </>

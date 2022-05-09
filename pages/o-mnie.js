@@ -1,6 +1,7 @@
 import MainHeader from "../components/MainHeader";
 import Main from "../components/Main";
 import Hero from "../components/Hero";
+import Banner from "../components/Banner";
 import Link from "../components/Link";
 
 import heroImage from "../public/images/me.png";
@@ -54,6 +55,23 @@ const Page = () => {
             },
           ]}
           image={{ src: heroImage, alt: "człowieczek koduje na sofie" }}
+        />
+        <Banner
+          title="Zbuduj swoją wysokiej klasy stronę internetową ze mną!"
+          description="Chętnie pomogę zrealizować Twój projekt."
+          buttons={[
+            {
+              label: "Skontaktuj się ze mną",
+              href: "/kontakt",
+              customClasses: "bg-white hover:bg-whiteGreen text-gray-800",
+            },
+            {
+              label: "Poczytaj mój blog",
+              href: "/blog",
+              customClasses:
+                "bg-transparent hover:bg-whiteGreen text-white hover:text-gray-800 border-2 border-white",
+            },
+          ]}
         />
       </Main>
     </>
