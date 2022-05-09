@@ -38,7 +38,9 @@ const ContentWithImage = ({
           )}
         </div>
         <picture className="w-full w-full md:w-1/2">
-          {image && <Image src={image.src} alt={image.alt} />}
+          {image && (
+            <Image src={image.src} alt={image.alt} placeholder="blur" />
+          )}
         </picture>
       </div>
     </section>
