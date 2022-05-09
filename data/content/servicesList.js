@@ -50,7 +50,7 @@ export const servicesList = [
     ),
     href: "/kodowanie",
     image: {
-      src: pagesImage,
+      src: codeImage,
       alt: "szczęśliwy człowiek koduje na sofie",
     },
   },
