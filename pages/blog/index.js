@@ -4,7 +4,10 @@ import Section from "../../components/Section";
 import Header from "../../components/Header";
 import PostsGrid from "../../components/PostsGrid";
 
-const Blog = () => {
+import { getPosts, getSlugs } from "../../provider/posts";
+
+const Blog = ({ posts }) => {
+  console.log(posts);
   return (
     <>
       <MainHeader />
@@ -14,36 +17,7 @@ const Blog = () => {
             title="Artykuły, ciekawostki z świata stron internetowych i nie tylko"
             titleAsH1
           />
-          <PostsGrid
-            // posts={posts} //allPosts
-            // posts={[
-            //   {
-            //     featureImage: {
-            //       src: placeholderImage,
-            //       alt: "hello image",
-            //     },
-            //     title: "Czy w dzisiejszych czasach",
-            //     excerpt:
-            //       "Excerpt Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque molestie ligula, quis ultrices mauris vestibulum vel. Maecenas sit amet leo scelerisque, sagittis odio eu, malesuada arcu. ",
-            //     category: "Marketing",
-            //     date: "2022.05.09",
-            //     slug: "czy-warto-prowadzic-bloga",
-            //   },
-            //   {
-            //     featureImage: {
-            //       src: placeholderImage,
-            //       alt: "hello image",
-            //     },
-            //     title: "Wspaniały tytuł do testowego posta",
-            //     excerpt:
-            //       "Excerpt2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque molestie ligula, quis ultrices mauris vestibulum vel. Maecenas sit amet leo scelerisque, sagittis odio eu, malesuada arcu. ",
-            //     category: "Programowanie",
-            //     date: "2022.04.20",
-            //     slug: "test",
-            //   },
-            // ]}
-            withMarginTop
-          />
+          <PostsGrid posts={posts} withMarginTop />
         </Section>
       </Main>
     </>
@@ -51,3 +25,13 @@ const Blog = () => {
 };
 
 export default Blog;
+
+export const getStaticProps = async () => {
+  const posts = getPosts();
+
+  return {
+    props: {
+      posts,
+    },
+  };
+};

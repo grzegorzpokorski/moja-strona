@@ -2,18 +2,37 @@ import { useRouter } from "next/router";
 import MainHeader from "./../../components/MainHeader";
 import Main from "./../../components/Main";
 
-const Blog = () => {
-  const { query } = useRouter();
-  const slug = Object.values(query).length > 0 ? query.slug : "/";
+import { getPostBySlug, getSlugs } from "../../provider/posts";
 
+const Blog = ({ post }) => {
   return (
     <>
       <MainHeader />
       <Main withMarginTop>
-        <p>{slug}</p>
+        <p>{post.meta.title}</p>
       </Main>
     </>
   );
 };
 
 export default Blog;
+
+export const getStaticProps = async ({ params }) => {
+  const { slug } = params;
+  const { content, meta } = getPostBySlug(slug);
+
+  return {
+    props: {
+      post: { content, meta },
+    },
+  };
+};
+
+export const getStaticPaths = async () => {
+  const paths = getSlugs().map((slug) => ({ params: { slug } }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
