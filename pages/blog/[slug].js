@@ -1,4 +1,5 @@
-import { useRouter } from "next/router";
+import { serialize } from "next-mdx-remote/serialize";
+
 import MainHeader from "./../../components/MainHeader";
 import Main from "./../../components/Main";
 import Post from "./../../components/Post";
@@ -21,10 +22,11 @@ export default Blog;
 export const getStaticProps = async ({ params }) => {
   const { slug } = params;
   const { content, meta } = getPostBySlug(slug);
+  const mdxSource = await serialize(content);
 
   return {
     props: {
-      post: { content, meta },
+      post: { mdxSource, meta },
     },
   };
 };

@@ -1,3 +1,4 @@
+import { MDXRemote } from "next-mdx-remote";
 import Image from "next/image";
 import Link from "../Link";
 
@@ -5,7 +6,7 @@ import MainHeader from "../MainHeader";
 import Main from "../Main";
 import Footer from "./parts/Footer";
 
-const Post = ({ content, meta }) => {
+const Post = ({ mdxSource, meta }) => {
   return (
     <>
       <MainHeader />
@@ -38,7 +39,7 @@ const Post = ({ content, meta }) => {
         </header>
         <article className="pb-16 md:pb-24">
           <div className="container px-3 mx-auto w-full md:w-6/12 prose max-w-none">
-            {content}
+            <MDXRemote {...mdxSource} />
           </div>
 
           {meta.tags && <Footer tags={meta.tags} />}
