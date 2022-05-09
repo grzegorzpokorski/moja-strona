@@ -25,7 +25,13 @@ const Hero = ({ title, description, buttons, image, bgColor, isHome }) => {
           )}
         </header>
         <picture className="w-full md:w-1/2">
-          <Image src={image.src} alt={image.alt} objectFit="cover" priority />
+          <Image
+            src={image.src}
+            alt={image.alt}
+            objectFit="cover"
+            placeholder="blur"
+            priority
+          />
         </picture>
       </div>
     </section>
