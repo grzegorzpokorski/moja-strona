@@ -7,20 +7,20 @@ export const offerList = [
     title: "Kompleksowe tworzenie stron internetowych",
     description:
       "Oferuję wykonanie strony internetowej od A do Z zaczynając od projektu graficznego po wdrożenie go do systemu zażądania treścią WordPress.",
-    href: "/tworzenie-stron-internetowych",
+    href: "/oferta/tworzenie-stron-internetowych",
   },
   {
     icon: <FontAwesomeIcon icon={faCode} />,
     title: "Kodowanie projektów graficznych do HTML",
     description:
       "Potrzebujesz profesjonalnie zakodowanego szablonu? A może nie potrzebujesz często edytować treści na swojej witrynie? Chętnie zakoduję go dla Ciebie.",
-    href: "/kodownie",
+    href: "/oferta/kodownie",
   },
   {
     icon: <FontAwesomeIcon icon={faImages} />,
     title: "Projektowanie graficzne",
     description:
       "Chodzi Ci po głowie nowy projekt? A może nudzi Cię twoja stara strona internetowa i chcesz ją dostosować do panujących trendów? Zapraszam, zaprojektuję Twoją nową stronę.",
-    href: "/projektowanie-graficzne",
+    href: "/oferta/projektowanie-graficzne",
   },
 ];
