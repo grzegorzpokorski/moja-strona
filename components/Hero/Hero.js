@@ -15,7 +15,7 @@ const Hero = ({ title, description, buttons, image, bgColor, isHome }) => {
               {title}
             </h2>
           )}
-          {description && description}
+          <div className="prose">{description && description}</div>
           {buttons && (
             <div className="flex flex-row flex-wrap gap-2 justify-center md:justify-start">
               {buttons.map((item, i) => (
