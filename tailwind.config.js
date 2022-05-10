@@ -32,6 +32,9 @@ module.exports = {
               textDecoration: "none",
               "&:hover": { color: "#26d07c", textDecoration: "underline" },
             },
+            strong: {
+              fontWeight: "500",
+            },
           },
         },
       },
