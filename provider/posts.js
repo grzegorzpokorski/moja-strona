@@ -3,8 +3,6 @@ import fs from "fs";
 import matter from "gray-matter";
 
 const POSTS_PATH = path.join(process.cwd(), "data/posts");
-const PUBLIC_ASSETS_PATH = path.join(process.cwd(), "public");
-const FEATURED_IMAGE_NAME = "featured-image.jpg";
 
 export const getSlugs = () => {
   return fs
@@ -29,16 +27,7 @@ export const getPostBySlug = (slug) => {
   const post_path = path.join(POSTS_PATH, `${slug}/index.mdx`);
   const source = fs.readFileSync(post_path);
   const { content, data } = matter(source);
-
-  // const featuredImageToCopy = path.join(POSTS_PATH, slug, FEATURED_IMAGE_NAME);
-  // const copiedFeaturedImage = path.join(
-  //   PUBLIC_ASSETS_PATH,
-  //   "images",
-  //   slug,
-  //   FEATURED_IMAGE_NAME
-  // );
-
-  // fs.promises.copyFile(featuredImageToCopy, copiedFeaturedImage);
+  const feature_image_path = `/images/posts/${slug}.jpg`;
 
   return {
     content,
@@ -51,8 +40,6 @@ export const getPostBySlug = (slug) => {
       date: (data.date ?? new Date()).toString(),
       seo: data.seo ?? "",
     },
-    // featuredImage: path.join("public", "images", slug, FEATURED_IMAGE_NAME),
+    featuredImage: feature_image_path,
   };
 };
-
-export const getPostsByTag = (tag) => {};

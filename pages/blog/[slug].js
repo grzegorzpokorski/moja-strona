@@ -21,12 +21,12 @@ export default Blog;
 
 export const getStaticProps = async ({ params }) => {
   const { slug } = params;
-  const { content, meta } = getPostBySlug(slug);
+  const { content, meta, featuredImage } = getPostBySlug(slug);
   const mdxSource = await serialize(content);
 
   return {
     props: {
-      post: { mdxSource, meta },
+      post: { mdxSource, meta, featuredImage },
     },
   };
 };

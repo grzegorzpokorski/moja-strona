@@ -6,7 +6,8 @@ import MainHeader from "../MainHeader";
 import Main from "../Main";
 import Footer from "./parts/Footer";
 
-const Post = ({ mdxSource, meta }) => {
+const Post = ({ mdxSource, meta, featuredImage }) => {
+  console.log(featuredImage);
   return (
     <>
       <MainHeader />
@@ -27,19 +28,26 @@ const Post = ({ mdxSource, meta }) => {
               <time dateTime={`${meta.date}`}>{meta.date}</time>
             </span>
             <h1 className="font-bold text-3xl md:text-4xl">{meta.title}</h1>
-            <figure className="w-full h-96 max-h-96 overflow-hidden relative block mt-12">
-              {/* <Image
+            <figure className="w-full h-[30rem] max-h-[60vh] overflow-hidden relative block mt-12">
+              <Image
                 src={featuredImage}
                 alt="człowiek pracuje przy biurku"
                 className="object-cover object-center w-full h-full"
                 layout="fill"
-              /> */}
+                priority
+              />
             </figure>
           </div>
         </header>
         <article className="pb-16 md:pb-24">
           <div className="container px-3 mx-auto w-full md:w-6/12 prose max-w-none">
-            <MDXRemote {...mdxSource} />
+            <MDXRemote
+              {...mdxSource}
+              components={{
+                img: Image,
+                a: Link,
+              }}
+            />
           </div>
 
           {meta.tags && <Footer tags={meta.tags} />}

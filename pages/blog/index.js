@@ -7,7 +7,6 @@ import PostsGrid from "../../components/PostsGrid";
 import { getPosts, getSlugs } from "../../provider/posts";
 
 const Blog = ({ posts }) => {
-  console.log(posts);
   return (
     <>
       <MainHeader />
