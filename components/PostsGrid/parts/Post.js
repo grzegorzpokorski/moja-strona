@@ -14,7 +14,8 @@ const Post = ({ content, meta, featuredImage }) => {
         <Link href={`/blog/${meta.slug}`}>
           <picture className="w-full h-72 max-h-72 overflow-hidden relative block">
             <Image
-              src={featuredImage}
+              src={featuredImage.src}
+              alt={featuredImage.alt}
               layout="fill"
               priority
               className="object-cover object-center w-full h-full hover:scale-105 transition-all duration-300"

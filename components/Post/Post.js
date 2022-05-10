@@ -13,7 +13,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Post = ({ mdxSource, meta, featuredImage }) => {
-  console.log(featuredImage);
   return (
     <>
       <MainHeader />
@@ -37,24 +36,11 @@ const Post = ({ mdxSource, meta, featuredImage }) => {
                 </time>
               </span>
             </span>
-            {/* <span className="flex flex-row items-center mb-4 gap-3">
-              <Link
-                href={`/blog/kategoria/${meta.category}`}
-                className="text-green hover:underline"
-              >
-                {meta.category}
-              </Link>
-              <span
-                className="inline-block w-12 h-0.5 bg-customGray text-separator"
-                aria-hidden="true"
-              ></span>
-              <time dateTime={`${meta.date}`}>{meta.date}</time>
-            </span> */}
             <h1 className="font-bold text-3xl md:text-4xl">{meta.title}</h1>
             <figure className="w-full h-[30rem] max-h-[60vh] overflow-hidden relative block mt-12">
               <Image
-                src={featuredImage}
-                alt="człowiek pracuje przy biurku"
+                src={featuredImage.src}
+                alt={featuredImage.alt}
                 className="object-cover object-center w-full h-full"
                 layout="fill"
                 priority

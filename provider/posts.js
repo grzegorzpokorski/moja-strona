@@ -27,7 +27,10 @@ export const getPostBySlug = (slug) => {
   const post_path = path.join(POSTS_PATH, `${slug}/index.mdx`);
   const source = fs.readFileSync(post_path);
   const { content, data } = matter(source);
-  const feature_image_path = `/images/posts/${slug}.jpg`;
+  const featuredImage = {
+    src: `/images/posts/${slug}.jpg`,
+    alt: slug.replace("-", " "),
+  };
 
   return {
     content,
@@ -40,6 +43,6 @@ export const getPostBySlug = (slug) => {
       date: (data.date ?? new Date()).toString(),
       seo: data.seo ?? "",
     },
-    featuredImage: feature_image_path,
+    featuredImage: featuredImage,
   };
 };
