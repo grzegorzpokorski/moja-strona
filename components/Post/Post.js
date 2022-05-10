@@ -6,6 +6,12 @@ import MainHeader from "../MainHeader";
 import Main from "../Main";
 import Footer from "./parts/Footer";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCalendarDays,
+  faLayerGroup,
+} from "@fortawesome/free-solid-svg-icons";
+
 const Post = ({ mdxSource, meta, featuredImage }) => {
   console.log(featuredImage);
   return (
@@ -14,7 +20,24 @@ const Post = ({ mdxSource, meta, featuredImage }) => {
       <Main withMarginTop>
         <header className="py-16 md:py-24">
           <div className="container px-3 mx-auto w-full md:w-8/12">
-            <span className="flex flex-row items-center mb-4 gap-3">
+            <span className="flex flex-row items-center mb-6 gap-6 text-green">
+              <span className="flex flex-row items-center gap-2">
+                <FontAwesomeIcon icon={faLayerGroup} />
+                <Link
+                  href={`/blog/kategoria/${meta.category}`}
+                  className="text-gray-500 hover:underline"
+                >
+                  {meta.category}
+                </Link>
+              </span>
+              <span className="flex flex-row items-center gap-2">
+                <FontAwesomeIcon icon={faCalendarDays} />
+                <time dateTime={`${meta.date}`} className="text-gray-500">
+                  {meta.date}
+                </time>
+              </span>
+            </span>
+            {/* <span className="flex flex-row items-center mb-4 gap-3">
               <Link
                 href={`/blog/kategoria/${meta.category}`}
                 className="text-green hover:underline"
@@ -26,7 +49,7 @@ const Post = ({ mdxSource, meta, featuredImage }) => {
                 aria-hidden="true"
               ></span>
               <time dateTime={`${meta.date}`}>{meta.date}</time>
-            </span>
+            </span> */}
             <h1 className="font-bold text-3xl md:text-4xl">{meta.title}</h1>
             <figure className="w-full h-[30rem] max-h-[60vh] overflow-hidden relative block mt-12">
               <Image
