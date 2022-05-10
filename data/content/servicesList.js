@@ -27,7 +27,7 @@ export const servicesList = [
         </p>
       </>
     ),
-    href: "/tworzenie-stron-internetowych",
+    href: "/oferta/tworzenie-stron-internetowych",
     image: {
       src: pagesImage,
       alt: "człowiek programuje stronę w biurze",
@@ -48,7 +48,7 @@ export const servicesList = [
         </p>
       </>
     ),
-    href: "/kodowanie",
+    href: "/oferta/kodowanie",
     image: {
       src: codeImage,
       alt: "szczęśliwy człowiek koduje na sofie",
@@ -72,7 +72,7 @@ export const servicesList = [
         </p>
       </>
     ),
-    href: "/projektowanie-graficzne",
+    href: "/oferta/projektowanie-graficzne",
     image: {
       src: designImage,
       alt: "człowiek biegnie z ołówkiem projektować nową stronę interneową",
