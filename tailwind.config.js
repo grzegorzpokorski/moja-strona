@@ -23,6 +23,18 @@ module.exports = {
       fontFamily: {
         sans: ["Rubik", "sans-serif"],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            a: {
+              color: "#00C865",
+              fontWeight: "400",
+              textDecoration: "none",
+              "&:hover": { color: "#26d07c", textDecoration: "underline" },
+            },
+          },
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
