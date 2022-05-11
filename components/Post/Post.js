@@ -37,7 +37,7 @@ const Post = ({ mdxSource, meta, featuredImage }) => {
               </span>
             </span>
             <h1 className="font-bold text-3xl md:text-4xl">{meta.title}</h1>
-            <figure className="w-full h-[30rem] max-h-[60vh] overflow-hidden relative block mt-12">
+            <figure className="w-full h-64 lg:h-[28rem] max-h-[60vh] overflow-hidden relative block mt-12">
               <Image
                 src={featuredImage.src}
                 alt={featuredImage.alt}
