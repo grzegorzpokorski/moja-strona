@@ -3,7 +3,7 @@ const Hamburger = ({ handleMobileMenu, isOpen }) => {
     <button
       id="menu-opener"
       className={`flex flex-col justify-around lg:hidden mr-2 hamburger ${
-        isOpen && "open"
+        isOpen ? "open" : ""
       }`}
       aria-label="przełącznik nawigacji"
       onClick={handleMobileMenu}
