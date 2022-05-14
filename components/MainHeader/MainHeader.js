@@ -16,7 +16,7 @@ const MainHeader = ({ children }) => {
   };
 
   const [isHome, setIsHome] = useState(false);
-  const { pathname } = useRouter();
+  const { pathname, isReady } = useRouter();
 
   useEffect(() => {
     if (pathname === "/") {
@@ -27,9 +27,10 @@ const MainHeader = ({ children }) => {
   useEffect(() => {
     const handleEscapeKey = ({ key }) => {
       key && key === "Escape" && setMobileMenuOpen(false);
+      console.log("ESC");
     };
 
-    const handleClick = ({ target }) => {
+    const handleClickOffMenu = ({ target }) => {
       const navbar = document.getElementById("navbar");
 
       do {
@@ -42,12 +43,12 @@ const MainHeader = ({ children }) => {
 
     if (mobileMenuOpen) {
       window.addEventListener("keydown", handleEscapeKey);
-      window.addEventListener("click", handleClick);
+      window.addEventListener("click", handleClickOffMenu);
     }
 
     return () => {
       window.removeEventListener("keydown", handleEscapeKey);
-      window.removeEventListener("click", handleClick);
+      window.removeEventListener("click", handleClickOffMenu);
     };
   }, [mobileMenuOpen]);
 
