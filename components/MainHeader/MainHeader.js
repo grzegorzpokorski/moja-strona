@@ -49,7 +49,7 @@ const MainHeader = ({ children }) => {
       window.removeEventListener("keydown", handleEscapeKey);
       window.removeEventListener("click", handleClick);
     };
-  }, []);
+  }, [mobileMenuOpen]);
 
   return (
     <header className="relative">
