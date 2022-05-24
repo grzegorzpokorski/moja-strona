@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Logo from "../Logo";
 import Hamburger from "../Hamburger";
@@ -6,8 +6,21 @@ import MainMenu from "../MainMenu";
 
 const MainHeader = ({ children }) => {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
-
   const handleMobileMenuIsOpen = () => setMobileMenuIsOpen(!mobileMenuIsOpen);
+
+  useEffect(() => {
+    const handleEscapeKey = ({ key }) => {
+      key && key === "Escape" && setMobileMenuIsOpen(false);
+    };
+
+    if (mobileMenuIsOpen) {
+      window.addEventListener("keydown", handleEscapeKey);
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, [mobileMenuIsOpen]);
 
   return (
     <header>
