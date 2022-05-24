@@ -2,7 +2,7 @@ import { useEffect, useCallback, useRef, useState } from "react";
 
 const useStickyElement = (customOffset) => {
   const [isSticky, setStickiness] = useState(false);
-  const [positionOnWhichStickinessIsApplied, setPosition] = useState(10);
+  const [positionOnWhichStickinessIsApplied, setPosition] = useState(0);
   const elementToApplyStickiness = useRef(null);
   useEffect(() => {
     if (customOffset) {
