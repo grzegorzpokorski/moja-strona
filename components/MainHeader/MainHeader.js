@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 import useStickyElement from "../../hooks/useStickyElement";
 
@@ -40,6 +41,15 @@ const MainHeader = ({ children }) => {
 
   const [isSticky] = useStickyElement();
 
+  const [isHome, setIsHome] = useState(false);
+  const { pathname } = useRouter();
+
+  useEffect(() => {
+    if (pathname === "/") {
+      setIsHome(true);
+    }
+  }, [pathname]);
+
   return (
     <header>
       <nav
@@ -48,7 +58,7 @@ const MainHeader = ({ children }) => {
         }`}
       >
         <section className="container mx-auto px-3 h-20 lg:h-28 flex flex-row justify-between items-center">
-          <Logo isHome={true} isTitle={true} />
+          <Logo isHome={isHome} isTitle={isHome} />
           <Hamburger
             mobileMenuIsOpen={mobileMenuIsOpen}
             handleMobileMenuIsOpen={handleMobileMenuIsOpen}
