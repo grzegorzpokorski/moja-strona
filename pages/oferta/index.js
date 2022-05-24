@@ -1,12 +1,12 @@
-import ContentWithImage from "../components/ContentWithImage";
-import BoxesList from "../components/BoxesList";
-import Section from "../components/Section";
-import Header from "../components/Header";
-import Main from "../components/Main";
-import MainHeader from "../components/MainHeader";
+import ContentWithImage from "../../components/ContentWithImage";
+import BoxesList from "../../components/BoxesList";
+import Section from "../../components/Section";
+import Header from "../../components/Header";
+import Main from "../../components/Main";
+import MainHeader from "../../components/MainHeader";
 
-import { offerList } from "../data/content/offerList";
-import { servicesList } from "../data/content/servicesList";
+import { offerList } from "../../data/content/offerList";
+import { servicesList } from "../../data/content/servicesList";
 
 const Offer = () => {
   return (

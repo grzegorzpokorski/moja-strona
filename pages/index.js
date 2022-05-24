@@ -41,7 +41,7 @@ const Home = () => {
             alt: "zadowoleni klienci przeglądają otrzymany produkt",
             src: heroImage,
           }}
-          isHome
+          titleAsH1
           withMarginOnTop
         />
       </MainHeader>
