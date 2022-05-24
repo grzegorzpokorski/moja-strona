@@ -8,7 +8,7 @@ import MainHeader from "../components/MainHeader";
 import { offerList } from "../data/content/offerList";
 import { servicesList } from "../data/content/servicesList";
 
-const Oferta = () => {
+const Offer = () => {
   return (
     <>
       <MainHeader>
@@ -49,4 +49,4 @@ const Oferta = () => {
   );
 };
 
-export default Oferta;
+export default Offer;
