@@ -1,46 +1,19 @@
-import Link from "../Link";
-import mainMenu from "./../../data/menu/mainMenu";
-import DropdownMenu from "./parts/DropdownMenu";
+import MenuItem from "./parts/MenuItem";
 
-const MainMenu = ({ isVisible }) => {
+import mainMenu from "./../../data/menu/mainMenu";
+
+const MainMenu = ({ mobileMenuIsOpen }) => {
   return (
-    <nav
-      id="menu"
-      className={`w-full lg:w-auto pt-8 lg:pt-0 lg:inline ${
-        !isVisible && "hidden"
+    <ul
+      className={`fixed lg:relative top-20 lg:top-0 right-0 bottom-0 z-10 w-80 lg:w-auto p-8 lg:p-0 flex flex-col lg:flex-row gap-6 lg:items-center overflow-y-scroll lg:overflow-hidden bg-zinc-800 lg:bg-transparent shadow-lg lg:shadow-none transition ${
+        mobileMenuIsOpen
+          ? "translate-x-0 lg:translate-x-0"
+          : "translate-x-full lg:translate-x-0"
       }`}
     >
-      <ul className="flex flex-col lg:flex-row gap-6 lg:items-center">
-        {mainMenu &&
-          mainMenu.map((item, i) => (
-            <li
-              key={`main-menu-item-${i}`}
-              className={`${item.childrens ? "relative dropdown-wrapper" : ""}`}
-            >
-              {item.button ? (
-                <Link
-                  href={item.href}
-                  className={`inline-block bg-green hover:bg-greenHover text-white px-6 py-3
-                transition-all ${item.childrens && "dropdown-toggle"}`}
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <Link
-                  href={item.href}
-                  className={`text-gray-500 hover:text-gray-800 transition-all ${
-                    item.childrens && "dropdown-toggle"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              )}
-
-              {item.childrens && <DropdownMenu items={item.childrens} />}
-            </li>
-          ))}
-      </ul>
-    </nav>
+      {mainMenu &&
+        mainMenu.map((item) => <MenuItem key={item.href} {...item} />)}
+    </ul>
   );
 };
 

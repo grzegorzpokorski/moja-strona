@@ -1,10 +1,8 @@
-const Main = ({ children, withMarginTop }) => {
-  return withMarginTop ? (
-    <main id="tresc" className="mt-[4.375rem] lg:mt-36">
+const Main = ({ children }) => {
+  return (
+    <main id="tresc" className="pt-20 lg:pt-28">
       {children}
     </main>
-  ) : (
-    <main id="tresc">{children}</main>
   );
 };
 

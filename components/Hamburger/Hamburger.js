@@ -1,17 +1,15 @@
-const Hamburger = ({ handleMobileMenu, isOpen }) => {
+const Hamburger = ({ mobileMenuIsOpen, handleMobileMenuIsOpen }) => {
   return (
     <button
-      id="menu-opener"
-      className={`flex flex-col justify-around lg:hidden mr-2 hamburger ${
-        isOpen ? "open" : ""
-      }`}
-      aria-label="przełącznik nawigacji"
-      onClick={handleMobileMenu}
+      className={`lg:hidden hamburger`}
+      aria-label="Otwórz menu nawigacyjne"
+      onClick={handleMobileMenuIsOpen}
     >
-      <span className="sr-only">Otwórz menu</span>
-      <span className="hamburger-top"></span>
-      <span className="hamburger-middle"></span>
-      <span className="hamburger-bottom"></span>
+      <span
+        className={`hamburger__icon transition ${
+          mobileMenuIsOpen ? "hamburger__icon--menuIsOpen" : ""
+        }`}
+      ></span>
     </button>
   );
 };
