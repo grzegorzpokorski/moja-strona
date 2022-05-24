@@ -2,7 +2,10 @@ import Link from "../Link";
 
 const Logo = ({ isHome, isTitle }) => {
   return (
-    <Link href={`${isHome ? "#" : "/"}`}>
+    <Link
+      href={`${isHome ? "#" : "/"}`}
+      className="transition hover:opacity-60"
+    >
       {isTitle ? (
         <h1 className="text-lg font-bold">
           <span className="text-green">Grzegorz </span>
