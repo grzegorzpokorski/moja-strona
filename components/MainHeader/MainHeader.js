@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import useStickyElement from "../../hooks/useStickyElement";
+
 import Logo from "../Logo";
 import Hamburger from "../Hamburger";
 import MainMenu from "../MainMenu";
@@ -36,9 +38,15 @@ const MainHeader = ({ children }) => {
     };
   }, [mobileMenuIsOpen]);
 
+  const [isSticky] = useStickyElement();
+
   return (
     <header>
-      <nav className="fixed top-0 z-10 w-full bg-white shadow-lg">
+      <nav
+        className={`fixed top-0 z-10 w-full bg-white transition ${
+          isSticky ? "shadow-md" : ""
+        }`}
+      >
         <section className="container mx-auto px-3 h-20 lg:h-28 flex flex-row justify-between items-center">
           <Logo isHome={true} isTitle={true} />
           <Hamburger
