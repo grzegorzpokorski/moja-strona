@@ -7,7 +7,7 @@ const Hero = ({
   buttons,
   image,
   bgColor,
-  isHome,
+  titleAsH1,
   withMarginOnTop,
 }) => {
   return (
@@ -18,7 +18,7 @@ const Hero = ({
     >
       <div className="container mx-auto px-3 flex flex-col md:flex-row items-center gap-3">
         <header className="md:w-1/2 flex flex-col gap-3 text-center md:text-left items-center md:items-start">
-          {isHome ? (
+          {titleAsH1 ? (
             <h1 className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-customGray">
               {title}
             </h1>
