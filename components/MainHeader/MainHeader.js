@@ -13,12 +13,26 @@ const MainHeader = ({ children }) => {
       key && key === "Escape" && setMobileMenuIsOpen(false);
     };
 
+    const handleClickOffTheMenu = ({ target }) => {
+      const menu = document.getElementById("menu");
+      const hamburger = document.getElementById("hamburger");
+
+      do {
+        if (target === menu || target === hamburger) return;
+        target = target.parentNode;
+      } while (target != null);
+
+      setMobileMenuIsOpen(false);
+    };
+
     if (mobileMenuIsOpen) {
       window.addEventListener("keydown", handleEscapeKey);
+      window.addEventListener("click", handleClickOffTheMenu);
     }
 
     return () => {
       window.removeEventListener("keydown", handleEscapeKey);
+      window.removeEventListener("click", handleClickOffTheMenu);
     };
   }, [mobileMenuIsOpen]);
 
