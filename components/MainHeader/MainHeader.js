@@ -8,15 +8,41 @@ import Hamburger from "../Hamburger";
 import MainMenu from "../MainMenu";
 
 const MainHeader = ({ children }) => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
+  const handleMobileMenuIsOpen = () => setMobileMenuIsOpen(!mobileMenuIsOpen);
+
+  useEffect(() => {
+    const handleEscapeKey = ({ key }) => {
+      key && key === "Escape" && setMobileMenuIsOpen(false);
+    };
+
+    const handleClickOffTheMenu = ({ target }) => {
+      const menu = document.getElementById("menu");
+      const hamburger = document.getElementById("hamburger");
+
+      do {
+        if (target === menu || target === hamburger) return;
+        target = target.parentNode;
+      } while (target != null);
+
+      setMobileMenuIsOpen(false);
+    };
+
+    if (mobileMenuIsOpen) {
+      window.addEventListener("keydown", handleEscapeKey);
+      window.addEventListener("click", handleClickOffTheMenu);
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleEscapeKey);
+      window.removeEventListener("click", handleClickOffTheMenu);
+    };
+  }, [mobileMenuIsOpen]);
+
   const [isSticky] = useStickyElement();
 
-  const handleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
   const [isHome, setIsHome] = useState(false);
-  const { pathname, isReady } = useRouter();
+  const { pathname } = useRouter();
 
   useEffect(() => {
     if (pathname === "/") {
@@ -24,56 +50,23 @@ const MainHeader = ({ children }) => {
     }
   }, [pathname]);
 
-  useEffect(() => {
-    const handleEscapeKey = ({ key }) => {
-      key && key === "Escape" && setMobileMenuOpen(false);
-      console.log("ESC");
-    };
-
-    const handleClickOffMenu = ({ target }) => {
-      const navbar = document.getElementById("navbar");
-
-      do {
-        if (target == navbar) return;
-        target = target.parentNode;
-      } while (target != null);
-
-      setMobileMenuOpen(false);
-    };
-
-    if (mobileMenuOpen) {
-      window.addEventListener("keydown", handleEscapeKey);
-      window.addEventListener("click", handleClickOffMenu);
-    }
-
-    return () => {
-      window.removeEventListener("keydown", handleEscapeKey);
-      window.removeEventListener("click", handleClickOffMenu);
-    };
-  }, [mobileMenuOpen]);
-
   return (
-    <header className="relative">
-      <div
-        id="navbar"
-        className={`fixed top-0 py-5 lg:py-12 w-full z-10 bg-white transition-all duration-300 ${
-          isSticky ? "py-5 lg:py-8 drop-shadow-md" : ""
-        } ${mobileMenuOpen ? "drop-shadow-md" : ""}`}
+    <header>
+      <nav
+        className={`fixed top-0 z-10 w-full bg-white transition ${
+          isSticky ? "shadow-md" : ""
+        }`}
       >
-        <div className="container mx-auto px-3">
-          <div className="flex flex-col lg:flex-row gap-3 items-center lg:justify-between">
-            <div className="flex flex-row justify-between items-center w-full lg:w-auto">
-              <Logo isHome={isHome} isTitle={isHome} />
-              <Hamburger
-                handleMobileMenu={handleMobileMenu}
-                isOpen={mobileMenuOpen}
-              />
-            </div>
-            <MainMenu isVisible={mobileMenuOpen} />
-          </div>
-        </div>
-      </div>
-      {children && <div className="mt-[4.375rem] lg:mt-36">{children}</div>}
+        <section className="container mx-auto px-3 h-20 lg:h-28 flex flex-row justify-between items-center">
+          <Logo isHome={isHome} isTitle={isHome} />
+          <Hamburger
+            mobileMenuIsOpen={mobileMenuIsOpen}
+            handleMobileMenuIsOpen={handleMobileMenuIsOpen}
+          />
+          <MainMenu mobileMenuIsOpen={mobileMenuIsOpen} />
+        </section>
+      </nav>
+      {children}
     </header>
   );
 };

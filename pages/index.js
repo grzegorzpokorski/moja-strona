@@ -1,16 +1,16 @@
-import MainHeader from "../components/MainHeader";
 import Main from "../components/Main";
+import MainHeader from "../components/MainHeader";
 import Hero from "../components/Hero";
-import Banner from "../components/Banner/Banner";
-import ContentWithImage from "../components/ContentWithImage/ContentWithImage";
+import Banner from "../components/Banner";
+import ContentWithImage from "../components/ContentWithImage";
 import Section from "../components/Section";
 import Header from "../components/Header";
-import BoxesList from "../components/BoxesList";
-import PostsGrid from "../components/PostsGrid";
 
-import heroImage from "../public/images/hero.webp";
+import BoxesList from "../components/BoxesList";
+
 import { offerList } from "../data/content/offerList";
 import { servicesList } from "../data/content/servicesList";
+import heroImage from "../public/images/hero.webp";
 
 const Home = () => {
   return (
@@ -41,7 +41,8 @@ const Home = () => {
             alt: "zadowoleni klienci przeglądają otrzymany produkt",
             src: heroImage,
           }}
-          isHome
+          titleAsH1
+          withMarginOnTop
         />
       </MainHeader>
       <Main>

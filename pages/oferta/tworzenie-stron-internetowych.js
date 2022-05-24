@@ -1,22 +1,20 @@
-import MainHeader from "../../components/MainHeader";
-import Main from "../../components/Main";
 import Hero from "../../components/Hero";
+import Main from "../../components/Main";
+import MainHeader from "../../components/MainHeader";
 import Banner from "../../components/Banner";
+import ContentWithImage from "../../components/ContentWithImage";
 import Section from "../../components/Section";
 import Header from "../../components/Header";
 import BoxesList from "../../components/BoxesList";
-import ContentWithImage from "../../components/ContentWithImage";
-import Link from "../../components/Link";
 
 import heroImage from "../../public/images/pages.webp";
 import logosImage from "../../public/images/logos.webp";
 import { pageFeatures } from "../../data/content/pageFeatures";
 
-const Pages = () => {
+const Offer = () => {
   return (
     <>
-      <MainHeader />
-      <Main withMarginTop>
+      <MainHeader>
         <Hero
           title="Tworzenie stron w oparciu o CMS WordPress"
           description={
@@ -28,6 +26,10 @@ const Pages = () => {
               </p>
             </>
           }
+          image={{
+            alt: "tworzenie strony na kanapie",
+            src: heroImage,
+          }}
           buttons={[
             {
               label: "Rozpocznijmy współpracę",
@@ -41,8 +43,11 @@ const Pages = () => {
                 "bg-white text-green hover:bg-greenHover hover:text-white border-2 border-green",
             },
           ]}
-          image={{ src: heroImage, alt: "człowieczek koduje na sofie" }}
+          withMarginOnTop
+          titleAsH1
         />
+      </MainHeader>
+      <Main>
         <Section bgColor="bg-whiteGreen">
           <Header
             subtitle="Zalety"
@@ -107,4 +112,4 @@ const Pages = () => {
   );
 };
 
-export default Pages;
+export default Offer;

@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import Layaut from "../components/Layaut";
 
 export default function Document() {
   return (

@@ -1,12 +1,24 @@
 import Image from "next/image";
 import Button from "./../Button";
 
-const Hero = ({ title, description, buttons, image, bgColor, isHome }) => {
+const Hero = ({
+  title,
+  description,
+  buttons,
+  image,
+  bgColor,
+  titleAsH1,
+  withMarginOnTop,
+}) => {
   return (
-    <section className={`py-12 md:py-18 ${bgColor ? bgColor : "bg-white"}`}>
+    <section
+      className={`py-12 md:py-12 ${bgColor ? bgColor : "bg-white"} ${
+        withMarginOnTop ? "mt-20 lg:mt-28" : ""
+      }`}
+    >
       <div className="container mx-auto px-3 flex flex-col md:flex-row items-center gap-3">
         <header className="md:w-1/2 flex flex-col gap-3 text-center md:text-left items-center md:items-start">
-          {isHome ? (
+          {titleAsH1 ? (
             <h1 className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-customGray">
               {title}
             </h1>

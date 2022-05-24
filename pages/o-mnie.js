@@ -1,16 +1,15 @@
-import MainHeader from "../components/MainHeader";
 import Main from "../components/Main";
+import MainHeader from "../components/MainHeader";
 import Hero from "../components/Hero";
-import Banner from "../components/Banner";
 import Link from "../components/Link";
+import Banner from "../components/Banner";
 
-import heroImage from "../public/images/me.png";
+import heroImage from "../public/images/about.png";
 
-const Page = () => {
+const About = () => {
   return (
     <>
-      <MainHeader />
-      <Main withMarginTop>
+      <MainHeader>
         <Hero
           title="Cześć, jestem Grzegorz!"
           description={
@@ -28,16 +27,9 @@ const Page = () => {
               </p>
               <p>
                 W wolnej chwili staram się dzielić swoją wiedzą na łamach
-                artykułów na moim{" "}
-                <Link href="http://localhost/www/2022-kwiecien/blog/">
-                  blogu
-                </Link>
-                . Jeśli interesuje Cię współpraca lub po prostu chcesz pogadać
-                śmiało{" "}
-                <Link href="http://localhost/www/2022-kwiecien/kontakt/">
-                  kontaktuj się ze mną
-                </Link>
-                .
+                artykułów na moim <Link href="/blog">blogu</Link>. Jeśli
+                interesuje Cię współpraca lub po prostu chcesz pogadać śmiało{" "}
+                <Link href="/kontakt">kontaktuj się ze mną</Link>.
               </p>
             </>
           }
@@ -54,8 +46,15 @@ const Page = () => {
                 "bg-white text-green hover:bg-greenHover hover:text-white border-2 border-green",
             },
           ]}
-          image={{ src: heroImage, alt: "człowieczek koduje na sofie" }}
+          image={{
+            alt: "człowiek zadowolony z pracy",
+            src: heroImage,
+          }}
+          isHome
+          withMarginOnTop
         />
+      </MainHeader>
+      <Main>
         <Banner
           title="Zbuduj swoją wysokiej klasy stronę internetową ze mną!"
           description="Chętnie pomogę zrealizować Twój projekt."
@@ -78,4 +77,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default About;

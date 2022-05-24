@@ -7,7 +7,7 @@ import SocialMenu from "./parts/SocialMenu";
 
 const Footer = ({ isHome }) => {
   return (
-    <footer className="py-20 bg-white">
+    <footer className="py-20 bg-white border-t-2 border-greenLight">
       <div className="container mx-auto px-3 flex flex-wrap flex-col md:flex-row justify-between items-center gap-6">
         <span className="md:order-2 hover:underline">
           <Logo isHome={isHome} />
