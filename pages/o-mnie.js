@@ -1,6 +1,7 @@
 import Main from "../components/Main";
 import MainHeader from "../components/MainHeader";
 import Hero from "../components/Hero";
+import Link from "../components/Link";
 
 import heroImage from "../public/images/about.png";
 
@@ -25,24 +26,9 @@ const About = () => {
               </p>
               <p>
                 W wolnej chwili staram się dzielić swoją wiedzą na łamach
-                artykułów na moim{" "}
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="http://localhost/www/2022-kwiecien/blog/"
-                >
-                  blogu
-                </a>
-                . Jeśli interesuje Cię współpraca lub po prostu chcesz pogadać
-                śmiało{" "}
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="http://localhost/www/2022-kwiecien/kontakt/"
-                >
-                  kontaktuj się ze mną
-                </a>
-                .
+                artykułów na moim <Link href="/blog">blogu</Link>. Jeśli
+                interesuje Cię współpraca lub po prostu chcesz pogadać śmiało{" "}
+                <Link href="/kontakt">kontaktuj się ze mną</Link>.
               </p>
             </>
           }
