@@ -2,6 +2,7 @@ import Main from "../components/Main";
 import MainHeader from "../components/MainHeader";
 import Hero from "../components/Hero";
 import Link from "../components/Link";
+import Banner from "../components/Banner";
 
 import heroImage from "../public/images/about.png";
 
@@ -53,7 +54,25 @@ const About = () => {
           withMarginOnTop
         />
       </MainHeader>
-      <Main></Main>
+      <Main>
+        <Banner
+          title="Zbuduj swoją wysokiej klasy stronę internetową ze mną!"
+          description="Chętnie pomogę zrealizować Twój projekt."
+          buttons={[
+            {
+              label: "Skontaktuj się ze mną",
+              href: "/kontakt",
+              customClasses: "bg-white hover:bg-whiteGreen text-gray-800",
+            },
+            {
+              label: "Poczytaj mój blog",
+              href: "/blog",
+              customClasses:
+                "bg-transparent hover:bg-whiteGreen text-white hover:text-gray-800 border-2 border-white",
+            },
+          ]}
+        />
+      </Main>
     </>
   );
 };
