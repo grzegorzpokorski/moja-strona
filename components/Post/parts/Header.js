@@ -16,7 +16,7 @@ const Header = (props) => {
             className="inline-block w-12 h-0.5 bg-customGray text-separator"
             aria-hidden="true"
           ></span>
-          <time dateTime={props.date.replaceAll(".", "-")}>{props.date}</time>
+          <span>{props.date}</span>
         </span>
         <h1 className="font-bold text-3xl md:text-4xl">{props.title}</h1>
         <figure className="w-full h-96 max-h-96 overflow-hidden relative block mt-12">
