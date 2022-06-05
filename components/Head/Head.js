@@ -1,6 +1,8 @@
 import HeadTag from "next/head";
 import usePermalink from "../../hooks/usePermalink";
 import siteUrl from "../../data/seo/siteUrl";
+import siteName from "../../data/seo/siteName";
+import getISOStringFromPublicationDate from "../../data/seo/getISOStringFromPublicationDate";
 
 const Head = (props) => {
   const permalink = usePermalink();
@@ -18,6 +20,29 @@ const Head = (props) => {
       <meta key="bingbot" name="bingbot" content={robotsMeta} />
 
       <link key="canonical" rel="canonical" href={permalink} />
+
+      <meta property="og:title" content={props.title} />
+      <meta property="og:description" content={props.description} />
+
+      <meta property="og:url" content={permalink} />
+      <meta property="og:site_name" content={siteName} />
+
+      <meta property="og:locale" content="pl_PL" />
+      <meta property="og:type" content={props.contentType} />
+
+      {props.contentType === "article" && (
+        <>
+          <meta
+            property="article:author"
+            content="https://www.linkedin.com/in/grzegorz-pokorski/"
+          />
+          <meta
+            property="article:published_time"
+            content={getISOStringFromPublicationDate(props.publicationDate)}
+          />
+        </>
+      )}
+
       <link rel="index" title="Strona główna" href={siteUrl} />
     </HeadTag>
   );

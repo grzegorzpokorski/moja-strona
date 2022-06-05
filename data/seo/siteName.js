@@ -1,1 +1,3 @@
-export const siteName = "Grzegorz Pokorski";
+const siteName = "Grzegorz Pokorski";
+
+export default siteName;

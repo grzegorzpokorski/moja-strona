@@ -14,6 +14,8 @@ const BlogPost = ({ post }) => {
       <Head
         title={`${post.frontmatter.title} | ${siteName}`}
         description={post.frontmatter.excerpt}
+        contentType="article"
+        publicationDate={post.frontmatter.date}
       />
       <MainHeader></MainHeader>
       <Main withMarginOnTop>
