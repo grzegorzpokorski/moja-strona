@@ -17,7 +17,7 @@ const Offer = () => {
     <>
       <Head
         title={`Oferta ${addressSeparator} ${siteName}`}
-        description={`Oferuję szerokie spektrum usług związanych ze stronami internetowymi. Programuję strony internetowe, koduję szablony graficzne oraz przygotowuję projekty graficzne stron internetowych.`}
+        description={`Programuję strony internetowe, koduję szablony graficzne oraz przygotowuję projekty graficzne stron internetowych.`}
         contentType="website"
       />
       <MainHeader>
