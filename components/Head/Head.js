@@ -50,7 +50,7 @@ const Head = (props) => {
         content={`${siteUrl}${
           props.featuredImage
             ? props.featuredImage
-            : "/images/default-og-image.png"
+            : "/images/default-og-image.jpg"
         }`}
       />
       <meta property="og:image:width" content="1200" />
