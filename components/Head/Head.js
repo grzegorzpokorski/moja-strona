@@ -57,6 +57,8 @@ const Head = (props) => {
       <meta property="og:image:height" content="630" />
       <meta property="og:image:type" content="image/jpeg" />
 
+      <meta name="twitter:card" content="summary_large_image" />
+
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -74,6 +76,8 @@ const Head = (props) => {
         sizes="16x16"
         href="/favicon-16x16.png"
       />
+      <meta name="msapplication-TileColor" content="#ffffff" />
+      <meta name="theme-color" content="#ffffff" />
     </HeadTag>
   );
 };
