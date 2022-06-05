@@ -20,6 +20,8 @@ const Offer = () => {
     <>
       <Head
         title={`Tworzenie stron internetowych ${addressSeparator} ${siteName}`}
+        description={`Tworzenie stron ładujących się poniżej jeden sekundy w oparciu o najnowsze technologie.`}
+        contentType="website"
       />
       <MainHeader>
         <Hero
