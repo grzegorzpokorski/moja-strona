@@ -22,7 +22,7 @@ const Home = () => {
     <>
       <Head
         title={`${siteName} ${addressSeparator} ${slogan}`}
-        description={`Tworzę nowoczene strony internetowe oraz staram się dzielić zdobywaną wiedzą z innnymi na blogu.`}
+        description={`Tworzę nowoczesne strony internetowe oraz staram się dzielić zdobywaną wiedzą z innymi na blogu.`}
         contentType="website"
       />
       <MainHeader>
