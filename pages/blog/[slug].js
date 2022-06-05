@@ -3,7 +3,7 @@ import Main from "../../components/Main";
 import Post from "../../components/Post";
 import Head from "../../components/Head";
 
-import { siteName } from "./../../data/seo/siteName";
+import siteName from "./../../data/seo/siteName";
 
 import { getPostBySlug, getPostsPaths } from "../../provider/posts";
 import { serialize } from "next-mdx-remote/serialize";
