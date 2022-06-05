@@ -2,8 +2,10 @@ import MainHeader from "../../components/MainHeader";
 import Section from "../../components/Section";
 import Header from "../../components/Header";
 import Main from "../../components/Main";
+import { getAllPosts } from "../../provider/posts";
 
 const Blog = ({ posts }) => {
+  console.log(posts);
   return (
     <>
       <MainHeader>
@@ -22,10 +24,11 @@ const Blog = ({ posts }) => {
 };
 
 export const getStaticProps = async () => {
-  const posts = [];
+  const posts = getAllPosts();
+
   return {
     props: {
-      posts,
+      posts: posts,
     },
   };
 };
