@@ -3,7 +3,7 @@ import Section from "../../components/Section";
 import Header from "../../components/Header";
 import Main from "../../components/Main";
 
-const Blog = () => {
+const Blog = ({ posts }) => {
   return (
     <>
       <MainHeader>
@@ -19,6 +19,15 @@ const Blog = () => {
       </Main>
     </>
   );
+};
+
+export const getStaticProps = async () => {
+  const posts = [];
+  return {
+    props: {
+      posts,
+    },
+  };
 };
 
 export default Blog;
