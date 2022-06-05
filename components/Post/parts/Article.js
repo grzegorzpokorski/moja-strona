@@ -1,11 +1,16 @@
 import { MDXRemote } from "next-mdx-remote";
 import Link from "../../Link";
+import Image from "next/image";
 
 const Article = ({ source, tags }) => {
+  const components = {
+    a: Link,
+  };
+
   return (
     <article className="pb-16 md:pb-24">
       <div className="container px-3 mx-auto w-full md:w-6/12 prose max-w-none">
-        <MDXRemote {...source} components={{ a: Link }} />
+        <MDXRemote {...source} components={components} />
       </div>
       {tags && (
         <footer className="container mx-auto px-3 w-full md:w-6/12">
