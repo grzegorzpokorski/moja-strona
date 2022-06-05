@@ -4,7 +4,7 @@ import Section from "../../../components/Section";
 import Header from "../../../components/Header";
 import Main from "../../../components/Main";
 import PostsList from "../../../components/PostsList/PostsList";
-import { getAllPosts, getTags } from "../../../provider/posts";
+import { getPublishedPostsOrderByDate, getTags } from "../../../provider/posts";
 
 import addressSeparator from "../../../data/seo/addressSeparator";
 import siteName from "../../../data/seo/siteName";
@@ -30,7 +30,7 @@ const Blog = ({ posts, slug }) => {
 
 export const getStaticProps = async ({ params }) => {
   const { slug } = params;
-  const posts = getAllPosts().filter((post) =>
+  const posts = getPublishedPostsOrderByDate().filter((post) =>
     post.frontmatter.tags.includes(slug)
   );
 
@@ -44,11 +44,10 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const tags = getTags();
-
-  console.log(tags.map((tag) => ({ params: { slug: tag } })));
+  const paths = tags.map((tag) => ({ params: { slug: tag } }));
 
   return {
-    paths: tags.map((tag) => ({ params: { slug: tag } })),
+    paths: paths,
     fallback: false,
   };
 };

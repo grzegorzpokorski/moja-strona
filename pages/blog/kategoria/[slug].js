@@ -4,7 +4,10 @@ import Section from "../../../components/Section";
 import Header from "../../../components/Header";
 import Main from "../../../components/Main";
 import PostsList from "../../../components/PostsList/PostsList";
-import { getAllPosts, getCategories } from "../../../provider/posts";
+import {
+  getPublishedPostsOrderByDate,
+  getCategories,
+} from "../../../provider/posts";
 import siteName from "./../../../data/seo/siteName";
 import addressSeparator from "../../../data/seo/addressSeparator";
 
@@ -29,7 +32,7 @@ const Blog = ({ posts, slug }) => {
 
 export const getStaticProps = async ({ params }) => {
   const { slug } = params;
-  const posts = getAllPosts().filter(
+  const posts = getPublishedPostsOrderByDate().filter(
     (post) => post.frontmatter.category == slug
   );
 
@@ -43,11 +46,10 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const categories = getCategories();
-
-  console.log(categories.map((cat) => ({ params: { slug: cat } })));
+  const paths = categories.map((cat) => ({ params: { slug: cat } }));
 
   return {
-    paths: categories.map((cat) => ({ params: { slug: cat } })),
+    paths: paths,
     fallback: false,
   };
 };

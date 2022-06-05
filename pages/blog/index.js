@@ -4,7 +4,7 @@ import Section from "../../components/Section";
 import Header from "../../components/Header";
 import Main from "../../components/Main";
 import PostsList from "../../components/PostsList/PostsList";
-import { getAllPosts, getTags } from "../../provider/posts";
+import { getPublishedPostsOrderByDate } from "../../provider/posts";
 import addressSeparator from "../../data/seo/addressSeparator";
 import siteName from "../../data/seo/siteName";
 
@@ -31,7 +31,7 @@ const Blog = ({ posts }) => {
 };
 
 export const getStaticProps = async () => {
-  const posts = getAllPosts();
+  const posts = getPublishedPostsOrderByDate();
 
   return {
     props: {

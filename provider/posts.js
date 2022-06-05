@@ -2,6 +2,10 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
+import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+dayjs.extend(customParseFormat);
+
 const rootPath = process.cwd();
 const postsPath = path.join(rootPath, "data", "posts");
 const mainFileName = "index.mdx";
@@ -46,8 +50,21 @@ export const getAllPosts = () => {
   return posts;
 };
 
-export const getTags = () => {
+export const getPublishedPostsOrderByDate = () => {
   const posts = getAllPosts();
+  const published = posts.filter((post) => post.frontmatter.published == true);
+  const sorted = published.sort((a, b) => {
+    const first = dayjs(a.frontmatter.date, "DD.MM.YYYY");
+    const second = dayjs(b.frontmatter.date, "DD.MM.YYYY");
+
+    return first.isBefore(second) ? 1 : -1;
+  });
+
+  return sorted;
+};
+
+export const getTags = () => {
+  const posts = getPublishedPostsOrderByDate();
   const tags = posts.map((post) => post.frontmatter.tags).flat();
   const uniqueTags = new Set(tags);
 
@@ -55,7 +72,7 @@ export const getTags = () => {
 };
 
 export const getCategories = () => {
-  const posts = getAllPosts();
+  const posts = getPublishedPostsOrderByDate();
   const categories = posts.map((post) => post.frontmatter.category);
   const uniqueCategories = new Set(categories);
 
