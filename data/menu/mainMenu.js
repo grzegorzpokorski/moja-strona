@@ -24,7 +24,7 @@ const mainMenu = [
     ],
   },
   {
-    href: "/realizacje",
+    href: "https://behance.net/grzegorzpokorski",
     label: "Realizacje",
     button: false,
   },
