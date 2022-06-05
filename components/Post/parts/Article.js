@@ -9,25 +9,27 @@ const Article = ({ source, tags }) => {
 
   return (
     <article className="pb-16 md:pb-24">
-      <div className="container px-3 mx-auto w-full md:w-6/12 prose max-w-none">
-        <MDXRemote {...source} components={components} />
+      <div className="container px-3 mx-auto">
+        <div className="w-full md:w-8/12 lg:w-6/12 prose max-w-none mx-auto">
+          <MDXRemote {...source} components={components} />
+        </div>
+        {tags && (
+          <footer className="container mx-auto px-3">
+            <ul className="w-full md:w-8/12 lg:w-6/12 mx-auto flex flex-row flex-wrap gap-2 mt-8">
+              {tags.map((tag) => (
+                <li key={tag}>
+                  <Link
+                    href={`/blog/tag/${tag}`}
+                    className="py-2 px-4 bg-whiteGreen text-sm border-2 border-green"
+                  >
+                    {tag}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </footer>
+        )}
       </div>
-      {tags && (
-        <footer className="container mx-auto px-3 w-full md:w-6/12">
-          <ul className="flex flex-row flex-wrap gap-2 mt-8">
-            {tags.map((tag) => (
-              <li key={tag}>
-                <Link
-                  href={`/blog/tag/${tag}`}
-                  className="py-2 px-4 bg-whiteGreen text-sm border-2 border-green"
-                >
-                  {tag}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </footer>
-      )}
     </article>
   );
 };
