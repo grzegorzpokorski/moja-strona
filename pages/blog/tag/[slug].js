@@ -1,3 +1,4 @@
+import Head from "../../../components/Head";
 import MainHeader from "../../../components/MainHeader";
 import Section from "../../../components/Section";
 import Header from "../../../components/Header";
@@ -5,9 +6,17 @@ import Main from "../../../components/Main";
 import PostsList from "../../../components/PostsList/PostsList";
 import { getAllPosts, getTags } from "../../../provider/posts";
 
+import addressSeparator from "../../../data/seo/addressSeparator";
+import siteName from "../../../data/seo/siteName";
+
 const Blog = ({ posts, slug }) => {
   return (
     <>
+      <Head
+        title={`${slug} ${addressSeparator} ${siteName}`}
+        description={`Wszytkie artykuły, które pojawiły się na blogu w ramach tagu "${slug.toLowerCase()}".`}
+        contentType="website"
+      />
       <MainHeader />
       <Main>
         <Section bgColor="bg-whiteGreen" withMarginOnTop>

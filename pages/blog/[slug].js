@@ -3,16 +3,17 @@ import Main from "../../components/Main";
 import Post from "../../components/Post";
 import Head from "../../components/Head";
 
-import siteName from "./../../data/seo/siteName";
-
 import { getPostBySlug, getPostsPaths } from "../../provider/posts";
 import { serialize } from "next-mdx-remote/serialize";
+
+import siteName from "./../../data/seo/siteName";
+import addressSeparator from "../../data/seo/addressSeparator";
 
 const BlogPost = ({ post }) => {
   return (
     <>
       <Head
-        title={`${post.frontmatter.title} | ${siteName}`}
+        title={`${post.frontmatter.title} ${addressSeparator} ${siteName}`}
         description={post.frontmatter.excerpt}
         contentType="article"
         publicationDate={post.frontmatter.date}

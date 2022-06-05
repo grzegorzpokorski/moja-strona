@@ -1,3 +1,4 @@
+import Head from "../../components/Head";
 import Hero from "../../components/Hero";
 import Main from "../../components/Main";
 import MainHeader from "../../components/MainHeader";
@@ -11,9 +12,15 @@ import heroImage from "../../public/images/pages.webp";
 import logosImage from "../../public/images/logos.webp";
 import { pageFeatures } from "../../data/content/pageFeatures";
 
+import addressSeparator from "../../data/seo/addressSeparator";
+import siteName from "../../data/seo/siteName";
+
 const Offer = () => {
   return (
     <>
+      <Head
+        title={`Tworzenie stron internetowych ${addressSeparator} ${siteName}`}
+      />
       <MainHeader>
         <Hero
           title="Tworzenie stron w oparciu o CMS WordPress"

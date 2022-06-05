@@ -1,3 +1,4 @@
+import Head from "../../components/Head";
 import ContentWithImage from "../../components/ContentWithImage";
 import BoxesList from "../../components/BoxesList";
 import Section from "../../components/Section";
@@ -8,9 +9,17 @@ import MainHeader from "../../components/MainHeader";
 import { offerList } from "../../data/content/offerList";
 import { servicesList } from "../../data/content/servicesList";
 
+import addressSeparator from "../../data/seo/addressSeparator";
+import siteName from "../../data/seo/siteName";
+
 const Offer = () => {
   return (
     <>
+      <Head
+        title={`Oferta ${addressSeparator} ${siteName}`}
+        description={`Oferuję szerokie spektrum usług związanych ze stronami internetowymi. Programuję strony internetowe, koduję szablony graficzne oraz przygotowuję projekty graficzne stron internetowych.`}
+        contentType="website"
+      />
       <MainHeader>
         <Section bgColor="bg-whiteGreen" withMarginOnTop>
           <Header

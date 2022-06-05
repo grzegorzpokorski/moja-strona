@@ -1,3 +1,4 @@
+import Head from "../components/Head";
 import Main from "../components/Main";
 import MainHeader from "../components/MainHeader";
 import Hero from "../components/Hero";
@@ -6,9 +7,17 @@ import Banner from "../components/Banner";
 
 import heroImage from "../public/images/about.png";
 
+import addressSeparator from "../data/seo/addressSeparator";
+import siteName from "../data/seo/siteName";
+
 const About = () => {
   return (
     <>
+      <Head
+        title={`O mnie ${addressSeparator} ${siteName}`}
+        description={`Działam jako freelancer, pomagając tworzyć dobrze wyglądające i realizujące cele biznesowe strony internetowe. Poznaj mnie lepiej!`}
+        contentType="website"
+      />
       <MainHeader>
         <Hero
           title="Cześć, jestem Grzegorz!"

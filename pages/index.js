@@ -1,3 +1,4 @@
+import Head from "../components/Head";
 import Main from "../components/Main";
 import MainHeader from "../components/MainHeader";
 import Hero from "../components/Hero";
@@ -12,9 +13,18 @@ import { offerList } from "../data/content/offerList";
 import { servicesList } from "../data/content/servicesList";
 import heroImage from "../public/images/hero.webp";
 
+import siteName from "../data/seo/siteName";
+import addressSeparator from "../data/seo/addressSeparator";
+import slogan from "../data/seo/slogan";
+
 const Home = () => {
   return (
     <>
+      <Head
+        title={`${siteName} ${addressSeparator} ${slogan}`}
+        description={`Tworzę nowoczene strony internetowe oraz staram się dzielić zdobywaną wiedzą z innnymi na blogu.`}
+        contentType="website"
+      />
       <MainHeader>
         <Hero
           title="Projekuję oraz tworzę nowoczesne strony internetowe"
