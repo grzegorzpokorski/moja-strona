@@ -19,6 +19,7 @@ export const getSlugs = () => {
 export const getPostsPaths = () => {
   const slugs = getSlugs();
   const paths = slugs.map((slug) => ({ params: { slug } }));
+
   return paths;
 };
 
@@ -43,4 +44,20 @@ export const getAllPosts = () => {
   const posts = slugs.map((slug) => getPostBySlug(slug));
 
   return posts;
+};
+
+export const getTags = () => {
+  const posts = getAllPosts();
+  const tags = posts.map((post) => post.frontmatter.tags).flat();
+  const uniqueTags = new Set(tags);
+
+  return Array.from(uniqueTags);
+};
+
+export const getCategories = () => {
+  const posts = getAllPosts();
+  const categories = posts.map((post) => post.frontmatter.category);
+  const uniqueCategories = new Set(categories);
+
+  return Array.from(uniqueCategories);
 };
