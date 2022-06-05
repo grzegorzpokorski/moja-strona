@@ -1,10 +1,11 @@
 import { MDXRemote } from "next-mdx-remote";
 import Link from "../../Link";
-import Image from "next/image";
+import Image from "../../mdx/Image";
 
 const Article = ({ source, tags }) => {
   const components = {
     a: Link,
+    img: (props) => <Image {...props} />,
   };
 
   return (
