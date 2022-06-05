@@ -34,13 +34,7 @@ const Offer = () => {
       </MainHeader>
       <Main>
         <Section>
-          <BoxesList
-            items={offerList}
-            subtitle="Oferta"
-            title="W czym się specjalizuje?"
-            description="Gdyby zachodziła konieczność przeprowadzenia zabiegu na otwartym sercu, powierzyłbyś swoje zdrowie i życie mechanikowi? Między innymi dlatego warto korzystać z usług specjalisty."
-            bgColor="bg-whiteGreen"
-          />
+          <BoxesList items={offerList} />
         </Section>
         {servicesList &&
           servicesList.map((item, i) =>
