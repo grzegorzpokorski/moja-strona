@@ -2,13 +2,64 @@ import HeadTag from "next/head";
 import usePermalink from "../../hooks/usePermalink";
 import siteUrl from "../../data/seo/siteUrl";
 import siteName from "../../data/seo/siteName";
+import slogan from "../../data/seo/slogan";
 import getISOStringFromPublicationDate from "../../data/seo/getISOStringFromPublicationDate";
 
 const Head = (props) => {
   const permalink = usePermalink();
+
   // const robotsMeta =
   //   "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
   const robotsMeta = "noindex, nofollow";
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Person", "Organization"],
+        "@id": `${siteUrl}/#person`,
+        name: siteName,
+        sameAs: [
+          "https://www.instagram.com/grzegorz_pokorski/",
+          "https://www.linkedin.com/in/grzegorz-pokorski/",
+        ],
+      },
+      {
+        "@type": ["WebSite"],
+        "@id": `${siteUrl}/#website`,
+        url: `${siteUrl}/`,
+        name: siteName,
+        description: slogan,
+        publisher: {
+          "@id": `${siteUrl}/#person`,
+        },
+        inLanguage: "pl-PL",
+      },
+    ],
+  };
+
+  if (props.contentType === "article") {
+    schema["@graph"].push({
+      "@type": ["Article"],
+      "@id": `${permalink}/article`,
+      url: permalink,
+      name: props.title,
+      description: props.description,
+      image: {
+        "@type": "ImageObject",
+        "@id": `${permalink}#image`,
+        url: props.featuredImage,
+        inLanguage: "pl-PL",
+        width: 1200,
+        height: 630,
+        caption: siteName,
+      },
+      datePublished: getISOStringFromPublicationDate(props.publicationDate),
+      publisher: {
+        "@id": `${siteUrl}/#person`,
+      },
+    });
+  }
 
   return (
     <HeadTag>
@@ -78,6 +129,11 @@ const Head = (props) => {
       />
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      ></script>
     </HeadTag>
   );
 };
