@@ -22,6 +22,7 @@ const Header = (props) => {
         <figure className="w-full h-96 max-h-96 overflow-hidden relative block mt-12">
           <Image
             src={props.featuredImage}
+            alt=""
             className="object-cover object-center w-full h-full"
             layout="fill"
             priority

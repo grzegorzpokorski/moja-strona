@@ -11,6 +11,7 @@ const PostItem = (post) => {
               src={post.featuredImage}
               layout="fill"
               className="object-cover object-center w-full h-full hover:scale-105 transition-all duration-300"
+              alt=""
             />
           </figure>
         </Link>
