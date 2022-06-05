@@ -14,7 +14,7 @@ const MenuItem = (item) => {
       ) : (
         <Link
           href={item.href}
-          className="text-gray-100 lg:text-zinc-600 hover:text-gray-300 lg:hover:text-zinc-900 transition-all"
+          className="text-gray-100 lg:text-zinc-600 hover:text-gray-300 lg:hover:text-green transition-all"
         >
           {item.label}
         </Link>
