@@ -11,6 +11,7 @@ import { servicesList } from "../../data/content/servicesList";
 
 import addressSeparator from "../../data/seo/addressSeparator";
 import siteName from "../../data/seo/siteName";
+import featuredImage from "../../public/images/people.webp";
 
 const Offer = () => {
   return (

@@ -45,6 +45,18 @@ const Head = (props) => {
 
       <link rel="index" title="Strona główna" href={siteUrl} />
 
+      <meta
+        property="og:image"
+        content={`${siteUrl}${
+          props.featuredImage
+            ? props.featuredImage
+            : "/images/default-og-image.png"
+        }`}
+      />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:type" content="image/jpeg" />
+
       <link
         rel="apple-touch-icon"
         sizes="180x180"

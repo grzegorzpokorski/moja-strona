@@ -17,6 +17,7 @@ const BlogPost = ({ post }) => {
         description={post.frontmatter.excerpt}
         contentType="article"
         publicationDate={post.frontmatter.date}
+        featuredImage={post.frontmatter.featuredImage}
       />
       <MainHeader></MainHeader>
       <Main withMarginOnTop>
