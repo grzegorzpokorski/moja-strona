@@ -3,7 +3,7 @@ import Section from "../../components/Section";
 import Header from "../../components/Header";
 import Main from "../../components/Main";
 import PostsList from "../../components/PostsList/PostsList";
-import { getAllPosts } from "../../provider/posts";
+import { getAllPosts, getTags } from "../../provider/posts";
 
 const Blog = ({ posts }) => {
   return (
