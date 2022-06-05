@@ -1,4 +1,11 @@
-const Header = ({ subtitle, title, description, centered, titleAsH1 }) => {
+const Header = ({
+  subtitle,
+  title,
+  description,
+  centered,
+  titleAsH1,
+  children,
+}) => {
   return (
     <header
       className={`w-full md:w-4/6 mr-auto flex flex-col gap-4 ${
@@ -18,6 +25,7 @@ const Header = ({ subtitle, title, description, centered, titleAsH1 }) => {
         </h2>
       )}
       {description && <p>{description}</p>}
+      {children}
     </header>
   );
 };
