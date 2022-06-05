@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Header = (props) => {
   return (
-    <header className="py-16 md:py-24">
+    <header className="pt-16 pb-8 md:py-24">
       <div className="container px-3 mx-auto">
         <div className="w-full lg:w-8/12 mx-auto">
           <span className="flex flex-row items-center mb-4 gap-3">
@@ -20,7 +20,8 @@ const Header = (props) => {
             <span>{props.date}</span>
           </span>
           <h1 className="font-bold text-3xl md:text-4xl">{props.title}</h1>
-          <figure className="w-full h-96 max-h-96 overflow-hidden relative block mt-12">
+          <figure className="w-full h-60 lg:h-96 max-h-96 overflow-hidden relative block mt-8">
+            {/* <figure className="w-full h-96 max-h-96 overflow-hidden relative block mt-12"> */}
             <Image
               src={props.featuredImage}
               alt=""
