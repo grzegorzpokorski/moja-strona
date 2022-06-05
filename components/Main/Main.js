@@ -1,6 +1,6 @@
 const Main = ({ children, withMarginOnTop }) => {
   return (
-    <main id="tresc" className={`${withMarginOnTop ? "pt-20 lg:pt-28" : ""}`}>
+    <main id="tresc" className={`${withMarginOnTop ? "mt-20 lg:mt-28" : ""}`}>
       {children}
     </main>
   );
