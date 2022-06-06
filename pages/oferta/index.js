@@ -1,5 +1,5 @@
 import Head from "../../components/Head";
-import ContentWithImage from "../../components/ContentWithImage";
+import Services from "../../components/Services";
 import BoxesList from "../../components/BoxesList";
 import Section from "../../components/Section";
 import Header from "../../components/Header";
@@ -11,7 +11,6 @@ import { servicesList } from "../../data/content/servicesList";
 
 import addressSeparator from "../../data/seo/addressSeparator";
 import siteName from "../../data/seo/siteName";
-import featuredImage from "../../public/images/people.webp";
 
 const Offer = () => {
   return (
@@ -25,7 +24,7 @@ const Offer = () => {
         <Section bgColor="bg-whiteGreen" withMarginOnTop>
           <Header
             subtitle="Oferta"
-            title="W czym się specjalizuje?"
+            title="Poznaj moją ofertę"
             description="Gdyby zachodziła konieczność przeprowadzenia zabiegu na otwartym sercu, powierzyłbyś swoje zdrowie i życie mechanikowi? Między innymi dlatego warto korzystać z usług specjalisty."
             centered
             titleAsH1
@@ -36,18 +35,7 @@ const Offer = () => {
         <Section>
           <BoxesList items={offerList} />
         </Section>
-        {servicesList &&
-          servicesList.map((item, i) =>
-            i % 2 ? (
-              <ContentWithImage
-                key={item.title}
-                {...item}
-                bgColor="bg-whiteGreen"
-              />
-            ) : (
-              <ContentWithImage key={item.title} {...item} reverse />
-            )
-          )}
+        <Services services={servicesList} />
       </Main>
     </>
   );
