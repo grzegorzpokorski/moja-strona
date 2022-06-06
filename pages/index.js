@@ -6,6 +6,7 @@ import Banner from "../components/Banner";
 import ContentWithImage from "../components/ContentWithImage";
 import Section from "../components/Section";
 import Header from "../components/Header";
+import PostsList from "../components/PostsList";
 
 import BoxesList from "../components/BoxesList";
 
@@ -16,8 +17,10 @@ import heroImage from "../public/images/hero.webp";
 import siteName from "../data/seo/siteName";
 import addressSeparator from "../data/seo/addressSeparator";
 import slogan from "../data/seo/slogan";
+import { getPublishedPostsOrderByDate } from "../provider/posts";
+import Button from "../components/Button";
 
-const Home = () => {
+const Home = ({ newestPosts }) => {
   return (
     <>
       <Head
@@ -77,6 +80,13 @@ const Home = () => {
               <ContentWithImage key={item.title} {...item} reverse />
             )
           )}
+        <Section bgColor="bg-whiteGreen">
+          <Header title="Najnowsze aktykuły z bloga" subtitle="blog" />
+          <PostsList posts={newestPosts} withMarginOnTop />
+          <footer className="mt-12 text-center">
+            <Button label="Zobacz wszystkie wpisy" href="/blog" />
+          </footer>
+        </Section>
         <Banner
           title="Zbuduj swoją wysokiej klasy stronę internetową ze mną!"
           description="Chętnie pomogę zrealizować Twój projekt."
@@ -97,6 +107,17 @@ const Home = () => {
       </Main>
     </>
   );
+};
+
+export const getStaticProps = async () => {
+  const posts = getPublishedPostsOrderByDate();
+  const newestPosts = posts.slice(0, 3);
+
+  return {
+    props: {
+      newestPosts: newestPosts,
+    },
+  };
 };
 
 export default Home;
