@@ -27,6 +27,7 @@
     padding-right: theme("spacing.6");
 
     &:after {
+      visibility: hidden;
       content: "";
       position: absolute;
       margin-left: theme("spacing.2");
@@ -40,6 +41,7 @@
       transition: all theme("transitionDuration.150");
 
       @media (min-width: theme("screens.lg")) {
+        visibility: visible;
         border-top: 0.35em solid theme("colors.zinc.600");
       }
     }
