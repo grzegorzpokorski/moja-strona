@@ -3,7 +3,8 @@ import MainHeader from "../../../components/MainHeader";
 import Section from "../../../components/Section";
 import Header from "../../../components/Header";
 import Main from "../../../components/Main";
-import PostsList from "../../../components/PostsList/PostsList";
+import PostsList from "../../../components/PostsList";
+import Banner from "../../../components/Banner";
 import {
   getPublishedPostsOrderByDate,
   getCategories,
@@ -25,6 +26,17 @@ const Blog = ({ posts, slug }) => {
           <Header title={`Kategoria: ${slug}`} titleAsH1 />
           <PostsList posts={posts} withMarginOnTop />
         </Section>
+        <Banner
+          title="Zbuduj swoją wysokiej klasy stronę internetową ze mną!"
+          description="Chętnie pomogę zrealizować Twój projekt i porzegonić konkurencję."
+          buttons={[
+            {
+              label: "Skontaktuj się ze mną",
+              href: "/kontakt",
+              customClasses: "bg-white hover:bg-whiteGreen text-gray-800",
+            },
+          ]}
+        />
       </Main>
     </>
   );
