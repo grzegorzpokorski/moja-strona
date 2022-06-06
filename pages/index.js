@@ -69,7 +69,7 @@ const Home = ({ newestPosts }) => {
         </Section>
         <Services services={servicesList} />
         <PostsExcerpt
-          title="Najnowsze aktykuły z bloga"
+          title="Najnowsze aktykuły na blogu"
           subtitle="blog"
           posts={newestPosts}
           button={{ label: "Zobacz wszystkie wpisy", href: "/blog" }}
