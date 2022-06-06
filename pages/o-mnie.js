@@ -4,13 +4,15 @@ import MainHeader from "../components/MainHeader";
 import Hero from "../components/Hero";
 import Link from "../components/Link";
 import Banner from "../components/Banner";
+import PostsExcerpt from "../components/PostsExcerpt";
 
 import heroImage from "../public/images/about.png";
 
 import addressSeparator from "../data/seo/addressSeparator";
 import siteName from "../data/seo/siteName";
+import { getPublishedPostsOrderByDate } from "../provider/posts";
 
-const About = () => {
+const About = ({ newestPosts }) => {
   return (
     <>
       <Head
@@ -64,6 +66,12 @@ const About = () => {
         />
       </MainHeader>
       <Main>
+        <PostsExcerpt
+          title="Najnowsze aktykuły na blogu"
+          subtitle="blog"
+          posts={newestPosts}
+          button={{ label: "Zobacz wszystkie wpisy", href: "/blog" }}
+        />
         <Banner
           title="Zbuduj swoją wysokiej klasy stronę internetową ze mną!"
           description="Chętnie pomogę zrealizować Twój projekt."
@@ -84,6 +92,17 @@ const About = () => {
       </Main>
     </>
   );
+};
+
+export const getStaticProps = async () => {
+  const posts = getPublishedPostsOrderByDate();
+  const newestPosts = posts.slice(0, 3);
+
+  return {
+    props: {
+      newestPosts: newestPosts,
+    },
+  };
 };
 
 export default About;
