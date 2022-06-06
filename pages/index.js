@@ -3,12 +3,11 @@ import Main from "../components/Main";
 import MainHeader from "../components/MainHeader";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
-import ContentWithImage from "../components/ContentWithImage";
 import Section from "../components/Section";
 import Header from "../components/Header";
-import PostsList from "../components/PostsList";
 import BoxesList from "../components/BoxesList";
-import Button from "../components/Button";
+import PostsExcerpt from "../components/PostsExcerpt";
+import Services from "../components/Services";
 
 import { offerList } from "../data/content/offerList";
 import { servicesList } from "../data/content/servicesList";
@@ -68,25 +67,13 @@ const Home = ({ newestPosts }) => {
           />
           <BoxesList items={offerList} withMarginTop />
         </Section>
-        {servicesList &&
-          servicesList.map((item, i) =>
-            i % 2 ? (
-              <ContentWithImage
-                key={item.title}
-                {...item}
-                bgColor="bg-whiteGreen"
-              />
-            ) : (
-              <ContentWithImage key={item.title} {...item} reverse />
-            )
-          )}
-        <Section bgColor="bg-whiteGreen">
-          <Header title="Najnowsze aktykuły z bloga" subtitle="blog" />
-          <PostsList posts={newestPosts} withMarginOnTop />
-          <footer className="mt-12 text-center">
-            <Button label="Zobacz wszystkie wpisy" href="/blog" />
-          </footer>
-        </Section>
+        <Services services={servicesList} />
+        <PostsExcerpt
+          title="Najnowsze aktykuły z bloga"
+          subtitle="blog"
+          posts={newestPosts}
+          button={{ label: "Zobacz wszystkie wpisy", href: "/blog" }}
+        />
         <Banner
           title="Zbuduj swoją wysokiej klasy stronę internetową ze mną!"
           description="Chętnie pomogę zrealizować Twój projekt."
