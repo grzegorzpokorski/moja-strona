@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Header = (props) => {
   return (
-    <header className="pt-16 pb-8 md:py-24">
+    <header className="pt-16 pb-8 md:pt-24 md:pb-12">
       <div className="container px-3 mx-auto">
         <div className="w-full lg:w-8/12 mx-auto">
           <span className="flex flex-row items-center mb-4 gap-3">
