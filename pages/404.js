@@ -12,7 +12,11 @@ import heroImage from "../public/images/404.png";
 const NotFound = () => {
   return (
     <>
-      <Head title={`404 ${addressSeparator} ${siteName}`} />
+      <Head
+        title={`404 ${addressSeparator} ${siteName}`}
+        description={`Strona, której szukasz, nie istnieje (błąd 404)`}
+        featuredImage={heroImage.src}
+      />
       <MainHeader></MainHeader>
       <Main withMarginOnTop>
         <Hero
@@ -32,17 +36,6 @@ const NotFound = () => {
           titleAsH1
           withMarginOnTop
         />
-        {/* <Banner
-          title="Niestety coś poszło nie tak"
-          description="trona, której szukasz, nie istnieje (błąd 404)"
-          buttons={[
-            {
-              label: "Zabierz mnie na stronę główną",
-              href: "/",
-              customClasses: "bg-white hover:bg-whiteGreen text-gray-800",
-            },
-          ]}
-        /> */}
       </Main>
     </>
   );
