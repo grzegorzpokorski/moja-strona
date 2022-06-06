@@ -13,14 +13,14 @@ const Header = ({
       }`}
     >
       {subtitle && (
-        <span className="text-green uppercase font-bold">{subtitle}</span>
+        <span className={`uppercase font-bold text-green`}>{subtitle}</span>
       )}
       {titleAsH1 ? (
-        <h1 className="font-bold text-3xl md:text-4xl text-customGray">
+        <h1 className={`font-bold text-3xl md:text-4xl text-customGray`}>
           {title}
         </h1>
       ) : (
-        <h2 className="font-bold text-3xl md:text-4xl text-customGray">
+        <h2 className={`font-bold text-3xl md:text-4xl text-customGray`}>
           {title}
         </h2>
       )}
