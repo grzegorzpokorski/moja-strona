@@ -21,12 +21,12 @@ const NotFound = () => {
           buttons={[
             {
               label: "Zabierz mnie na stronę główną",
-              href: "/oferta",
+              href: "/",
               customClasses: "bg-green hover:bg-greenHover text-white",
             },
           ]}
           image={{
-            alt: "Zatrzymany cyklista czeka na skrzyżowaniu",
+            alt: "Zagubiony człowek czeka przed zanakiem 'stop'",
             src: heroImage,
           }}
           titleAsH1
