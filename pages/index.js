@@ -7,8 +7,8 @@ import ContentWithImage from "../components/ContentWithImage";
 import Section from "../components/Section";
 import Header from "../components/Header";
 import PostsList from "../components/PostsList";
-
 import BoxesList from "../components/BoxesList";
+import Button from "../components/Button";
 
 import { offerList } from "../data/content/offerList";
 import { servicesList } from "../data/content/servicesList";
@@ -17,8 +17,8 @@ import heroImage from "../public/images/hero.webp";
 import siteName from "../data/seo/siteName";
 import addressSeparator from "../data/seo/addressSeparator";
 import slogan from "../data/seo/slogan";
+
 import { getPublishedPostsOrderByDate } from "../provider/posts";
-import Button from "../components/Button";
 
 const Home = ({ newestPosts }) => {
   return (
