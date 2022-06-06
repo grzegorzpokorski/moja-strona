@@ -28,14 +28,12 @@ const BlogPost = ({ post, relatedPosts }) => {
       <MainHeader></MainHeader>
       <Main withMarginOnTop>
         <Post post={post} />
-        {relatedPosts.length ? (
+        {relatedPosts.length > 0 && (
           <PostsExcerpt
             subtitle="Posty o podobnej tematyce"
             title="Mogą Cię zainteresować:"
             posts={relatedPosts}
           />
-        ) : (
-          ""
         )}
         <Banner
           title="Zbuduj swoją wysokiej klasy stronę internetową ze mną!"
