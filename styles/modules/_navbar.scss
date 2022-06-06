@@ -5,11 +5,13 @@
   }
 
   &:hover .dropdown__toggle {
-    color: theme("textColor.green") !important;
+    @media (min-width: theme("screens.lg")) {
+      color: theme("textColor.green");
 
-    &:after {
-      border-top-color: theme("colors.green");
-      transform: rotate(-180deg) translateY(0.175em);
+      &:after {
+        border-top-color: theme("colors.green");
+        transform: rotate(-180deg) translateY(0.175em);
+      }
     }
   }
 
@@ -34,8 +36,12 @@
       height: 0;
       border-left: 0.35em solid transparent;
       border-right: 0.35em solid transparent;
-      border-top: 0.35em solid theme("colors.zinc.600");
+      border-top: 0.35em solid theme("colors.gray.300");
       transition: all theme("transitionDuration.150");
+
+      @media (min-width: theme("screens.lg")) {
+        border-top: 0.35em solid theme("colors.zinc.600");
+      }
     }
   }
 }
