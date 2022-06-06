@@ -1,5 +1,7 @@
-const Image = (props) => {
-  return <img src={props.src} alt={props.alt} loading="lazy" />;
+const MdxImage = (props) => {
+  return (
+    <img src={props.src} alt={props.alt} loading="lazy" decoding="async" />
+  );
 };
 
-export default Image;
+export default MdxImage;
