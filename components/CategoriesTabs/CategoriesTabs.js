@@ -1,7 +1,6 @@
 import Link from "../Link";
 
 const CategoriesTabs = ({ categories }) => {
-  console.log(categories);
   return (
     <ul className={`flex flex-row flex-wrap gap-3 mt-8`}>
       {categories.map((cat) => (
