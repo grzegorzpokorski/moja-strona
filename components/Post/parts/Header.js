@@ -1,6 +1,10 @@
 import Link from "../../Link";
 import Image from "next/image";
 
+import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+dayjs.extend(customParseFormat);
+
 const Header = (props) => {
   return (
     <header className="pt-16 pb-8 md:pt-24 md:pb-12">
@@ -17,7 +21,9 @@ const Header = (props) => {
               className="inline-block w-12 h-0.5 bg-customGray text-separator"
               aria-hidden="true"
             ></span>
-            <span>{props.date}</span>
+            <time dateTime={dayjs(props.date).format("YYYY-MM-DD")}>
+              {dayjs(props.date).locale("pl").format("DD MMMM YYYY")}
+            </time>
           </span>
           <h1 className="font-bold text-3xl md:text-4xl">{props.title}</h1>
           <figure className="w-full h-60 lg:h-96 max-h-96 overflow-hidden relative block mt-8">
