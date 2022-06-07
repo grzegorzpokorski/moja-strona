@@ -5,11 +5,15 @@ import Header from "../../components/Header";
 import Main from "../../components/Main";
 import PostsList from "../../components/PostsList";
 import Banner from "../../components/Banner";
-import { getPublishedPostsOrderByDate } from "../../provider/posts";
+import CategoriesTabs from "../../components/CategoriesTabs";
+import {
+  getCategories,
+  getPublishedPostsOrderByDate,
+} from "../../provider/posts";
 import addressSeparator from "../../data/seo/addressSeparator";
 import siteName from "../../data/seo/siteName";
 
-const Blog = ({ posts }) => {
+const Blog = ({ posts, categories }) => {
   return (
     <>
       <Head
@@ -24,6 +28,7 @@ const Blog = ({ posts }) => {
             title="Artykuły, ciekawostki z świata stron internetowych i nie tylko"
             titleAsH1
           />
+          <CategoriesTabs categories={categories} />
           <PostsList posts={posts} withMarginOnTop />
         </Section>
         <Banner
@@ -44,10 +49,12 @@ const Blog = ({ posts }) => {
 
 export const getStaticProps = async () => {
   const posts = getPublishedPostsOrderByDate();
+  const categories = getCategories();
 
   return {
     props: {
       posts: posts,
+      categories: categories,
     },
   };
 };
