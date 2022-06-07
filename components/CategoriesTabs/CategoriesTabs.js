@@ -8,7 +8,7 @@ const CategoriesTabs = ({ categories }) => {
         <li key={cat}>
           <Link
             href={`/blog/kategoria/${cat}`}
-            className={`inline-block bg-white text-md text-zinc-400 hover:text-green border-2 border-zinc-400 hover:border-green px-2 py-1.5
+            className={`inline-block bg-white text-md text-zinc-400 hover:text-green border-2 border-zinc-400 hover:border-green px-4 py-1.5
                 transition-all`}
           >
             {cat}
