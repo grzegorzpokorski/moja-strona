@@ -29,18 +29,20 @@ const About = ({ newestPosts }) => {
                 Działam jako freelancer, pomagając tworzyć dobrze wyglądające i
                 realizujące cele biznesowe strony internetowe.
               </p>
-              <p>
+              {/* <p>
                 Moją specjalnością są strony typu wizytówka pozwalające firmom
                 przedstawić swoją działalność szerszej grupie odbiorców w
                 Internecie. Chętnie pomagam również osoba prowadzącym blogi lub
                 chcącym zacząć swoją przygodę z tym związaną, ale potrzebują
                 dedykowanego rozwiązania.
-              </p>
+              </p> */}
               <p>
                 W wolnej chwili staram się dzielić swoją wiedzą na łamach
-                artykułów na moim <Link href="/blog">blogu</Link>. Jeśli
-                interesuje Cię współpraca lub po prostu chcesz pogadać śmiało{" "}
-                <Link href="/kontakt">kontaktuj się ze mną</Link>.
+                artykułów na moim <Link href="/blog">blogu</Link>.
+              </p>
+              <p>
+                Jeśli interesuje Cię współpraca lub po prostu chcesz pogadać
+                śmiało <Link href="/kontakt">kontaktuj się ze mną</Link>.
               </p>
             </>
           }
