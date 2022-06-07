@@ -10,6 +10,7 @@ import {
   getPublishedPostsOrderByDate,
 } from "../../provider/posts";
 import { serialize } from "next-mdx-remote/serialize";
+import imageSize from "rehype-img-size";
 
 import siteName from "./../../data/seo/siteName";
 import addressSeparator from "../../data/seo/addressSeparator";
@@ -54,7 +55,11 @@ const BlogPost = ({ post, relatedPosts }) => {
 export const getStaticProps = async ({ params }) => {
   const { slug } = params;
   const { frontmatter, source } = getPostBySlug(slug);
-  const mdxSource = await serialize(source);
+  const mdxSource = await serialize(source, {
+    mdxOptions: {
+      rehypePlugins: [[imageSize, { dir: `public` }]],
+    },
+  });
   const relatedPosts = getPublishedPostsOrderByDate().filter(
     (post) =>
       post.frontmatter.category === frontmatter.category &&
