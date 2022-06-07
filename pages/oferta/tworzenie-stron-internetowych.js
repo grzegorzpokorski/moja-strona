@@ -7,6 +7,7 @@ import ContentWithImage from "../../components/ContentWithImage";
 import Section from "../../components/Section";
 import Header from "../../components/Header";
 import BoxesList from "../../components/BoxesList";
+import Process from "../../components/Process";
 
 import heroImage from "../../public/images/pages.webp";
 import logosImage from "../../public/images/logos.webp";
@@ -98,6 +99,41 @@ const Offer = () => {
           }}
           reverse
           bgColor
+        />
+        <Process
+          header={{
+            title: "Jak przebiega współpraca?",
+            subtitle: "WSPÓŁPRACA",
+            description:
+              "Aenean sed accumsan dolor. Nunc blandit tristique suscipit. Sed at augue sit amet magna tempor ornare ac sed diam. Suspendisse purus sem, bibendum quis aliquam at",
+          }}
+          steps={[
+            {
+              title: "Brief",
+              content:
+                "Każdą współpracę zaczynam od szczególowego zbadania porzeb. Uważam że w dużej mierze pomyśla realizacja projektu musi zostać poprzedona wnikliną analiza wielu aspektów takich jak: cel witryny, stylistyka, grupa odbiorców, zakładane rezultaty czy cele biznesowe.",
+            },
+            {
+              title: "Brief",
+              content:
+                "Każdą współpracę zaczynam od szczególowego zbadania porzeb. Uważam że w dużej mierze pomyśla realizacja projektu musi zostać poprzedona wnikliną analiza wielu aspektów takich jak: cel witryny, stylistyka, grupa odbiorców, zakładane rezultaty czy cele biznesowe.",
+            },
+            {
+              title: "Brief",
+              content:
+                "Każdą współpracę zaczynam od szczególowego zbadania porzeb. Uważam że w dużej mierze pomyśla realizacja projektu musi zostać poprzedona wnikliną analiza wielu aspektów takich jak: cel witryny, stylistyka, grupa odbiorców, zakładane rezultaty czy cele biznesowe.",
+            },
+            {
+              title: "Brief",
+              content:
+                "Każdą współpracę zaczynam od szczególowego zbadania porzeb. Uważam że w dużej mierze pomyśla realizacja projektu musi zostać poprzedona wnikliną analiza wielu aspektów takich jak: cel witryny, stylistyka, grupa odbiorców, zakładane rezultaty czy cele biznesowe.",
+            },
+            {
+              title: "Brief",
+              content:
+                "Każdą współpracę zaczynam od szczególowego zbadania porzeb. Uważam że w dużej mierze pomyśla realizacja projektu musi zostać poprzedona wnikliną analiza wielu aspektów takich jak: cel witryny, stylistyka, grupa odbiorców, zakładane rezultaty czy cele biznesowe.",
+            },
+          ]}
         />
         <Banner
           title="Zbuduj swoją wysokiej klasy stronę internetową ze mną!"
