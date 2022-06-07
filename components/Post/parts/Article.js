@@ -21,7 +21,7 @@ const Article = ({ source, tags }) => {
                 <li key={tag}>
                   <Link
                     href={`/blog/tag/${tag}`}
-                    className="py-2 px-4 bg-whiteGreen text-sm border-2 border-green"
+                    className="inline-block bg-white text-md text-zinc-400 hover:text-green border-2 border-zinc-400 hover:border-green px-4 py-1.5 transition-all"
                   >
                     {tag}
                   </Link>
