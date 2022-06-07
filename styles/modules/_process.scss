@@ -1,0 +1,88 @@
+.process {
+  position: relative;
+  counter-reset: process;
+
+  &__counter {
+    &:after {
+      counter-increment: process;
+      content: counter(process) ".";
+    }
+  }
+
+  &__item {
+    position: relative;
+    align-items: flex-end;
+
+    &:first-child {
+      &:after {
+        top: 50%;
+        height: calc(50% + 1.5rem);
+
+        @media (min-width: theme("screens.md")) {
+          height: 50%;
+        }
+      }
+    }
+
+    &:last-child {
+      &:after {
+        height: 50%;
+      }
+    }
+
+    @media (min-width: theme("screens.md")) {
+      margin-bottom: 0;
+
+      &:nth-child(even) {
+        align-items: flex-start;
+        margin-bottom: 0;
+        text-align: right;
+      }
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      height: 0.75rem;
+      width: 0.75rem;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #00c865;
+      z-index: 2;
+
+      @media (min-width: theme("screens.md")) {
+        & {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0.25rem;
+      height: calc(100% + 1.5rem);
+      top: 0;
+      left: 1rem;
+      background-color: rgba(#00c865, 0.15);
+
+      @media (min-width: 720px) {
+        height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  @media (min-width: theme("screens.md")) {
+    &__item:nth-child(even) {
+      text-align: right;
+    }
+
+    &__item:nth-child(even) &__header {
+      justify-content: flex-end;
+    }
+  }
+}
