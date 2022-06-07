@@ -1,0 +1,216 @@
+---
+title: Kożyści ze stosowania SCSS
+excerpt: W artykule poruszam niektóre korzyści wynikające ze stosowania SCSS w swoich projektach, które osobiście najbardziej cenię.
+category: Programowanie
+tags:
+  - nextjs
+  - css
+  - html
+  - firma
+date: 07.06.2022
+seo: description dla robotów indeksujących
+published: true
+---
+
+Kodowanie witryn internetowych od strony wizualnej zawsze sprawiało mi dużo frajdy. Nic tak nie cieszy człowieka, kiedy w stosunkowo krótkim czasie widać namacalne efekty pracy.
+
+Z czasem zacząłem kodować coraz to bardziej skomplikowane makiety stron internetowych. Naturalnie zatem doszedłem przy tym do wniosku, że stylowanie strony w czystym CSS nie wystarcza — przydałoby się coś na wzór konstrukcji używanych w 'pełnoprawnych' językach programowania, takie jak zmienne, pętle, funkcje czy dziedziczenie.
+
+Jako że nie jestem pierwszą osobą, która miała takie przemyślenia, znalazłem w internecie narzędzie, jakim jest SCSS. Od tamtej pory tworzenie wizualnej strony witryn wskoczyło u mnie na zupełnie inny poziom — zarówno pod kątem jakości kodu, ale również wygody i efektywności procesu jego tworzenia.
+
+## Co zatem zyskujesz stosując scss?
+
+Każde rozwiązanie ma wiele wad i zalet. Ja pozwolę sobie w dalszej części wymienić korzyści ze stosowania SCSS w swoich projektach, które sam najbardziej cenię.
+
+### Po pierwsze — wygodne zmienne.
+
+Podczas kiedy uczylem sie scss w czystym css nie byly dostępne jeszcze zmienne typu:
+
+```scss
+--nazwa-zmiennej: wartosc;
+```
+
+Jakże uradowalo mnie, kiedy dzięki możliwości deklarowania zmiennych w SCSS nie musiałem już męczyć się nad zmianą np. kolorystyki w projekcie.
+
+Taka zamiana zawsze wiązała się z odszukaniem i zamiana wartości koloru we wszystkich sektorach. Dobrze o ile większość styli znajdowała się w jednym pliku, można było zwyczajnie skorzystać z opcji _'wyszukaj i zamień'_ w edytorze kodu, co innego jednak kiedy CSS podzielony był na wiele plików...
+
+Od tamtego momentu wszystko stało się prostsze. Zazwyczaj w jednym pliku zapisuje wszystkie zmienne z wartościami, które zamierzam wykorzystywać wielokrotnie w danym projekcie.
+
+#### Zobacz jakie to proste!
+
+Przykladowa zmienna w scss wyglada tak:
+
+```scss
+$nazwa-zmiennej: wartosc;
+```
+
+Teraz wystarczy wstawić utworzona zmienną w miejsce wartości dowolnego atrybutu czy funkcji w CSS. Poniżej przykład zmiennej, do której przypisany został kolor, a następnie została ona wykorzystana przy stylowaniu paragrafu:
+
+```scss
+$primary: #0088ee;
+
+p {
+  color: $primary;
+}
+```
+
+Ile to juz czasu mi w zyciu zaoszczędziło!
+
+### Po drugie — Mapy zmiennych, czyli możliwość grupowania zmiennych.
+
+Trochę bardziej zaawansowanym typem zmiennej, którą mamy możliwość stworzyć w SCSS jest tzw. mapa zmiennych. Jeśli znasz jakiś inny język programowania, to na pewno skojarzysz ją jako tablice.
+
+W mapie zmiennych można przechowywać wiele wartości, do których później można odnosić się poprzez nazwę mapy oraz etykiety przypisanej do danej wartości.
+
+Poniżej przykład takiej mapy i prostego wykorzystania:
+
+```scss
+$colors: (
+  "red": #ff0000,
+  "green": #00ff00,
+  "blue": #0000ff,
+);
+
+a {
+  color: map-get($colors, "red");
+}
+```
+
+![ustawione kontenery jako mapa, a wózek z kontenetem jako funkcja map-get](/images/posts/korzysci-ze-stosowania-scss/mapy-w-scss.jpg)
+
+Jak można zauważyć, aby uzyskać konkretna wartość z mapy, korzystamy ze wbudowanej funkcji `map-get()`, która przyjmuje dwie wartości: nazwę mapy i etykietę przypisaną do wartości, którą chcemy uzyskać.
+
+### Po trzecie — mixiny, czyli koniec z powtarzalną pracą.
+
+W wielu frameworkach można znaleźć liczne tzw. _utitites class_, czyli klasy, które zawierają zazwyczaj jeden atrybut z wartością. Przykładem może być następująca klasa:
+
+```css
+.text-left {
+  text-align: left;
+}
+```
+
+Powyższa klasa po zastosowaniu do konkretnego pojemnika zmienia kierunek tekstu na wyrównanie do lewej krawędzi.
+
+Kierunków tekstu jest co prawda 4 (left, right, center, justify), ale czemu miałbym ręcznie pisać klasy takie jak wyżej? Lepiej będzie użyć _mixin_ z SCSS, czyli funkcji, którą można dowolnie zdefiniować, a ona zwróci nam wygenerowany kod.
+
+Poniżej podaję przykładowe rozwiązanie stworzenia tzw. 'utilities class' dla ustawiania kierunku tekstu, z wykorzystaniem _mixin_ i uprzednio przygotowanej _mapy zmiennych_:
+
+```scss
+$directions: (
+  "left": left,
+  "right": right,
+  "justify": justify,
+  "center": center,
+);
+
+@mixin generate-with-directions($attr) {
+  @each $key, $value in $directions {
+    .#{$attr}-#{$key} {
+      #{$attr}-#{$key}: $value;
+    }
+  }
+}
+
+@include generate-with-directions("text-align");
+```
+
+Teraz wystarczy tylko wskazać miejsce, w którym chcemy zastosować nasz _mixin_ stosując dyrektywę `@include nazwa-mixinu;`, a w tym miejscu zostaną wygenerowane nasze _utilities classes_ :) Kod z przykładu wygeneruje nastęne klasy:
+
+```css
+.text-align-left {
+  text-align-left: left;
+}
+
+.text-align-right {
+  text-align-right: right;
+}
+
+.text-align-justify {
+  text-align-justify: justify;
+}
+
+.text-align-center {
+  text-align-center: center;
+}
+```
+
+Jak widać _utilities classes_ można tworzyć w uporządkowany sposób i co ważne, taki kod nie wymaga dużych zmian, kiedy chcemy dodać kolejny wariant pomocniczej klasy — wystarczy dodać kolejna wartość z etykietą do mapy ze zmiennymi. Jak można to wykorzystać pozostawiam waszej wyobraźni.
+
+### Po czwarte — niestandardowe funkcje.
+
+SCSS umożliwia nie tylko generowanie gotowych klas, ale również tworzenie niestandardowych funkcji zwracające wartość dla naszego atrybutu.
+
+Jako ciekawostkę wspomnę, że sam SCSS ma kilka wbudowanych funkcji np. konwertujące kolor na jaśniejszy `lighten()`, czy ciemniejszy `darken()`.
+
+Nic jednak nie stoi na przeszkodzie, aby napisać swoja własną funkcję, która zwróciła nam wartość do wykorzystania w atrybucie. Jako przykład takiej funkcji podam funkcje, która podwaja wartość argumentu przekazanego do funkcji:
+
+```scss
+@function double($val) {
+  @return $val * 2;
+}
+
+.text-lg {
+  height: double(1rem);
+}
+```
+
+Powyższy kod wygeneruje nam coś takiego:
+
+```css
+.text-lg {
+  height: 2rem;
+}
+```
+
+Podany przykład jest bardzo prosty, ale nic nie stoi na przeszkodzie, aby zastosować wewnątrz jej jakiejś pętli czy przekazać więcej niż jeden argument.
+
+Na koniec wspomnę o ważnej różnicy między funkcją, a mixinem w SCSS, która być może już zauważyłeś. Funkcja zwraca wartość, którą można wykorzystać jako wartość atrybutu w selektorze. Mixin natomiast generuje już głowy kod CSS do _wstrzyknięcia_ we wskazane przez dyrektywę `@include` miejsce — może to być gotowa klasa lub blok atrybutów.
+
+### Po piąte — uporządkowany kod.
+
+Stosowanie SCSS w swoich projektach bardzo ułatwia mi utrzymanie w nich porządku.
+
+SCSS wspiera importy plików SCSS, dzięki czemu kod można dzielić na tzw. moduły — jest to dobrą praktyką. Takie działanie może pomoc sprawnie poruszać się po projekcje, a pogrupowanie poszczególnych plików w foldery zawierające pliki z konkretnej kategorii stylów np. folder 'core' może zawierać pliki SCSS ze zmiennymi i globalnymi stylami, folder 'modules' — pliki SCSS ze stylami poszczególnych elementów na stronie, folder mixins pliki SCSS z mixinami i tak dalej, a wszystko w zależności od potrzeb importujemy do głównego pliku np. style.scss, który następnie jest kompilowany do CSS.
+
+Poniżej podaje przykładową strukturę plików SCSS, która często sam stosuję:
+
+```
+style.scss
+core
+  - _variables.scss
+  - _global.scss
+  - _typography.scss
+  - ...
+modules
+  - _container.scss
+  - _card.scss
+  - _footer.scss
+  - ...
+...
+```
+
+Rozwijanie i utrzymanie takich uporządkowanych projektów jest na pewno o wiele łatwiejsze.
+
+### Po szóste — lepsza wydajność strony.
+
+Kod SCSS musi być kompilowany przez dedykowany kompilator. Wiele z takich kompilatorów umożliwia wybór formatu generowanego kodu CSS:
+
+- nested
+- expanded
+- compact
+- compressed
+
+Jak widać poza samym kompilowaniem takie narzędzie często może również zminifikowac nasz kod CSS. Minifikacja to proces usuwania zbędnych białych znaków takich jak spacje tabulatory, entery z kodu, aby objętościowo zajmował możliwie jak najmniej miejsca, a co za tym idzie — mniej ważył i szybciej się ładował na naszej stronie.
+
+Są to szczegóły, lecz dbanie o takie wydawało się by drobnostki, pozwala optymalizować szybkość działania naszej strony internetowej.
+
+## Gdzie znaleźć więcej informacji?
+
+Jeśli zainteresował cię ten temat, zachęcam do zapoznania się z oficjalna dokumentacja, którą znajdziesz pod tym adresem: [sass-lang.com/documentation](https://sass-lang.com/documentation/).
+
+![passion lead us here](/images/posts/korzysci-ze-stosowania-scss/passion-lead-us-here.jpg)
+
+W moim przypadku w nauce scss pomocne okazało się również analizowanie kodu innych ludzi np. na githubie. Jeśli korzystasz z frameworkow takich, jak bootstrap warto zbadać, jak dane funkcjonalności zostały zaimplementowane. Przyda się to również, jeśli chciałbyś dostosować bootstrapa do swoich potrzeb, ponieważ on sam został napisany w SCSS.
+
+Życzę owocnej nauki :)
