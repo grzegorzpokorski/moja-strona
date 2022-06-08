@@ -24,7 +24,7 @@ const PostItem = (post) => {
             />
           </figure>
         </Link>
-        <header className="p-8 flex flex-col gap-3">
+        <header className="p-8 pb-0 flex flex-col gap-3">
           <div className="flex flex-row gap-4 text-sm">
             <Link
               href={`/blog/kategoria/${post.category}`}
@@ -49,8 +49,10 @@ const PostItem = (post) => {
           >
             <h3 className="font-bold text-lg">{post.title}</h3>
           </Link>
-          <p>{post.excerpt.split(" ").splice(0, 20).join(" ")} [...]</p>
         </header>
+        <div className="p-8 pt-3 flex flex-col gap-3">
+          <p>{post.excerpt.split(" ").splice(0, 20).join(" ")} [...]</p>
+        </div>
       </article>
     </li>
   );
