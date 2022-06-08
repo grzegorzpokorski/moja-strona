@@ -25,15 +25,12 @@ const PostItem = (post) => {
           </figure>
         </Link>
         <header className="p-8 flex flex-col gap-3">
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-row gap-4 text-sm">
             <Link
               href={`/blog/kategoria/${post.category}`}
               className="hover:underline"
             >
-              <FontAwesomeIcon
-                icon={faTag}
-                className="mr-2 text-sm text-green"
-              />
+              <FontAwesomeIcon icon={faTag} className="mr-2 text-green" />
               {post.category}
             </Link>
             <time
@@ -41,7 +38,7 @@ const PostItem = (post) => {
             >
               <FontAwesomeIcon
                 icon={faCalendarDays}
-                className="mr-2 text-sm text-green"
+                className="mr-2 text-green"
               />
               {dayjs(post.date).format("DD MMMM YYYY")}
             </time>
