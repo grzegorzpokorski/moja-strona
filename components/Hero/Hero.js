@@ -29,7 +29,7 @@ const Hero = ({
           )}
           <div className="prose">{description && description}</div>
           {buttons && (
-            <div className="flex flex-row flex-wrap gap-2 justify-center md:justify-start">
+            <div className="flex flex-row flex-wrap gap-2 justify-center md:justify-start items-center">
               {buttons.map((item, i) => (
                 <Button key={`btn-${i}`} {...item} />
               ))}
