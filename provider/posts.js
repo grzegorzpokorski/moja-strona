@@ -54,8 +54,8 @@ export const getPublishedPostsOrderByDate = () => {
   const posts = getAllPosts();
   const published = posts.filter((post) => post.frontmatter.published == true);
   const sorted = published.sort((a, b) => {
-    const first = dayjs(a.frontmatter.date, "DD.MM.YYYY");
-    const second = dayjs(b.frontmatter.date, "DD.MM.YYYY");
+    const first = dayjs(a.frontmatter.date, "YYYY.MM.DD");
+    const second = dayjs(b.frontmatter.date, "YYYY.MM.DD");
 
     return first.isBefore(second) ? 1 : -1;
   });

@@ -4,8 +4,8 @@ import Image from "next/image";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 dayjs.extend(customParseFormat);
-
 import locale_pl from "dayjs/locale/pl";
+dayjs.locale("pl");
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDays, faTag } from "@fortawesome/free-solid-svg-icons";
@@ -43,7 +43,7 @@ const PostItem = (post) => {
                 icon={faCalendarDays}
                 className="mr-2 text-sm text-green"
               />
-              {dayjs(post.date).locale("pl").format("DD MMMM YYYY")}
+              {dayjs(post.date).format("DD MMMM YYYY")}
             </time>
           </div>
           <Link
