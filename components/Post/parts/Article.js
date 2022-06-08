@@ -14,22 +14,6 @@ const Article = ({ source, tags }) => {
         <div className="w-full lg:w-7/12 prose max-w-none mx-auto">
           <MDXRemote {...source} components={components} />
         </div>
-        {tags && (
-          <footer className="container mx-auto px-3">
-            <ul className="w-full lg:w-7/12 mx-auto flex flex-row flex-wrap gap-2 mt-8">
-              {tags.map((tag) => (
-                <li key={tag}>
-                  <Link
-                    href={`/blog/tag/${tag}`}
-                    className="inline-block bg-white text-md text-zinc-400 hover:text-green border-2 border-zinc-400 hover:border-green px-4 py-1.5 transition-all"
-                  >
-                    {tag}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </footer>
-        )}
       </div>
     </article>
   );
