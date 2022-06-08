@@ -40,13 +40,11 @@ const Home = ({ newestPosts }) => {
             {
               label: "Zobacz ofertę",
               href: "/oferta",
-              customClasses: "bg-green hover:bg-greenHover text-white",
             },
             {
               label: "Skontaktuj się ze mną",
               href: "/kontakt",
-              customClasses:
-                "bg-transparent hover:bg-greenHover text-green hover:text-white border-2 border-green",
+              style: "transparentGreen",
             },
           ]}
           image={{
@@ -81,13 +79,12 @@ const Home = ({ newestPosts }) => {
             {
               label: "Skontaktuj się ze mną",
               href: "/kontakt",
-              customClasses: "bg-white hover:bg-whiteGreen text-gray-800",
+              style: "white",
             },
             {
               label: "Poczytaj mój blog",
               href: "/blog",
-              customClasses:
-                "bg-transparent hover:bg-whiteGreen text-white hover:text-gray-800 border-2 border-white",
+              style: "transparentWhite",
             },
           ]}
         />

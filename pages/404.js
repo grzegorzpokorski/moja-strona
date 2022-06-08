@@ -26,7 +26,6 @@ const NotFound = () => {
             {
               label: "Zabierz mnie na stronę główną",
               href: "/",
-              customClasses: "bg-green hover:bg-greenHover text-white",
             },
           ]}
           image={{

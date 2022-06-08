@@ -29,11 +29,7 @@ const ContentWithImage = ({
           {content && <div className="prose mt-6">{content}</div>}
           {href && (
             <footer className="mt-6">
-              <Button
-                href={href}
-                customClasses="inline-block bg-green hover:bg-greenHover text-white px-4 md:px-6 py-2 md:py-3 transition-all"
-                label="Dowiedz się więcej"
-              />
+              <Button href={href} label="Dowiedz się więcej" />
             </footer>
           )}
         </div>

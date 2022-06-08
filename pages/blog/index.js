@@ -33,12 +33,12 @@ const Blog = ({ posts, categories }) => {
         </Section>
         <Banner
           title="Zbuduj swoją wysokiej klasy stronę internetową ze mną!"
-          description="Chętnie pomogę zrealizować Twój projekt i porzegonić konkurencję."
+          description="Chętnie pomogę zrealizować Twój projekt."
           buttons={[
             {
               label: "Skontaktuj się ze mną",
               href: "/kontakt",
-              customClasses: "bg-white hover:bg-whiteGreen text-gray-800",
+              style: "white",
             },
           ]}
         />

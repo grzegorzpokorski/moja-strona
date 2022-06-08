@@ -44,13 +44,11 @@ const Offer = () => {
             {
               label: "Rozpocznijmy współpracę",
               href: "/kontakt",
-              customClasses: "bg-green hover:bg-greenHover text-white",
             },
             {
               label: "Dowiedz się więcej",
               href: "/oferta",
-              customClasses:
-                "bg-white text-green hover:bg-greenHover hover:text-white border-2 border-green",
+              style: "transparentGreen",
             },
           ]}
           withMarginOnTop
@@ -95,7 +93,7 @@ const Offer = () => {
           href="/kontakt"
           image={{
             src: logosImage,
-            alt: "loga wykożystywanych przez mnie technologii",
+            alt: "loga wykorzystywanych przez mnie technologii",
           }}
           reverse
           bgColor
@@ -142,13 +140,12 @@ const Offer = () => {
             {
               label: "Skontaktuj się ze mną",
               href: "/kontakt",
-              customClasses: "bg-white hover:bg-whiteGreen text-gray-800",
+              style: "white",
             },
             {
               label: "Poczytaj mój blog",
               href: "/blog",
-              customClasses:
-                "bg-transparent hover:bg-whiteGreen text-white hover:text-gray-800 border-2 border-white",
+              style: "transparentWhite",
             },
           ]}
         />
