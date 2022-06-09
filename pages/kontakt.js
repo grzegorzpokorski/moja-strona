@@ -49,7 +49,7 @@ const Contact = () => {
           }
           image={{
             src: heroImage,
-            alt: "mężczyzna czekający siedzący z laptopem na kolanach",
+            alt: "mężczyzna siedzący z laptopem na kolanach",
           }}
           withMarginOnTop
         />
