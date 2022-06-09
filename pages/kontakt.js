@@ -2,7 +2,7 @@ import Head from "../components/Head";
 import MainHeader from "../components/MainHeader";
 import Hero from "../components/Hero";
 import Main from "../components/Main";
-import Link from "next/Link";
+import Link from "next/link";
 
 import addressSeparator from "../data/seo/addressSeparator";
 import siteName from "../data/seo/siteName";
