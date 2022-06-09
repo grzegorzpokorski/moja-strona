@@ -61,7 +61,7 @@ const About = ({ newestPosts }) => {
             alt: "człowiek zadowolony z pracy",
             src: heroImage,
           }}
-          isHome
+          titleAsH1
           withMarginOnTop
         />
       </MainHeader>
