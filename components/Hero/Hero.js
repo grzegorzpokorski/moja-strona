@@ -9,6 +9,7 @@ const Hero = ({
   bgColor,
   titleAsH1,
   withMarginOnTop,
+  imageFirst,
 }) => {
   return (
     <section
@@ -16,7 +17,11 @@ const Hero = ({
         withMarginOnTop ? "mt-20 lg:mt-28" : ""
       }`}
     >
-      <div className="container mx-auto px-3 flex flex-col md:flex-row items-center gap-3">
+      <div
+        className={`container mx-auto px-3 flex flex-col md:flex-row ${
+          imageFirst ? "flex-col-reverse md:flex-row-reverse" : ""
+        } items-center gap-3`}
+      >
         <header className="md:w-1/2 flex flex-col gap-3 text-center md:text-left items-center md:items-start">
           {titleAsH1 ? (
             <h1 className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-customGray">
