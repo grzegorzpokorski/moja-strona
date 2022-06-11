@@ -2,7 +2,7 @@
 
 Personal webpage presenting mine offer, connected with blog.
 
-## Used technologies:
+## Used technologies 🛠️:
 
 1. React.js
 2. Next.js
@@ -10,7 +10,7 @@ Personal webpage presenting mine offer, connected with blog.
 4. SCSS
 5. MDX with MDX Bundler
 
-## How to run it?
+## Installation 👷
 
 Required installed node.js.
 
@@ -40,7 +40,7 @@ To built this project:
 npm run build
 ```
 
-## Live
+## Live 🌐
 
 [https://moja-strona-one.vercel.app/](https://moja-strona-one.vercel.app/)
 
