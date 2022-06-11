@@ -12,9 +12,9 @@ Personal webpage presenting mine offer, connected with blog.
 
 ## How to run it?
 
-1. Clone this repository:
+Required installed node.js.
 
-2. Required installed node.js.
+1. Clone this repository:
 
 ```
 git clone https://github.com/grzegorzpokorski/moja-strona.git
@@ -26,13 +26,13 @@ git clone https://github.com/grzegorzpokorski/moja-strona.git
 npm install
 ```
 
-3. depending on your needs:
+3. Depending on your needs:
 
 To run it in local environment:
 
-'''
+```
 npm run dev
-'''
+```
 
 To built this project:
 
