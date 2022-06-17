@@ -51,7 +51,6 @@ const Home = ({ newestPosts }) => {
             alt: "zadowoleni klienci przeglądają otrzymany produkt",
             src: heroImage,
           }}
-          titleAsH1
           withMarginOnTop
         />
       </MainHeader>
