@@ -8,6 +8,7 @@ import Header from "../components/Header";
 import BoxesList from "../components/BoxesList";
 import PostsExcerpt from "../components/PostsExcerpt";
 import Services from "../components/Services";
+import Link from "../components/Link";
 
 import { offerList } from "../data/content/offerList";
 import { servicesList } from "../data/content/servicesList";
@@ -33,8 +34,8 @@ const Home = ({ newestPosts }) => {
           description={
             <p>
               Zaistniej w internecie i zrealizuj swoje cele z
-              <strong>ultra szybką</strong> 🚀 stroną internetową osiągającą
-              <strong>najwyższe noty</strong> 🥇 w Google PageSpeed benchmark.
+              <strong> ultra szybką</strong> 🚀 stroną internetową osiągającą
+              <strong> najwyższe noty</strong> 🥇 w Google PageSpeed benchmark.
             </p>
           }
           buttons={[
@@ -60,7 +61,15 @@ const Home = ({ newestPosts }) => {
           <Header
             subtitle="Oferta"
             title="W czym mogę Ci pomóc?"
-            description="Potrzebujesz nowoczesnej, ultra szybkiej strony strony internetowej aby zaistnieć w internecie? A może gotowy projekt graficzny czeka na zakodowanie? Oferuję profesjonalne usługi, które pomogą Ci wkroczyć na szerokie wody internetu."
+            description={
+              <p>
+                Potrzebujesz nowoczesnej, ultra szybkiej strony strony
+                internetowej aby zaistnieć w internecie? A może gotowy projekt
+                graficzny czeka na zakodowanie? Oferuję{" "}
+                <Link href={`/oferta`}>profesjonalne usługi</Link>, które pomogą
+                Ci wkroczyć na szerokie wody internetu.
+              </p>
+            }
             centered
           />
           <BoxesList items={offerList} withMarginTop />
