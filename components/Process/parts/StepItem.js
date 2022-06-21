@@ -6,7 +6,7 @@ const StepItem = ({ title, content }) => {
           <span className="font-bold text-green text-lg process__counter"></span>
           <h3 className="font-bold text-lg">{title}</h3>
         </header>
-        <p>{content}</p>
+        <div className="prose max-w-auto">{content}</div>
       </article>
     </li>
   );
