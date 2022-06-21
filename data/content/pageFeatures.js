@@ -1,3 +1,4 @@
+import Link from "../../components/Link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBoxes,
@@ -20,8 +21,14 @@ export const pageFeatures = [
       />
     ),
     title: "Zakodowana mobile first, pełna responsywnośc",
-    description:
-      "Większość użytkowników internetu używa z urządzeń mobilnych. Wychodząc temu naprzeciw, wykonywane przeze mnie strony cechują się doskonałym dostosowaniem do każdego rodzaju urządzeń — począwszy od smartfonów, przez tablety, na dużych ekranach monitorów kończąc.",
+    description: (
+      <p>
+        Większość użytkowników internetu korzysta z urządzeń mobilnych.
+        Wykonywane przeze mnie strony cechują się doskonałym dostosowaniem do
+        każdego rodzaju urządzeń — począwszy od smartfonów, przez tablety, na
+        dużych ekranach monitorów kończąc.
+      </p>
+    ),
   },
   {
     icon: (
@@ -31,8 +38,14 @@ export const pageFeatures = [
       />
     ),
     title: "Semantyczny kod źródłowy",
-    description:
-      "Kod strony odpowiada zamieszczanej na niej treści, a odpowiednio dobrane znaczniki prawidłowo nakreślają jej strukturę, czyniąc ją dostępną również dla użytkowników korzystających z urządzeń wspomagających jej przeglądanie takich jak czytniki ekranowe.",
+    description: (
+      <p>
+        Kod strony odpowiada zamieszczanej na niej treści. Odpowiednio dobrane
+        znaczniki prawidłowo nakreślają strukturę strony, czyniąc ją dostępną
+        również dla użytkowników korzystających z urządzeń wspomagających jej
+        przeglądanie takich jak czytniki ekranowe.
+      </p>
+    ),
   },
   {
     icon: (
@@ -42,8 +55,14 @@ export const pageFeatures = [
       />
     ),
     title: "Zgodność z zasadami SEO",
-    description:
-      "Bardzo ważne jest, aby strona dobrze indeksowała się w wyszukiwarkach internetowych. Rozumiejąc tę potrzebę, dlatego dbam, aby wykonanie strony oraz stosowane technologie wspomagały osiągnięcie wysokich pozycji w najpopularniejszych wyszukiwarkach takich jak Google.",
+    description: (
+      <p>
+        Rozumiem potrzebę, aby strona była wysoko w wyszukiwarkach. Wysokiej
+        jakości wykonanie strony oraz stosowane technologie wspomagają
+        osiągnięcie wysokich pozycji w najpopularniejszych wyszukiwarkach takich
+        jak Google.
+      </p>
+    ),
   },
   {
     icon: (
@@ -53,8 +72,13 @@ export const pageFeatures = [
       />
     ),
     title: "Możliwość rozbudowy",
-    description:
-      "Modułowa budowa wykonywanych projektów pozwala na rozbudowywanie witryny w przyszłości, jeśli zaszłaby potrzeba dodania dodatkowych funkcjonalności czy elementów struktury.",
+    description: (
+      <p>
+        Modułowa budowa wykonywanych projektów pozwala na rozbudowywanie witryny
+        w przyszłości, jeśli zaszłaby potrzeba dodania dodatkowych
+        funkcjonalności czy elementów.
+      </p>
+    ),
   },
   {
     icon: (
@@ -64,8 +88,13 @@ export const pageFeatures = [
       />
     ),
     title: "Prostota zarządzania treścią",
-    description:
-      "Indywidualne podejście do wykonywanych witryn pozwala doskonale dopasować panel zażądania treścią strony, aby praktycznie każdy bez znajomości programowania mógł z przyjemnością nią zarządzać.",
+    description: (
+      <p>
+        Indywidualne podejście do wykonywanych witryn pozwala doskonale
+        dopasować panel zażądania treścią strony, aby praktycznie każdy bez
+        znajomości programowania mógł z przyjemnością nią zarządzać.
+      </p>
+    ),
   },
   {
     icon: (
@@ -75,8 +104,15 @@ export const pageFeatures = [
       />
     ),
     title: "Szybkie ładowanie",
-    description:
-      "Stosuję nowoczesne formaty grafik oraz techniki pozwalające zoptymalizować czas ładowania się strony w przeglądarce. Każda witryna jest testowana pod tym kątem narzędziami takimi jak PageSpeed Insights czy GTmetrix.",
+    description: (
+      <p>
+        Stosuję nowoczesne formaty grafik oraz techniki pozwalające
+        zoptymalizować czas ładowania się strony w przeglądarce. Każda witryna
+        jest testowana pod tym kątem narzędziami takimi jak{" "}
+        <Link href="https://pagespeed.web.dev/">PageSpeed Insights </Link>
+        czy <Link href="https://gtmetrix.com/">GTmetrix</Link>.
+      </p>
+    ),
   },
   {
     icon: (
@@ -86,8 +122,14 @@ export const pageFeatures = [
       />
     ),
     title: "Zgondość z najnowszymi standardami",
-    description:
-      "Podążając za zmianami, w swoich projektach wykorzystuję najnowsze technologie takie jak: HTML5, SCSS, JS ES6, MySQL, WEBP i najlepsze praktyki jak: BEM, Moblie First, aby finalnie wyróżniać się solidnym wykonaniem oraz wydajnością.",
+    description: (
+      <p>
+        Podążając za zmianami, w swoich projektach wykorzystuję najnowsze
+        technologie takie jak: HTML5, SCSS, JS ES6, MySQL, WEBP i najlepsze
+        praktyki jak: BEM, Moblie First, aby finalnie wyróżniać się solidnym
+        wykonaniem oraz wydajnością.
+      </p>
+    ),
   },
   {
     icon: (
@@ -97,8 +139,13 @@ export const pageFeatures = [
       />
     ),
     title: "Kompatybilność z najnowszymi przeglądarkami",
-    description:
-      "Gwarantuję pełną funkcjonalność wykonywanej strony na najpopularniejszych przeglądarkach internetowych: Mozilla Firefox (3 ostanie wersje), Google Chrome (3 ostatnie wersje), Safari (1 ostatnia wersja).",
+    description: (
+      <p>
+        Oferuję pełną funkcjonalność wykonywanej strony na najpopularniejszych
+        przeglądarkach internetowych, jak: Mozilla Firefox, Google Chrome,
+        Safari. Pod uwagę brane są 3 najnowsze wersje przeglądarek.
+      </p>
+    ),
   },
   {
     icon: (
@@ -108,7 +155,13 @@ export const pageFeatures = [
       />
     ),
     title: "Nowoczesny design",
-    description:
-      "Wykonuję strony internetowe, które cieszą oko swoim wyglądem oraz działaniem. Śledzę aktualne oraz dopiero pojawiające się światowe trendy w zakresie projektowania stron i staram się przekładać zdobywaną wiedzę na swoje prace.",
+    description: (
+      <p>
+        Wykonuję strony internetowe, które cieszą oko swoim wyglądem oraz
+        działaniem. Śledzę aktualne oraz dopiero pojawiające się światowe trendy
+        w zakresie projektowania stron i staram się przekładać zdobywaną wiedzę
+        na swoje prace.
+      </p>
+    ),
   },
 ];
