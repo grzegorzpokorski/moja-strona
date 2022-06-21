@@ -8,8 +8,8 @@ const Header = ({
 }) => {
   return (
     <header
-      className={`w-full md:w-4/6 mr-auto flex flex-col gap-4 ${
-        centered && "text-center mx-auto"
+      className={`w-full mr-auto flex flex-col gap-4 ${
+        centered && "text-center mx-auto md:w-4/6"
       }`}
     >
       {subtitle && (
