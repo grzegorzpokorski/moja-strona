@@ -23,21 +23,30 @@ module.exports = {
       fontFamily: {
         sans: ["Rubik", "sans-serif"],
       },
-      typography: {
+      typography: (theme) => ({
         DEFAULT: {
           css: {
             a: {
-              color: "#00C865",
+              color: theme("colors.green"),
               fontWeight: "400",
               textDecoration: "none",
-              "&:hover": { color: "#26d07c", textDecoration: "underline" },
+              "&:hover": {
+                color: theme("colors.green"),
+                textDecoration: "underline",
+              },
             },
             strong: {
               fontWeight: "500",
             },
+            li: {
+              "&::marker": {
+                color: theme("colors.green"),
+                fontWeight: "500",
+              },
+            },
           },
         },
-      },
+      }),
     },
   },
   plugins: [require("@tailwindcss/typography")],
