@@ -5,22 +5,36 @@ export const offerList = [
   {
     icon: <FontAwesomeIcon icon={faDesktop} />,
     title: "Kompleksowe tworzenie stron internetowych",
-    description:
-      "Oferuję wykonanie strony internetowej od A do Z zaczynając od projektu graficznego po wdrożenie go do systemu zażądania treścią WordPress.",
+    description: (
+      <p>
+        Oferuję wykonanie strony internetowej od A do Z zaczynając od projektu
+        graficznego po wdrożenie go do systemu zażądania treścią WordPress.
+      </p>
+    ),
     href: "/oferta/tworzenie-stron-internetowych",
   },
   {
     icon: <FontAwesomeIcon icon={faCode} />,
-    title: "Kodowanie projektów graficznych do HTML",
-    description:
-      "Potrzebujesz profesjonalnie zakodowanego szablonu? A może nie potrzebujesz często edytować treści na swojej witrynie? Chętnie zakoduję go dla Ciebie.",
+    title: "Kodowanie statyczne stron internetowe",
+    description: (
+      <p>
+        Jeśli nie potrzebujesz aktualizować treści na strony lub masz do
+        zakodowania projekt graficzny, chętnie zakoduję dla Ciebie statyczną
+        stronę internetową.
+      </p>
+    ),
     href: "/oferta/kodownie",
   },
   {
     icon: <FontAwesomeIcon icon={faImages} />,
     title: "Projektowanie graficzne",
-    description:
-      "Chodzi Ci po głowie nowy projekt? A może nudzi Cię twoja stara strona internetowa i chcesz ją dostosować do panujących trendów? Zapraszam, zaprojektuję Twoją nową stronę.",
+    description: (
+      <p>
+        Chodzi Ci po głowie nowy projekt? A może nudzi Cię twoja stara strona
+        internetowa i chcesz ją dostosować do panujących trendów? Zapraszam,
+        zaprojektuję Twoją nową stronę.
+      </p>
+    ),
     href: "/oferta/projektowanie-graficzne",
   },
 ];

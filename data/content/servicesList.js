@@ -10,20 +10,20 @@ export const servicesList = [
       <>
         <p>
           Wykonuję 'szyte na miarę’ strony internetowe dostosowane do konkretnej
-          grupy docelowej oraz pomagające realizować założone cele.
+          grupy docelowej oraz realizujące założone przez Ciebie cele.
         </p>
         <p>
           Moją specjalnością są strony dla małych oraz średnich firm oparte na
-          autorskim motywie.
+          autorskim motywie.{" "}
           <strong>
             Każda strona internetowa przygotowywana jest indywidualnie
           </strong>
           , aby zapewnić jak najlepsze wrażenia z użytkowania zarówno dla
-          odbiorców jak i dla administratorów.
+          odbiorców jak i dla administratorów gotowego serwisu.
         </p>
         <p>
-          Rozszerz zasięg swojej firmy dzięki mojej profesjonalnie przygotowanej
-          stronie internetowej.
+          <strong>Rozszerz zasięg swojej firmy i wyprzedź konkurencję</strong>{" "}
+          dzięki mojej profesjonalnie przygotowanej stronie internetowej.
         </p>
       </>
     ),
@@ -35,16 +35,16 @@ export const servicesList = [
   },
   {
     subtitle: "Kodowanie szablonów",
-    title: "Kodowanie gotowych projektów graficznych do HTML",
+    title:
+      "Kodowanie statycznych stron internetowych na podstawie projektu graficznego",
     content: (
       <>
         <p>
-          Jeśli poszukujesz programisty do zakodowania Twojego szablonu
-          graficznego? Dobrze trafiłeś! Oferuję wysokiej jakości, wolne od
-          błędów i dostosowane do potrzeb usługę kodowania szablonów stron
-          internetowych. Wykorzystuje najnowsze technologie, abyś mógł się
-          cieszyć, w pełni kompatybilną z najnowszymi przeglądarkami, stroną
-          internetową.
+          Poszukujesz programisty do zakodowania Twojego szablonu graficznego?
+          Dobrze trafiłeś! Oferuję wysokiej jakości, wolne od błędów i
+          dostosowane do potrzeb usługę kodowania szablonów stron internetowych.
+          Wykorzystuje najnowsze technologie, abyś mógł się cieszyć, w pełni
+          kompatybilną z najnowszymi przeglądarkami, stroną internetową.
         </p>
       </>
     ),
@@ -61,10 +61,11 @@ export const servicesList = [
       <>
         <p>
           Chodzi Ci po głowie nowy projekt? A może nudzi Cię wygląd twojej
-          strony internetowej? Chętnie przygotują dla Ciebie kompleksowy projekt
-          graficzny witryny, odpowiadający Twojej wizji. Na bieżąco monitoruję
-          zmieniające się trendy w dziedzinie projektowania graficznego i
-          wykorzystuję je w swoich pracach.
+          strony internetowej? Chętnie przygotują dla Ciebie{" "}
+          <strong>kompleksowy projekt graficzny</strong> witryny, odpowiadający
+          Twojej wizji. Na bieżąco monitoruję zmieniające się trendy w
+          dziedzinie projektowania graficznego i wykorzystuję je w swoich
+          pracach.
         </p>
         <p>
           Projekty wykonuję w&nbsp;<strong>Figmie</strong>&nbsp;oraz&nbsp;
