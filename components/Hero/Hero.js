@@ -22,7 +22,7 @@ const Hero = ({
           imageFirst ? "flex-col-reverse md:flex-row-reverse" : ""
         } items-center gap-3`}
       >
-        <header className="md:w-1/2 flex flex-col gap-3 text-center md:text-left items-center md:items-start">
+        <header className="md:w-1/2 flex flex-col gap-6 text-center md:text-left items-center md:items-start">
           {titleAsH1 ? (
             <h1 className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-customGray">
               {title}
