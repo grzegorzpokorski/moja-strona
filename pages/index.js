@@ -32,8 +32,9 @@ const Home = ({ newestPosts }) => {
           title="Projekuję oraz tworzę nowoczesne strony internetowe"
           description={
             <p>
-              Zachęcam do zapoznania się z moją ofertą oraz do kontaktu. Zróbmy
-              razem coś niesamowitego!
+              Zaistniej w internecie i zrealizuj swoje cele z
+              <strong>ultra szybką</strong> 🚀 stroną internetową osiągającą
+              <strong>najwyższe noty</strong> 🥇 w Google PageSpeed benchmark.
             </p>
           }
           buttons={[
@@ -58,8 +59,8 @@ const Home = ({ newestPosts }) => {
         <Section bgColor="bg-whiteGreen">
           <Header
             subtitle="Oferta"
-            title="W czym się specjalizuje?"
-            description="Gdyby zachodziła konieczność przeprowadzenia zabiegu na otwartym sercu, powierzyłbyś swoje zdrowie i życie mechanikowi? Między innymi dlatego warto korzystać z usług specjalisty."
+            title="W czym mogę Ci pomóc?"
+            description="Potrzebujesz nowoczesnej, ultra szybkiej strony strony internetowej aby zaistnieć w internecie? A może gotowy projekt graficzny czeka na zakodowanie? Oferuję profesjonalne usługi, które pomogą Ci wkroczyć na szerokie wody internetu."
             centered
           />
           <BoxesList items={offerList} withMarginTop />
