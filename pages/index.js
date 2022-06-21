@@ -91,8 +91,8 @@ const Home = ({ newestPosts }) => {
               style: "white",
             },
             {
-              label: "Poczytaj mój blog",
-              href: "/blog",
+              label: "Zobacz ofertę",
+              href: "/oferta",
               style: "transparentWhite",
             },
           ]}
