@@ -29,13 +29,6 @@ const About = ({ newestPosts }) => {
                 Działam jako freelancer, pomagając tworzyć dobrze wyglądające i
                 realizujące cele biznesowe strony internetowe.
               </p>
-              {/* <p>
-                Moją specjalnością są strony typu wizytówka pozwalające firmom
-                przedstawić swoją działalność szerszej grupie odbiorców w
-                Internecie. Chętnie pomagam również osoba prowadzącym blogi lub
-                chcącym zacząć swoją przygodę z tym związaną, ale potrzebują
-                dedykowanego rozwiązania.
-              </p> */}
               <p>
                 W wolnej chwili staram się dzielić swoją wiedzą na łamach
                 artykułów na moim <Link href="/blog">blogu</Link>.

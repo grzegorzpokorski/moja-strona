@@ -8,6 +8,8 @@ import Section from "../../components/Section";
 import Header from "../../components/Header";
 import BoxesList from "../../components/BoxesList";
 import Process from "../../components/Process";
+import Content from "../../components/Content";
+import Link from "../../components/Link";
 
 import heroImage from "../../public/images/pages.webp";
 import logosImage from "../../public/images/logos.webp";
@@ -21,12 +23,12 @@ const Offer = () => {
     <>
       <Head
         title={`Tworzenie stron internetowych ${addressSeparator} ${siteName}`}
-        description={`Tworzenie stron ładujących się poniżej jeden sekundy w oparciu o najnowsze technologie.`}
+        description={`Tworzenie stron internetowych ładujących się poniżej jedenej sekundy w oparciu o najnowsze technologie.`}
         contentType="website"
       />
       <MainHeader>
         <Hero
-          title="Tworzenie stron w oparciu o CMS WordPress"
+          title="Tworzenie stron internetowych w oparciu o WordPress"
           description={
             <>
               <p>
@@ -60,12 +62,91 @@ const Offer = () => {
           <Header
             subtitle="Zalety"
             title="Czym wyróżniają się moje strony?"
+            description={
+              <p>
+                Każda wykonana przeze mnie strona wyróżnia się na tle
+                konkurencyjncyh rozwiązań jakością wykonania i dbałością o
+                detale. Poznaj czym wygrywam na starcie z wieloma agencjami
+                reklamowymi, które często bardziej cenią ilość, a nie jakość
+                wykonywanych zleceń.
+              </p>
+            }
             centered
           />
           <BoxesList items={pageFeatures} withMarginTop />
         </Section>
+        <Section>
+          <Header
+            subtitle="System zarządzania treścią"
+            title="Dlaczego warto korzystać z WordPresa?"
+          />
+          <Content
+            columns={2}
+            withSpaceAbove
+            content={
+              <>
+                <p>
+                  W przypadku kiedy zależy nam na możliwości dodawanie oraz
+                  edytowania treści oferuję indywidualny projekt oparty na
+                  najpopularniejszym systemie zażądania treścią (CMS) WordPress.
+                </p>
+                <ol>
+                  <li>
+                    Otwarty kod źródłowy oraz wsparcie przez twórców
+                    aktualizacjami pozwalają spać spokojnie bez obaw o
+                    bezpieczeństwo naszej strony.
+                  </li>
+                  <li>
+                    Możliwość elastycznego dostosowania do wymagań — zbudujemy
+                    na nim zarówno małą stronę lokalnej firmy czy blog
+                    tematyczny, jak i ogromny serwis informacyjny.
+                  </li>
+                  <li>
+                    Pomimo ponad 15-letniej obecności na rynku jego popularność
+                    nie słabnie i jego udział w światowym rynku nadal deklasuje
+                    konkurencję.
+                  </li>
+                  <li>
+                    Popularność tego rozwiązania sprawia, że możemy liczyć na
+                    łatwe wsparcie ze strony dużej rzeszy programistów.
+                  </li>
+                  <li>
+                    Umożliwia proste zarządzanie zdjęciami oraz innymi plikami
+                    witryny.
+                  </li>
+                </ol>
+                <h3>Dlaczego warto wybrać moje usługi?</h3>
+                <p>
+                  Pomimo obecności tysięcy gotowych szablonów, nie jednokrotnie
+                  znalezienie idealnego rozwiązania dla naszych potrzeb nie
+                  zawsze jest możliwe. Sama konfiguracja takich motywów często
+                  jest przytłaczająca, a konieczność stosowania zewnętrznych
+                  wtyczek sprawia, że wydajność takiej witryny nie jest
+                  zadowalająca.
+                </p>
+                <p>
+                  Rozwiązuję powyższe problemy, oferując&nbsp;
+                  <strong>indywidualny, ‘szyty na miarę’ projekt</strong> oparty
+                  na autorskim motywie budowanym od podstaw. Cała witryna jest
+                  dostosowana do treści, jaka finalnie ma się na niej znaleźć.
+                  Użytkownik ma do wyboru unikalne bloki, z których może
+                  zbudować swoją własną wersję strony zachowując przy tym
+                  właściwą strukturę dokumentu{" "}
+                  <strong>bez nadmiarowego i zbędnego kodu źródłowego</strong>.
+                  Administracja taką stroną przypomina układanie klocków i
+                  sprawia wiele przyjemności.
+                </p>
+                <p>
+                  Jeśli zastanawiasz się, czy moje usługi będą odpowiednie dla
+                  Twojego projektu, serdecznie zapraszam do{" "}
+                  <Link href="/kontakt">kontaktu</Link>!
+                </p>
+              </>
+            }
+          />
+        </Section>
         <ContentWithImage
-          subtitle="TECHNOLOGIE"
+          subtitle="Nowoczesne technologie"
           title="Technologie, z których korzystam"
           content={
             <>
@@ -90,46 +171,92 @@ const Offer = () => {
               </p>
             </>
           }
-          href="/kontakt"
           image={{
             src: logosImage,
             alt: "loga wykorzystywanych przez mnie technologii",
           }}
           reverse
-          bgColor
+          bgColor="bg-whiteGreen"
         />
         <Process
           header={{
             title: "Jak przebiega współpraca?",
-            subtitle: "WSPÓŁPRACA",
-            description:
-              "Aenean sed accumsan dolor. Nunc blandit tristique suscipit. Sed at augue sit amet magna tempor ornare ac sed diam. Suspendisse purus sem, bibendum quis aliquam at",
+            subtitle: "Współpraca",
+            description: (
+              <p>
+                Dobra komunikacja od samego początku pozwala nawet przy bardzo
+                skompilkowanych projektach osiągnąc sukces. Poznaj poszczególne
+                etapy współpracy.
+              </p>
+            ),
           }}
           steps={[
             {
               title: "Brief",
-              content:
-                "Każdą współpracę zaczynam od szczególowego zbadania porzeb. Uważam że w dużej mierze pomyśla realizacja projektu musi zostać poprzedona wnikliną analiza wielu aspektów takich jak: cel witryny, stylistyka, grupa odbiorców, zakładane rezultaty czy cele biznesowe.",
+              content: (
+                <p>
+                  Każdą współpracę zaczynam od szczególowego zbadania porzeb.
+                  Uważam że w dużej mierze pomyśla realizacja projektu musi
+                  zostać poprzedona wnikliną analiza wielu aspektów takich jak:
+                  cel witryny, stylistyka, grupa odbiorców, zakładane rezultaty
+                  czy cele biznesowe.
+                </p>
+              ),
             },
             {
-              title: "Brief",
-              content:
-                "Każdą współpracę zaczynam od szczególowego zbadania porzeb. Uważam że w dużej mierze pomyśla realizacja projektu musi zostać poprzedona wnikliną analiza wielu aspektów takich jak: cel witryny, stylistyka, grupa odbiorców, zakładane rezultaty czy cele biznesowe.",
+              title: "Formalności",
+              content: (
+                <p>
+                  Po zbadaniu potrzeb oraz wstępnej wycenie projektu oraz
+                  nakreśleniu zakładanych ram czasowych na realizację i
+                  akceptacji tych warunków, przychodzi pora na formalne
+                  rozpoczęcie właściwego procesu realizacji projektu oraz
+                  podpisanie umowy.
+                </p>
+              ),
             },
             {
-              title: "Brief",
-              content:
-                "Każdą współpracę zaczynam od szczególowego zbadania porzeb. Uważam że w dużej mierze pomyśla realizacja projektu musi zostać poprzedona wnikliną analiza wielu aspektów takich jak: cel witryny, stylistyka, grupa odbiorców, zakładane rezultaty czy cele biznesowe.",
+              title: "Projekt graficzny",
+              content: (
+                <p>
+                  Biorąc pod uwagę ustalenia dotyczące zakładanego efektu
+                  finalnego realizowanej witryny, wykonuję oraz przedstawiam
+                  projekt graficzny witryny do akceptacji oraz ewentualnych
+                  poprawek, tak aby finalny produkt trafiał w oczekiwania
+                  klienta.
+                </p>
+              ),
             },
             {
-              title: "Brief",
-              content:
-                "Każdą współpracę zaczynam od szczególowego zbadania porzeb. Uważam że w dużej mierze pomyśla realizacja projektu musi zostać poprzedona wnikliną analiza wielu aspektów takich jak: cel witryny, stylistyka, grupa odbiorców, zakładane rezultaty czy cele biznesowe.",
+              title: "Programowanie",
+              content: (
+                <p>
+                  Najbardziej czasochłonnym etapem tworzenia, każdej strony
+                  internetowej jest etap wdrożenia zaakceptowanego projektu
+                  graficznego. W pierwszej fazie koduję stronę do szablonu HTML,
+                  a następnie integruję go z panelem zażądania WordPress.
+                </p>
+              ),
             },
             {
-              title: "Brief",
-              content:
-                "Każdą współpracę zaczynam od szczególowego zbadania porzeb. Uważam że w dużej mierze pomyśla realizacja projektu musi zostać poprzedona wnikliną analiza wielu aspektów takich jak: cel witryny, stylistyka, grupa odbiorców, zakładane rezultaty czy cele biznesowe.",
+              title: "Wdrożenie",
+              content: (
+                <p>
+                  Po zakończeniu prac związanych z projektowaniem i
+                  programowaniem witryny przychodzi czas na wgranie gotowej
+                  witryny na serwer wskazany przez klienta.
+                </p>
+              ),
+            },
+            {
+              title: "Finalizacja",
+              content: (
+                <p>
+                  Na zakończenie realizacji projektu przekazuję gotową witrynę
+                  oraz objaśniam jak można nią zarządzać. W razie konieczności
+                  dokonuję niezbędnych poprawek.
+                </p>
+              ),
             },
           ]}
         />

@@ -25,7 +25,16 @@ const Offer = () => {
           <Header
             subtitle="Oferta"
             title="Poznaj moją ofertę"
-            description="Gdyby zachodziła konieczność przeprowadzenia zabiegu na otwartym sercu, powierzyłbyś swoje zdrowie i życie mechanikowi? Między innymi dlatego warto korzystać z usług specjalisty."
+            description={
+              <p>
+                Można być człowiekiem renesansu. Ja jednak staram się doskonalić
+                w konkretnych specjalizacjach. Potrzebujesz nowoczesnej, ultra
+                szybkiej strony strony internetowej aby zaistnieć w internecie?
+                A może gotowy projekt graficzny czeka na zakodowanie? Oferuję
+                profesjonalne usługi, które pomogą Ci wkroczyć na szerokie wody
+                internetu.
+              </p>
+            }
             centered
             titleAsH1
           />
