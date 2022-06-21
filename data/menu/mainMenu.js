@@ -14,8 +14,8 @@ const mainMenu = [
         label: "Tworzenie stron internetowych",
       },
       {
-        href: "/oferta/kodowanie-szablonow-graficznych",
-        label: "Kodowanie szablonów graficznych",
+        href: "/oferta/kodowanie-projektow-graficznych",
+        label: "Kodowanie projektów graficznych",
       },
       {
         href: "/oferta/projektowanie-graficzne",

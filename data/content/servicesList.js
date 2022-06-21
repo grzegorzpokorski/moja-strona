@@ -48,7 +48,7 @@ export const servicesList = [
         </p>
       </>
     ),
-    href: "/oferta/kodowanie",
+    href: "/oferta/kodowanie-projektow-graficznych",
     image: {
       src: codeImage,
       alt: "szczęśliwy człowiek koduje na sofie",
