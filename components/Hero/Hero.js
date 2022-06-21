@@ -32,7 +32,7 @@ const Hero = ({
               {title}
             </h2>
           )}
-          <div className="prose">{description && description}</div>
+          <div className="prose max-w-none">{description && description}</div>
           {buttons && (
             <div className="flex flex-row flex-wrap gap-2 justify-center md:justify-start items-center">
               {buttons.map((item, i) => (
