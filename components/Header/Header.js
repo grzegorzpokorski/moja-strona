@@ -24,7 +24,7 @@ const Header = ({
           {title}
         </h2>
       )}
-      {description && <p>{description}</p>}
+      {description && <div className="prose max-w-none">{description}</div>}
       {children}
     </header>
   );
