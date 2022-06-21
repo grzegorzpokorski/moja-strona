@@ -13,14 +13,19 @@ const ListItem = ({ icon, subtitle, title, description, href }) => {
             </span>
           )}
           {href ? (
-            <Link href={href} className="hover:underline">
+            <Link
+              href={href}
+              className="hover:underline hover:text-green transition"
+            >
               <h3 className="font-bold text-lg">{title}</h3>
             </Link>
           ) : (
             <h3 className="font-bold text-lg">{title}</h3>
           )}
         </header>
-        {description && <p className="mt-6">{description}</p>}
+        {description && (
+          <div className="prose max-w-none mt-6">{description}</div>
+        )}
       </article>
     </li>
   );
