@@ -5,12 +5,13 @@ import pagesImage from "../../public/images/pages.webp";
 export const servicesList = [
   {
     subtitle: "Strony internetowe",
-    title: "Programowanie stron internetowych",
+    title: "Programowanie stron internetowych 🚀",
     content: (
       <>
         <p>
-          Wykonuję 'szyte na miarę’ strony internetowe dostosowane do konkretnej
-          grupy docelowej oraz realizujące założone przez Ciebie cele.
+          Wykonuję 'szyte na miarę’ strony internetowe dostosowane i
+          zaprojektowane dla konkretnej grupy docelowej oraz realizujące
+          założone przez Ciebie cele.
         </p>
         <p>
           Moją specjalnością są strony dla małych oraz średnich firm oparte na
@@ -41,10 +42,12 @@ export const servicesList = [
       <>
         <p>
           Poszukujesz programisty do zakodowania Twojego szablonu graficznego?
-          Dobrze trafiłeś! Oferuję wysokiej jakości, wolne od błędów i
-          dostosowane do potrzeb usługę kodowania szablonów stron internetowych.
-          Wykorzystuje najnowsze technologie, abyś mógł się cieszyć, w pełni
-          kompatybilną z najnowszymi przeglądarkami, stroną internetową.
+          Dobrze trafiłeś! Oferuję wysokiej jakości,{" "}
+          <strong>wolne od błędów</strong> i dostosowane do potrzeb usługę
+          kodowania szablonów stron internetowych. Wykorzystuje najnowsze
+          technologie, abyś mógł się cieszyć,{" "}
+          <strong>w pełni kompatybilną z najnowszymi przeglądarkami</strong>,
+          stroną internetową ✨.
         </p>
       </>
     ),
@@ -69,7 +72,7 @@ export const servicesList = [
         </p>
         <p>
           Projekty wykonuję w&nbsp;<strong>Figmie</strong>&nbsp;oraz&nbsp;
-          <strong>Adobe Photoshop</strong>.
+          <strong>Adobe Photoshop</strong> 🎨.
         </p>
       </>
     ),

@@ -28,7 +28,7 @@ const Offer = () => {
       />
       <MainHeader>
         <Hero
-          title="Tworzenie stron internetowych w oparciu o WordPress"
+          title="Tworzenie stron internetowych w oparciu o WordPress ✨"
           description={
             <>
               <p>
@@ -49,7 +49,7 @@ const Offer = () => {
             },
             {
               label: "Dowiedz się więcej",
-              href: "/oferta",
+              href: "#tresc",
               style: "transparentGreen",
             },
           ]}
