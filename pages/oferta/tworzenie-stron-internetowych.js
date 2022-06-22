@@ -60,23 +60,6 @@ const Offer = () => {
       <Main>
         <Section bgColor="bg-whiteGreen">
           <Header
-            subtitle="Zalety"
-            title="Czym wyróżniają się moje strony?"
-            description={
-              <p>
-                Każda wykonana przeze mnie strona wyróżnia się na tle
-                konkurencyjncyh rozwiązań jakością wykonania i dbałością o
-                detale. Poznaj czym wygrywam na starcie z wieloma agencjami
-                reklamowymi, które często bardziej cenią ilość, a nie jakość
-                wykonywanych zleceń.
-              </p>
-            }
-            centered
-          />
-          <BoxesList items={pageFeatures} withMarginTop />
-        </Section>
-        <Section>
-          <Header
             subtitle="System zarządzania treścią"
             title="Dlaczego warto korzystać z WordPresa?"
           />
@@ -152,6 +135,24 @@ const Offer = () => {
             }
           />
         </Section>
+        <Section bgColor="bg-green-100">
+          <Header
+            subtitle="Zalety"
+            title="Czym wyróżniają się moje strony?"
+            description={
+              <p>
+                Każda wykonana przeze mnie strona wyróżnia się na tle
+                konkurencyjncyh rozwiązań jakością wykonania i dbałością o
+                detale. Poznaj czym wygrywam na starcie z wieloma agencjami
+                reklamowymi, które często bardziej cenią ilość, a nie jakość
+                wykonywanych zleceń.
+              </p>
+            }
+            centered
+          />
+          <BoxesList items={pageFeatures} withMarginTop />
+        </Section>
+
         <ContentWithImage
           subtitle="Nowoczesne technologie"
           title="Technologie, z których korzystam"
@@ -186,6 +187,7 @@ const Offer = () => {
           bgColor="bg-whiteGreen"
         />
         <Process
+          bgColor="bg-white"
           header={{
             title: "Jak przebiega współpraca?",
             subtitle: "Współpraca",
