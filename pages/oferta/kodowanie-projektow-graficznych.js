@@ -33,9 +33,9 @@ const Offer = () => {
           description={
             <>
               <p>
-                Potrzebujesz zamienić projekt graficznny z pliku PSD lub Figma
-                do statycznej, dobrze zakodowanej strony internetowej HTML?
-                Bardzo dobrze trafiłeś!
+                Potrzebujesz zamienić projekt graficzny z pliku PSD lub Figma do
+                statycznej, dobrze zakodowanej strony internetowej HTML? Bardzo
+                dobrze trafiłeś!
               </p>
               <p>
                 Oferuję profesjonalna usługę konwersji{" "}
@@ -85,6 +85,7 @@ const Offer = () => {
                   pełni funkcjonalnej strony internetowej — zaoszczędź czas i
                   skup się na tym, co lubisz, a ja zajmę się twoją stroną.
                 </p>
+                <h3>Dlaczego wybrać moje usługi?</h3>
                 <p>
                   Wysokie noty osiągane przez moje strony w benchmarkach Google
                   PageSpeed, GTmetrix czy Pingdom mogą Cię utwierdzić w
@@ -133,10 +134,8 @@ const Offer = () => {
           content={
             <>
               <p>
-                Do wykonania szczegółowych projektów graficznych witryn
-                internetowych wykorzystuję&nbsp;<strong>Figmę</strong>
-                &nbsp;oraz&nbsp;<strong>Adobe Phtoshop</strong>. Po zakończeniu
-                projektowania makiet witryny, wykorzystuje najnowsze,&nbsp;
+                Mając do dyspozycji projekt graficzny oraz dobrze przygotowaną
+                specyfikację, wykorzystuje najnowsze,&nbsp;
                 <strong>niezawodne dostępne narządzia oraz technologię</strong>
                 &nbsp;do przekształcenia jej w&nbsp;
                 <strong>
