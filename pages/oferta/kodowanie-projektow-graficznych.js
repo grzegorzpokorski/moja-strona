@@ -163,6 +163,13 @@ const Offer = () => {
           <Header
             subtitle="kluczowe zalety"
             title="Co wyróżnia moje statyczne strony HTML?"
+            description={
+              <p>
+                Poznaj praktyczne aspekty oraz zalety moich finalnych prac, z
+                których jestem dumny. Przekonaj się, że zostawiasz pracę w
+                dobrych rękach.
+              </p>
+            }
             centered
           />
           <BoxesList items={codingFeatures} withMarginTop />
