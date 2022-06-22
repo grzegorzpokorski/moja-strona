@@ -82,7 +82,7 @@ const Home = ({ newestPosts }) => {
           button={{ label: "Zobacz wszystkie wpisy", href: "/blog" }}
         />
         <Banner
-          title="Zbuduj swoją wysokiej klasy stronę internetową ze mną!"
+          title="Zbuduj swoją ultra szybką stronę internetową ze mną!"
           description="Chętnie pomogę zrealizować Twój projekt."
           buttons={[
             {
