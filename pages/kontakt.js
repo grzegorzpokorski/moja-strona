@@ -35,8 +35,10 @@ const Contact = () => {
               </p>
               <p>
                 Zachęcam do zapozniana się z{" "}
-                <Link href="/faq">najczęściej zadawanymi pytaniami</Link>, gdzie
-                być może znajdziesz odpowiedz na swoje pytanie.
+                <Link href="/czesto-zadawane-pytania">
+                  najczęściej zadawanymi pytaniami
+                </Link>
+                , gdzie być może znajdziesz odpowiedz na swoje pytanie.
               </p>
             </>
           }
