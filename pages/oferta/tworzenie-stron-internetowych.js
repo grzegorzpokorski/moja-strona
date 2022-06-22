@@ -23,7 +23,7 @@ const Offer = () => {
     <>
       <Head
         title={`Tworzenie stron internetowych ${addressSeparator} ${siteName}`}
-        description={`Tworzenie stron internetowych ładujących się poniżej jedenej sekundy w oparciu o najnowsze technologie.`}
+        description={`Tworzenie stron internetowych ładujących się poniżej jedenej sekundy wykorzystując najnowsze technologie.`}
         contentType="website"
       />
       <MainHeader>
@@ -33,7 +33,7 @@ const Offer = () => {
             <>
               <p>
                 Niepowtarzalne, indywidualnie przygotowywane, ultra szybkie
-                strony internetowe z najpopularniejszym systemem zażądania
+                strony internetowe z najpopularniejszym systemem zarządzania
                 treścią.
               </p>
             </>
@@ -88,7 +88,14 @@ const Offer = () => {
                 <p>
                   W przypadku kiedy zależy nam na możliwości dodawanie oraz
                   edytowania treści oferuję indywidualny projekt oparty na
-                  najpopularniejszym systemie zażądania treścią (CMS) WordPress.
+                  najpopularniejszym systemie zarządzania treścią (CMS)
+                  WordPress.
+                </p>
+                <h3>Zalety stosowania WordPressa.</h3>
+                <p>
+                  Poniżej wymieniam niektóre powody, dlaczego wybranie
+                  WordPressa do utworzenia Twojej strony internetowej to dobry
+                  pomysł:
                 </p>
                 <ol>
                   <li>
@@ -130,7 +137,7 @@ const Offer = () => {
                   na autorskim motywie budowanym od podstaw. Cała witryna jest
                   dostosowana do treści, jaka finalnie ma się na niej znaleźć.
                   Użytkownik ma do wyboru unikalne bloki, z których może
-                  zbudować swoją własną wersję strony zachowując przy tym
+                  zbudować swoją własną wersję strony, zachowując przy tym
                   właściwą strukturę dokumentu{" "}
                   <strong>bez nadmiarowego i zbędnego kodu źródłowego</strong>.
                   Administracja taką stroną przypomina układanie klocków i
@@ -154,9 +161,9 @@ const Offer = () => {
                 Do wykonania szczegółowych projektów graficznych witryn
                 internetowych wykorzystuję&nbsp;<strong>Figmę</strong>
                 &nbsp;oraz&nbsp;<strong>Adobe Phtoshop</strong>. Po zakończeniu
-                tworzenia makiet witryny, wykorzystuje najnowszą,&nbsp;
-                <strong>niezawodną dostępną technologię</strong>&nbsp;do
-                przekształcenia jej w&nbsp;
+                projektowania makiet witryny, wykorzystuje najnowsze,&nbsp;
+                <strong>niezawodne dostępne narządzia oraz technologię</strong>
+                &nbsp;do przekształcenia jej w&nbsp;
                 <strong>
                   funkcjonalną, wolną od błędów i responsywną stronę internetową
                 </strong>
@@ -185,7 +192,7 @@ const Offer = () => {
             description: (
               <p>
                 Dobra komunikacja od samego początku pozwala nawet przy bardzo
-                skompilkowanych projektach osiągnąc sukces. Poznaj poszczególne
+                skomplikowanych projektach osiągnąć sukces. Poznaj poszczególne
                 etapy współpracy.
               </p>
             ),
@@ -195,9 +202,9 @@ const Offer = () => {
               title: "Brief",
               content: (
                 <p>
-                  Każdą współpracę zaczynam od szczególowego zbadania porzeb.
-                  Uważam że w dużej mierze pomyśla realizacja projektu musi
-                  zostać poprzedona wnikliną analiza wielu aspektów takich jak:
+                  Każdą współpracę zaczynam od szczegółowego zbadania potrzeb.
+                  Uważam, że w dużej mierze pomyślna realizacja projektu musi
+                  zostać poprzedzona wnikliwą analizą wielu aspektów takich jak:
                   cel witryny, stylistyka, grupa odbiorców, zakładane rezultaty
                   czy cele biznesowe.
                 </p>
@@ -207,11 +214,10 @@ const Offer = () => {
               title: "Formalności",
               content: (
                 <p>
-                  Po zbadaniu potrzeb oraz wstępnej wycenie projektu oraz
-                  nakreśleniu zakładanych ram czasowych na realizację i
-                  akceptacji tych warunków, przychodzi pora na formalne
-                  rozpoczęcie właściwego procesu realizacji projektu oraz
-                  podpisanie umowy.
+                  Po zbadaniu potrzeb następuje wstępna wycena projektu. Po
+                  nakreśleniu ram czasowych, realizacji zlecenia oraz akceptacji
+                  tych warunków, przychodzi pora na formalne rozpoczęcie
+                  realizacji projektu oraz podpisanie umowy.
                 </p>
               ),
             },
@@ -220,7 +226,7 @@ const Offer = () => {
               content: (
                 <p>
                   Biorąc pod uwagę ustalenia dotyczące zakładanego efektu
-                  finalnego realizowanej witryny, wykonuję oraz przedstawiam
+                  finalnego realizowanej witryny, wykonuję i przedstawiam
                   projekt graficzny witryny do akceptacji oraz ewentualnych
                   poprawek, tak aby finalny produkt trafiał w oczekiwania
                   klienta.
@@ -234,7 +240,7 @@ const Offer = () => {
                   Najbardziej czasochłonnym etapem tworzenia, każdej strony
                   internetowej jest etap wdrożenia zaakceptowanego projektu
                   graficznego. W pierwszej fazie koduję stronę do szablonu HTML,
-                  a następnie integruję go z panelem zażądania WordPress.
+                  a następnie integruję go z panelem zarządzania WordPress.
                 </p>
               ),
             },
@@ -253,15 +259,15 @@ const Offer = () => {
               content: (
                 <p>
                   Na zakończenie realizacji projektu przekazuję gotową witrynę
-                  oraz objaśniam jak można nią zarządzać. W razie konieczności
-                  dokonuję niezbędnych poprawek.
+                  oraz objaśniam w razie potrzeby, jak można nią zarządzać. W
+                  razie konieczności dokonuję niezbędnych poprawek.
                 </p>
               ),
             },
           ]}
         />
         <Banner
-          title="Zbuduj swoją wysokiej klasy stronę internetową ze mną!"
+          title="Zbuduj swoją ultra szybką stronę internetową ze mną!"
           description="Chętnie pomogę zrealizować Twój projekt."
           buttons={[
             {

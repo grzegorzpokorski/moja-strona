@@ -1,9 +1,18 @@
 export const Content = ({ columns, content, withSpaceAbove }) => {
-  return (
+  console.log();
+  return columns ? (
     <div
-      className={`prose max-w-none gap-8 columns-1 lg:columns-${
-        columns ? columns : "1"
-      } ${withSpaceAbove ? "mt-8 md:mt-12" : ""}`}
+      className={`w-full prose max-w-none gap-8 ${
+        withSpaceAbove ? "mt-8 md:mt-12" : ""
+      } content content--col-${columns}`}
+    >
+      {content}
+    </div>
+  ) : (
+    <div
+      className={`w-full prose max-w-none gap-8 ${
+        withSpaceAbove ? "mt-8 md:mt-12" : ""
+      }`}
     >
       {content}
     </div>

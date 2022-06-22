@@ -8,7 +8,7 @@ export const offerList = [
     description: (
       <p>
         Oferuję wykonanie strony internetowej od A do Z zaczynając od projektu
-        graficznego po wdrożenie go do systemu zażądania treścią WordPress.
+        graficznego po wdrożenie go do systemu zarządzania treścią WordPress.
       </p>
     ),
     href: "/oferta/tworzenie-stron-internetowych",
@@ -18,7 +18,7 @@ export const offerList = [
     title: "Kodowanie statyczne stron internetowe",
     description: (
       <p>
-        Jeśli nie potrzebujesz aktualizować treści na strony lub masz do
+        Jeśli nie potrzebujesz aktualizować treści na stronie lub masz do
         zakodowania projekt graficzny, chętnie zakoduję dla Ciebie statyczną
         stronę internetową.
       </p>
@@ -32,7 +32,7 @@ export const offerList = [
       <p>
         Chodzi Ci po głowie nowy projekt? A może nudzi Cię twoja stara strona
         internetowa i chcesz ją dostosować do panujących trendów? Zapraszam,
-        zaprojektuję Twoją nową stronę.
+        zaprojektuję Twoją nową stronę internetową.
       </p>
     ),
     href: "/oferta/projektowanie-graficzne",

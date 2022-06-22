@@ -91,7 +91,7 @@ export const pageFeatures = [
     description: (
       <p>
         Indywidualne podejście do wykonywanych witryn pozwala doskonale
-        dopasować panel zażądania treścią strony, aby praktycznie każdy bez
+        dopasować panel zarządzania treścią strony, aby praktycznie każdy bez
         znajomości programowania mógł z przyjemnością nią zarządzać.
       </p>
     ),
