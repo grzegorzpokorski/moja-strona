@@ -4,7 +4,7 @@ import Dropdown from "./Dropdown";
 import { useRouter } from "next/router";
 
 const MenuItem = (item) => {
-  const currentPath = useRouter().asPath;
+  const currentPath = useRouter().asPath.split("#")[0];
 
   return item.button ? (
     <li className={item.childrens ? `relative dropdown` : ``}>
