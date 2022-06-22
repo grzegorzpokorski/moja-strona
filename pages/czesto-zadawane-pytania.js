@@ -5,6 +5,7 @@ import Main from "../components/Main";
 import MainHeader from "../components/MainHeader";
 import Link from "../components/Link";
 import Accordion from "../components/Accordion";
+import Banner from "../components/Banner";
 
 import addressSeparator from "../data/seo/addressSeparator";
 import siteName from "../data/seo/siteName";
@@ -37,6 +38,22 @@ const FAQ = () => {
           />
           <Accordion items={faqs} withMarginOnTop />
         </Section>
+        <Banner
+          title="Zbuduj swoją wysokiej klasy stronę internetową ze mną!"
+          description="Chętnie pomogę zrealizować Twój projekt."
+          buttons={[
+            {
+              label: "Skontaktuj się ze mną",
+              href: "/kontakt",
+              style: "white",
+            },
+            {
+              label: "Zobacz ofertę",
+              href: "/oferta",
+              style: "transparentWhite",
+            },
+          ]}
+        />
       </Main>
     </>
   );
