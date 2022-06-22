@@ -4,7 +4,7 @@ const OfferList = ({ items, withMarginTop }) => {
   return (
     <ul
       className={`flex flex-col lg:grid md:grid-cols-2 xl:grid-cols-3 gap-6 ${
-        withMarginTop && "mt-12 md:mt-24"
+        withMarginTop ? "mt-12 md:mt-24" : ""
       }`}
     >
       {items &&

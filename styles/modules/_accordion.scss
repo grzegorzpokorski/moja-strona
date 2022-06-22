@@ -1,0 +1,28 @@
+.accordion {
+  &__title {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(calc(-50%));
+      right: theme("spacing.6");
+      border-left: 0.35rem solid transparent;
+      border-right: 0.35rem solid transparent;
+      border-top: 0.35rem solid theme("colors.zinc.900");
+      transform: all 0.5s;
+    }
+  }
+
+  &[open] &__title,
+  &:hover &__title {
+    background-color: theme("colors.green");
+    color: theme("colors.white");
+
+    &::after {
+      transform: rotateX(-180deg);
+      border-top-color: theme("colors.white");
+    }
+  }
+}
