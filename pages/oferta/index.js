@@ -5,6 +5,7 @@ import Section from "../../components/Section";
 import Header from "../../components/Header";
 import Main from "../../components/Main";
 import MainHeader from "../../components/MainHeader";
+import Link from "../../components/Link";
 
 import { offerList } from "../../data/content/offerList";
 import { servicesList } from "../../data/content/servicesList";
@@ -29,10 +30,17 @@ const Offer = () => {
               <p>
                 Można być człowiekiem renesansu. Ja jednak staram się doskonalić
                 w konkretnych specjalizacjach. Potrzebujesz nowoczesnej, ultra
-                szybkiej strony strony internetowej aby zaistnieć w internecie?
-                A może gotowy projekt graficzny czeka na zakodowanie? Oferuję
-                profesjonalne usługi, które pomogą Ci wkroczyć na szerokie wody
-                internetu.
+                szybkiej{" "}
+                <Link href="/oferta/tworzenie-stron-internetowych">
+                  strony strony internetowej
+                </Link>{" "}
+                aby zaistnieć w internecie? A może gotowy projekt graficzny
+                czeka na{" "}
+                <Link href="/oferta/kodowanie-projektow-graficznych">
+                  zakodowanie
+                </Link>
+                ? Oferuję profesjonalne usługi, które pomogą Ci wkroczyć na
+                szerokie wody internetu.
               </p>
             }
             centered
