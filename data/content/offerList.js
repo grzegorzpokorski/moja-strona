@@ -15,7 +15,7 @@ export const offerList = [
   },
   {
     icon: <FontAwesomeIcon icon={faCode} />,
-    title: "Kodowanie statyczne stron internetowe",
+    title: "Kodowanie statycznych stron internetowych",
     description: (
       <p>
         Jeśli nie potrzebujesz aktualizować treści na stronie lub masz do
@@ -23,7 +23,7 @@ export const offerList = [
         stronę internetową.
       </p>
     ),
-    href: "/oferta/kodownie",
+    href: "/oferta/kodownie-projektow-graficznych",
   },
   {
     icon: <FontAwesomeIcon icon={faImages} />,
