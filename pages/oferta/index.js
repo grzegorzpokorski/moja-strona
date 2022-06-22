@@ -38,12 +38,10 @@ const Offer = () => {
             centered
             titleAsH1
           />
+          <BoxesList items={offerList} withMarginTop />
         </Section>
       </MainHeader>
       <Main>
-        <Section>
-          <BoxesList items={offerList} />
-        </Section>
         <Services services={servicesList} />
       </Main>
     </>
