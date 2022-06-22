@@ -12,6 +12,10 @@ const footerMenu = [
     label: "Blog",
   },
   {
+    href: "/czesto-zadawane-pytania",
+    label: "FAQs",
+  },
+  {
     href: "/kontakt",
     label: "Kontakt",
   },
