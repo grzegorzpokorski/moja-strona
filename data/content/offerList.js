@@ -23,7 +23,7 @@ export const offerList = [
         stronę internetową.
       </p>
     ),
-    href: "/oferta/kodownie-projektow-graficznych",
+    href: "/oferta/kodowanie-projektow-graficznych",
   },
   {
     icon: <FontAwesomeIcon icon={faImages} />,
