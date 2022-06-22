@@ -25,7 +25,7 @@ const Blog = ({ posts, categories }) => {
       <Main>
         <Section bgColor="bg-whiteGreen" withMarginOnTop>
           <Header
-            title="Artykuły, ciekawostki z świata stron internetowych i nie tylko"
+            title="Artykuły, ciekawostki z świata stron internetowych i nie tylko 🔥"
             titleAsH1
           />
           <CategoriesTabs categories={categories} />

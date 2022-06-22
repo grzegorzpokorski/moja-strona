@@ -22,7 +22,7 @@ const About = ({ newestPosts }) => {
       />
       <MainHeader>
         <Hero
-          title="Cześć, jestem Grzegorz!"
+          title="Cześć, jestem Grzegorz 👋"
           description={
             <>
               <p>
@@ -60,7 +60,7 @@ const About = ({ newestPosts }) => {
       </MainHeader>
       <Main>
         <PostsExcerpt
-          title="Najnowsze aktykuły na blogu"
+          title="Najnowsze aktykuły na blogu 🔥"
           subtitle="blog"
           posts={newestPosts}
           button={{ label: "Zobacz wszystkie wpisy", href: "/blog" }}
