@@ -34,8 +34,9 @@ const About = ({ newestPosts }) => {
                 artykułów na moim <Link href="/blog">blogu</Link>.
               </p>
               <p>
-                Jeśli interesuje Cię współpraca lub po prostu chcesz pogadać
-                śmiało <Link href="/kontakt">kontaktuj się ze mną</Link>.
+                Jeśli interesuje Cię współpraca lub po prostu chcesz zadać
+                pytanie śmiało <Link href="/kontakt">kontaktuj się ze mną</Link>
+                .
               </p>
             </>
           }

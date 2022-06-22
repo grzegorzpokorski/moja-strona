@@ -22,8 +22,8 @@ const Contact = () => {
           description={
             <>
               <p>
-                Jeśli interesuje Cię współpraca lub po prostu chcesz pogadać,
-                nie bój się napisać na mojego maila:
+                Jeśli interesuje Cię współpraca lub po prostu chcesz zadać
+                pytanie, nie bój się napisać na mojego maila:
               </p>
               <p>
                 <Link
