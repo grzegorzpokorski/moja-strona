@@ -5,12 +5,13 @@ const Header = ({
   centered,
   titleAsH1,
   children,
+  customClasses,
 }) => {
   return (
     <header
       className={`w-full mr-auto flex flex-col gap-4 ${
         centered ? "text-center mx-auto md:w-4/6" : ""
-      }`}
+      } ${customClasses ? customClasses : ""}`}
     >
       {subtitle && (
         <span className={`uppercase font-bold text-green`}>{subtitle}</span>
