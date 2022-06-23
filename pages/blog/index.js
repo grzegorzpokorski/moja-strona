@@ -25,13 +25,6 @@ const Blog = ({ posts, categories }) => {
         <Section bgColor="bg-whiteGreen" withMarginOnTop>
           <HeaderWithDropdown
             title="Artykuły, ciekawostki z świata stron internetowych i nie tylko 🔥"
-            description={
-              <p>
-                Wszystkie artykuły, które pojawiły się na blogu. Przeważa
-                tematyka związana z tworzeniem stron internetowych, ale znajdzie
-                się coś również z mniej technicznych zagadnień.
-              </p>
-            }
             titleAsH1
             categories={categories}
             initialDropdownValue="Kategorie"
