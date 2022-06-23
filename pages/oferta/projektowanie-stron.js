@@ -20,13 +20,13 @@ const Offer = () => {
   return (
     <>
       <Head
-        title={`Projektowanie graficzne ${addressSeparator} ${siteName}`}
-        description={`Projektowanie graficzne stron internetowych z intuicyjnym interfejsem użytkownika.`}
+        title={`Projektowanie stron ${addressSeparator} ${siteName}`}
+        description={`Projektowanie stron internetowych z intuicyjnym interfejsem użytkownika.`}
         contentType="website"
       />
       <MainHeader>
         <Hero
-          title="Projektowanie graficzne stron internetowych oraz grafik użytkowych 🎨"
+          title="Projektowanie stron internetowych 💎"
           description={
             <>
               <p>

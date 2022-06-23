@@ -18,8 +18,8 @@ const mainMenu = [
         label: "Kodowanie projektów graficznych",
       },
       {
-        href: "/oferta/projektowanie-graficzne",
-        label: "Projektowanie graficzne",
+        href: "/oferta/projektowanie-stron",
+        label: "Projektowanie stron",
       },
     ],
   },

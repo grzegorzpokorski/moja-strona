@@ -58,7 +58,7 @@ export const servicesList = [
     },
   },
   {
-    subtitle: "Projektowanie graficzne",
+    subtitle: "Projektowanie stron",
     title: "Potrzebujesz projektu graficznego?",
     content: (
       <>
@@ -76,7 +76,7 @@ export const servicesList = [
         </p>
       </>
     ),
-    href: "/oferta/projektowanie-graficzne",
+    href: "/oferta/projektowanie-stron",
     image: {
       src: designImage,
       alt: "człowiek biegnie z ołówkiem projektować nową stronę interneową",

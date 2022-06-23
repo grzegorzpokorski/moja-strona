@@ -27,7 +27,7 @@ export const offerList = [
   },
   {
     icon: <FontAwesomeIcon icon={faImages} />,
-    title: "Projektowanie graficzne",
+    title: "Projektowanie stron",
     description: (
       <p>
         Chodzi Ci po głowie nowy projekt? A może nudzi Cię twoja stara strona
@@ -35,6 +35,6 @@ export const offerList = [
         zaprojektuję Twoją nową stronę internetową.
       </p>
     ),
-    href: "/oferta/projektowanie-graficzne",
+    href: "/oferta/projektowanie-stron",
   },
 ];
