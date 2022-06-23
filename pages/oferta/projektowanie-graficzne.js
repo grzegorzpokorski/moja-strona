@@ -21,7 +21,7 @@ const Offer = () => {
     <>
       <Head
         title={`Projektowanie graficzne ${addressSeparator} ${siteName}`}
-        description={`Projektowanie graficzne stron internetowych oraz grafiki użytkowej takiej jak ulotki, banery, wizytówki.`}
+        description={`Projektowanie graficzne stron internetowych z intuicyjnym interfejsem użytkownika.`}
         contentType="website"
       />
       <MainHeader>
@@ -30,16 +30,13 @@ const Offer = () => {
           description={
             <>
               <p>
-                Przygotuję dla Ciebie projekt graficzny Twojej{" "}
-                <Link href="/oferta/tworzenie-stron-internetowych">
-                  strony internetowej
-                </Link>
-                , zaskocz swoją konkurencje przyciągającym wzrok banerem
-                reklamowym.
+                Zaprojektuję dla Ciebie stronę internetową z intuicyjnym i
+                prostym w obsłudze interfejsem, dostarczając indywidualną
+                makietę Twojej witryny.
               </p>
               <p>
-                Oferuję również profesjonalne projekty ulotek oraz wizytówek dla
-                Twojej działalności.
+                Pomagam dostosować twoją stronę do panujących trendów w
+                projektowaniu stron internetowych.
               </p>
             </>
           }
@@ -66,60 +63,75 @@ const Offer = () => {
         <Section bgColor="bg-whiteGreen">
           <Header
             subtitle="Projektowanie graficzne"
-            title="Szeroka oferta usług związnych z grafiką użytkową: ulotki, banery, makiety stron internetowych."
+            title="Zaprojektuję dla Ciebie piekną, nowoczesną stronę internetową."
           />
           <Content
             columns={2}
             withSpaceAbove
             content={
               <>
+                <h3>
+                  Dlaczego dobry interfejs użytkownika oraz wrażenie z
+                  użytkowania są tak ważne?
+                </h3>
                 <p>
-                  Posiadasz gotowy projekt graficzny twojej przyszłej strony
-                  internetowej? Kodowanie stron wymaga wiedzy technicznej,
-                  której nie zdobędziesz w kilka dni. Powierz zakodowanie strony
-                  profesjonaliście. Zachęcam do skorzystania z mojej
-                  profesjonalnej usługi konwersji projektów graficznych do w
-                  pełni funkcjonalnej strony internetowej — zaoszczędź czas i
-                  skup się na tym, co lubisz, a ja zajmę się twoją stroną.
+                  Jeśli chcesz zdobyć nowych użytkowników oraz zachęcić obecnych
+                  do korzystania z twojej strony internetowej musisz posiadać
+                  dopracowany interfejs użytkownika.
                 </p>
-                <h3>Dlaczego wybrać moje usługi?</h3>
                 <p>
-                  Wysokie noty osiągane przez moje strony w benchmarkach Google
-                  PageSpeed, GTmetrix czy Pingdom mogą Cię utwierdzić w
-                  przekonaniu, że wybierając moją usługę kodowanie szablonów
-                  graficznych, możesz liczyć na produkt z najwyższej półki{" "}
+                  Dobrze zaprojektowana strona internetowa nie tylko przyciąga
+                  swym wyglądem, lecz pomaga użytkownikom{" "}
                   <strong>
-                    wykonany przy użyciu najnowszych technologi i bibliotek
+                    w pełni korzystać z oferowanych funkcjonalności
+                  </strong>
+                  , które posiada. Odpowiedni układ i wyeksponowanie treści
+                  sprawia, że odwiedzający Twoją stronę{" "}
+                  <strong>
+                    chętniej ją odwiedzają i mają o niej pozytywne zdanie
                   </strong>
                   .
                 </p>
                 <p>
-                  Istnieje wiele agencji, które oferują usługi PSD do HTML, ale
-                  większość z nich używa przestarzałych technologii i
-                  niechlujnych praktyk kodowania do kodowania Twojej witryny.
-                  Jestem inny, mój{" "}
-                  <strong>
-                    kod przygotowuję z myślą o kliencie i jego potrzebach
-                  </strong>
-                  . Posiadam szeroką wiedzę z zakresu HTML i CSS oraz
-                  frameworków takich jak Bootstrap czy Tailwind. Co więcej, wiem
-                  jak dostosować kod strony do potrzeb konkretnego projektu, aby
-                  klient otrzymał dokładnie to, czego potrzebuje.
+                  Poprawne funkcjonowanie serwisu internetowego nie jest i nie
+                  powinno zależeć od wyglądu jej interfejsu. Warto jednak
+                  poważnie podejść do projektu graficznego Swojej strony
+                  internetowej. Istnieją bardzo konkurencyjne branże, gdzie{" "}
+                  <strong>o sukcesie mogą decydować szczegóły</strong>, dlatego
+                  warto wyróżnić się z tłumu, oferując jak najlepsze wrażenia z
+                  korzystania z Twojej witryny internetowej.
                 </p>
-                <p>Wspieram następujące formaty plików graficznych:</p>
+                <p>
+                  Dobry interfejs użytkownika powinien uwzgledniać miedzy
+                  innymi:
+                </p>
                 <ul>
                   <li>
-                    <strong>psd</strong> — pliki graficzne Adobe Photoshop,
+                    właściwie dobraną, czytelną czcionkę, aby zapoznawanie się z
+                    treścią strony było przyjemnie,
                   </li>
                   <li>
-                    <strong>figma</strong> — pliki graficzne Figma.
+                    oferować unikalny design, nie zmieniając przy tym
+                    przyzwyczajeń użytkowników internetu. Oznacza to, że
+                    elementy takie jak nawigacja czy guziki powinny znajdować
+                    się w intuicyjnych miejscach. Frustracja wynikająca z
+                    poszukiwania np. elementów nawigacyjnych to coś, czego
+                    chcemy uniknąć,
+                  </li>
+                  <li>
+                    design strony powinien podkreślać oraz uwydatniać jej treść,
+                    nie dominować i odwracać uwagę.
                   </li>
                 </ul>
                 <p>
-                  Moje finalne produkty są łatwe do wdrożenia. Modułowość
-                  poszczególnych elementów, szczegółowe opisanie plików
-                  źródłowych znacznie przyspieszy pełne wdrożenie twojej strony
-                  internetowej oraz jej późniejsze utrzymanie.
+                  Powyższe punkty to tylko niektóre z bardzo istotnych aspektów,
+                  które należy brać pod uwagę przy projektowaniu interfesu
+                  użytkownika.
+                </p>
+                <p>
+                  Posiadam kilu letnie doświadczenie oraz wiedzę z zakresu
+                  projektowania stron internetowych. Chętnie pomogę Ci zadbać o
+                  szczegóły twojej strony internetowej.
                 </p>
               </>
             }
@@ -131,21 +143,25 @@ const Offer = () => {
           content={
             <>
               <p>
-                Mając do dyspozycji projekt graficzny oraz dobrze przygotowaną
-                specyfikację, wykorzystuje najnowsze,&nbsp;
-                <strong>niezawodne dostępne narządzia oraz technologię</strong>
-                &nbsp;do przekształcenia jej w&nbsp;
-                <strong>
-                  funkcjonalną, wolną od błędów i responsywną stronę internetową
-                </strong>
-                .
+                Chcąć uzyskać jak najlepszy rezultat działań związanych z
+                projektowaniem stron internetowych, konieczne jest korzystanie z
+                <strong>nowoczesnych narzędzi</strong>.
               </p>
               <p>
-                Do zaprogramowania oraz wdrożenia projektu wykorzystuję
-                technologie takie jak:{" "}
-                <strong>HTML5, CSS3, PHP7, Java Script ES6+</strong>, oraz
-                praktyki:&nbsp;<strong>Mobile First, BEM</strong>. Wszystko to
-                aby dostarczyć jak najlepszy jakościowo produkt.
+                Do przygotowania Twojego indywidualnego oraz dopracowanego
+                projektu strony internetowej wykożystuje zaawansowane nażędzie
+                jakim jest program <strong>Figma</strong>. Pieknie wyglądające,
+                dopasowane do tematyki strony, ilustracje czerpię z{" "}
+                <strong>sprawdzonych banków fotografi oraz grafik</strong> jak.{" "}
+                <Link href="https://unsplash.com">Unsplash</Link>,{" "}
+                <Link href="https://pixabay.com">Pixabay</Link>. W zależności od
+                projektu sam przygodowuję potrzeben materiały używając do tego
+                programu do obróbki graficznej <strong>Abobe Photoshop</strong>.
+              </p>
+              <p>
+                Inspiracje i pomysły zbiram wzorując się na najlepszych,
+                starając się dostrzec pozytywne trendy kształtujące się w
+                branży, aby znaleź dla nich zastosowanie w moich pracach.
               </p>
             </>
           }
@@ -172,63 +188,47 @@ const Offer = () => {
           }}
           steps={[
             {
-              title: "Omówienie projektu do zakodowania",
+              title: "Zapoznanie się z projektem",
               content: (
                 <p>
-                  Początkowo najważniejsze jest dobre zrozumienie potrzeb i
-                  oczekiwań klienta. Na tym etapie omawiamy projekt graficzny
-                  oraz ustalamy szczegóły, jak ma wyglądać finalna zakodowana
-                  strona — upewniam się, że wszystkie szczegóły zostały
-                  dopracowane przez przystąpieniem do kodowania.
+                  Pierwszą sprawą, która trzeba się zająć przed projektowaniem,
+                  jest wzajemne zrozumienie Twoich potrzeb i oczekiwań. Wszelkie
+                  sporne aspekty projektu powinny być na tym etapie dokładnie
+                  omówione, aby finalnie wypracować jasno określony zakres
+                  działań pozwalający dostarczyć dokładnie to, czego oczekujesz.
                 </p>
               ),
             },
             {
-              title: "Kodowanie",
+              title: "Produkcja",
               content: (
                 <p>
-                  Mając dokładną specyfikację projektu, dokładnie krok po kroku
-                  konwertuję projekt graficzny, pamiętając, aby szczegółowo
-                  opisywać tworzony kod. Takie podejście gwarantuje realizacje
-                  zleconych prac w sposób systematyczny i uporządkowany oraz co
-                  ważne terminowo. Finalny kod sam się tłumaczy, pozwalając na
-                  przyjemne i nieproblematyczne wdrożenie i zarządzanie w
-                  późniejszym czasie.
+                  Na tym etapie staram się wykorzystać całą moją wiedzę oraz
+                  umiejętności, wspomagająć się nowoczesnymi narzędziami oraz
+                  profesjonalnymi materiałami, aby dostarczyć niepowtarzalny
+                  projekt o doskonałej strukturze, intuicyjnym układzie, który
+                  cieszy oko swymi kolorami.Na tym etapie staram się wykorzystać
+                  całą moją wiedzę oraz umiejętności, wspomagając się
+                  nowoczesnymi narzędziami oraz profesjonalnymi materiałami, aby
+                  dostarczyć niepowtarzalny projekt o doskonałej strukturze,
+                  intuicyjnym układzie, który cieszy oko swymi kolorami.
                 </p>
               ),
             },
             {
-              title: "Testowanie i optymalizacja",
+              title: "Dostarczenie projektu",
               content: (
                 <p>
-                  Po zakończeniu prac związanych z kodowaniem strony przechodzę
-                  do etapu testowania oraz końcowych optymalizacji. Strona
-                  internetowa testowana jest pod kątem szybkości, wydajności,
-                  poprawności zastosowanych znaczników. Prawidłowa prezentacja
-                  strony we wszystkich popularnych przeglądarkach jest brana na
-                  poważnie. Pocięte grafiki konwertowane są do nowoczesnych
-                  formatów oferujących wysoką wydajność, nie pomniejszając przy
-                  tym ich jakości.
-                </p>
-              ),
-            },
-            {
-              title: "Dostarczenie finalnych plików",
-              content: (
-                <p>
-                  Dzięki metodycznemu podejściu do realizacji zleceń oraz
-                  dokładnej specyfikacji skomplikowany proces konwersji projektu
-                  graficznego do statycznej strony internetowej w HTML musi
-                  okazać się sukcesem! Teraz możesz cieszyć się doskonale
-                  zakodowaną stroną internetową, mając wszystkie potrzebne pliki
-                  HTML, CSS oraz grafiki.
+                  Dostarczam projekt, zgodny z ustaleniami oraz wymaganiami. Po
+                  ostatecznej akceptacji rezlizacja projektu Twojej strony
+                  internetowej zostaje zakończona.
                 </p>
               ),
             },
           ]}
         />
         <Banner
-          title="Zbuduj swoją ultra szybką stronę internetową ze mną!"
+          title="Potrzebujesz niepowtarzalnego, doskonałego projektu strony internetowej?"
           description="Chętnie pomogę zrealizować Twój projekt."
           buttons={[
             {
