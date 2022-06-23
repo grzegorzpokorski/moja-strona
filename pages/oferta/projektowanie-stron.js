@@ -71,7 +71,7 @@ const Offer = () => {
             content={
               <>
                 <h3>
-                  Dlaczego dobry interfejs użytkownika oraz wrażenie z
+                  Dlaczego dobry interfejs użytkownika oraz wrażenia z
                   użytkowania są tak ważne?
                 </h3>
                 <p>
@@ -95,11 +95,11 @@ const Offer = () => {
                 <p>
                   Poprawne funkcjonowanie serwisu internetowego nie jest i nie
                   powinno zależeć od wyglądu jej interfejsu. Warto jednak
-                  poważnie podejść do projektu graficznego Swojej strony
-                  internetowej. Istnieją bardzo konkurencyjne branże, gdzie{" "}
+                  poważnie podejść do projektu graficznego strony internetowej.
+                  Istnieją bardzo konkurencyjne branże, gdzie{" "}
                   <strong>o sukcesie mogą decydować szczegóły</strong>, dlatego
                   warto wyróżnić się z tłumu, oferując jak najlepsze wrażenia z
-                  korzystania z Twojej witryny internetowej.
+                  korzystania z witryny internetowej.
                 </p>
                 <p>
                   Dobry interfejs użytkownika powinien uwzgledniać miedzy
@@ -126,7 +126,7 @@ const Offer = () => {
                 <p>
                   Powyższe punkty to tylko niektóre z bardzo istotnych aspektów,
                   które należy brać pod uwagę przy projektowaniu interfesu
-                  użytkownika.
+                  użytkownika witryny internetowej.
                 </p>
                 <p>
                   Posiadam kilu letnie doświadczenie oraz wiedzę z zakresu
@@ -143,25 +143,25 @@ const Offer = () => {
           content={
             <>
               <p>
-                Chcąć uzyskać jak najlepszy rezultat działań związanych z
+                Chcąc uzyskać jak najlepszy rezultat działań związanych z
                 projektowaniem stron internetowych, konieczne jest korzystanie z
-                <strong>nowoczesnych narzędzi</strong>.
+                <strong> nowoczesnych narzędzi</strong>.
               </p>
               <p>
                 Do przygotowania Twojego indywidualnego oraz dopracowanego
-                projektu strony internetowej wykożystuje zaawansowane nażędzie
-                jakim jest program <strong>Figma</strong>. Pieknie wyglądające,
-                dopasowane do tematyki strony, ilustracje czerpię z{" "}
-                <strong>sprawdzonych banków fotografi oraz grafik</strong> jak.{" "}
-                <Link href="https://unsplash.com">Unsplash</Link>,{" "}
+                projektu strony internetowej wykorzystuje zaawansowane
+                narzędzie, jakim jest program <strong>Figma</strong>. Pieknie
+                wyglądające, dopasowane do tematyki strony, ilustracje czerpię
+                ze <strong>sprawdzonych banków fotografii oraz grafik</strong>{" "}
+                jak <Link href="https://unsplash.com">Unsplash</Link>,{" "}
                 <Link href="https://pixabay.com">Pixabay</Link>. W zależności od
-                projektu sam przygodowuję potrzeben materiały używając do tego
-                programu do obróbki graficznej <strong>Abobe Photoshop</strong>.
+                projektu sam przygotowuje potrzebne materiały. Pomaga mi w tym
+                program do obróbki grafiki <strong>Abobe Photoshop</strong>.
               </p>
               <p>
-                Inspiracje i pomysły zbiram wzorując się na najlepszych,
+                Inspiracje i pomysły zbieram, wzorując się na najlepszych,
                 starając się dostrzec pozytywne trendy kształtujące się w
-                branży, aby znaleź dla nich zastosowanie w moich pracach.
+                branży, aby znaleźć dla nich zastosowanie w moich pracach.
               </p>
             </>
           }
@@ -206,11 +206,11 @@ const Offer = () => {
                   Na tym etapie staram się wykorzystać całą moją wiedzę oraz
                   umiejętności, wspomagająć się nowoczesnymi narzędziami oraz
                   profesjonalnymi materiałami, aby dostarczyć niepowtarzalny
-                  projekt o doskonałej strukturze, intuicyjnym układzie, który
-                  cieszy oko swymi kolorami.Na tym etapie staram się wykorzystać
-                  całą moją wiedzę oraz umiejętności, wspomagając się
-                  nowoczesnymi narzędziami oraz profesjonalnymi materiałami, aby
-                  dostarczyć niepowtarzalny projekt o doskonałej strukturze,
+                  projekt o doskonałej strukturze i intuicyjnym układzie, który
+                  cieszy oko swymi kolorami. Na tym etapie staram się
+                  wykorzystać całą moją wiedzę oraz umiejętności, wspomagając
+                  się nowoczesnymi narzędziami oraz profesjonalnymi materiałami,
+                  aby dostarczyć niepowtarzalny projekt o doskonałej strukturze,
                   intuicyjnym układzie, który cieszy oko swymi kolorami.
                 </p>
               ),
