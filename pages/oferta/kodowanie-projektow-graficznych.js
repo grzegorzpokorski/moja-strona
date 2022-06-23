@@ -11,7 +11,7 @@ import Process from "../../components/Process";
 import Content from "../../components/Content";
 import Link from "../../components/Link";
 
-import heroImage from "../../public/images/pages.webp";
+import heroImage from "../../public/images/code.webp";
 import logosImage from "../../public/images/logos.webp";
 
 import addressSeparator from "../../data/seo/addressSeparator";
@@ -47,7 +47,7 @@ const Offer = () => {
             </>
           }
           image={{
-            alt: "tworzenie strony na kanapie",
+            alt: "szczęśliwy człowiek koduje na sofie",
             src: heroImage,
           }}
           buttons={[
