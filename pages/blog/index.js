@@ -1,11 +1,10 @@
 import Head from "../../components/Head";
 import MainHeader from "../../components/MainHeader";
 import Section from "../../components/Section";
-import Header from "../../components/Header";
+import HeaderWithDropdown from "../../components/HeaderWithDropdown";
 import Main from "../../components/Main";
 import PostsList from "../../components/PostsList";
 import Banner from "../../components/Banner";
-import CategoriesTabs from "../../components/CategoriesTabs";
 import {
   getCategories,
   getPublishedPostsOrderByDate,
@@ -24,11 +23,19 @@ const Blog = ({ posts, categories }) => {
       <MainHeader />
       <Main>
         <Section bgColor="bg-whiteGreen" withMarginOnTop>
-          <Header
+          <HeaderWithDropdown
             title="Artykuły, ciekawostki z świata stron internetowych i nie tylko 🔥"
+            description={
+              <p>
+                Wszystkie artykuły, które pojawiły się na blogu. Przeważa
+                tematyka związana z tworzeniem stron internetowych, ale znajdzie
+                się coś również z mniej technicznych zagadnień.
+              </p>
+            }
             titleAsH1
+            categories={categories}
+            initialDropdownValue="Kategorie"
           />
-          <CategoriesTabs categories={categories} />
           <PostsList posts={posts} withMarginOnTop />
         </Section>
         <Banner

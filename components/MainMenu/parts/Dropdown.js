@@ -3,7 +3,7 @@ import Link from "../../Link";
 const Dropdown = ({ items, currentPath }) => {
   return (
     <ul
-      className={`relative lg:absolute mt-6 lg:mt-0 flex flex-col gap-4 border-l-2 lg:border-none border-l-green pl-4 lg:p-6 lg:bg-white lg:shadow-md lg:w-64 transition-opacity dropdown__menu`}
+      className={`relative lg:absolute mt-6 lg:mt-0 flex flex-col gap-4 border-l-2 lg:border-none border-l-green pl-4 lg:p-6 lg:bg-white lg:shadow-md lg:w-64 transition-opacity navbar-dropdown__menu`}
     >
       {items.map((item) => (
         <li key={item.href}>

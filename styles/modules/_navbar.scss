@@ -1,10 +1,10 @@
-.dropdown {
-  &:hover .dropdown__menu {
+.navbar-dropdown {
+  &:hover .navbar-dropdown__menu {
     visibility: visible;
     opacity: 1;
   }
 
-  &:hover .dropdown__toggle {
+  &:hover .navbar-dropdown__toggle {
     @media (min-width: theme("screens.lg")) {
       color: theme("textColor.green");
 

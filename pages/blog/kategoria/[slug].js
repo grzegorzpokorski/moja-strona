@@ -1,7 +1,7 @@
 import Head from "../../../components/Head";
 import MainHeader from "../../../components/MainHeader";
 import Section from "../../../components/Section";
-import Header from "../../../components/Header";
+import HeaderWithDropdown from "../../../components/HeaderWithDropdown";
 import Main from "../../../components/Main";
 import PostsList from "../../../components/PostsList";
 import Banner from "../../../components/Banner";
@@ -12,7 +12,7 @@ import {
 import siteName from "./../../../data/seo/siteName";
 import addressSeparator from "../../../data/seo/addressSeparator";
 
-const Blog = ({ posts, slug }) => {
+const Blog = ({ posts, slug, categories }) => {
   return (
     <>
       <Head
@@ -23,7 +23,12 @@ const Blog = ({ posts, slug }) => {
       <MainHeader />
       <Main>
         <Section bgColor="bg-whiteGreen" withMarginOnTop>
-          <Header title={`Kategoria: ${slug}`} titleAsH1 />
+          <HeaderWithDropdown
+            title={`Kategoria: ${slug}`}
+            titleAsH1
+            categories={categories}
+            initialDropdownValue={slug}
+          />
           <PostsList posts={posts} withMarginOnTop />
         </Section>
         <Banner
@@ -47,10 +52,12 @@ export const getStaticProps = async ({ params }) => {
   const posts = getPublishedPostsOrderByDate().filter(
     (post) => post.frontmatter.category == slug
   );
+  const categories = getCategories();
 
   return {
     props: {
       posts: posts,
+      categories: categories,
       slug,
     },
   };

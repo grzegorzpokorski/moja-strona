@@ -7,15 +7,15 @@ const MenuItem = (item) => {
   const currentPath = useRouter().asPath.split("#")[0];
 
   return item.button ? (
-    <li className={item.childrens ? `relative dropdown` : ``}>
+    <li className={item.childrens ? `relative navbar-dropdown` : ``}>
       <Button label={item.label} href={item.href} />
     </li>
   ) : (
-    <li className={item.childrens ? `relative dropdown` : ``}>
+    <li className={item.childrens ? `relative navbar-dropdown` : ``}>
       <Link
         href={item.href}
         className={`transition-all ${
-          item.childrens ? "dropdown__toggle" : ""
+          item.childrens ? "navbar-dropdown__toggle" : ""
         } ${
           item.href === currentPath
             ? "text-green"
