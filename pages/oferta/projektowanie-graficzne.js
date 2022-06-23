@@ -6,18 +6,15 @@ import Banner from "../../components/Banner";
 import ContentWithImage from "../../components/ContentWithImage";
 import Section from "../../components/Section";
 import Header from "../../components/Header";
-import BoxesList from "../../components/BoxesList";
 import Process from "../../components/Process";
 import Content from "../../components/Content";
 import Link from "../../components/Link";
 
-import heroImage from "../../public/images/code.webp";
+import heroImage from "../../public/images/design.webp";
 import logosImage from "../../public/images/logos-graphics.webp";
 
 import addressSeparator from "../../data/seo/addressSeparator";
 import siteName from "../../data/seo/siteName";
-
-import { codingFeatures } from "../../data/content/codingFeatures";
 
 const Offer = () => {
   return (
@@ -37,12 +34,12 @@ const Offer = () => {
                 <Link href="/oferta/tworzenie-stron-internetowych">
                   strony internetowej
                 </Link>
-                , zaskoczę Twoją konkurencje przyciągającym wzrok banerem
+                , zaskocz swoją konkurencje przyciągającym wzrok banerem
                 reklamowym.
               </p>
               <p>
-                Oferuję profesjonalne projekty ulotek oraz wizytówek dla Twojej
-                działalności.
+                Oferuję również profesjonalne projekty ulotek oraz wizytówek dla
+                Twojej działalności.
               </p>
             </>
           }
