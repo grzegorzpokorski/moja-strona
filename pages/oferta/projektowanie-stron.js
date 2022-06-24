@@ -228,8 +228,8 @@ const Offer = () => {
           ]}
         />
         <Banner
-          title="Potrzebujesz niepowtarzalnego, doskonałego projektu strony internetowej?"
-          description="Chętnie pomogę zrealizować Twój projekt."
+          title="Potrzebujesz niepowtarzalnego, pięknego projektu strony internetowej?"
+          description="Chętnie zaprojektuję dla Ciebie Twoją nową stronę internetową."
           buttons={[
             {
               label: "Skontaktuj się ze mną",

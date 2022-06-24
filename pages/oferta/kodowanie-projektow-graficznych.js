@@ -244,8 +244,8 @@ const Offer = () => {
           ]}
         />
         <Banner
-          title="Zbuduj swoją ultra szybką stronę internetową ze mną!"
-          description="Chętnie pomogę zrealizować Twój projekt."
+          title="Chętnie zamienię Twój projekt grafczny w doskonale zakodowaną stronę internetową!"
+          description="Pomogę zrealizować Twój projekt dostarczając wolny od błędów kod."
           buttons={[
             {
               label: "Skontaktuj się ze mną",
