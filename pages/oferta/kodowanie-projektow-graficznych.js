@@ -39,7 +39,7 @@ const Offer = () => {
               </p>
               <p>
                 Oferuję profesjonalna usługę konwersji{" "}
-                <Link href="/oferta/projektowanie-graficzne">
+                <Link href="/oferta/projektowanie-stron">
                   projektów graficznych
                 </Link>{" "}
                 do doskonale zakodowanej, statycznej strony internetowej w HTML.
