@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 
 import useStickyElement from "../../hooks/useStickyElement";
 
+import ClickAwayListener from "../ClickAwayListener";
 import Logo from "../Logo";
 import Hamburger from "../Hamburger";
 import MainMenu from "../MainMenu";
@@ -10,40 +11,14 @@ import MainMenu from "../MainMenu";
 const MainHeader = ({ children }) => {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
   const handleMobileMenuIsOpen = () => setMobileMenuIsOpen(!mobileMenuIsOpen);
-
-  useEffect(() => {
-    const handleEscapeKey = ({ key }) => {
-      key && key === "Escape" && setMobileMenuIsOpen(false);
-    };
-
-    const handleClickOffTheMenu = ({ target }) => {
-      const menu = document.getElementById("menu");
-      const hamburger = document.getElementById("hamburger");
-
-      do {
-        if (target === menu || target === hamburger) return;
-        target = target.parentNode;
-      } while (target != null);
-
-      setMobileMenuIsOpen(false);
-    };
-
-    if (mobileMenuIsOpen) {
-      window.addEventListener("keydown", handleEscapeKey);
-      window.addEventListener("click", handleClickOffTheMenu);
-    }
-
-    return () => {
-      window.removeEventListener("keydown", handleEscapeKey);
-      window.removeEventListener("click", handleClickOffTheMenu);
-    };
-  }, [mobileMenuIsOpen]);
+  const handleClickOffTheMenu = () => {
+    if (mobileMenuIsOpen) setMobileMenuIsOpen(false);
+  };
 
   const [isSticky] = useStickyElement();
 
   const [isHome, setIsHome] = useState(false);
   const { pathname } = useRouter();
-
   useEffect(() => {
     if (pathname === "/") {
       setIsHome(true);
@@ -59,11 +34,13 @@ const MainHeader = ({ children }) => {
       >
         <section className="container mx-auto px-3 h-20 lg:h-28 flex flex-row justify-between items-center">
           <Logo isHome={isHome} isTitle={isHome} />
-          <Hamburger
-            mobileMenuIsOpen={mobileMenuIsOpen}
-            handleMobileMenuIsOpen={handleMobileMenuIsOpen}
-          />
-          <MainMenu mobileMenuIsOpen={mobileMenuIsOpen} />
+          <ClickAwayListener onClickAway={handleClickOffTheMenu}>
+            <Hamburger
+              mobileMenuIsOpen={mobileMenuIsOpen}
+              handleMobileMenuIsOpen={handleMobileMenuIsOpen}
+            />
+            <MainMenu mobileMenuIsOpen={mobileMenuIsOpen} />
+          </ClickAwayListener>
         </section>
       </nav>
       {children}
