@@ -3,17 +3,20 @@
 
   &__button {
     position: relative;
+    transition: border-color theme("transitionDuration.150"),
+      color theme("transitionDuration.150");
 
     &::after {
       content: "";
       position: absolute;
       top: 50%;
-      transform: translateY(calc(-50%));
+      transform: translateY(-50%);
       right: theme("spacing.6");
       border-left: 0.35rem solid transparent;
       border-right: 0.35rem solid transparent;
       border-top: 0.35rem solid theme("colors.zinc.900");
-      transition: all theme("transitionDuration.150");
+      transition: border-top-color theme("transitionDuration.150"),
+        transform theme("transitionDuration.300");
     }
 
     &:hover::after {
@@ -31,6 +34,11 @@
 
   &__menu {
     display: none;
+    visibility: hidden;
+
+    &--willChangeTransform {
+      will-change: transform;
+    }
   }
 
   &--open {
@@ -41,11 +49,12 @@
 
     .dropdown__button::after {
       border-top-color: theme("colors.green");
-      transform: rotate(180deg);
+      transform: rotate(180deg) translateY(50%);
     }
 
     .dropdown__menu {
       display: block;
+      visibility: visible;
     }
   }
 }

@@ -1,7 +1,6 @@
-import React from "react";
 import DropdownItem from "./DropdownItem";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ClickAwayListener from "../../ClickAwayListener";
 const Dropdown = ({ categories, initialDropdownValue }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -14,6 +13,15 @@ const Dropdown = ({ categories, initialDropdownValue }) => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  useEffect(() => {
+    const handleEscapeKeyPress = ({ key }) =>
+      isDropdownOpen && key === "Escape" && setIsDropdownOpen(false);
+
+    window.addEventListener("keydown", handleEscapeKeyPress);
+
+    return () => window.removeEventListener("keydown", handleEscapeKeyPress);
+  });
+
   return (
     <div className={"w-full lg:w-4/12"}>
       <ClickAwayListener onClickAway={closeDropdown}>
@@ -23,16 +31,19 @@ const Dropdown = ({ categories, initialDropdownValue }) => {
           }`}
         >
           <button
-            className="h-16 px-6 border-2 border-zinc-400 hover:border-green text-left text-zinc-600 hover:text-green transition dropdown__button"
+            className="h-16 px-6 border-2 border-zinc-400 hover:border-green text-left text-zinc-600 hover:text-green dropdown__button"
             type="button"
             id="dropdownMenuButton"
             aria-expanded={isDropdownOpen}
+            aria-haspopup="true"
             onClick={toggleDropdown}
           >
             {initialDropdownValue}
           </button>
           <ul
-            className="flex flex-col py-4 bg-white shadow-md z-10 dropdown__menu"
+            className={`flex flex-col py-4 bg-white shadow-md z-10 dropdown__menu ${
+              isDropdownOpen ? "dropdown__menu--willChangeTransform" : ""
+            }`}
             aria-labelledby="dropdownMenuButton"
           >
             {categories &&
