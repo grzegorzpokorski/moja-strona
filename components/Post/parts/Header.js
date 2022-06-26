@@ -22,8 +22,12 @@ const Header = (props) => {
               className="inline-block w-12 h-0.5 bg-customGray text-separator"
               aria-hidden="true"
             ></span>
-            <time dateTime={dayjs(props.date).format("YYYY-MM-DD")}>
-              {dayjs(props.date).locale("pl").format("DD MMMM YYYY")}
+            <time
+              dateTime={dayjs(props.date, "YYYY.MM.DD").format("YYYY-MM-DD")}
+            >
+              {dayjs(props.date, "YYYY.MM.DD")
+                .locale("pl")
+                .format("DD MMMM YYYY")}
             </time>
           </span>
           <h1 className="font-bold text-3xl md:text-4xl">{props.title}</h1>

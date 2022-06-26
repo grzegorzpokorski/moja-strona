@@ -34,13 +34,13 @@ const PostItem = (post) => {
               {post.category}
             </Link>
             <time
-              dateTime={dayjs(post.date, "DD.MM.YYYY").format("YYYY-MM-DD")}
+              dateTime={dayjs(post.date, "YYYY.MM.DD").format("YYYY-MM-DD")}
             >
               <FontAwesomeIcon
                 icon={faCalendarDays}
                 className="mr-2 text-green"
               />
-              {dayjs(post.date).format("DD MMMM YYYY")}
+              {dayjs(post.date, "YYYY.MM.DD").format("DD MMMM YYYY")}
             </time>
           </div>
           <Link
