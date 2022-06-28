@@ -29,7 +29,11 @@
     top: 0;
     left: 0;
     right: 0;
-    transform: translateY(theme("spacing.16"));
+    transform: translateY(theme("spacing.12"));
+
+    @media (min-width: theme("screens.lg")) {
+      transform: translateY(theme("spacing.16"));
+    }
   }
 
   &__menu {

@@ -31,7 +31,7 @@ const Dropdown = ({ categories, initialDropdownValue }) => {
           }`}
         >
           <button
-            className="h-16 px-6 border-2 border-zinc-400 hover:border-green text-left text-zinc-600 hover:text-green dropdown__button"
+            className="h-12 lg:h-16 px-6 border-2 border-zinc-400 hover:border-green text-left text-zinc-600 hover:text-green dropdown__button"
             type="button"
             id="dropdownMenuButton"
             aria-expanded={isDropdownOpen}
@@ -41,7 +41,7 @@ const Dropdown = ({ categories, initialDropdownValue }) => {
             {initialDropdownValue}
           </button>
           <ul
-            className={`flex flex-col py-4 bg-white shadow-md z-10 dropdown__menu ${
+            className={`flex flex-col py-2 lg:py-4 bg-white shadow-md z-10 dropdown__menu ${
               isDropdownOpen ? "dropdown__menu--willChangeTransform" : ""
             }`}
             aria-labelledby="dropdownMenuButton"
