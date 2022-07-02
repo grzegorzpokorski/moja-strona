@@ -33,7 +33,6 @@ const Header = (props) => {
           <h1 className="font-bold text-3xl md:text-4xl">{props.title}</h1>
           <TagsList tags={props.tags} withMarginOnTop />
           <figure className="w-full h-60 md:h-80 lg:h-[30rem] overflow-hidden relative block mt-4">
-            {/* <figure className="w-full h-96 max-h-96 overflow-hidden relative block mt-12"> */}
             <Image
               src={props.featuredImage}
               alt=""
