@@ -24,24 +24,24 @@ export const faqs = [
         <p>
           Niektóre elementy mogące znaleźć się na stronie to: galeria typu
           lightbox, slider z referencjami, moduł bloga, mapa dojazdu, banery,
-          sekcja z rozwijanymi elementami typu akordeon itd — wszystko zależy od
-          potrzeb i ustaleń.
+          sekcja z rozwijanymi elementami typu akordeon itd. — wszystko zależy
+          od potrzeb i ustaleń.
         </p>
       </>
     ),
     open: false,
   },
   {
-    question: "Jak długo trwa wykonanie stron internetowej?",
+    question: "Jak długo trwa wykonanie strony internetowej?",
     answer: (
       <p>
-        Zazwyczaj wykonanie strony internetowej zajmuje dwóch do czterech
+        Zazwyczaj wykonanie strony internetowej zajmuje do dwóch do czterech
         tygodni. W tym czasie wykonywane są niezbędne prace takie jak projekt
         graficzny, kodowanie strony, wdrożenie do systemu cms Wordpress i wiele
         innych zadań koniecznych do zrealizowania projektu. Zbierane oraz
-        dostaarczane są również niezbędne materiały do wykonania zlecenia. Jeśli
-        nie masz tyle czasu zachęcam do <Link href="/kontakt">kontaktu</Link> -
-        postaram się znaleźć najbardziej optymalne rozwiązanie.
+        dostarczane są również niezbędne materiały do wykonania zlecenia. Jeśli
+        nie masz tyle czasu, zachęcam do <Link href="/kontakt">kontaktu</Link> -
+        postaram się znaleźć optymalne rozwiązanie.
       </p>
     ),
     open: false,
@@ -75,7 +75,7 @@ export const faqs = [
         pozwalające edytować zawartość stron internetowej, dodawać oraz
         zarządzać multimediami takimi jak zdjęcia bez konieczności posiadania
         umiejętności programowania. Edycja treści z wykorzystaniem CMS odbywa
-        się za pomocą formularzy oraz innych elementów nie wymagających
+        się za pomocą formularzy oraz innych elementów niewymagających
         specjalistycznej wiedzy.
       </p>
     ),
@@ -87,7 +87,7 @@ export const faqs = [
       <p>
         Realizowane projekty rozliczam poprzez umowę o dzieło lub umowę
         zlecenie. Istnieje możliwość wystawienia faktury przez za pośrednictwem
-        serwisu useme.
+        serwisu useme.eu.
       </p>
     ),
     open: false,
