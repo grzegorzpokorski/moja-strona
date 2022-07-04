@@ -1,4 +1,3 @@
-const slogan =
-  "Tworzę nowoczesne stron internetowe oraz dzielę się zdobywaną wiedzą.";
+const slogan = "Nowczesne, ultra szybkie strony internetowe";
 
 export default slogan;

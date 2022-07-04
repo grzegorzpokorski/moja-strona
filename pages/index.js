@@ -24,7 +24,7 @@ const Home = ({ newestPosts }) => {
   return (
     <>
       <Head
-        title={`${siteName} ${addressSeparator} ${slogan}`}
+        title={`${slogan} ${addressSeparator} ${siteName}`}
         description={`Tworzę nowoczesne strony internetowe oraz staram się dzielić zdobywaną wiedzą z innymi na blogu.`}
         contentType="website"
       />
