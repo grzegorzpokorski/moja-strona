@@ -24,7 +24,8 @@ export const servicesList = [
         </p>
         <p>
           <strong>Rozszerz zasięg swojej firmy i wyprzedź konkurencję</strong>{" "}
-          dzięki mojej profesjonalnie przygotowanej stronie internetowej.
+          dzięki profesjonalnie przygotowanej, ultra szybkiej stronie
+          internetowej.
         </p>
       </>
     ),
