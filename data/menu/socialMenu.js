@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBehance,
-  faInstagram,
+  faFacebook,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -12,9 +12,9 @@ const socialMenu = [
     icon: <FontAwesomeIcon icon={faBehance} />,
   },
   {
-    href: "https://instagram.com/grzegorz_pokorski",
-    label: "instagram",
-    icon: <FontAwesomeIcon icon={faInstagram} />,
+    href: "https://facebook.com/grzegorzpokorski.software",
+    label: "facebook",
+    icon: <FontAwesomeIcon icon={faFacebook} />,
   },
   {
     href: "https://linkedin.com/in/grzegorz-pokorski",

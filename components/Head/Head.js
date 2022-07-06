@@ -22,6 +22,7 @@ const Head = (props) => {
         sameAs: [
           "https://www.instagram.com/grzegorz_pokorski/",
           "https://www.linkedin.com/in/grzegorz-pokorski/",
+          "https://www.facebook.com/grzegorzpokorski.software/",
         ],
       },
       {
