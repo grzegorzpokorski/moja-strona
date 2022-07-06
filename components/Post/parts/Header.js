@@ -6,6 +6,8 @@ import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 dayjs.extend(customParseFormat);
 
+import slugify from "slugify";
+
 const Header = (props) => {
   return (
     <header className="pt-16 pb-8 md:pt-24 md:pb-12">
@@ -13,7 +15,10 @@ const Header = (props) => {
         <div className="w-full lg:w-8/12 mx-auto flex flex-col gap-4">
           <span className="flex flex-row items-center gap-3">
             <Link
-              href={`/blog/kategoria/${props.category}`}
+              href={`/blog/kategoria/${slugify(props.category, {
+                replacement: "-",
+                lower: true,
+              })}`}
               className="text-green hover:underline"
             >
               {props.category}

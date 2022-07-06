@@ -7,6 +7,8 @@ dayjs.extend(customParseFormat);
 import locale_pl from "dayjs/locale/pl";
 dayjs.locale("pl");
 
+import slugify from "slugify";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDays, faTag } from "@fortawesome/free-solid-svg-icons";
 
@@ -27,7 +29,10 @@ const PostItem = (post) => {
         <header className="p-8 pb-0 flex flex-col gap-3">
           <div className="flex flex-row gap-4 text-sm">
             <Link
-              href={`/blog/kategoria/${post.category}`}
+              href={`/blog/kategoria/${slugify(post.category, {
+                replacement: "-",
+                lower: true,
+              })}`}
               className="hover:underline"
             >
               <FontAwesomeIcon icon={faTag} className="mr-2 text-green" />

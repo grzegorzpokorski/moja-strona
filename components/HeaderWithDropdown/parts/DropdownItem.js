@@ -1,3 +1,5 @@
+import slugify from "slugify";
+
 const DropdownItem = ({ name, active = false }) => {
   return (
     <li
@@ -5,7 +7,13 @@ const DropdownItem = ({ name, active = false }) => {
         active ? "text-green" : "hover:text-green"
       } transition`}
     >
-      <a className="block dropdown__item" href={`/blog/kategoria/${name}`}>
+      <a
+        className="block dropdown__item"
+        href={`/blog/kategoria/${slugify(name, {
+          replacement: "-",
+          lower: true,
+        })}`}
+      >
         {name}
       </a>
     </li>

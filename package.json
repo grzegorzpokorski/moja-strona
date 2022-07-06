@@ -16,7 +16,8 @@
     "next-mdx-remote": "^4.0.3",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "rehype-img-size": "github:ksoichiro/rehype-img-size"
+    "rehype-img-size": "github:ksoichiro/rehype-img-size",
+    "slugify": "^1.6.5"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",

@@ -11,23 +11,24 @@ import {
 } from "../../../provider/posts";
 import siteName from "./../../../data/seo/siteName";
 import addressSeparator from "../../../data/seo/addressSeparator";
+import slugify from "slugify";
 
-const Blog = ({ posts, slug, categories }) => {
+const Blog = ({ posts, fullCategoryNameToPass, categories }) => {
   return (
     <>
       <Head
-        title={`${slug} ${addressSeparator} ${siteName}`}
-        description={`Wszytkie artykuły, które pojawiły się na blogu w ramach kategorii "${slug.toLowerCase()}".`}
+        title={`${fullCategoryNameToPass} ${addressSeparator} ${siteName}`}
+        description={`Wszytkie artykuły, które pojawiły się na blogu w ramach kategorii "${fullCategoryNameToPass}".`}
         contentType="website"
       />
       <MainHeader />
       <Main>
         <Section bgColor="bg-whiteGreen" withMarginOnTop>
           <HeaderWithDropdown
-            title={`Kategoria: ${slug}`}
+            title={`Kategoria: ${fullCategoryNameToPass}`}
             titleAsH1
             categories={categories}
-            initialDropdownValue={slug}
+            initialDropdownValue={fullCategoryNameToPass}
           />
           <PostsList posts={posts} withMarginOnTop />
         </Section>
@@ -50,22 +51,32 @@ const Blog = ({ posts, slug, categories }) => {
 export const getStaticProps = async ({ params }) => {
   const { slug } = params;
   const posts = getPublishedPostsOrderByDate().filter(
-    (post) => post.frontmatter.category == slug
+    (post) =>
+      slugify(post.frontmatter.category, {
+        replacement: "-",
+        lower: true,
+      }) == slug
   );
   const categories = getCategories();
+
+  const fullCategoryNameToPass = categories.filter(
+    (cat) => slugify(cat, { replacement: "-", lower: true }) === slug
+  );
 
   return {
     props: {
       posts: posts,
       categories: categories,
-      slug,
+      fullCategoryNameToPass,
     },
   };
 };
 
 export const getStaticPaths = async () => {
   const categories = getCategories();
-  const paths = categories.map((cat) => ({ params: { slug: cat } }));
+  const paths = categories.map((cat) => ({
+    params: { slug: slugify(cat, { replacement: "-", lower: true }) },
+  }));
 
   return {
     paths: paths,

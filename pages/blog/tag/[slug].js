@@ -6,22 +6,23 @@ import Main from "../../../components/Main";
 import PostsList from "../../../components/PostsList";
 import Banner from "../../../components/Banner";
 import { getPublishedPostsOrderByDate, getTags } from "../../../provider/posts";
+import slugify from "slugify";
 
 import addressSeparator from "../../../data/seo/addressSeparator";
 import siteName from "../../../data/seo/siteName";
 
-const Blog = ({ posts, slug }) => {
+const Blog = ({ posts, fullTagNameToPass }) => {
   return (
     <>
       <Head
-        title={`${slug} ${addressSeparator} ${siteName}`}
-        description={`Wszytkie artykuły, które pojawiły się na blogu w ramach tagu "${slug.toLowerCase()}".`}
+        title={`${fullTagNameToPass} ${addressSeparator} ${siteName}`}
+        description={`Wszytkie artykuły, które pojawiły się na blogu w ramach tagu "${fullTagNameToPass}".`}
         contentType="website"
       />
       <MainHeader />
       <Main>
         <Section bgColor="bg-whiteGreen" withMarginOnTop>
-          <Header title={`Tag: ${slug}`} titleAsH1 />
+          <Header title={`Tag: ${fullTagNameToPass}`} titleAsH1 />
           <PostsList posts={posts} withMarginOnTop />
         </Section>
         <Banner
@@ -43,20 +44,29 @@ const Blog = ({ posts, slug }) => {
 export const getStaticProps = async ({ params }) => {
   const { slug } = params;
   const posts = getPublishedPostsOrderByDate().filter((post) =>
-    post.frontmatter.tags.includes(slug)
+    post.frontmatter.tags
+      .map((tag) => slugify(tag, { replacement: "-", lower: true }))
+      .includes(slug)
+  );
+  const tags = getTags();
+
+  const fullTagNameToPass = tags.filter(
+    (tag) => slugify(tag, { replacement: "-", lower: true }) === slug
   );
 
   return {
     props: {
       posts: posts,
-      slug,
+      fullTagNameToPass,
     },
   };
 };
 
 export const getStaticPaths = async () => {
   const tags = getTags();
-  const paths = tags.map((tag) => ({ params: { slug: tag } }));
+  const paths = tags.map((tag) => ({
+    params: { slug: slugify(tag, { replacement: "-", lower: true }) },
+  }));
 
   return {
     paths: paths,
