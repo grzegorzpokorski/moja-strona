@@ -1,4 +1,8 @@
 .accordion {
+  &__item {
+    overflow: hidden;
+  }
+
   &__title {
     position: relative;
 
@@ -11,22 +15,32 @@
       border-left: 0.35rem solid transparent;
       border-right: 0.35rem solid transparent;
       border-top: 0.35rem solid theme("colors.zinc.900");
+      transition: transform theme("transitionDuration.500"),
+        border theme("transitionDuration.300");
     }
-  }
 
-  &[open] &__title,
-  &:hover &__title {
-    background-color: theme("colors.green");
-    color: theme("colors.white");
+    &:hover {
+      color: theme("colors.white");
+      background-color: theme("colors.green");
+    }
 
-    &::after {
+    &:hover::after {
       border-top-color: theme("colors.white");
     }
+
+    &--active {
+      color: theme("colors.white");
+      background-color: theme("colors.green");
+
+      &::after {
+        border-top-color: theme("colors.white");
+        transform: rotateZ(-180deg);
+      }
+    }
   }
 
-  &[open] &__title {
-    &::after {
-      transform: rotateX(-180deg);
-    }
+  &__content {
+    overflow: hidden;
+    max-height: 0;
   }
 }

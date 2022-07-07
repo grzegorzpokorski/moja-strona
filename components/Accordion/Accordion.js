@@ -1,13 +1,31 @@
-import Item from "./parts/Item";
+import AccordionItem from "./parts/AccordionItem";
+import { useState } from "react";
 
-const Accordion = ({ items, withMarginOnTop, customClasses, dataName }) => {
+const Accordion = ({ items, withMarginOnTop, id = "accordion" }) => {
+  const [expanded, setExpanded] = useState(items[0].question);
+
   return (
     <div
       className={`flex flex-col gap-4 w-full md:w-8/12 mx-auto ${
         withMarginOnTop ? "mt-12 md:mt-24" : ""
-      } ${customClasses}`}
+      } accordion`}
+      id={id}
     >
-      {items && items.map((item) => <Item key={item.question} {...item} />)}
+      {items.map((item, i) => (
+        <AccordionItem
+          key={item.question}
+          {...item}
+          uniqueId={`${id}-${i}`}
+          expanded={expanded == item.question ? true : false}
+          handleClickTrigger={() => {
+            if (expanded != item.question) {
+              setExpanded(item.question);
+            } else {
+              setExpanded(false);
+            }
+          }}
+        />
+      ))}
     </div>
   );
 };
