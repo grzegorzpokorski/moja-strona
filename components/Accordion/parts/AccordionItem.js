@@ -27,7 +27,13 @@ const AccordionItem = ({
           aria-expanded={expanded}
           aria-controls={`${uniqueId}-panel`}
           id={`${uniqueId}-button`}
-          onClick={handleClickTrigger}
+          onClick={() => {
+            handleClickTrigger();
+            accordionContentRef.current.classList.add(
+              "transition-[max-height]"
+            );
+            accordionContentRef.current.classList.add("duration-500");
+          }}
           className={`w-full font-medium text-md text-left py-4 px-6 z-10 transition duration-300 accordion__title ${
             expanded ? "accordion__title--active" : ""
           }`}
@@ -39,7 +45,7 @@ const AccordionItem = ({
         id={`${uniqueId}-panel`}
         role="region"
         aria-labelledby={`${uniqueId}-button`}
-        className={`transition-[max-height] duration-500 accordion__content`}
+        className={`accordion__content`}
         ref={accordionContentRef}
       >
         <div className={`prose max-w-none py-4 px-6`}>{answer}</div>
