@@ -9,7 +9,6 @@ export const faqs = [
         osobistych oraz witrynach typu landing page.
       </p>
     ),
-    open: true,
   },
   {
     question: "Co zawiera wykonana przez Ciebie strona?",
@@ -29,7 +28,6 @@ export const faqs = [
         </p>
       </>
     ),
-    open: false,
   },
   {
     question: "Jak długo trwa wykonanie strony internetowej?",
@@ -44,7 +42,6 @@ export const faqs = [
         postaram się znaleźć optymalne rozwiązanie.
       </p>
     ),
-    open: false,
   },
   {
     question: "Ile kosztuje wykonanie strony internetowej?",
@@ -64,7 +61,6 @@ export const faqs = [
         </p>
       </>
     ),
-    open: false,
   },
   {
     question: "Co to jest CMS?",
@@ -79,7 +75,6 @@ export const faqs = [
         specjalistycznej wiedzy.
       </p>
     ),
-    open: false,
   },
   {
     question: "Czy wystawiasz fakturę?",
@@ -90,6 +85,5 @@ export const faqs = [
         serwisu useme.eu.
       </p>
     ),
-    open: false,
   },
 ];
