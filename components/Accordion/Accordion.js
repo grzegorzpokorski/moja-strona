@@ -6,7 +6,7 @@ const Accordion = ({ items, withMarginOnTop, id = "accordion" }) => {
 
   return (
     <div
-      className={`flex flex-col gap-4 w-full md:w-8/12 mx-auto ${
+      className={`flex flex-col gap-4 mx-auto ${
         withMarginOnTop ? "mt-12 md:mt-24" : ""
       } accordion`}
       id={id}

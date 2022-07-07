@@ -36,7 +36,9 @@ const FAQ = () => {
             centered
             titleAsH1
           />
-          <Accordion items={faqs} withMarginOnTop />
+          <div className="w-full md:w-8/12 mx-auto">
+            <Accordion items={faqs} withMarginOnTop />
+          </div>
         </Section>
         <Banner
           title="Zbuduj swoją ultra szybką stronę internetową ze mną!"
