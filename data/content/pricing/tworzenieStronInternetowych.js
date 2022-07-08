@@ -18,11 +18,11 @@ export const tworzenieStronInternetowychPricing = [
     price: "999 pln",
     features: [
       <>Indywidualny projekt</>,
-      <>Pełna responsywność - dostosowanie do urządzeń mobilnych</>,
+      <>Pełna responsywność — dostosowanie do urządzeń mobilnych</>,
       <>
         Wykonanie zgodne z{" "}
         <Link href="/oferta/tworzenie-stron-internetowych#zalety">
-          najlepszymi statndardami
+          najlepszymi standardami
         </Link>
       </>,
       <>Optymalizacja szybkości ładowania się strony</>,
@@ -67,7 +67,7 @@ export const tworzenieStronInternetowychPricing = [
         className="font-bold text-white text-2xl icon-in-box"
       />
     ),
-    title: "Firmowa strona z WordPress CMS",
+    title: "Strona internetowa z WordPress CMS",
     price: "1999 pln",
     features: [
       <>Indywidualny projekt</>,
