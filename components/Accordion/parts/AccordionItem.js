@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import slugify from "slugify";
 
 const AccordionItem = ({
   question,
@@ -21,7 +22,7 @@ const AccordionItem = ({
 
   return (
     <div className={`flex flex-col bg-white shadow-md accordion__item`}>
-      <h3>
+      <h3 id={`${slugify(question, { lower: true })}__${uniqueId}`}>
         <button
           type="button"
           aria-expanded={expanded}
