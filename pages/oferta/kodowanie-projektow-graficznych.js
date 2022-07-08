@@ -172,7 +172,7 @@ const Offer = () => {
             }
             centered
           />
-          <BoxesList items={codingFeatures} withMarginTop />
+          <BoxesList items={codingFeatures} withMarginOnTop />
         </Section>
         <Process
           header={{

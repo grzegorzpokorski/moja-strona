@@ -72,7 +72,7 @@ const Home = ({ newestPosts }) => {
             }
             centered
           />
-          <BoxesList items={offerList} withMarginTop />
+          <BoxesList items={offerList} withMarginOnTop />
         </Section>
         <Services services={servicesList} />
         <PostsExcerpt

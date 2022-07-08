@@ -46,7 +46,7 @@ const Offer = () => {
             centered
             titleAsH1
           />
-          <BoxesList items={offerList} withMarginTop />
+          <BoxesList items={offerList} withMarginOnTop />
         </Section>
       </MainHeader>
       <Main>

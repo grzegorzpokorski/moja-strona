@@ -10,6 +10,7 @@ import BoxesList from "../../components/BoxesList";
 import Process from "../../components/Process";
 import Content from "../../components/Content";
 import Link from "../../components/Link";
+import PricingList from "../../components/PricingList";
 
 import heroImage from "../../public/images/pages.webp";
 import logosImage from "../../public/images/logos.webp";
@@ -17,6 +18,7 @@ import { pageFeatures } from "../../data/content/pageFeatures";
 
 import addressSeparator from "../../data/seo/addressSeparator";
 import siteName from "../../data/seo/siteName";
+import { tworzenieStronInternetowychPricing } from "../../data/content/pricing/tworzenieStronInternetowych";
 
 const Offer = () => {
   return (
@@ -135,7 +137,7 @@ const Offer = () => {
             }
           />
         </Section>
-        <Section bgColor="bg-green-100">
+        <Section bgColor="bg-green-100" id="zalety">
           <Header
             subtitle="Zalety"
             title="Czym wyróżniają się moje strony?"
@@ -150,9 +152,8 @@ const Offer = () => {
             }
             centered
           />
-          <BoxesList items={pageFeatures} withMarginTop />
+          <BoxesList items={pageFeatures} withMarginOnTop />
         </Section>
-
         <ContentWithImage
           subtitle="Nowoczesne technologie"
           title="Technologie, z których korzystam"
@@ -268,6 +269,26 @@ const Offer = () => {
             },
           ]}
         />
+        <Section bgColor="bg-whiteGreen">
+          <Header
+            subtitle="Cennik"
+            title="Poznaj moje przystepne ceny"
+            description={
+              <>
+                <p>
+                  Poniżej znajdują się startowe ceny za konkretny typ projektu.
+                  Aby poznać dokładną wycenę zachęcam do{" "}
+                  <Link href="/kontakt">kontaktu</Link>.
+                </p>
+              </>
+            }
+            centered
+          />
+          <PricingList
+            items={tworzenieStronInternetowychPricing}
+            withMarginOnTop
+          />
+        </Section>
         <Banner
           title="Zbuduj swoją ultra szybką stronę internetową ze mną!"
           description="Chętnie pomogę zrealizować Twój projekt."

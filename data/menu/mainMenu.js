@@ -33,7 +33,16 @@ const mainMenu = [
     label: "Blog",
     button: false,
   },
-  { href: "/czesto-zadawane-pytania", label: "FAQ", button: false },
+  {
+    href: "/czesto-zadawane-pytania",
+    label: "FAQ",
+    button: false,
+  },
+  {
+    href: "/cennik",
+    label: "Cennik",
+    button: false,
+  },
   {
     href: "/kontakt",
     label: "Kontakt",

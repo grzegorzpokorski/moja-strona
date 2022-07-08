@@ -1,9 +1,9 @@
 import ListItem from "./parts/ListItem";
 
-const OfferList = ({ items, withMarginOnTop }) => {
+const PricingList = ({ items, withMarginOnTop }) => {
   return (
     <ul
-      className={`flex flex-col lg:grid md:grid-cols-2 xl:grid-cols-3 gap-6 ${
+      className={`flex flex-col md:flex-row gap-6 ${
         withMarginOnTop ? "mt-12 md:mt-24" : ""
       }`}
     >
@@ -13,4 +13,4 @@ const OfferList = ({ items, withMarginOnTop }) => {
   );
 };
 
-export default OfferList;
+export default PricingList;
