@@ -1,4 +1,3 @@
-import Link from "../../Link";
 import Button from "../../Button";
 
 const ListItem = ({ icon, title, price, features, href }) => {
@@ -14,7 +13,7 @@ const ListItem = ({ icon, title, price, features, href }) => {
                 </span>
               </span>
             )}
-            <h3 class="text-lg font-medium mt-3">{title}</h3>
+            <h3 className="text-lg font-medium mt-3">{title}</h3>
           </header>
           <div className="flex flex-col text-center">
             <p className="border-y-2 border-zinc-200 py-2">
@@ -23,10 +22,13 @@ const ListItem = ({ icon, title, price, features, href }) => {
             </p>
           </div>
           <div className="prose max-w-none">
-            <ul>{features && features.map((feature) => <li>{feature}</li>)}</ul>
+            <ul>
+              {features &&
+                features.map((feature, i) => <li key={i}>{feature}</li>)}
+            </ul>
           </div>
         </div>
-        <div class="flex flex-col text-center items-center">
+        <div className="flex flex-col text-center items-center">
           <Button href={href} label="Uzyskaj darmową wycenę" />
         </div>
       </article>
