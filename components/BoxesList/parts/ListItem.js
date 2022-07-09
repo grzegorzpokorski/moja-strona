@@ -13,7 +13,10 @@ const ListItem = ({ icon, subtitle, title, description, href }) => {
             </span>
           )}
           {href ? (
-            <Link href={href} className="hover:text-green transition">
+            <Link
+              href={href}
+              className="hover:text-green transition hover:underline"
+            >
               <h3 className="font-bold text-lg">{title}</h3>
             </Link>
           ) : (
