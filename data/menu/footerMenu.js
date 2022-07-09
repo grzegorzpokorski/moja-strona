@@ -16,6 +16,10 @@ const footerMenu = [
     label: "FAQs",
   },
   {
+    href: "/cennik",
+    label: "Cennik",
+  },
+  {
     href: "/kontakt",
     label: "Kontakt",
   },
