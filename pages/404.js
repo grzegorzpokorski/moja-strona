@@ -7,7 +7,7 @@ import Hero from "../components/Hero";
 import addressSeparator from "../data/seo/addressSeparator";
 import siteName from "../data/seo/siteName";
 
-import heroImage from "../public/images/404.png";
+import heroImage from "../public/images/404.webp";
 
 const NotFound = () => {
   return (

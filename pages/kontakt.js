@@ -6,7 +6,7 @@ import Link from "../components/Link";
 
 import addressSeparator from "../data/seo/addressSeparator";
 import siteName from "../data/seo/siteName";
-import heroImage from "../public/images/contact.png";
+import heroImage from "../public/images/contact.webp";
 
 const Contact = () => {
   return (
