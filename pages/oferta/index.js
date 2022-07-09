@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import Main from "../../components/Main";
 import MainHeader from "../../components/MainHeader";
 import Link from "../../components/Link";
+import Banner from "../../components/Banner";
 
 import { offerList } from "../../data/content/offerList";
 import { servicesList } from "../../data/content/servicesList";
@@ -51,6 +52,17 @@ const Offer = () => {
       </MainHeader>
       <Main>
         <Services services={servicesList} />
+        <Banner
+          title="Powierz realizację swojego projektu profesjonaliście!"
+          description="Chętnie pomogę zrealizować Twój pomysł i przekuję go na wysokiej jakości produkt."
+          buttons={[
+            {
+              label: "Skontaktuj się ze mną",
+              href: "/kontakt",
+              style: "white",
+            },
+          ]}
+        />
       </Main>
     </>
   );
