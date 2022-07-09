@@ -6,7 +6,7 @@ const ListItem = ({ icon, subtitle, title, description, href }) => {
       <article className="p-8">
         <header className="flex flex-row gap-3 items-center">
           {icon && (
-            <span className="relative bg-green inline-block min-w-[4rem] min-h-[4rem]">
+            <span className="relative bg-green inline-block min-w-[4rem] min-h-[4rem] rounded">
               <span className="font-bold text-white text-2xl absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                 {icon}
               </span>
