@@ -2,7 +2,7 @@ import Button from "../../Button";
 
 const ListItem = ({ icon, title, price, features, href }) => {
   return (
-    <li className="w-full bg-white border-2 border-greenLight hover:border-green drop-shadow-xl transition flex flex-col">
+    <li className="w-full bg-white border-2 border-greenLight hover:border-green drop-shadow-lg rounded-md transition flex flex-col">
       <article className="p-8 flex flex-col gap-6 h-full justify-between">
         <div className="flex flex-col gap-6">
           <header className="flex flex-col gap-3 items-center justify-center text-center">

@@ -14,10 +14,10 @@ import { faCalendarDays, faTag } from "@fortawesome/free-solid-svg-icons";
 
 const PostItem = (post) => {
   return (
-    <li className="bg-white drop-shadow-xl border-2 border-greenLight">
+    <li className="bg-white drop-shadow-xl border-2 border-greenLight rounded-md">
       <article>
         <Link href={`/blog/${post.slug}`}>
-          <figure className="w-full h-72 max-h-72 overflow-hidden relative block">
+          <figure className="w-full h-72 max-h-72 overflow-hidden relative block rounded-t-md">
             <Image
               src={post.featuredImage}
               layout="fill"

@@ -2,7 +2,7 @@ import Link from "../../Link";
 
 const ListItem = ({ icon, subtitle, title, description, href }) => {
   return (
-    <li className="w-full bg-white border-2 border-greenLight drop-shadow-xl">
+    <li className="w-full bg-white border-2 border-greenLight drop-shadow-xl rounded-md">
       <article className="p-8">
         <header className="flex flex-row gap-3 items-center">
           {icon && (
