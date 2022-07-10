@@ -22,7 +22,7 @@ const AccordionItem = ({
 
   return (
     <div className={`flex flex-col bg-white shadow-md accordion__item`}>
-      <h3 id={`${slugify(question, { lower: true })}__${uniqueId}`}>
+      <h3 id={`${slugify(question, { lower: true })}__${uniqueId}`} className="text-customGray">
         <button
           type="button"
           aria-expanded={expanded}

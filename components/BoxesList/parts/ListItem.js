@@ -15,12 +15,12 @@ const ListItem = ({ icon, subtitle, title, description, href }) => {
           {href ? (
             <Link
               href={href}
-              className="hover:text-green transition hover:underline"
+              className="text-customGray hover:text-green transition hover:underline"
             >
               <h3 className="font-bold text-lg">{title}</h3>
             </Link>
           ) : (
-            <h3 className="font-bold text-lg">{title}</h3>
+            <h3 className="font-bold text-lg text-customGray">{title}</h3>
           )}
         </header>
         {description && (

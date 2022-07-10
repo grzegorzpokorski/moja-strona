@@ -50,7 +50,7 @@ const PostItem = (post) => {
           </div>
           <Link
             href={`/blog/${post.slug}`}
-            className="hover:text-green transition"
+            className="text-customGray hover:text-green transition"
           >
             <h3 className="font-bold text-lg">{post.title}</h3>
           </Link>

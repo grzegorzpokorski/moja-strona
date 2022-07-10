@@ -13,7 +13,7 @@ const ListItem = ({ icon, title, price, features, href }) => {
                 </span>
               </span>
             )}
-            <h3 className="text-lg font-medium mt-3">{title}</h3>
+            <h3 className="text-customGray text-lg font-medium mt-3">{title}</h3>
           </header>
           <div className="flex flex-col text-center">
             <p className="border-y-2 border-zinc-200 py-2">
