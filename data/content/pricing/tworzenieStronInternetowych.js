@@ -26,7 +26,7 @@ export const tworzenieStronInternetowychPricing = [
         </Link>
       </>,
       <>Optymalizacja szybkości ładowania się strony</>,
-      <>Wynik w PageSpeed powyżej 85/100</>,
+      <>Wynik w PageSpeed powyżej 85/100 (desktop)</>,
       <>Wynik w GTmetrix powyżej 90%</>,
       <>Wdrożenie na serwer</>,
     ],
@@ -55,7 +55,7 @@ export const tworzenieStronInternetowychPricing = [
           najlepszymi praktykami
         </Link>
       </>,
-      <>Wynik w PageSpeed powyżej 85/100</>,
+      <>Wynik w PageSpeed powyżej 85/100 (desktop)</>,
       <>Ocena w GTmetrix powyżej 90%</>,
     ],
     href: "/kontakt",
@@ -83,7 +83,7 @@ export const tworzenieStronInternetowychPricing = [
           najlepszymi praktykami
         </Link>
       </>,
-      <>Wynik w PageSpeed powyżej 85/100</>,
+      <>Wynik w PageSpeed powyżej 85/100 (desktop)</>,
       <>Ocena w GTmetrix powyżej 90%</>,
       <>Predefiniowane style elementów</>,
     ],
