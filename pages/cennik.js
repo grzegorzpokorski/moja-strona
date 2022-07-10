@@ -25,12 +25,12 @@ const Pricing = () => {
         <Section bgColor="bg-whiteGreen">
           <Header
             subtitle="Cennik"
-            title="Poznaj moje przystepne ceny"
+            title="Poznaj moje przystępne ceny"
             description={
               <>
                 <p>
                   Poniżej znajdują się startowe ceny za konkretny typ projektu.
-                  Aby poznać dokładną wycenę zachęcam do{" "}
+                  Aby poznać dokładną wycenę, zachęcam do{" "}
                   <Link href="/kontakt">kontaktu</Link>.
                 </p>
               </>
