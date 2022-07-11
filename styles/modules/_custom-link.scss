@@ -1,0 +1,40 @@
+.custom-link {
+  --decor-size: 0.5em;
+  position: relative;
+  padding-right: calc(var(--decor-size) * 2);
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 0;
+    transition: all 0.15s;
+  }
+
+  &::after {
+    transform: translateY(calc(-50% + var(--decor-size) / 3)) rotate(-45deg);
+    height: 0;
+    border-left: var(--decor-size) solid transparent;
+    border-right: var(--decor-size) solid theme("colors.green");
+    border-top: var(--decor-size) solid transparent;
+  }
+
+  &:hover::after {
+    right: calc(var(--decor-size) * -1);
+  }
+
+  &::before {
+    background-color: theme("colors.green");
+    height: calc(var(--decor-size) / 4);
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+
+  &:hover::before {
+    opacity: 1;
+    width: calc(var(--decor-size) * 2);
+    right: calc(var(--decor-size) * -1);
+  }
+}

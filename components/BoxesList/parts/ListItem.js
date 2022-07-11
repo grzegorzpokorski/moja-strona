@@ -3,7 +3,7 @@ import Link from "../../Link";
 const ListItem = ({ icon, subtitle, title, description, href }) => {
   return (
     <li className="w-full bg-white border-2 border-greenLight drop-shadow-xl rounded-md">
-      <article className="p-8">
+      <article className="p-8 flex flex-col items-start gap-6">
         <header className="flex flex-row gap-3 items-center">
           {icon && (
             <span className="relative bg-green inline-block min-w-[4rem] min-h-[4rem] rounded">
@@ -23,8 +23,11 @@ const ListItem = ({ icon, subtitle, title, description, href }) => {
             <h3 className="font-bold text-lg text-customGray">{title}</h3>
           )}
         </header>
-        {description && (
-          <div className="prose max-w-none mt-6">{description}</div>
+        {description && <div className="prose max-w-none">{description}</div>}
+        {href && (
+          <Link href={href} className="text-green hover:underline custom-link">
+            Dowiedz się więcej
+          </Link>
         )}
       </article>
     </li>
