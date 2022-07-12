@@ -21,8 +21,11 @@ const AccordionItem = ({
   }, [expanded, accordionContentRef]);
 
   return (
-    <div className={`flex flex-col bg-white shadow-md accordion__item`}>
-      <h3 id={`${slugify(question, { lower: true })}__${uniqueId}`} className="text-customGray">
+    <div className={`flex flex-col bg-white shadow-md rounded accordion__item`}>
+      <h3
+        id={`${slugify(question, { lower: true })}__${uniqueId}`}
+        className="text-customGray"
+      >
         <button
           type="button"
           aria-expanded={expanded}
@@ -35,8 +38,8 @@ const AccordionItem = ({
             );
             accordionContentRef.current.classList.add("duration-500");
           }}
-          className={`w-full font-medium text-md text-left py-4 px-6 z-10 transition duration-300 accordion__title ${
-            expanded ? "accordion__title--active" : ""
+          className={`w-full font-medium text-md text-left py-4 px-6 z-10 transition duration-300 rounded accordion__title ${
+            expanded ? "rounded-b-none accordion__title--active" : ""
           }`}
         >
           <span>{question}</span>
