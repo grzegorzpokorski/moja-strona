@@ -96,6 +96,16 @@ Aby zapobiegać blokowaniu renderowania strony należy skrypty js umieszczać na
 
 Różnica między `async` i `defer` polega na tym, że skrypty z atrybutem `async` wykonywane są w kolejności, który pierwszy się załaduje, a w przypadku `defer` w kolejności, w której znajdowały się w kodzie.
 
+## Nadawanie odpowiedniego priorytetu zasobom
+
+Dzisiejsze przeglądarki dzięki rozbudowanej heurystyce potrafią ocenić, które zasoby strony powinny zostać pobrane w pierwszej kolejności. Mimo to mamy możliwość ułatwić to zadanie za pomocą dedykowanych znaczników `link`:
+
+- [`<link rel="preload">`](https://web.dev/preload-critical-assets/) — informuje, że dany zasób jest potrzebny w ramach bieżącej strony i powinien zostać pobrany, jak szybko to tylko możliwe,
+- [`<link rel="preconnect">`](https://web.dev/preconnect-and-dns-prefetch/) — informuję przeglądarkę, że strona internetowa będzie pobierać zasoby spoza obecnej domeny i chcemy, aby pobranie tego zasobu odbyło się możliwie jak najszybciej,
+- [`<link rel="prefetch">`](https://web.dev/link-prefetch/) — używany do wskazania, że dany zasób nie jest tak bardzo potrzebny, jak zasoby wskazane linkami wymienionymi powyżej, lecz chcemy, aby pobrać je możliwie jak najwcześniej.
+
+Obecnie (tj. drugi kwartał 2022) pojawił się nowy atrybut `fetchpriority`, który jest wspierany przez Google Chrome 101 i nowsze wersje. Atrybut ten pozwala na polepszenie czasu ładowania, krytycznych z punktu szybkości ładowania się strony, zasobów. Więcej informacji na jego temat można znaleźć [tu (web.dev)](https://web.dev/priority-hints/) i [tu (MDN)](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/fetchPriority).
+
 ## Stosowanie odpowiedniej technologii
 
 Czasem, kiedy strona z założenia nie jest często aktualizowana, dobrym rozwiązaniem może okazać się statyczna strona internetowa. Może to być po prostu strona napisana w html i wrzucona na serwer. Strony takie nie wymagają tego, aby pobierać dane z bazy danych, a następnie kompilować ich do plików html co zabiera cenny czas.
