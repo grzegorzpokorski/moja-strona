@@ -5,7 +5,7 @@ category: Artykuły
 tags:
   - szybkość strony internetowej
   - optymalizacja
-  - obrazki
+  - multimedia
   - hosting
   - webp
   - web vitals
@@ -34,7 +34,7 @@ Warto zainwestować w dobry hosting, który nie tylko będzie spełniał nasze w
 
 W przypadku kiedy chcemy, aby nasza witryna internetowa równie szybko ładowała się dla użytkowników na całym świecie, dobrym rozwiązaniem jest zastosowanie CDN. CDN to akronim od angielskiego określenia 'sieć dostarczania treści'. Sieć ta dotyczy serwerów rozproszonych po całym świecie, a których zadaniem jest dostarczanie treści np. naszej strony do użytkowników.
 
-W świecie internetu fizyczne odległości również mają znaczenie. Dostarczenie obrazu wysłanego z serwera znajdującego się w USA do użytkownika znajdującego się w Holandii zajmie więcej czasu niż gdyby został wysłany z serwera znajdującego się np. w Niemczech. Aby zrozumieć, dlaczego tak się dzieje, należy zdać sobie sprawę, że w dużym uproszczeniu sieć Internet, to siec połączonych ze sobą komputerów, które komunikują się nawzajem ze sobą i przesyłają dane. Im bliżej siebie znajdują się komunikujące się ze sobą komputery, tym mniejsze występują przy tym opóźnienia w przesyle danych.
+W świecie internetu fizyczne odległości również mają znaczenie. Dostarczenie obrazu wysłanego z serwera znajdującego się w USA do użytkownika znajdującego się w Holandii może zająć więcej czasu niż gdyby został wysłany z serwera znajdującego się np. w Niemczech. Aby zrozumieć, dlaczego tak się dzieje, należy zdać sobie sprawę, że w dużym uproszczeniu sieć Internet, to siec połączonych ze sobą komputerów, które komunikują się nawzajem ze sobą i przesyłają dane. Im bliżej siebie znajdują się komunikujące się ze sobą komputery, tym mniejsze występują przy tym opóźnienia w przesyle danych.
 
 ![wizualizacja sieci cdn](/images/posts/jak-przyspieszyc-strone-internetowa/cdn-visualization.webp)
 
@@ -42,7 +42,7 @@ Sieć CDN powiela dane naszej strony, które przesłaliśmy na główny serwer d
 
 ## Ładowanie tylko potrzebnych zasobów
 
-Wiele stron opartych na WordPressie wykorzystuje najróżniejsze wtyczki. Za przykład niech posłuży [Contact Form 7](https://pl.wordpress.org/plugins/contact-form-7/), która pozwala tworzyć formularze kontaktowe. Wspomniana wtyczka dołącza do strony standardowe pliki CSS oraz JavaScript do obsługi formularzy. Dołącza je również na stronach, które nie wykorzystują formularzy generowanych przez tę wtyczkę. Warto zatem, aby zasoby dołączane przez wspomnianą wtyczkę, czy inną były ładowane tylko na tych stronach, na których rzeczywiście są one potrzebne.
+Wiele stron opartych na WordPressie wykorzystuje najróżniejsze wtyczki. Za przykład niech posłuży [Contact Form 7](https://pl.wordpress.org/plugins/contact-form-7/), która pozwala tworzyć formularze kontaktowe. Wspomniana wtyczka dołącza do strony standardowe pliki CSS oraz JavaScript do obsługi formularzy. Domyślnie dołącza je również na stronach, które nie wykorzystują formularzy generowanych przez tę wtyczkę. Warto zatem, aby zasoby dołączane przez wspomnianą wtyczkę, czy inną były ładowane tylko na tych stronach, na których rzeczywiście są one potrzebne.
 
 Genialnym rozwiązaniem jest korzystanie ze stron internetowych, które są przygotowywane indywidualnie i nie korzystają z gotowych szablonów. Strony oparte na gotowych szablonach często spełniają swoją podstawową funkcję — z pozoru działają prawidłowo, lecz nie są zoptymalizowane pod kątem ograniczania ładowania nieużywanych zasobów.
 
@@ -50,9 +50,9 @@ Dobrą praktyką jest to, aby podczas programowania strony internetowej dzielić
 
 ## Minifikacja kodu strony
 
-Pod tym być może nie często spotykanym słowem kryje się bardzo intuicyjna metoda optymalizacji strony internetowej. Minifikacja kody strony to nic innego jak usunięcie zbędnych dla przeglądarki komentarzy, nadmiarowych lub niepotrzebnych tzw. znaków białych typu spacje, tabulacje, znaki nowej linii. Zabieg ten pozwala "odchudzić" pliki strony, a jak wiadomo mniej danych do przesłania to szybsza strona.
+Pod tym być może nie często spotykanym słowem kryje się bardzo intuicyjna metoda optymalizacji strony internetowej. Minifikacja kodu strony to nic innego jak usunięcie zbędnych dla przeglądarki komentarzy, nadmiarowych lub niepotrzebnych tzw. znaków białych typu spacje, tabulacje, znaki nowej linii. Zabieg ten pozwala "odchudzić" pliki strony, a jak wiadomo mniej danych do przesłania to szybsza strona.
 
-Wiele narzędzi pomagających odchudzać nasze pliki strony, pozwala również na łączenie wielu plików o takim samym rozszerzeniu w jeden. To korzystny zabieg, który skraca czas ładowania strony przez zmniejszanie ilości zapytań, które musi wykonać przeglądarka, aby pobrać wszystkie potrzebne pliki. Mniej plików oznacza mniej zapytań do serwera dostarczającego pliki naszej strony, co w efekcie przekłada się na szybszą stronę.
+Wiele narzędzi pomagających odchudzać nasze pliki strony, pozwala również na łączenie wielu plików o takim samym rozszerzeniu w jeden. To korzystny zabieg, który skraca czas ładowania strony przez zmniejszanie ilości zapytań, które musi wykonać przeglądarka, aby pobrać wszystkie potrzebne pliki. Mniej plików oznacza mniej zapytań do serwera dostarczającego pliki naszej strony, co w efekcie przekłada się na krótszy czas ładowania strony.
 
 ## Optymalizacja multimediów
 
@@ -82,7 +82,7 @@ Waga plików graficznych w dużej mierze uzależniona jest od ich rozmiaru. Waż
 
 Znacznik `<img>` również pozwala na stworzenie responsywnych obrazów na stronach. Więcej informacji, jak i kiedy stosować takie rozwiązanie znajdziesz w [artykule MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
 
-Większość obecnych przeglądarek internetowych wspiera tzw. leniwe ładowanie obrazów. Polega to na tym, że przeglądarka pobiera obraz dopiero w momencie, kiedy znajduje się on w oknie przeglądarki internetowej. Aby mieć pewność, że funkcja ta będzie działać niezależnie standardowego zachowania przeglądarki, zaleca się, aby obrazy, które nie są widoczne od razu po załadowaniu strony ([LCP](https://web.dev/lcp/)), posiadały atrybut `loading="lazy"`.
+Większość obecnych przeglądarek internetowych wspiera tzw. leniwe ładowanie obrazów. Polega to na tym, że przeglądarka pobiera obraz dopiero w momencie, kiedy znajduje się on w oknie przeglądarki internetowej. Aby mieć pewność, że funkcja ta będzie działać niezależnie od standardowego zachowania przeglądarki, zaleca się, aby obrazy, które nie są widoczne od razu po załadowaniu strony ([LCP](https://web.dev/lcp/)), posiadały atrybut `loading="lazy"`.
 
 ## Odpowiednie ładowanie skyptów
 
@@ -98,7 +98,7 @@ Różnica między `async` i `defer` polega na tym, że skrypty z atrybutem `asyn
 
 ## Stosowanie odpowiedniej technologii
 
-Czasem, kiedy strona z założenia nie jest często aktualizowana, dobrym rozwiązaniem może okazać się statyczna strona internetowa. Może to być po prostu strona napisana w html i wrzucona na serwer. Strony takie nie wymagają tego, aby pobierać dane z bazy danych, a następnie kompilować ich do plików html co zabiera czas.
+Czasem, kiedy strona z założenia nie jest często aktualizowana, dobrym rozwiązaniem może okazać się statyczna strona internetowa. Może to być po prostu strona napisana w html i wrzucona na serwer. Strony takie nie wymagają tego, aby pobierać dane z bazy danych, a następnie kompilować ich do plików html co zabiera cenny czas.
 
 Innym rozwiązaniem jest wykorzystanie generatorów statycznych stron internetowych. Jest to technologia, która pozwala na zarządzanie treścią strony jak w standardowym systemie CMS. Różnica polega jednak na tym, że wszelkie zapisane zmiany powodują wygenerowanie statycznych plików html, które następnie serwowane są odwiedzającym naszą stronę.
 
