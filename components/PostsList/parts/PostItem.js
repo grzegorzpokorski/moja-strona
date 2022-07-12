@@ -56,7 +56,8 @@ const PostItem = (post) => {
           </Link>
         </header>
         <div className="p-8 pt-3 flex flex-col gap-3">
-          <p>{post.excerpt.split(" ").splice(0, 20).join(" ")} [...]</p>
+          <p>{post.excerpt}</p>
+          {/* <p>{post.excerpt.split(" ").splice(0, 20).join(" ")} [...]</p> */}
         </div>
       </article>
     </li>
