@@ -15,6 +15,8 @@ const Button = ({
           ? "px-2 py-1 text-xs "
           : size === "default"
           ? "px-4 md:px-6 py-2 md:py-3 text-base"
+          : size === "social"
+          ? "px-3 md:px-4 py-2 md:py-3"
           : ""
       } ${
         style === "default"
