@@ -10,7 +10,7 @@ const Button = ({
   return (
     <Link
       href={href}
-      className={`transition-colors border-2 rounded ${
+      className={`inline-flex transition-colors border-2 rounded ${
         size === "small"
           ? "px-2 py-1 text-xs "
           : size === "default"
