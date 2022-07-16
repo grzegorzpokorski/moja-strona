@@ -16,7 +16,7 @@ import siteName from "./../../data/seo/siteName";
 import addressSeparator from "../../data/seo/addressSeparator";
 import PostsExcerpt from "../../components/PostsExcerpt";
 
-const BlogPost = ({ post, relatedPosts }) => {
+const BlogPost = ({ post, relatedPosts, slug }) => {
   return (
     <>
       <Head
@@ -68,7 +68,7 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
-      post: { frontmatter, source: mdxSource },
+      post: { frontmatter, source: mdxSource, slug: slug },
       relatedPosts: relatedPosts,
     },
   };

@@ -1,8 +1,9 @@
 import { MDXRemote } from "next-mdx-remote";
 import Link from "../../Link";
 import Image from "next/image";
+import SharePostLinks from "./SharePostLinks";
 
-const Article = ({ source, tags }) => {
+const Article = ({ source, tags, slug, title }) => {
   const components = {
     a: Link,
     img: (props) => <Image {...props} layout="responsive" loading="lazy" />,
@@ -14,6 +15,10 @@ const Article = ({ source, tags }) => {
         <div className="w-full lg:w-7/12 prose max-w-none mx-auto">
           <MDXRemote {...source} components={components} />
         </div>
+        <footer className="w-full lg:w-7/12 mx-auto mt-8 pt-8 border-t-2 flex flex-col lg:flex-row items-center gap-6">
+          <p className={`font-bold`}>Udostępnij artykuł</p>
+          <SharePostLinks slug={slug} title={title} />
+        </footer>
       </div>
     </article>
   );
