@@ -13,13 +13,13 @@ const SharePostLinks = ({ slug, title }) => {
   const postUrl = `${siteUrl}/blog/${slug}`;
 
   return (
-    <ul className={`flex flex-wrap gap-3`}>
+    <ul className={`list-none flex flex-wrap gap-3`}>
       <li>
         <Button
           href={`https://www.facebook.com/sharer/sharer.php?u=${postUrl}`}
           label={
             <>
-              <span className="sr-only">Udostepnij na facebooku.</span>
+              <span className="sr-only">Udostepnij na Facebooku.</span>
               <FontAwesomeIcon icon={faFacebook} />
             </>
           }
@@ -31,7 +31,7 @@ const SharePostLinks = ({ slug, title }) => {
           href={`https://twitter.com/intent/tweet?url=${postUrl}`}
           label={
             <>
-              <span className="sr-only">Udostepnij na twitterze.</span>
+              <span className="sr-only">Udostepnij na Twitterze.</span>
               <FontAwesomeIcon icon={faTwitter} />
             </>
           }
@@ -52,7 +52,7 @@ const SharePostLinks = ({ slug, title }) => {
       </li>
       <li>
         <Button
-          href={`mailto:?subject=${title}&body=<a href="${postUrl}">${title}</a>`}
+          href={`mailto:?subject=${title}&body=${title}`}
           label={
             <>
               <span className="sr-only">Udostepnij emailem.</span>
