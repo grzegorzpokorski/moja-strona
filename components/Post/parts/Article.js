@@ -10,12 +10,12 @@ const Article = ({ source, tags, slug, title }) => {
   };
 
   return (
-    <article className="pb-16 md:pb-24">
+    <article className="pb-16">
       <div className="container px-3 mx-auto">
         <div className="w-full lg:w-7/12 prose max-w-none mx-auto">
           <MDXRemote {...source} components={components} />
         </div>
-        <footer className="w-full lg:w-7/12 mx-auto mt-8 pt-8 border-t-2 flex flex-col lg:flex-row items-center gap-6">
+        <footer className="w-full lg:w-7/12 mx-auto mt-16 pt-8 border-t-2 border-greenWhite flex flex-col lg:flex-row gap-6 items-center">
           <p className={`font-bold`}>Udostępnij artykuł</p>
           <SharePostLinks slug={slug} title={title} />
         </footer>
