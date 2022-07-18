@@ -11,9 +11,6 @@ import MainMenu from "../MainMenu";
 const MainHeader = ({ children }) => {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
   const handleMobileMenuIsOpen = () => setMobileMenuIsOpen(!mobileMenuIsOpen);
-  const handleClickOffTheMenu = () => {
-    if (mobileMenuIsOpen) setMobileMenuIsOpen(false);
-  };
 
   const [isSticky] = useStickyElement();
 
@@ -34,7 +31,9 @@ const MainHeader = ({ children }) => {
       >
         <section className="container mx-auto px-3 h-20 lg:h-28 flex flex-row justify-between items-center">
           <Logo isHome={isHome} isTitle={isHome} />
-          <ClickAwayListener onClickAway={handleClickOffTheMenu}>
+          <ClickAwayListener
+            onClickAway={() => mobileMenuIsOpen && setMobileMenuIsOpen(false)}
+          >
             <Hamburger
               mobileMenuIsOpen={mobileMenuIsOpen}
               handleMobileMenuIsOpen={handleMobileMenuIsOpen}
