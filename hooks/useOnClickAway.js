@@ -8,11 +8,9 @@ const useOnClickAway = (ref, action) => {
     };
 
     document.addEventListener("mousedown", handleAction);
-    document.addEventListener("touchstart", handleAction);
 
     return () => {
       document.removeEventListener("mousedown", handleAction);
-      document.removeEventListener("touchstart", handleAction);
     };
   }, [ref, action]);
 };
