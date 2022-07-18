@@ -7,7 +7,7 @@ const ClickAwayListener = ({ children, onClickAway }) => {
 
   if (React.Children.count(children) == 1) {
     const copyWithRef = React.cloneElement(children, { ref: ref });
-    return <React.Fragment>{copyWithRef}</React.Fragment>;
+    return <>{copyWithRef}</>;
   }
 
   return <div ref={ref}>{children}</div>;
