@@ -61,18 +61,13 @@ const Pricing = () => {
           </div>
         </Section>
         <Banner
-          title="Zbuduj swoją ultra szybką stronę internetową ze mną!"
-          description="Chętnie pomogę zrealizować Twój projekt."
+          title="Powierz realizację swojego projektu profesjonaliście!"
+          description="Chętnie pomogę zrealizować Twój pomysł i przekuję go na wysokiej jakości produkt."
           buttons={[
-            {
-              label: "Skontaktuj się ze mną",
-              href: "/kontakt",
-              style: "white",
-            },
             {
               label: "Zobacz ofertę",
               href: "/oferta",
-              style: "transparentWhite",
+              style: "white",
             },
           ]}
         />
