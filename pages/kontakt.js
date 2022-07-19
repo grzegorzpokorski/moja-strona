@@ -6,6 +6,7 @@ import Main from "../components/Main";
 import MainHeader from "../components/MainHeader";
 import Link from "../components/Link";
 import Banner from "../components/Banner";
+import ContactForm from "../components/ContactForm";
 
 import addressSeparator from "../data/seo/addressSeparator";
 import siteName from "../data/seo/siteName";
@@ -50,8 +51,10 @@ const Pricing = () => {
             titleAsH1
             customClasses={`pb-16 md:pb-24`}
           />
-          <div className="flex flex-col lg:flex-row gap-6">
-            <div className="w-full lg:w-1/2">{/* <ContactForm /> */}</div>
+          <div className="flex flex-col lg:flex-row gap-6 items-center">
+            <div className="w-full lg:w-1/2">
+              <ContactForm />
+            </div>
             <picture className="w-full lg:w-1/2">
               <Image src={image} alt={image.alt} />
             </picture>
