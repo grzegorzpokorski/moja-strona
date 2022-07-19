@@ -28,7 +28,7 @@ const FAQ = () => {
             title="Często zadawane pytania"
             description={
               <p>
-                Tutaj znajdziesz odpowiedzi na najczęściej zadawwane pytania.
+                Tutaj znajdziesz odpowiedzi na najczęściej zadawane pytania.
                 Jeśli masz inne pytanie napisz do{" "}
                 <Link href="/kontakt">napisz do mnie</Link>.
               </p>
