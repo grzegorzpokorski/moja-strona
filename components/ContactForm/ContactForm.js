@@ -196,7 +196,7 @@ const ContactForm = () => {
         )}
       </div>
       <button
-        className="inline-flex items-center gap-2 transition-colors border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base bg-green hover:bg-greenHover text-white border-green"
+        className="inline-flex items-center gap-2 transition-colors border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base bg-green hover:bg-greenHover disabled:opacity-75 disabled:cursor-not-allowed text-white border-green"
         type="submit"
         disabled={disableSubmitButton}
       >
