@@ -204,7 +204,7 @@ const ContactForm = () => {
         {submitButtonLabel}
       </button>
       {errorMessage && (
-        <p className="text-sm text-green mt-4">{errorMessage}</p>
+        <p className="text-sm text-red-400 mt-4">{errorMessage}</p>
       )}
       {successMessage && (
         <p className="text-sm text-green mt-4">Wiadomość została wysłana.</p>
