@@ -1,15 +1,51 @@
 import Link from "../Link";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 const ContactForm = () => {
+  const [submitButtonLabel, setSubmitButtonLabel] =
+    useState("Wyślij wiadomość");
+  const [disableSubmitButton, setDisableSubmitButton] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(false);
+  const [successMessage, setSuccessMessage] = useState(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    setSubmitButtonLabel("Wysyłanie wiadomości...");
+    setDisableSubmitButton(true);
+
+    const res = await fetch("/api/contactform/send", {
+      body: JSON.stringify({
+        name: data.name,
+        surrname: data.surrname,
+        email: data.email,
+        message: data.message,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    });
+
+    const { error } = await res.json();
+
+    if (error) {
+      console.log(error);
+      setErrorMessage(error);
+      setSubmitButtonLabel("Wyślij wiadomość");
+
+      return;
+    }
+    setSubmitButtonLabel("Wyślij wiadomość");
+    setSuccessMessage(true);
+
+    reset();
   };
 
   return (
@@ -163,9 +199,16 @@ const ContactForm = () => {
       <button
         className="inline-flex transition-colors border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base bg-green hover:bg-greenHover text-white border-green"
         type="submit"
+        disabled={disableSubmitButton}
       >
-        Wyśli wiadomość
+        {submitButtonLabel}
       </button>
+      {errorMessage && (
+        <p className="text-sm text-green mt-4">{errorMessage}</p>
+      )}
+      {successMessage && (
+        <p className="text-sm text-green mt-4">Wiadomość została wysłana.</p>
+      )}
     </form>
   );
 };
