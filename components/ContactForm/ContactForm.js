@@ -3,8 +3,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 
 const ContactForm = () => {
-  const [submitButtonLabel, setSubmitButtonLabel] =
-    useState("Wyślij wiadomość");
+  const [sending, setSending] = useState(false);
   const [disableSubmitButton, setDisableSubmitButton] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
   const [successMessage, setSuccessMessage] = useState(false);
@@ -17,7 +16,7 @@ const ContactForm = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    setSubmitButtonLabel("Wysyłanie wiadomości...");
+    setSending(true);
     setDisableSubmitButton(true);
 
     const res = await fetch("/api/contactform/send", {
@@ -38,11 +37,11 @@ const ContactForm = () => {
     if (error) {
       console.log(error);
       setErrorMessage(error);
-      setSubmitButtonLabel("Wyślij wiadomość");
+      setSending(false);
 
       return;
     }
-    setSubmitButtonLabel("Wyślij wiadomość");
+    setSending(false);
     setSuccessMessage(true);
 
     reset();
@@ -197,11 +196,33 @@ const ContactForm = () => {
         )}
       </div>
       <button
-        className="inline-flex transition-colors border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base bg-green hover:bg-greenHover text-white border-green"
+        className="inline-flex items-center gap-2 transition-colors border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base bg-green hover:bg-greenHover text-white border-green"
         type="submit"
         disabled={disableSubmitButton}
       >
-        {submitButtonLabel}
+        {sending ? "Wysyłanie" : "Wyślij wiadomość"}
+        {sending && (
+          <svg
+            class="h-5 w-5 animate-spin text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              class="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="white"
+              strokeWidth="4"
+            ></circle>
+            <path
+              class="opacity-75"
+              fill="white"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            ></path>
+          </svg>
+        )}
       </button>
       {errorMessage && (
         <p className="text-sm text-red-400 mt-4">{errorMessage}</p>
