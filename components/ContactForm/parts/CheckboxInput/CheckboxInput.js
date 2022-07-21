@@ -45,4 +45,6 @@ const CheckboxInput = forwardRef(
   }
 );
 
+CheckboxInput.displayName = "CheckboxInput";
+
 export default CheckboxInput;

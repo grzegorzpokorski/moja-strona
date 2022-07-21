@@ -53,4 +53,6 @@ const TextareaField = forwardRef(
   }
 );
 
+TextareaField.displayName = "TextareaField";
+
 export default TextareaField;

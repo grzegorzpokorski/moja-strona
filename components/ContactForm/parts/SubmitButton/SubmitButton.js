@@ -52,4 +52,6 @@ const SubmitButton = forwardRef(
   }
 );
 
+SubmitButton.displayName = "SubmitButton";
+
 export default SubmitButton;
