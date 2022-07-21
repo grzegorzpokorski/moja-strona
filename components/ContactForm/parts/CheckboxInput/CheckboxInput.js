@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 import ErrorMessage from "../ErrorMessage";
 
-const TextInput = forwardRef(
+const CheckboxInput = forwardRef(
   (
     {
       children,
@@ -45,4 +45,4 @@ const TextInput = forwardRef(
   }
 );
 
-export default TextInput;
+export default CheckboxInput;
