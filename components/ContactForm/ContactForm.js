@@ -29,10 +29,9 @@ const ContactForm = () => {
     setSending(true);
     setDisableSubmitButton(true);
 
-    const { error } = sendMessageFromContactForm(data);
+    const error = await sendMessageFromContactForm(data);
 
     if (error) {
-      console.log(error);
       setErrorMessage(error);
       setSending(false);
 
