@@ -3,7 +3,7 @@ import usePermalink from "../../hooks/usePermalink";
 import siteUrl from "../../data/seo/siteUrl";
 import siteName from "../../data/seo/siteName";
 import slogan from "../../data/seo/slogan";
-import getISOStringFromPublicationDate from "../../data/seo/getISOStringFromPublicationDate";
+import getISOStringFromPublicationDate from "../../helpers/functions/getISOStringFromPublicationDate";
 
 const Head = (props) => {
   const permalink = usePermalink();
