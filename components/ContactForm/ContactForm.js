@@ -1,6 +1,15 @@
-import Link from "../Link";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+
+import Link from "../Link";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPaperPlane,
+  faCircleNotch,
+  faCircleCheck,
+  faCircleExclamation,
+} from "@fortawesome/free-solid-svg-icons";
 
 const ContactForm = () => {
   const [sending, setSending] = useState(false);
@@ -13,7 +22,7 @@ const ContactForm = () => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm();
+  } = useForm({ shouldFocusError: false });
 
   const onSubmit = async (data) => {
     setSending(true);
@@ -129,7 +138,7 @@ const ContactForm = () => {
           aria-invalid={errors.email ? "true" : "false"}
           {...register("email", {
             required: true,
-            pattern: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
+            pattern: /^[a-zA-Z0-9+.-_]+@[a-zA-Z0–9.-]+[.][a-zA-Z]{1,}$/,
           })}
         />
         {errors.email && (
@@ -158,7 +167,10 @@ const ContactForm = () => {
           placeholder="Treść wiadomości / opis projektu"
           aria-required="true"
           aria-invalid={errors.message ? "true" : "false"}
-          {...register("message", { required: true, minLength: 10 })}
+          {...register("message", {
+            required: true,
+            minLength: 10,
+          })}
         />
         {errors.message && (
           <p className="text-sm text-red-400 mt-2">
@@ -196,40 +208,36 @@ const ContactForm = () => {
         )}
       </div>
       <button
-        className="inline-flex items-center gap-2 transition-colors border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base bg-green hover:bg-greenHover disabled:opacity-75 disabled:cursor-not-allowed text-white border-green"
+        className={`inline-flex items-center gap-2 transition-colors border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base ${
+          errorMessage
+            ? "bg-red-400 border-red-400"
+            : "bg-green hover:bg-greenHover border-green"
+        } disabled:opacity-75 disabled:cursor-not-allowed text-white`}
         type="submit"
         disabled={disableSubmitButton}
       >
-        {sending ? "Wysyłanie" : "Wyślij wiadomość"}
-        {sending && (
-          <svg
-            className="h-5 w-5 animate-spin text-white"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <circle
-              className="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="white"
-              strokeWidth="4"
-            ></circle>
-            <path
-              className="opacity-75"
-              fill="white"
-              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-            ></path>
-          </svg>
+        {sending === true ? (
+          <>
+            Wysyłanie
+            <FontAwesomeIcon icon={faCircleNotch} className="animate-spin" />
+          </>
+        ) : errorMessage ? (
+          <>
+            Wystąpił błąd. Spróbuj ponownie pózniej
+            <FontAwesomeIcon icon={faCircleExclamation} />
+          </>
+        ) : successMessage ? (
+          <>
+            Wysłano
+            <FontAwesomeIcon icon={faCircleCheck} />
+          </>
+        ) : (
+          <>
+            Wyślij wiadomość
+            <FontAwesomeIcon icon={faPaperPlane} />
+          </>
         )}
       </button>
-      {errorMessage && (
-        <p className="text-sm text-red-400 mt-4">{errorMessage}</p>
-      )}
-      {successMessage && (
-        <p className="text-sm text-green mt-4">Wiadomość została wysłana.</p>
-      )}
     </form>
   );
 };
