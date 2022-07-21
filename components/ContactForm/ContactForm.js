@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import sendMessageFromContactForm from "../../helpers/requests/sendMessageFromContactForm";
 
 import Link from "../Link";
 
@@ -28,20 +29,7 @@ const ContactForm = () => {
     setSending(true);
     setDisableSubmitButton(true);
 
-    const res = await fetch("/api/contactform/send", {
-      body: JSON.stringify({
-        name: data.name,
-        surrname: data.surrname,
-        email: data.email,
-        message: data.message,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    });
-
-    const { error } = await res.json();
+    const { error } = sendMessageFromContactForm(data);
 
     if (error) {
       console.log(error);
