@@ -20,6 +20,7 @@ const ContactForm = () => {
     handleSubmit,
     formState: { errors },
     reset,
+    formState,
   } = useForm({ shouldFocusError: false });
 
   const onSubmit = async (data) => {
@@ -34,9 +35,9 @@ const ContactForm = () => {
 
       return;
     }
+
     setSending(false);
     setSuccessMessage(true);
-
     reset();
   };
 
@@ -46,70 +47,75 @@ const ContactForm = () => {
       noValidate
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div className="w-full mb-6">
-        <TextInput
-          label="Imie"
-          name="name"
-          placeholder="Imie"
-          required={true}
-          minLength={2}
-          {...{ register, errors }}
-        />
-      </div>
-      <div className="w-full mb-6">
-        <TextInput
-          label="Nazwisko"
-          name="surrname"
-          placeholder="Nazwisko"
-          required={true}
-          minLength={2}
-          {...{ register, errors }}
-        />
-      </div>
-      <div className="w-full mb-6">
-        <TextInput
-          label="Adres email"
-          name="email"
-          placeholder="Adres email"
-          type="email"
-          required={true}
-          pattern={{
-            value: /^[a-zA-Z0-9+.-_]+@[a-zA-Z0–9.-]+[.][a-zA-Z]{1,}$/,
-            errorMessage:
-              "Wprowadzony adres e-mail jest nieprawidłowy, sprawdź format (np. email@domena.com).",
+      <fieldset
+        disabled={formState.isSubmitSuccessful}
+        className="disabled:cursor-not-allowed"
+      >
+        <div className="w-full mb-6">
+          <TextInput
+            label="Imie"
+            name="name"
+            placeholder="Imie"
+            required={true}
+            minLength={2}
+            {...{ register, errors }}
+          />
+        </div>
+        <div className="w-full mb-6">
+          <TextInput
+            label="Nazwisko"
+            name="surrname"
+            placeholder="Nazwisko"
+            required={true}
+            minLength={2}
+            {...{ register, errors }}
+          />
+        </div>
+        <div className="w-full mb-6">
+          <TextInput
+            label="Adres email"
+            name="email"
+            placeholder="Adres email"
+            type="email"
+            required={true}
+            pattern={{
+              value: /^[a-zA-Z0-9+.-_]+@[a-zA-Z0–9.-]+[.][a-zA-Z]{1,}$/,
+              errorMessage:
+                "Wprowadzony adres e-mail jest nieprawidłowy, sprawdź format (np. email@domena.com).",
+            }}
+            {...{ register, errors }}
+          />
+        </div>
+        <div className="w-full mb-6">
+          <TextareaField
+            name="message"
+            label="Treść wiadomości / opis projektu"
+            placeholder="Treść wiadomości / opis projektu"
+            required={true}
+            minLength={10}
+            {...{ register, errors }}
+          />
+        </div>
+        <div className="flex flex-col mb-6">
+          <CheckboxInput name="gdpr" required={true} {...{ register, errors }}>
+            Wyrażam zgodę na przechowywanie przez tę witrynę przesłanych przeze
+            mnie informacji, w celu związanym z odpowiedzią na moje zapytanie.
+            Aby dowiedzieć się więcej, odwiedź{" "}
+            <Link href={"/"} className="text-green hover:underline">
+              politykę prywatności
+            </Link>
+            .
+          </CheckboxInput>
+        </div>
+        <SubmitButton
+          {...{
+            sending,
+            errorMessage,
+            successMessage,
           }}
-          {...{ register, errors }}
+          disabled={disableSubmitButton}
         />
-      </div>
-      <div className="w-full mb-6">
-        <TextareaField
-          name="message"
-          label="Treść wiadomości / opis projektu"
-          placeholder="Treść wiadomości / opis projektu"
-          required={true}
-          minLength={10}
-          {...{ register, errors }}
-        />
-      </div>
-      <div className="flex flex-col mb-6">
-        <CheckboxInput name="gdpr" required={true} {...{ register, errors }}>
-          Wyrażam zgodę na przechowywanie przez tę witrynę przesłanych przeze
-          mnie informacji, w celu związanym z odpowiedzią na moje zapytanie. Aby
-          dowiedzieć się więcej, odwiedź{" "}
-          <Link href={"/"} className="text-green hover:underline">
-            politykę prywatności
-          </Link>
-          .
-        </CheckboxInput>
-      </div>
-      <SubmitButton
-        {...{
-          sending,
-          disableSubmitButton,
-          errorMessage,
-          successMessage,
-        }}
-      />
+      </fieldset>
     </form>
   );
 };

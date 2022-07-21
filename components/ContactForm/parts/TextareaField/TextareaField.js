@@ -33,7 +33,7 @@ const TextareaField = forwardRef(
             isErrorThrown
               ? "border-red-400"
               : "border-gray-200 focus:border-green"
-          } rounded w-full py-3 px-4 text-gray-600 focus:outline-none focus:shadow-outline bg-whiteGreen focus:bg-white transition duration-200 h-36`}
+          } rounded w-full py-3 px-4 text-gray-600 focus:outline-none focus:shadow-outline bg-whiteGreen focus:bg-white transition duration-200 h-36 disabled:cursor-not-allowed`}
           id={name}
           placeholder={placeholder}
           aria-required={required}

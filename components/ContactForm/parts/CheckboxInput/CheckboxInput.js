@@ -24,7 +24,7 @@ const CheckboxInput = forwardRef(
             <input
               id={name}
               type="checkbox"
-              className="w-4 h-4 rounded border-green focus:ring-green focus:ring-2 accent-green cursor-pointer inline-flex"
+              className="w-4 h-4 rounded border-green focus:ring-green focus:ring-2 accent-green cursor-pointer inline-flex disabled:cursor-not-allowed"
               aria-required={required}
               aria-invalid={errors ? "true" : "false"}
               required={required}

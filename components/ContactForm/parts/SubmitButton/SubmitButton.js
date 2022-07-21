@@ -9,10 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const SubmitButton = forwardRef(
-  (
-    { sending, disableSubmitButton, errorMessage, successMessage, ...props },
-    ref
-  ) => {
+  ({ sending, errorMessage, successMessage, ...props }, ref) => {
     return (
       <>
         <button
@@ -20,9 +17,8 @@ const SubmitButton = forwardRef(
             errorMessage
               ? "bg-red-400 border-red-400"
               : "bg-green hover:bg-greenHover border-green"
-          } disabled:opacity-75 disabled:cursor-not-allowed text-white`}
+          } text-white disabled:cursor-not-allowed`}
           type="submit"
-          disabled={disableSubmitButton}
           {...{ ref, ...props }}
         >
           {sending === true ? (
