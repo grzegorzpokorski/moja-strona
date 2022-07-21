@@ -9,14 +9,18 @@ const send = async (req, res) => {
     await sendgrid.send({
       to: process.env.SENDGRID_MESSAGE_RECIEVER,
       from: process.env.SENDGRID_MESSAGE_RECIEVER,
+      replyTo: sanitizeHtml(req.body.email),
       subject: `Wiadomość ze strony ${host}`,
       html: `<p>imie: ${sanitizeHtml(req.body.name, {
         allowedTags: [],
       })}<br>nazwisko: ${sanitizeHtml(req.body.surrname, {
         allowedTags: [],
-      })}<br>email: ${req.body.email}</p><p>${sanitizeHtml(req.body.message, {
-        allowedTags: [],
-      })}</p>`,
+      })}<br>email: ${sanitizeHtml(req.body.email)}</p><p>${sanitizeHtml(
+        req.body.message,
+        {
+          allowedTags: [],
+        }
+      )}</p>`,
     });
   } catch (error) {
     return res.status(error.statusCode || 500).json({ error: error.message });
