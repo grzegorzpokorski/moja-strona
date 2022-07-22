@@ -47,6 +47,16 @@ module.exports = {
           },
         },
       }),
+      animation: {
+        "scale": "scale .8s ease-out",
+      },
+      keyframes: {
+        scale: {
+          "0%": { transform: "scale(0)" },
+          "80%": { transform: "scale(1.15)" },
+          "100%": { transform: "scale(1)" },
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

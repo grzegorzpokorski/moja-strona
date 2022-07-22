@@ -34,7 +34,7 @@ const SubmitButton = forwardRef(
           ) : successMessage ? (
             <>
               Wysłano
-              <FontAwesomeIcon icon={faCircleCheck} />
+              <FontAwesomeIcon icon={faCircleCheck} className="animate-scale" />
             </>
           ) : (
             <>
