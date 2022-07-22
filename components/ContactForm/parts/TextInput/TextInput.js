@@ -23,11 +23,12 @@ const TextInput = forwardRef(
     return (
       <>
         <label
-          className="block text-gray-700 text-sm font-bold mb-2"
+          className={`block text-gray-700 text-sm font-bold mb-2 ${
+            required ? 'after:content-["*"]' : ""
+          }`}
           htmlFor={name}
         >
           {label}
-          {required && "*"}
         </label>
         <input
           className={`text-sm appearance-none border-2 ${
