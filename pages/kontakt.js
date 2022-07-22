@@ -56,7 +56,10 @@ const Pricing = () => {
               <ContactForm />
             </div>
             <picture className="w-full lg:w-1/2">
-              <Image src={image} alt={image.alt} />
+              <Image
+                src={image}
+                alt="Zadowolony mężczyzna siedzi korzystając z laptopa"
+              />
             </picture>
           </div>
         </Section>
