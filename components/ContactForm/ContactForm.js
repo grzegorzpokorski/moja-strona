@@ -51,6 +51,7 @@ const ContactForm = () => {
         disabled={formState.isSubmitSuccessful}
         className="disabled:cursor-not-allowed"
       >
+        <legend className="sr-only">Formularz kontaktowy</legend>
         <div className="w-full mb-6">
           <TextInput
             label="Imie"
