@@ -26,7 +26,7 @@ const CheckboxInput = forwardRef(
               type="checkbox"
               className="w-4 h-4 rounded border-green focus:ring-green focus:ring-2 accent-green cursor-pointer inline-flex disabled:cursor-not-allowed"
               aria-required={required}
-              aria-invalid={errors ? "true" : "false"}
+              aria-invalid={isErrorThrown ? "true" : "false"}
               required={required}
               {...{ ref, ...props }}
               {...register(name, { required })}

@@ -38,7 +38,7 @@ const TextareaField = forwardRef(
           id={name}
           placeholder={placeholder}
           aria-required={required}
-          aria-invalid={errors ? "true" : "false"}
+          aria-invalid={isErrorThrown ? "true" : "false"}
           required={required}
           {...{ ref, ...props }}
           {...register(name, { required, minLength, pattern: pattern?.value })}

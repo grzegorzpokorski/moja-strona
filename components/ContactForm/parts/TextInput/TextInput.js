@@ -41,7 +41,7 @@ const TextInput = forwardRef(
           placeholder={placeholder}
           aria-required={required}
           required={required}
-          aria-invalid={errors ? "true" : "false"}
+          aria-invalid={isErrorThrown ? "true" : "false"}
           {...{ ref, ...props }}
           {...register(name, { required, minLength, pattern: pattern?.value })}
         />
