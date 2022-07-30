@@ -25,11 +25,15 @@ const MainHeader = ({ children }) => {
   return (
     <header>
       <nav
-        className={`fixed top-0 z-50 w-full bg-white transition ${
+        className={`fixed top-0 z-50 w-full bg-white transition-shadow ${
           isSticky ? "shadow-md" : ""
         }`}
       >
-        <section className="container mx-auto px-3 h-20 lg:h-28 flex flex-row justify-between items-center">
+        <section
+          className={`container mx-auto px-3 flex flex-row justify-between items-center transition-[height] ${
+            isSticky ? "h-16 lg:h-20" : "h-20 lg:h-28"
+          }`}
+        >
           <Logo isHome={isHome} isTitle={isHome} />
           <ClickAwayListener
             onClickAway={() => mobileMenuIsOpen && setMobileMenuIsOpen(false)}
@@ -38,7 +42,7 @@ const MainHeader = ({ children }) => {
               mobileMenuIsOpen={mobileMenuIsOpen}
               handleMobileMenuIsOpen={handleMobileMenuIsOpen}
             />
-            <MainMenu mobileMenuIsOpen={mobileMenuIsOpen} />
+            <MainMenu mobileMenuIsOpen={mobileMenuIsOpen} isSticky={isSticky} />
           </ClickAwayListener>
         </section>
       </nav>
