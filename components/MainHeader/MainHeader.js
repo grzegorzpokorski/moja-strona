@@ -30,7 +30,7 @@ const MainHeader = ({ children }) => {
         }`}
       >
         <section
-          className={`container mx-auto px-3 flex flex-row justify-between items-center transition-[height] ${
+          className={`container mx-auto px-3 flex flex-row justify-between items-center transition-[height] duration-[350ms] ${
             isSticky ? "h-16 lg:h-20" : "h-20 lg:h-28"
           }`}
         >
