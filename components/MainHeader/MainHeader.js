@@ -25,12 +25,12 @@ const MainHeader = ({ children }) => {
   return (
     <header>
       <nav
-        className={`fixed top-0 z-50 w-full bg-white transition-shadow duration-[350ms] ${
+        className={`fixed top-0 z-50 w-full bg-white transition-shadow duration-300 ${
           isSticky ? "shadow-md" : ""
         }`}
       >
         <section
-          className={`container mx-auto px-3 flex flex-row justify-between items-center transition-[height] duration-[350ms] ${
+          className={`container mx-auto px-3 flex flex-row justify-between items-center transition-[height] duration-300 ${
             isSticky ? "h-16 lg:h-20" : "h-20 lg:h-28"
           }`}
         >
