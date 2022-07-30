@@ -25,7 +25,7 @@ const MainHeader = ({ children }) => {
   return (
     <header>
       <nav
-        className={`fixed top-0 z-50 w-full bg-white transition-shadow ${
+        className={`fixed top-0 z-50 w-full bg-white transition-shadow duration-[350ms] ${
           isSticky ? "shadow-md" : ""
         }`}
       >
