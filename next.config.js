@@ -4,6 +4,9 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+module.exports = {
+  optimizeFonts: true,
+};
 
 module.exports = {
   webpack5: true,
