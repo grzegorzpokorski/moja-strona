@@ -1,3 +1,5 @@
+import { GetStaticProps } from "next";
+
 import Head from "../components/Head";
 import Main from "../components/Main";
 import MainHeader from "../components/MainHeader";
@@ -102,7 +104,7 @@ const Home = ({ newestPosts }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const posts = getPublishedPostsOrderByDate();
   const newestPosts = posts.slice(0, 3);
 
