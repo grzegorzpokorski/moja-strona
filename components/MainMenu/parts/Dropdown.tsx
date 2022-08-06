@@ -1,6 +1,13 @@
+import { FC } from "react";
+import { MenuItem } from "../../../types/menu";
 import Link from "../../Link";
 
-const Dropdown = ({ items, currentPath }) => {
+type Props = {
+  items: MenuItem[];
+  currentPath: string;
+};
+
+const Dropdown: FC<Props> = ({ items, currentPath }) => {
   return (
     <ul
       className={`relative lg:absolute mt-6 lg:mt-0 flex flex-col gap-4 border-l-2 lg:border-none border-l-green lg:rounded pl-4 lg:p-6 lg:bg-white lg:shadow-md lg:w-64 transition-opacity navbar-dropdown__menu`}

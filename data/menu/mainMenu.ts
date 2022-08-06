@@ -1,4 +1,6 @@
-const mainMenu = [
+import { MainMenuItem } from "../../types/menu";
+
+const mainMenu: MainMenuItem[] = [
   {
     href: "/o-mnie",
     label: "O mnie",

@@ -1,8 +1,14 @@
+import { FC } from "react";
 import MenuItem from "./parts/MenuItem";
 
 import mainMenu from "./../../data/menu/mainMenu";
 
-const MainMenu = ({ mobileMenuIsOpen, isSticky }) => {
+type Props = {
+  mobileMenuIsOpen: boolean;
+  isSticky: boolean;
+};
+
+const MainMenu: FC<Props> = ({ mobileMenuIsOpen, isSticky }) => {
   return (
     <ul
       id="menu"
