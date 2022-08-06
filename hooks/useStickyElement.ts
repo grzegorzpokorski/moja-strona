@@ -1,9 +1,11 @@
-import { useEffect, useCallback, useRef, useState } from "react";
+import { useEffect, useCallback, useRef, useState, RefObject } from "react";
 
-const useStickyElement = (customOffset) => {
+const useStickyElement = (
+  customOffset?: number,
+): [Boolean, RefObject<HTMLElement>] => {
   const [isSticky, setStickiness] = useState(false);
   const [positionOnWhichStickinessIsApplied, setPosition] = useState(0);
-  const elementToApplyStickiness = useRef(null);
+  const elementToApplyStickiness = useRef<HTMLElement>(null);
   useEffect(() => {
     if (customOffset) {
       setPosition(customOffset);
