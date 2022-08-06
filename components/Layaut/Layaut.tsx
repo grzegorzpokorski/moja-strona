@@ -1,7 +1,11 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 import Footer from "../Footer";
 
-const Layaut: FC = ({ children }) => {
+type Props = {
+  children: any;
+};
+
+const Layaut: FC<Props> = ({ children }) => {
   return (
     <>
       <a
