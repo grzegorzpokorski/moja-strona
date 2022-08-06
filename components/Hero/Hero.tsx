@@ -1,7 +1,23 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import { FC, ReactNode } from "react";
+import { ButtonType } from "../../types/button";
 import Button from "./../Button";
 
-const Hero = ({
+type HeroType = {
+  title: string;
+  description?: ReactNode;
+  buttons?: ButtonType[];
+  image: {
+    src: StaticImageData | string;
+    alt: string;
+  };
+  bgColor?: string;
+  titleAsH1?: boolean;
+  withMarginOnTop?: boolean;
+  imageFirst?: boolean;
+};
+
+const Hero: FC<HeroType> = ({
   title,
   description,
   buttons,
