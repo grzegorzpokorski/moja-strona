@@ -2,10 +2,10 @@ import { FC, ReactNode } from "react";
 import Footer from "../Footer";
 
 type Props = {
-  children: any;
+  children: ReactNode;
 };
 
-const Layaut: FC<Props> = ({ children }) => {
+const Layout: FC<Props> = ({ children }) => {
   return (
     <>
       <a
@@ -20,4 +20,4 @@ const Layaut: FC<Props> = ({ children }) => {
   );
 };
 
-export default Layaut;
+export default Layout;

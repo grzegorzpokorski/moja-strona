@@ -5,13 +5,13 @@ config.autoAddCss = false;
 
 import "./../styles/style.scss";
 
-import Layaut from "../components/Layaut";
+import Layout from "../components/Layout";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <Layaut>
+    <Layout>
       <Component {...pageProps} />
-    </Layaut>
+    </Layout>
   );
 };
 
