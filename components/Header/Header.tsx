@@ -1,4 +1,16 @@
-const Header = ({
+import { FC, ReactNode } from "react";
+
+type Props = {
+  subtitle?: string;
+  title: string;
+  description?: ReactNode;
+  centered?: boolean;
+  titleAsH1?: boolean;
+  children?: ReactNode;
+  customClasses?: string;
+};
+
+const Header: FC<Props> = ({
   subtitle,
   title,
   description,
