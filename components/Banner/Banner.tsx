@@ -1,6 +1,14 @@
+import { FC } from "react";
 import Button from "../Button";
+import { ButtonType } from "./../../types/button";
 
-const Banner = ({ title, description, buttons }) => {
+type BannerType = {
+  title: string;
+  description?: string;
+  buttons?: ButtonType[];
+};
+
+const Banner: FC<BannerType> = ({ title, description, buttons }) => {
   return (
     <section className="py-24 bg-green">
       <div className="container px-3 mx-auto">
