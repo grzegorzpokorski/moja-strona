@@ -1,6 +1,12 @@
+import { FC } from "react";
 import Link from "../Link";
 
-const Logo = ({ isHome, isTitle }) => {
+type Props = {
+  isHome?: boolean;
+  isTitle?: boolean;
+};
+
+const Logo: FC<Props> = ({ isHome, isTitle }) => {
   return (
     <Link
       href={`${isHome ? "#" : "/"}`}
