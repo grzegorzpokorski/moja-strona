@@ -1,19 +1,6 @@
 import { FC } from "react";
+import { ButtonType } from "./../../types/button";
 import Link from "../Link";
-
-type ButtonType = {
-  label: string;
-  href: string;
-  size?: "default" | "small" | "social";
-  style?:
-    | "default"
-    | "transparentGreen"
-    | "white"
-    | "transparentWhite"
-    | "tag"
-    | "whiteZinc";
-  customClasses?: string;
-};
 
 const Button: FC<ButtonType> = ({
   label,
