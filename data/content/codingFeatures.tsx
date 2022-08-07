@@ -9,7 +9,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faHtml5 } from "@fortawesome/free-brands-svg-icons";
 
-export const codingFeatures = [
+import { BoxesListItem } from "../../types/types";
+
+export const codingFeatures: BoxesListItem[] = [
   {
     icon: (
       <FontAwesomeIcon
