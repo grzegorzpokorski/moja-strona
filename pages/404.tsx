@@ -1,7 +1,6 @@
 import Head from "../components/Head";
 import Main from "../components/Main";
 import MainHeader from "../components/MainHeader";
-import Banner from "../components/Banner";
 import Hero from "../components/Hero";
 
 import addressSeparator from "../data/seo/addressSeparator";
