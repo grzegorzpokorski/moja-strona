@@ -2,7 +2,12 @@ import Link from "../../Link";
 import Button from "../../Button";
 import Dropdown from "./Dropdown";
 import { useRouter } from "next/router";
-import { MainMenuItemType } from "./../../../types/menu";
+import { MenuItemType } from "./../../../types/menu";
+
+type MainMenuItemType = {
+  button?: boolean;
+  childrens?: MenuItemType[];
+} & MenuItemType;
 
 const MenuItem = (item: MainMenuItemType) => {
   const currentPath = useRouter().asPath.split("#")[0];
