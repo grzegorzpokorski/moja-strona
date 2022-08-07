@@ -1,6 +1,6 @@
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 
-type SectionType = {
+type SectionProps = {
   bgColor?: "bg-white" | "bg-green" | "bg-whiteGreen";
   children: ReactNode[];
   withMarginOnTop?: boolean;
@@ -8,13 +8,13 @@ type SectionType = {
   id?: string;
 };
 
-const Section: FC<SectionType> = ({
+const Section = ({
   bgColor,
   children,
   withMarginOnTop,
   customClasses,
   id,
-}) => {
+}: SectionProps) => {
   return (
     <section
       className={`py-16 md:py-24 ${bgColor ? bgColor : "bg-white"} ${

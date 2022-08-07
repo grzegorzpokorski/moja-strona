@@ -1,11 +1,11 @@
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 
-type MainType = {
+type MainProps = {
   children: ReactNode;
   withMarginOnTop?: boolean;
 };
 
-const Main: FC<MainType> = ({ children, withMarginOnTop }) => {
+const Main = ({ children, withMarginOnTop }: MainProps) => {
   return (
     <main id="tresc" className={`${withMarginOnTop ? "mt-20 lg:mt-28" : ""}`}>
       {children}

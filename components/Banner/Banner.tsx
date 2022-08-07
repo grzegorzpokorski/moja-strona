@@ -1,14 +1,13 @@
-import { FC } from "react";
 import Button from "../Button";
 import { ButtonType } from "./../../types/button";
 
-type BannerType = {
+type BannerProps = {
   title: string;
   description?: string;
   buttons?: ButtonType[];
 };
 
-const Banner: FC<BannerType> = ({ title, description, buttons }) => {
+const Banner = ({ title, description, buttons }: BannerProps) => {
   return (
     <section className="py-24 bg-green">
       <div className="container px-3 mx-auto">

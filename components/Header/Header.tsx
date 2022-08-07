@@ -1,6 +1,6 @@
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 
-type Props = {
+type HeaderProps = {
   subtitle?: string;
   title: string;
   description?: ReactNode;
@@ -10,7 +10,7 @@ type Props = {
   customClasses?: string;
 };
 
-const Header: FC<Props> = ({
+const Header = ({
   subtitle,
   title,
   description,
@@ -18,7 +18,7 @@ const Header: FC<Props> = ({
   titleAsH1,
   children,
   customClasses,
-}) => {
+}: HeaderProps) => {
   return (
     <header
       className={`w-full mr-auto flex flex-col gap-4 ${

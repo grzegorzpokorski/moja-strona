@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
-export type FAQItem = {
+export type FAQItemType = {
   question: string;
   answer: ReacNode;
 };

@@ -1,14 +1,13 @@
-import { FC } from "react";
 import { ButtonType } from "./../../types/button";
 import Link from "../Link";
 
-const Button: FC<ButtonType> = ({
+const Button = ({
   label,
   href,
   size = "default",
   style = "default",
   customClasses,
-}) => {
+}: ButtonType) => {
   return (
     <Link
       href={href}

@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState, useEffect } from "react";
+import { ReactNode, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 import useStickyElement from "../../hooks/useStickyElement";
@@ -8,11 +8,11 @@ import Logo from "../Logo";
 import Hamburger from "../Hamburger";
 import MainMenu from "../MainMenu";
 
-type Props = {
+type MainHeaderProps = {
   children?: ReactNode;
 };
 
-const MainHeader: FC<Props> = ({ children }) => {
+const MainHeader = ({ children }: MainHeaderProps) => {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
   const handleMobileMenuIsOpen = () => setMobileMenuIsOpen(!mobileMenuIsOpen);
 

@@ -1,9 +1,9 @@
 import Image, { StaticImageData } from "next/image";
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 import { ButtonType } from "../../types/button";
 import Button from "./../Button";
 
-type HeroType = {
+type HeroProps = {
   title: string;
   description?: ReactNode;
   buttons?: ButtonType[];
@@ -17,7 +17,7 @@ type HeroType = {
   imageFirst?: boolean;
 };
 
-const Hero: FC<HeroType> = ({
+const Hero = ({
   title,
   description,
   buttons,
@@ -26,7 +26,7 @@ const Hero: FC<HeroType> = ({
   titleAsH1,
   withMarginOnTop,
   imageFirst,
-}) => {
+}: HeroProps) => {
   return (
     <section
       className={`py-12 md:py-12 ${bgColor ? bgColor : "bg-white"} ${

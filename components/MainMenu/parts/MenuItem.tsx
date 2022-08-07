@@ -1,11 +1,10 @@
-import { FC } from "react";
 import Link from "../../Link";
 import Button from "../../Button";
 import Dropdown from "./Dropdown";
 import { useRouter } from "next/router";
-import { MainMenuItem } from "./../../../types/menu";
+import { MainMenuItemType } from "./../../../types/menu";
 
-const MenuItem: FC<MainMenuItem> = (item) => {
+const MenuItem = (item: MainMenuItemType) => {
   const currentPath = useRouter().asPath.split("#")[0];
 
   return item.button ? (

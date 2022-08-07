@@ -1,9 +1,9 @@
-export type MenuItem = {
+export type MenuItemType = {
   label: string;
   href: string;
 };
 
-export type MainMenuItem = {
+export type MainMenuItemType = {
   button?: boolean;
-  childrens?: MenuItem[];
-} & MenuItem;
+  childrens?: MenuItemType[];
+} & MenuItemType;

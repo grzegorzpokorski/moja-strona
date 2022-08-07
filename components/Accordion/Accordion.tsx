@@ -1,18 +1,18 @@
 import AccordionItem from "./parts/AccordionItem";
-import { FC, useState } from "react";
-import { FAQItem } from "./../../types/content";
+import { useState } from "react";
+import { FAQItemType } from "./../../types/content";
 
 type AccordionType = {
-  items: FAQItem[];
+  items: FAQItemType[];
   withMarginOnTop?: boolean;
   id?: string;
 };
 
-const Accordion: FC<AccordionType> = ({
+const Accordion = ({
   items,
   withMarginOnTop,
   id = "accordion",
-}) => {
+}: AccordionType) => {
   const [expandedItem, setExpandedItem] = useState<string>(items[0].question);
 
   return (

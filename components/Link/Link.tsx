@@ -1,13 +1,13 @@
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 import LinkNext from "next/link";
 
-type LinkType = {
+type LinkProps = {
   href: string;
   children: ReactNode;
   className?: string;
 };
 
-const Link: FC<LinkType> = ({ href, children, className }) => {
+const Link = ({ href, children, className }: LinkProps) => {
   const isInternal = href && (href.startsWith("#") || href.startsWith("/"));
 
   return isInternal ? (
