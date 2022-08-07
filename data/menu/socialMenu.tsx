@@ -5,7 +5,9 @@ import {
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 
-const socialMenu = [
+import { SocialMenuItemType } from "../../types/menu";
+
+const socialMenu: SocialMenuItemType[] = [
   {
     href: "https://behance.net/grzegorzpokorski",
     label: "behance",

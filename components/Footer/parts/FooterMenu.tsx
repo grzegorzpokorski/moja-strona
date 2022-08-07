@@ -1,6 +1,11 @@
 import Link from "../../Link";
+import { MenuItemType } from "../../../types/menu";
 
-const FooterMenu = ({ items }) => {
+type FooterMenuType = {
+  items: MenuItemType[];
+};
+
+const FooterMenu = ({ items }: FooterMenuType) => {
   return (
     <ul className="flex flex-col md:flex-row items-center gap-3">
       {items &&

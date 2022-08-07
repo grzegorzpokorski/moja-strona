@@ -5,7 +5,11 @@ import Logo from "./../Logo";
 import FooterMenu from "./parts/FooterMenu";
 import SocialMenu from "./parts/SocialMenu";
 
-const Footer = ({ isHome }) => {
+type FooterProps = {
+  isHome: boolean;
+};
+
+const Footer = ({ isHome }: FooterProps) => {
   return (
     <footer className="py-20 bg-white border-t-2 border-greenLight">
       <div className="container mx-auto px-3 flex flex-wrap flex-col md:flex-row justify-between items-center gap-6">

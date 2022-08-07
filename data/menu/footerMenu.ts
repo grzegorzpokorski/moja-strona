@@ -1,4 +1,6 @@
-const footerMenu = [
+import { MenuItemType } from "../../types/menu";
+
+const footerMenu: MenuItemType[] = [
   {
     href: "/o-mnie",
     label: "O mnie",

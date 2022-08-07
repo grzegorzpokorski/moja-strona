@@ -1,6 +1,11 @@
 import Link from "../../Link";
+import { SocialMenuItemType } from "../../../types/menu";
 
-const SocialMenu = ({ items }) => {
+type SocialMenuProps = {
+  items: SocialMenuItemType[];
+};
+
+const SocialMenu = ({ items }: SocialMenuProps) => {
   return (
     <>
       {items &&
