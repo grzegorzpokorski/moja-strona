@@ -6,7 +6,7 @@ import FooterMenu from "./parts/FooterMenu";
 import SocialMenu from "./parts/SocialMenu";
 
 type FooterProps = {
-  isHome: boolean;
+  isHome?: boolean;
 };
 
 const Footer = ({ isHome }: FooterProps) => {
