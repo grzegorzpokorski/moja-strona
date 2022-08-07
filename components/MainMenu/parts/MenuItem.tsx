@@ -4,7 +4,7 @@ import Dropdown from "./Dropdown";
 import { useRouter } from "next/router";
 import { MenuItemType } from "./../../../types/menu";
 
-type MainMenuItemType = {
+export type MainMenuItemType = {
   button?: boolean;
   childrens?: MenuItemType[];
 } & MenuItemType;

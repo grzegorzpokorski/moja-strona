@@ -1,4 +1,4 @@
-import { MainMenuItemType } from "../../types/menu";
+import { MainMenuItemType } from "../../components/MainMenu/parts/MenuItem";
 
 const mainMenu: MainMenuItemType[] = [
   {
