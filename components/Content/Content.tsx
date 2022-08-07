@@ -1,4 +1,12 @@
-export const Content = ({ columns, content, withSpaceAbove }) => {
+import { ReactNode } from "react";
+
+type ContentProps = {
+  columns?: 1 | 2 | 3;
+  content: ReactNode;
+  withSpaceAbove?: boolean;
+};
+
+const Content = ({ columns, content, withSpaceAbove }: ContentProps) => {
   console.log();
   return columns ? (
     <div
