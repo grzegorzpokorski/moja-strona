@@ -1,8 +1,24 @@
+import { ReactNode } from "react";
 import Header from "../Header";
 import Section from "../Section";
 import StepItem from "./parts/StepItem";
 
-const Process = ({ header, steps, bgColor }) => {
+export type StepItemType = {
+  title: string;
+  content: ReactNode;
+};
+
+type ProcessProps = {
+  header: {
+    title: string;
+    subtitle: string;
+    description: ReactNode;
+  };
+  steps: StepItemType[];
+  bgColor?: "bg-white" | "bg-green" | "bg-whiteGreen";
+};
+
+const Process = ({ header, steps, bgColor }: ProcessProps) => {
   return (
     <Section bgColor={bgColor}>
       <Header
