@@ -137,7 +137,7 @@ const Offer = () => {
             }
           />
         </Section>
-        <Section bgColor="bg-green-100" id="zalety">
+        <Section bgColor="bg-white" id="zalety">
           <Header
             subtitle="Zalety"
             title="Czym wyróżniają się moje strony?"
