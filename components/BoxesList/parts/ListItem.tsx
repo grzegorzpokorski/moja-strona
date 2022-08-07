@@ -1,6 +1,7 @@
 import Link from "../../Link";
+import { BoxesListItem } from "../../../types/types";
 
-const ListItem = ({ icon, subtitle, title, description, href }) => {
+const ListItem = ({ icon, title, description, href }: BoxesListItem) => {
   return (
     <li className="w-full bg-white border-2 border-greenLight drop-shadow-xl rounded-md">
       <article className="p-8 flex flex-col items-start gap-6">

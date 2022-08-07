@@ -1,6 +1,12 @@
 import ListItem from "./parts/ListItem";
+import { BoxesListItem } from "../../types/types";
 
-const OfferList = ({ items, withMarginOnTop }) => {
+type BoxesListProps = {
+  items: BoxesListItem[];
+  withMarginOnTop?: boolean;
+};
+
+const BoxesList = ({ items, withMarginOnTop }: BoxesListProps) => {
   return (
     <ul
       className={`flex flex-col lg:grid md:grid-cols-2 xl:grid-cols-3 gap-6 ${
@@ -13,4 +19,4 @@ const OfferList = ({ items, withMarginOnTop }) => {
   );
 };
 
-export default OfferList;
+export default BoxesList;

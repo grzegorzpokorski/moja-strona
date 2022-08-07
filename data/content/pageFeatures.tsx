@@ -12,7 +12,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faHtml5 } from "@fortawesome/free-brands-svg-icons";
 
-export const pageFeatures = [
+import { BoxesListItem } from "../../types/types";
+
+export const pageFeatures: BoxesListItem[] = [
   {
     icon: (
       <FontAwesomeIcon

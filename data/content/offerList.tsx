@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDesktop, faCode, faImages } from "@fortawesome/free-solid-svg-icons";
 
-export const offerList = [
+import { BoxesListItem } from "../../types/types";
+
+export const offerList: BoxesListItem[] = [
   {
     icon: <FontAwesomeIcon icon={faDesktop} />,
     title: "Kompleksowe tworzenie stron internetowych",
