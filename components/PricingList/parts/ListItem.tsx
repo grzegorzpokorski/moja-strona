@@ -1,6 +1,20 @@
 import Button from "../../Button";
 
-const ListItem = ({ icon, title, price, features, href }) => {
+export type PricingListItemType = {
+  icon: JSX.Element;
+  title: string;
+  price: string;
+  features: JSX.Element[];
+  href: string;
+};
+
+const ListItem = ({
+  icon,
+  title,
+  price,
+  features,
+  href,
+}: PricingListItemType) => {
   return (
     <li className="w-full bg-white border-2 border-greenLight hover:border-green drop-shadow-lg rounded-md transition flex flex-col">
       <article className="p-8 flex flex-col gap-6 h-full justify-between">
@@ -13,7 +27,9 @@ const ListItem = ({ icon, title, price, features, href }) => {
                 </span>
               </span>
             )}
-            <h3 className="text-customGray text-lg font-medium mt-3">{title}</h3>
+            <h3 className="text-customGray text-lg font-medium mt-3">
+              {title}
+            </h3>
           </header>
           <div className="flex flex-col text-center">
             <p className="border-y-2 border-zinc-200 py-2">

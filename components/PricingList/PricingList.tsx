@@ -1,6 +1,12 @@
 import ListItem from "./parts/ListItem";
+import { PricingListItemType } from "./parts/ListItem";
 
-const PricingList = ({ items, withMarginOnTop }) => {
+type PricingLlistProps = {
+  items: PricingListItemType[];
+  withMarginOnTop?: boolean;
+};
+
+const PricingList = ({ items, withMarginOnTop }: PricingLlistProps) => {
   return (
     <ul
       className={`flex flex-col md:flex-row gap-6 ${

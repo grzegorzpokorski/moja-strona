@@ -6,7 +6,9 @@ import {
   faBriefcase,
 } from "@fortawesome/free-solid-svg-icons";
 
-export const tworzenieStronInternetowychPricing = [
+import { PricingListItemType } from "../../../components/PricingList/parts/ListItem";
+
+export const tworzenieStronInternetowychPricing: PricingListItemType[] = [
   {
     icon: (
       <FontAwesomeIcon
