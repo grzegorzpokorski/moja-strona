@@ -1,5 +1,19 @@
-import Image from "next/image";
+import { ReactNode } from "react";
+import Image, { StaticImageData } from "next/image";
 import Button from "../Button";
+
+type ContentWithImageProps = {
+  subtitle: string;
+  title: string;
+  content?: ReactNode;
+  href?: string;
+  image: {
+    src: StaticImageData | string;
+    alt: string;
+  };
+  reverse?: boolean;
+  bgColor?: "bg-white" | "bg-green" | "bg-whiteGreen";
+};
 
 const ContentWithImage = ({
   subtitle,
@@ -9,7 +23,7 @@ const ContentWithImage = ({
   image,
   reverse,
   bgColor,
-}) => {
+}: ContentWithImageProps) => {
   return (
     <section className={`py-16 md:py-24 ${bgColor ? bgColor : "bg-white"}`}>
       <div
