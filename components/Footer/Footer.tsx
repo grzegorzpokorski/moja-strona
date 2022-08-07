@@ -20,8 +20,8 @@ const Footer = ({ isHome }: FooterProps) => {
           <FooterMenu items={footerMenu} />
         </nav>
         <p className="basis-full text-center text-gray-500 md:order-4">
-          Grzegorz Pokorski © 2022. Doodles by doodleipsum.com. Created by
-          Grzegorz Pokorski.
+          Grzegorz Pokorski © {new Date().getFullYear()}. Doodles by
+          doodleipsum.com. Created by Grzegorz Pokorski.
         </p>
         <ul className="flex flex-row grow basis-0 gap-3 text-green md:justify-end md:order-3">
           <SocialMenu items={socialMenu} />
