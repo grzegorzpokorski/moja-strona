@@ -1,4 +1,12 @@
-const Hamburger = ({ mobileMenuIsOpen, handleMobileMenuIsOpen }) => {
+type HamburgerProps = {
+  mobileMenuIsOpen: boolean;
+  handleMobileMenuIsOpen: () => void;
+};
+
+const Hamburger = ({
+  mobileMenuIsOpen,
+  handleMobileMenuIsOpen,
+}: HamburgerProps) => {
   const ariaLabelForOpened = "Zamknij";
   const ariaLabelForClosed = "Otwórz";
 
