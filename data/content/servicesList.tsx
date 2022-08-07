@@ -2,7 +2,9 @@ import codeImage from "../../public/images/code.webp";
 import designImage from "../../public/images/design.webp";
 import pagesImage from "../../public/images/pages.webp";
 
-export const servicesList = [
+import { ServicesType } from "../../components/Services/Services";
+
+export const servicesList: ServicesType[] = [
   {
     subtitle: "Strony internetowe",
     title: "Programowanie stron internetowych 🚀",
