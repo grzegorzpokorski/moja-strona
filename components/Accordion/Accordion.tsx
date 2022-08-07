@@ -1,9 +1,8 @@
-import AccordionItem from "./parts/AccordionItem";
+import AccordionItem, { AccordionItemType } from "./parts/AccordionItem";
 import { useState } from "react";
-import { FAQItemType } from "./../../types/content";
 
 type AccordionType = {
-  items: FAQItemType[];
+  items: AccordionItemType[];
   withMarginOnTop?: boolean;
   id?: string;
 };

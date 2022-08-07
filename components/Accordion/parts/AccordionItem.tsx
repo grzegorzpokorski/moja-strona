@@ -1,13 +1,16 @@
 import { useEffect, useRef } from "react";
 import slugify from "slugify";
 
-import { FAQItemType } from "./../../../types/content";
+export type AccordionItemType = {
+  question: string;
+  answer: JSX.Element;
+};
 
 type AccordionItemProps = {
   expanded: boolean;
   uniqueId: string;
   handleClickTrigger: () => void;
-} & FAQItemType;
+} & AccordionItemType;
 
 const AccordionItem = ({
   question,
