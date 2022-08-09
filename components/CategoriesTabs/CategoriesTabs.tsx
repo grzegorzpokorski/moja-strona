@@ -1,6 +1,10 @@
 import Button from "../Button";
 
-const CategoriesTabs = ({ categories }) => {
+type Props = {
+  categories: string[];
+};
+
+const CategoriesTabs = ({ categories }: Props) => {
   return (
     <ul className={`flex flex-row flex-wrap gap-3 mt-8`}>
       {categories.map((cat) => (
