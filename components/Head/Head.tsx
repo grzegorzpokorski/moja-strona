@@ -30,7 +30,7 @@ type Shema = {
     image?: {
       "@type": string;
       "@id": string;
-      url: string;
+      url: string | StaticImageData;
       inLanguage: string;
       width: number;
       height: number;
