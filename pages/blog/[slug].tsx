@@ -63,7 +63,7 @@ export const getStaticProps = async ({ params }) => {
   const relatedPosts = getPublishedPostsOrderByDate().filter(
     (post) =>
       post.frontmatter.category === frontmatter.category &&
-      post.frontmatter.slug != slug
+      post.frontmatter.slug != slug,
   );
 
   return {

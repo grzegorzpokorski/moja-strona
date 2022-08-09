@@ -4,15 +4,56 @@ import siteUrl from "../../data/seo/siteUrl";
 import siteName from "../../data/seo/siteName";
 import slogan from "../../data/seo/slogan";
 import getISOStringFromPublicationDate from "../../helpers/functions/getISOStringFromPublicationDate";
+import { StaticImageData } from "next/image";
 
-const Head = (props) => {
+type Props = {
+  title: string;
+  description?: string;
+  contentType?: string;
+  publicationDate?: string;
+  featuredImage?: string | StaticImageData;
+};
+
+type Shema = {
+  "@context": string;
+  "@graph": {
+    "@type": string[];
+    "@id": string;
+    name: string;
+    sameAs?: string[];
+    description?: string;
+    url?: string;
+    publisher?: {
+      "@id": string;
+    };
+    inLanguage?: string;
+    image?: {
+      "@type": string;
+      "@id": string;
+      url: string;
+      inLanguage: string;
+      width: number;
+      height: number;
+      caption: string;
+    };
+    datePublished?: string;
+  }[];
+};
+
+const Head = ({
+  title,
+  description,
+  contentType,
+  publicationDate,
+  featuredImage,
+}: Props) => {
   const permalink = usePermalink();
 
-  // const robotsMeta =
+  // const robotsMeta: string =
   //   "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
-  const robotsMeta = "noindex, nofollow";
+  const robotsMeta: string = "noindex, nofollow";
 
-  const schema = {
+  const schema: Shema = {
     "@context": "https://schema.org",
     "@graph": [
       {
@@ -39,23 +80,23 @@ const Head = (props) => {
     ],
   };
 
-  if (props.contentType === "article") {
+  if (contentType === "article") {
     schema["@graph"].push({
       "@type": ["Article"],
       "@id": `${permalink}/article`,
       url: permalink,
-      name: props.title,
-      description: props.description,
+      name: title,
+      description: description,
       image: {
         "@type": "ImageObject",
         "@id": `${permalink}#image`,
-        url: props.featuredImage,
+        url: featuredImage,
         inLanguage: "pl-PL",
         width: 1200,
         height: 630,
         caption: siteName,
       },
-      datePublished: getISOStringFromPublicationDate(props.publicationDate),
+      datePublished: getISOStringFromPublicationDate(publicationDate),
       publisher: {
         "@id": `${siteUrl}/#person`,
       },
@@ -64,8 +105,8 @@ const Head = (props) => {
 
   return (
     <HeadTag>
-      <title>{props.title}</title>
-      <meta key="description" name="description" content={props.description} />
+      <title>{title}</title>
+      <meta key="description" name="description" content={description} />
 
       <meta key="robots" name="robots" content={robotsMeta} />
       <meta key="googlebot" name="googlebot" content={robotsMeta} />
@@ -73,16 +114,16 @@ const Head = (props) => {
 
       <link key="canonical" rel="canonical" href={permalink} />
 
-      <meta property="og:title" content={props.title} />
-      <meta property="og:description" content={props.description} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
 
       <meta property="og:url" content={permalink} />
       <meta property="og:site_name" content={siteName} />
 
       <meta property="og:locale" content="pl_PL" />
-      <meta property="og:type" content={props.contentType} />
+      <meta property="og:type" content={contentType} />
 
-      {props.contentType === "article" && (
+      {contentType === "article" && (
         <>
           <meta
             property="article:author"
@@ -90,7 +131,7 @@ const Head = (props) => {
           />
           <meta
             property="article:published_time"
-            content={getISOStringFromPublicationDate(props.publicationDate)}
+            content={getISOStringFromPublicationDate(publicationDate)}
           />
         </>
       )}
@@ -100,9 +141,7 @@ const Head = (props) => {
       <meta
         property="og:image"
         content={`${siteUrl}${
-          props.featuredImage
-            ? props.featuredImage
-            : "/images/default-og-image.jpg"
+          featuredImage ? featuredImage : "/images/default-og-image.jpg"
         }`}
       />
       <meta property="og:image:width" content="1200" />
