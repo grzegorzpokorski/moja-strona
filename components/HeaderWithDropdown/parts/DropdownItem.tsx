@@ -1,6 +1,11 @@
 import slugify from "slugify";
 
-const DropdownItem = ({ name, active = false }) => {
+type Props = {
+  name: string;
+  active?: boolean;
+};
+
+const DropdownItem = ({ name, active = false }: Props) => {
   return (
     <li
       className={`px-6 py-1 ${

@@ -1,4 +1,11 @@
-const Heading = ({ subtitle, title, description, titleAsH1 }) => {
+type Props = {
+  subtitle?: string;
+  title: string;
+  description?: JSX.Element;
+  titleAsH1?: boolean;
+};
+
+const Heading = ({ subtitle, title, description, titleAsH1 }: Props) => {
   return (
     <div className={`w-full lg:w-8/12 flex flex-col gap-3`}>
       {subtitle && (

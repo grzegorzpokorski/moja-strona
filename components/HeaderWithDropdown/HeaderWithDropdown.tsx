@@ -1,6 +1,15 @@
 import Dropdown from "./parts/Dropdown";
 import Heading from "./parts/Heading";
 
+type Props = {
+  subtitle?: string;
+  title: string;
+  description?: JSX.Element;
+  titleAsH1?: boolean;
+  categories: string[];
+  initialDropdownValue: string;
+};
+
 const HeaderWithSelectCategory = ({
   subtitle,
   title,
@@ -8,7 +17,7 @@ const HeaderWithSelectCategory = ({
   titleAsH1,
   categories,
   initialDropdownValue,
-}) => {
+}: Props) => {
   return (
     <header className={`flex flex-col lg:flex-row gap-6 lg:gap-20`}>
       <Heading
