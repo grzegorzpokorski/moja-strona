@@ -1,9 +1,9 @@
-import { ReactNode, useState, useEffect } from "react";
+import { ReactNode, useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 
 import useStickyElement from "../../hooks/useStickyElement";
+import useOnClickAway from "../../hooks/useOnClickAway";
 
-import ClickAwayListener from "../ClickAwayListener";
 import Logo from "../Logo";
 import Hamburger from "../Hamburger";
 import MainMenu from "../MainMenu";
@@ -26,6 +26,12 @@ const MainHeader = ({ children }: MainHeaderProps) => {
     }
   }, [pathname]);
 
+  const menuContainerRef = useRef<HTMLDivElement>(null);
+  useOnClickAway(
+    menuContainerRef,
+    () => mobileMenuIsOpen && setMobileMenuIsOpen(false),
+  );
+
   return (
     <header>
       <nav
@@ -39,15 +45,13 @@ const MainHeader = ({ children }: MainHeaderProps) => {
           }`}
         >
           <Logo isHome={isHome} isTitle={isHome} />
-          <ClickAwayListener
-            onClickAway={() => mobileMenuIsOpen && setMobileMenuIsOpen(false)}
-          >
+          <div ref={menuContainerRef}>
             <Hamburger
               mobileMenuIsOpen={mobileMenuIsOpen}
               handleMobileMenuIsOpen={handleMobileMenuIsOpen}
             />
             <MainMenu mobileMenuIsOpen={mobileMenuIsOpen} isSticky={isSticky} />
-          </ClickAwayListener>
+          </div>
         </section>
       </nav>
       {children}
