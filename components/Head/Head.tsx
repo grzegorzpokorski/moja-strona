@@ -30,7 +30,7 @@ type Shema = {
     image?: {
       "@type": string;
       "@id": string;
-      url: string | StaticImageData;
+      url: string | StaticImageData | undefined;
       inLanguage: string;
       width: number;
       height: number;
@@ -96,7 +96,7 @@ const Head = ({
         height: 630,
         caption: siteName,
       },
-      datePublished: getISOStringFromPublicationDate(publicationDate),
+      datePublished: getISOStringFromPublicationDate(publicationDate as string),
       publisher: {
         "@id": `${siteUrl}/#person`,
       },
@@ -131,7 +131,7 @@ const Head = ({
           />
           <meta
             property="article:published_time"
-            content={getISOStringFromPublicationDate(publicationDate)}
+            content={getISOStringFromPublicationDate(publicationDate as string)}
           />
         </>
       )}
