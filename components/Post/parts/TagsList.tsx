@@ -1,7 +1,12 @@
 import Button from "../../Button";
 import slugify from "slugify";
 
-const TagsList = ({ tags, withMarginOnTop }) => {
+type TagListPros = {
+  tags: string[];
+  withMarginOnTop?: boolean;
+};
+
+const TagsList = ({ tags, withMarginOnTop }: TagListPros) => {
   return (
     <ul className={`flex flex-row flex-wrap gap-2 text-sm`}>
       {tags.map((tag) => (
