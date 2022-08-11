@@ -24,10 +24,10 @@ const AccordionItem = ({
   useEffect(() => {
     if (expanded) {
       accordionContentRef;
-      accordionContentRef.current.style.maxHeight =
-        accordionContentRef.current.scrollHeight + "px";
+      accordionContentRef.current!.style.maxHeight =
+        accordionContentRef.current!.scrollHeight + "px";
     } else {
-      accordionContentRef.current.style.maxHeight = null;
+      accordionContentRef.current!.style.maxHeight = "0";
     }
   }, [expanded, accordionContentRef]);
 
@@ -44,10 +44,10 @@ const AccordionItem = ({
           id={`${uniqueId}-button`}
           onClick={() => {
             handleClickTrigger();
-            accordionContentRef.current.classList.add(
+            accordionContentRef.current!.classList.add(
               "transition-[max-height]",
             );
-            accordionContentRef.current.classList.add("duration-500");
+            accordionContentRef.current!.classList.add("duration-500");
           }}
           className={`w-full font-medium text-md text-left py-4 px-6 z-10 transition duration-300 rounded accordion__title ${
             expanded ? "rounded-b-none accordion__title--active" : ""
