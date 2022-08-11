@@ -1,5 +1,18 @@
-import { ButtonType } from "./../../types/button";
 import Link from "../Link";
+
+export type ButtonProps = {
+  label: string;
+  href: string;
+  size?: "default" | "small" | "social";
+  style?:
+    | "default"
+    | "transparentGreen"
+    | "white"
+    | "transparentWhite"
+    | "tag"
+    | "whiteZinc";
+  customClasses?: string;
+};
 
 const Button = ({
   label,
@@ -7,7 +20,7 @@ const Button = ({
   size = "default",
   style = "default",
   customClasses,
-}: ButtonType) => {
+}: ButtonProps) => {
   return (
     <Link
       href={href}

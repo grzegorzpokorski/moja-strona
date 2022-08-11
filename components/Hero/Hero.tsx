@@ -1,12 +1,12 @@
 import Image, { StaticImageData } from "next/image";
 import { ReactNode } from "react";
-import { ButtonType } from "../../types/button";
+import { ButtonProps } from "../../components/Button/Button";
 import Button from "./../Button";
 
 type HeroProps = {
   title: string;
   description?: ReactNode;
-  buttons?: ButtonType[];
+  buttons?: ButtonProps[];
   image: {
     src: StaticImageData | string;
     alt: string;
