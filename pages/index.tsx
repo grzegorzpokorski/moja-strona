@@ -20,9 +20,16 @@ import siteName from "../data/seo/siteName";
 import addressSeparator from "../data/seo/addressSeparator";
 import slogan from "../data/seo/slogan";
 
-import { getPublishedPostsOrderByDate } from "../provider/posts";
+import {
+  getPublishedPostsOrderByDate,
+  PostWithRawSource,
+} from "../provider/posts";
 
-const Home = ({ newestPosts }) => {
+type HomeProps = {
+  newestPosts: PostWithRawSource[];
+};
+
+const Home = ({ newestPosts }: HomeProps) => {
   return (
     <>
       <Head

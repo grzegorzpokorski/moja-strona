@@ -8,11 +8,17 @@ import Banner from "../../components/Banner";
 import {
   getCategories,
   getPublishedPostsOrderByDate,
+  PostWithRawSource,
 } from "../../provider/posts";
 import addressSeparator from "../../data/seo/addressSeparator";
 import siteName from "../../data/seo/siteName";
 
-const Blog = ({ posts, categories }) => {
+type BlogProps = {
+  posts: PostWithRawSource[];
+  categories: string[];
+};
+
+const Blog = ({ posts, categories }: BlogProps) => {
   return (
     <>
       <Head

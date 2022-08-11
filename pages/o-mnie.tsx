@@ -10,9 +10,16 @@ import heroImage from "../public/images/about.png";
 
 import addressSeparator from "../data/seo/addressSeparator";
 import siteName from "../data/seo/siteName";
-import { getPublishedPostsOrderByDate } from "../provider/posts";
+import {
+  getPublishedPostsOrderByDate,
+  PostWithRawSource,
+} from "../provider/posts";
 
-const About = ({ newestPosts }) => {
+type AboutProps = {
+  newestPosts: PostWithRawSource[];
+};
+
+const About = ({ newestPosts }: AboutProps) => {
   return (
     <>
       <Head
