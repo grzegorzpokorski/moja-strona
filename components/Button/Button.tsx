@@ -1,7 +1,7 @@
 import Link from "../Link";
 
 export type ButtonProps = {
-  label: string;
+  label: string | JSX.Element;
   href: string;
   size?: "default" | "small" | "social";
   style?:

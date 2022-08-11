@@ -6,10 +6,33 @@ import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 dayjs.extend(customParseFormat);
 
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
+
 const rootPath = process.cwd();
 const postsPath = path.join(rootPath, "data", "posts");
 const mainFileName = "index.mdx";
 const featuredImageName = "featured-image.jpg";
+
+export type PostFrontmatter = {
+  title: string;
+  excerpt: string;
+  category: string;
+  tags: string[];
+  date: string;
+  published: boolean;
+  slug: string;
+  featuredImage: string;
+};
+
+export type PostWithRawSource = {
+  frontmatter: PostFrontmatter;
+  source: string;
+};
+
+export type PostWithCompiledSource = {
+  frontmatter: PostFrontmatter;
+  source: MDXRemoteSerializeResult<Record<string, unknown>>;
+};
 
 export const getSlugs = () => {
   const slugs = fs
@@ -27,7 +50,9 @@ export const getPostsPaths = () => {
   return paths;
 };
 
-export const getPostBySlug = (slug) => {
+export const getPostBySlug = (
+  slug: string,
+): { frontmatter: PostFrontmatter; source: string } => {
   const featuredImageUrl = `/images/posts/${slug}/${featuredImageName}`;
   const mainFilePath = path.join(postsPath, slug, mainFileName);
   const postSource = fs.readFileSync(mainFilePath).toString();
@@ -35,7 +60,12 @@ export const getPostBySlug = (slug) => {
 
   return {
     frontmatter: {
-      ...data,
+      title: data.title,
+      excerpt: data.excerpt,
+      category: data.category,
+      tags: data.tags,
+      date: data.date,
+      published: data.published,
       slug: slug,
       featuredImage: featuredImageUrl,
     },

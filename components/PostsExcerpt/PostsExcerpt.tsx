@@ -2,8 +2,17 @@ import Section from "../Section";
 import Header from "../Header";
 import PostsList from "../PostsList";
 import Button from "../Button";
+import { PostWithRawSource } from "../../provider/posts";
+import { ButtonProps } from "../Button/Button";
 
-const PostsExcerpt = ({ subtitle, title, posts, button }) => {
+type PostExcerptProps = {
+  subtitle?: string;
+  title: string;
+  posts: PostWithRawSource[];
+  button?: ButtonProps;
+};
+
+const PostsExcerpt = ({ subtitle, title, posts, button }: PostExcerptProps) => {
   return (
     <Section bgColor="bg-whiteGreen">
       <Header title={title} subtitle={subtitle} />

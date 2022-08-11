@@ -9,7 +9,12 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
-const SharePostLinks = ({ slug, title }) => {
+type SharePostLinks = {
+  slug: string;
+  title: string;
+};
+
+const SharePostLinks = ({ slug, title }: SharePostLinks) => {
   const postUrl = `${siteUrl}/blog/${slug}`;
 
   return (

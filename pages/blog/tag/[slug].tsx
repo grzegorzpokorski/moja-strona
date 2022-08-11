@@ -5,13 +5,22 @@ import Header from "../../../components/Header";
 import Main from "../../../components/Main";
 import PostsList from "../../../components/PostsList";
 import Banner from "../../../components/Banner";
-import { getPublishedPostsOrderByDate, getTags } from "../../../provider/posts";
+import {
+  getPublishedPostsOrderByDate,
+  getTags,
+  PostWithRawSource,
+} from "../../../provider/posts";
 import slugify from "slugify";
 
 import addressSeparator from "../../../data/seo/addressSeparator";
 import siteName from "../../../data/seo/siteName";
 
-const Blog = ({ posts, fullTagNameToPass }) => {
+type BlogProps = {
+  posts: PostWithRawSource[];
+  fullTagNameToPass: string;
+};
+
+const Blog = ({ posts, fullTagNameToPass }: BlogProps) => {
   return (
     <>
       <Head
@@ -41,22 +50,25 @@ const Blog = ({ posts, fullTagNameToPass }) => {
   );
 };
 
-export const getStaticProps = async ({ params }) => {
-  const { slug } = params;
+export const getStaticProps = async ({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) => {
   const posts = getPublishedPostsOrderByDate().filter((post) =>
     post.frontmatter.tags
       .map((tag) => slugify(tag, { replacement: "-", lower: true }))
-      .includes(slug)
+      .includes(slug),
   );
   const tags = getTags();
 
   const fullTagNameToPass = tags.filter(
-    (tag) => slugify(tag, { replacement: "-", lower: true }) === slug
-  );
+    (tag) => slugify(tag, { replacement: "-", lower: true }) === slug,
+  )[0];
 
   return {
     props: {
-      posts: posts,
+      posts,
       fullTagNameToPass,
     },
   };

@@ -1,6 +1,12 @@
+import { PostWithRawSource } from "../../provider/posts";
 import PostItem from "./parts/PostItem";
 
-const PostsList = ({ posts, withMarginOnTop }) => {
+type PostListProps = {
+  posts: PostWithRawSource[];
+  withMarginOnTop?: boolean;
+};
+
+const PostsList = ({ posts, withMarginOnTop }: PostListProps) => {
   return (
     <ul
       className={`flex flex-col lg:grid md:grid-cols-2 xl:grid-cols-3 gap-6 ${

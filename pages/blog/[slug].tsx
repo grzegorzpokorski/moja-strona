@@ -8,15 +8,23 @@ import {
   getPostBySlug,
   getPostsPaths,
   getPublishedPostsOrderByDate,
+  PostWithCompiledSource,
+  PostWithRawSource,
 } from "../../provider/posts";
 import { serialize } from "next-mdx-remote/serialize";
+
 import imageSize from "rehype-img-size";
 
 import siteName from "./../../data/seo/siteName";
 import addressSeparator from "../../data/seo/addressSeparator";
 import PostsExcerpt from "../../components/PostsExcerpt";
 
-const BlogPost = ({ post, relatedPosts, slug }) => {
+type BlogPostProps = {
+  post: PostWithCompiledSource;
+  relatedPosts: PostWithRawSource[];
+};
+
+const BlogPost = ({ post, relatedPosts }: BlogPostProps) => {
   return (
     <>
       <Head
@@ -52,14 +60,13 @@ const BlogPost = ({ post, relatedPosts, slug }) => {
   );
 };
 
-export const getStaticProps = async ({ params }) => {
-  const { slug } = params;
+export const getStaticProps = async ({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) => {
   const { frontmatter, source } = getPostBySlug(slug);
-  const mdxSource = await serialize(source, {
-    mdxOptions: {
-      rehypePlugins: [[imageSize, { dir: `public` }]],
-    },
-  });
+  const mdxSource = await serialize(source);
   const relatedPosts = getPublishedPostsOrderByDate().filter(
     (post) =>
       post.frontmatter.category === frontmatter.category &&
@@ -68,7 +75,7 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
-      post: { frontmatter, source: mdxSource, slug: slug },
+      post: { frontmatter, source: mdxSource },
       relatedPosts: relatedPosts,
     },
   };

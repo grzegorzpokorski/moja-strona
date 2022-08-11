@@ -1,14 +1,18 @@
 import Header from "./parts/Header";
 import Article from "./parts/Article";
+import { PostWithCompiledSource } from "../../provider/posts";
 
-const Post = ({ post: { frontmatter, source, slug } }) => {
+type PostProps = {
+  post: PostWithCompiledSource;
+};
+
+const Post = ({ post: { frontmatter, source } }: PostProps) => {
   return (
     <>
       <Header {...frontmatter} />
       <Article
         source={source}
-        tags={frontmatter.tags}
-        slug={slug}
+        slug={frontmatter.slug}
         title={frontmatter.title}
       />
     </>
