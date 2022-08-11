@@ -1,10 +1,10 @@
 import Button from "../Button";
-import { ButtonType } from "./../../types/button";
+import { ButtonProps } from "../Button/Button";
 
 type BannerProps = {
   title: string;
   description?: string;
-  buttons?: ButtonType[];
+  buttons?: ButtonProps[];
 };
 
 const Banner = ({ title, description, buttons }: BannerProps) => {
