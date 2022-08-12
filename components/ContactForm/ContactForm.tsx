@@ -83,7 +83,7 @@ const ContactForm = () => {
     >
       <fieldset
         className={`disabled:cursor-not-allowed`}
-        disabled={sendingState && sendingState === "error"}
+        disabled={sendingState && sendingState !== "initial"}
       >
         <legend className={`sr-only`}>Formularz kontaktowy</legend>
         <div className={`w-full mb-6`}>
