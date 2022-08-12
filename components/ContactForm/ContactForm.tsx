@@ -65,7 +65,6 @@ const ContactForm = () => {
   const onSubmit = async (data: ContactFormValues) => {
     setSendingState("sending");
     const sendingError = await sendMessageFromContactForm(data);
-    console.log(sendingError);
 
     if (sendingError) {
       setSendingState("error");
