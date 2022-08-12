@@ -1,10 +1,13 @@
-const sendMessageFromContactForm = async (data) => {
+import { ContactFormValues } from "../../components/ContactForm/ContactForm";
+
+export const sendMessageFromContactForm = async (data: ContactFormValues) => {
   const res = await fetch("/api/contactform/send", {
     body: JSON.stringify({
       name: data.name,
-      surrname: data.surrname,
+      surrname: data.surname,
       email: data.email,
       message: data.message,
+      gdpr: data.gdpr,
     }),
     headers: {
       "Content-Type": "application/json",
@@ -15,5 +18,3 @@ const sendMessageFromContactForm = async (data) => {
   const { error } = await res.json();
   return error;
 };
-
-export default sendMessageFromContactForm;

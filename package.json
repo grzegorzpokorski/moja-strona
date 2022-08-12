@@ -10,6 +10,7 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.7",
     "@sendgrid/mail": "^7.7.0",
     "@types/sanitize-html": "^2.6.2",
     "dayjs": "^1.11.2",
@@ -21,7 +22,8 @@
     "react-hook-form": "^7.33.1",
     "rehype-img-size": "github:ksoichiro/rehype-img-size",
     "sanitize-html": "^2.7.1",
-    "slugify": "^1.6.5"
+    "slugify": "^1.6.5",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
