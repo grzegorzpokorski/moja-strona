@@ -13,8 +13,6 @@ import {
 } from "../../provider/posts";
 import { serialize } from "next-mdx-remote/serialize";
 
-import imageSize from "rehype-img-size";
-
 import siteName from "./../../data/seo/siteName";
 import addressSeparator from "../../data/seo/addressSeparator";
 import PostsExcerpt from "../../components/PostsExcerpt";
