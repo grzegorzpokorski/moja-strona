@@ -160,7 +160,7 @@ const ContactForm = () => {
             Treść wiadomości / opis projektu
           </label>
           <textarea
-            className={`text-sm appearance-none border-2 border-gray-200 focus:border-green rounded w-full py-3 px-4 text-gray-600 focus:outline-none focus:shadow-outline bg-whiteGreen focus:bg-white transition duration-200 h-36 disabled:cursor-not-allowed ${
+            className={`text-sm appearance-none border-2 rounded w-full py-3 px-4 text-gray-600 focus:outline-none focus:shadow-outline bg-whiteGreen focus:bg-white transition duration-200 h-36 disabled:cursor-not-allowed ${
               !!errors.message?.message
                 ? "border-red-400"
                 : "border-gray-200 focus:border-green"
