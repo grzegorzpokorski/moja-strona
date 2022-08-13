@@ -32,6 +32,8 @@ const send = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     const error = e as Error;
     return res.status(res.statusCode).json({ error: error.message });
   }
+
+  return res.status(200).json({ error: "" });
 };
 
 export default send;
