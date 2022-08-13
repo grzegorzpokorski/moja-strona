@@ -1,18 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  optimizeFonts: true,
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
 };
 
 module.exports = nextConfig;
-module.exports = {
-  optimizeFonts: true,
-};
 
-module.exports = {
-  webpack5: true,
-  webpack: (config) => {
-    config.resolve.fallback = { fs: false };
+// module.exports = {
+//   webpack5: true,
+//   webpack: (config) => {
+//     config.resolve.fallback = { fs: false };
 
-    return config;
-  },
-};
+//     return config;
+//   },
+// };
