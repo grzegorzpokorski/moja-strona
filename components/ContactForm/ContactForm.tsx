@@ -5,13 +5,10 @@ import * as yup from "yup";
 import { sendMessageFromContactForm } from "../../helpers/requests/sendMessageFromContactForm";
 
 import Link from "../Link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPaperPlane,
-  faCircleNotch,
-  faCircleCheck,
-  faCircleExclamation,
-} from "@fortawesome/free-solid-svg-icons";
+import Input from "./parts/Input";
+import Textarea from "./parts/Textarea";
+import Checkbox from "./parts/Checkbox";
+import SubmitButton from "./parts/SubmitButton";
 
 export type ContactFormValues = {
   name: string;
@@ -85,153 +82,55 @@ const ContactForm = () => {
         disabled={sendingStatus && sendingStatus !== "initial"}
       >
         <legend className={`sr-only`}>Formularz kontaktowy</legend>
-        <div className={`w-full mb-6`}>
-          <label
-            htmlFor="name"
-            className={`block text-gray-700 text-sm font-bold mb-2 after:content-["*"]`}
-          >
-            Imie
-          </label>
-          <input
-            type="text"
-            {...register("name")}
-            className={`text-sm appearance-none border-2 rounded w-full py-3 px-4 text-gray-600 focus:outline-none focus:shadow-outline bg-whiteGreen focus:bg-white transition duration-200 disabled:cursor-not-allowed ${
-              !!errors.name?.message
-                ? "border-red-400"
-                : "border-gray-200 focus:border-green"
-            }`}
-            id="name"
-            placeholder="Imie"
-            required={true}
-            aria-invalid={false}
-          />
-          <p className="text-sm text-red-400 mt-2">{errors.name?.message}</p>
-        </div>
-        <div className={`w-full mb-6`}>
-          <label
-            htmlFor="surname"
-            className={`block text-gray-700 text-sm font-bold mb-2 after:content-["*"]`}
-          >
-            Nazwisko
-          </label>
-          <input
-            type="text"
-            {...register("surname")}
-            className={`text-sm appearance-none border-2 rounded w-full py-3 px-4 text-gray-600 focus:outline-none focus:shadow-outline bg-whiteGreen focus:bg-white transition duration-200 disabled:cursor-not-allowed ${
-              !!errors.surname?.message
-                ? "border-red-400"
-                : "border-gray-200 focus:border-green"
-            }`}
-            id="surname"
-            placeholder="Nazwisko"
-            required={true}
-            aria-invalid={false}
-          />
-          <p className="text-sm text-red-400 mt-2">{errors.surname?.message}</p>
-        </div>
-        <div className={`w-full mb-6`}>
-          <label
-            htmlFor="email"
-            className={`block text-gray-700 text-sm font-bold mb-2 after:content-["*"]`}
-          >
-            Email
-          </label>
-          <input
-            type="email"
-            {...register("email")}
-            className={`text-sm appearance-none border-2 rounded w-full py-3 px-4 text-gray-600 focus:outline-none focus:shadow-outline bg-whiteGreen focus:bg-white transition duration-200 disabled:cursor-not-allowed ${
-              !!errors.email?.message
-                ? "border-red-400"
-                : "border-gray-200 focus:border-green"
-            }`}
-            id="email"
-            placeholder="Email"
-            required={true}
-            aria-invalid={false}
-          />
-          <p className="text-sm text-red-400 mt-2">{errors.email?.message}</p>
-        </div>
-        <div className="w-full mb-6">
-          <label
-            className={`block text-gray-700 text-sm font-bold mb-2 after:content-["*"]`}
-            htmlFor="message"
-          >
-            Treść wiadomości / opis projektu
-          </label>
-          <textarea
-            className={`text-sm appearance-none border-2 rounded w-full py-3 px-4 text-gray-600 focus:outline-none focus:shadow-outline bg-whiteGreen focus:bg-white transition duration-200 h-36 disabled:cursor-not-allowed ${
-              !!errors.message?.message
-                ? "border-red-400"
-                : "border-gray-200 focus:border-green"
-            }`}
-            id="message"
-            placeholder="Treść wiadomości / opis projektu"
-            aria-required={true}
-            aria-invalid={false}
-            required={true}
-            {...register("message")}
-          />
-          <p className="text-sm text-red-400 mt-2">{errors.message?.message}</p>
-        </div>
-        <div className="flex flex-col mb-6">
-          <div className="flex flex-row gap-3">
-            <div className="w-auto">
-              <input
-                id="gdpr"
-                type="checkbox"
-                className="w-4 h-4 rounded border-green focus:ring-green focus:ring-2 accent-green cursor-pointer inline-flex disabled:cursor-not-allowed"
-                aria-required={true}
-                aria-invalid={false}
-                required={true}
-                {...register("gdpr")}
-              />
-            </div>
-            <label
-              htmlFor="gdpr"
-              className="w-auto text-sm text-gray-500 cursor-pointer"
-            >
-              Wyrażam zgodę na przechowywanie przez tę witrynę przesłanych
-              przeze mnie informacji, w celu związanym z odpowiedzią na moje
-              zapytanie. Aby dowiedzieć się więcej, odwiedź{" "}
-              <Link href={"/"} className="text-green hover:underline">
-                politykę prywatności
-              </Link>
-            </label>
-          </div>
-          <p className="text-sm text-red-400 mt-2">{errors.gdpr?.message}</p>
-        </div>
-        <button
-          className={`inline-flex items-center gap-2 transition-colors border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base text-white disabled:cursor-not-allowed ${
-            sendingStatus && sendingStatus === "error"
-              ? "bg-red-400 border-red-400"
-              : "bg-green hover:bg-greenHover border-green"
-          }`}
+        <Input
+          type="text"
+          name="name"
+          placeholder="Imie"
+          label="Imie"
+          register={register("name")}
+          error={errors.name}
+          required={true}
+        />
+        <Input
+          type="text"
+          name="surname"
+          placeholder="Nazwisko"
+          label="Nazwisko"
+          register={register("surname")}
+          error={errors.surname}
+          required={true}
+        />
+        <Input
+          type="email"
+          name="email"
+          placeholder="Email"
+          label="Email"
+          register={register("email")}
+          error={errors.email}
+          required={true}
+        />
+        <Textarea
+          name="message"
+          placeholder="Treść wiadomości / opis projektu"
+          label="Treść wiadomości / opis projektu"
+          register={register("message")}
+          error={errors.message}
+          required={true}
+        />
+        <Checkbox
+          name="gdpr"
+          error={errors.gdpr}
+          required={true}
+          register={register("gdpr")}
         >
-          {sendingStatus && sendingStatus === "initial" && (
-            <>
-              Wyślij wiadomość
-              <FontAwesomeIcon icon={faPaperPlane} />
-            </>
-          )}
-          {sendingStatus && sendingStatus === "sending" && (
-            <>
-              Wysyłanie
-              <FontAwesomeIcon icon={faCircleNotch} className="animate-spin" />
-            </>
-          )}
-          {sendingStatus && sendingStatus === "sended" && (
-            <>
-              Wysłano
-              <FontAwesomeIcon icon={faCircleCheck} className="animate-scale" />
-            </>
-          )}
-          {sendingStatus && sendingStatus === "error" && (
-            <>
-              Wystąpił błąd. Spróbuj ponownie pózniej
-              <FontAwesomeIcon icon={faCircleExclamation} />
-            </>
-          )}
-        </button>
+          Wyrażam zgodę na przechowywanie przez tę witrynę przesłanych przeze
+          mnie informacji, w celu związanym z odpowiedzią na moje zapytanie. Aby
+          dowiedzieć się więcej, odwiedź{" "}
+          <Link href={"/"} className="text-green hover:underline">
+            politykę prywatności
+          </Link>
+        </Checkbox>
+        <SubmitButton sendingStatus={sendingStatus} />
       </fieldset>
     </form>
   );
