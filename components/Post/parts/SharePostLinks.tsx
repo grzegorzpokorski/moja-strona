@@ -57,7 +57,7 @@ const SharePostLinks = ({ slug, title }: SharePostLinks) => {
       </li>
       <li>
         <Button
-          href={`mailto:?subject=${title}&body=${title}`}
+          href={`mailto:?subject=${title}&body=${postUrl}`}
           label={
             <>
               <span className="sr-only">Udostepnij emailem.</span>
