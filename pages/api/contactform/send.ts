@@ -30,10 +30,8 @@ const send = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     });
   } catch (e) {
     const error = e as Error;
-    return res.status(500).json({ error: error.message });
+    return res.status(res.statusCode).json({ error: error.message });
   }
-
-  return res.status(200).json({ error: "" });
 };
 
 export default send;
