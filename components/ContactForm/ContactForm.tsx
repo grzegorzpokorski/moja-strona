@@ -54,7 +54,7 @@ const ContactForm = () => {
     reset,
     formState: { errors },
   } = useForm<ContactFormValues>({
-    shouldUnregister: false,
+    shouldFocusError: false,
     resolver: yupResolver(validationSchema),
   });
 
