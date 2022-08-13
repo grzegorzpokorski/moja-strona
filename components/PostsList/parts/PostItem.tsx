@@ -4,7 +4,7 @@ import Image from "next/image";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 dayjs.extend(customParseFormat);
-import locale_pl from "dayjs/locale/pl";
+import "dayjs/locale/pl";
 dayjs.locale("pl");
 
 import slugify from "slugify";

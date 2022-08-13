@@ -5,6 +5,8 @@ import TagsList from "./TagsList";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 dayjs.extend(customParseFormat);
+import "dayjs/locale/pl";
+dayjs.locale("pl");
 
 import slugify from "slugify";
 import { PostFrontmatter } from "../../../provider/posts";
