@@ -6,9 +6,11 @@ Personal webpage presenting mine offer, connected with blog.
 
 1. React.js
 2. Next.js
-3. Tailwind CSS
-4. SCSS
-5. MDX with MDX Bundler
+3. Typescript
+4. Tailwind CSS
+5. SCSS
+6. MDX with MDX Bundler
+7. React Hook Form and Sendgrid service to create and run a contact form
 
 ## Installation 👷
 
