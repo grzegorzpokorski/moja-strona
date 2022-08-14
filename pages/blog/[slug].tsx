@@ -12,6 +12,7 @@ import {
   PostWithRawSource,
 } from "../../provider/posts";
 import { serialize } from "next-mdx-remote/serialize";
+import rehypePrism from "@mapbox/rehype-prism";
 
 import siteName from "./../../data/seo/siteName";
 import addressSeparator from "../../data/seo/addressSeparator";
@@ -64,7 +65,11 @@ export const getStaticProps = async ({
   params: { slug: string };
 }) => {
   const { frontmatter, source } = getPostBySlug(slug);
-  const mdxSource = await serialize(source);
+  const mdxSource = await serialize(source, {
+    mdxOptions: {
+      rehypePlugins: [rehypePrism],
+    },
+  });
   const relatedPosts = getPublishedPostsOrderByDate().filter(
     (post) =>
       post.frontmatter.category === frontmatter.category &&

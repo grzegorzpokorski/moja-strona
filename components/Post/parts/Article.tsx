@@ -2,6 +2,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import Link from "../../Link";
 import SharePostLinks from "./SharePostLinks";
 import Img from "./../../mdx/Img";
+import Pre from "./../../mdx/Pre";
 
 type ArticleProps = {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
@@ -13,6 +14,7 @@ const Article = ({ source, slug, title }: ArticleProps) => {
   const customMdxComponents = {
     a: Link,
     img: Img,
+    pre: Pre,
   } as import("mdx/types").MDXComponents;
 
   return (
