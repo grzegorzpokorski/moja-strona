@@ -36,10 +36,11 @@ const Input = ({
         }`}
         id={name}
         placeholder={placeholder}
-        required={required}
         aria-invalid={!!error}
+        aria-describedby={!!error ? `${name}-hint` : undefined}
+        required={required}
       />
-      {!!error && <Error message={error.message as string} />}
+      {!!error && <Error message={error.message as string} name={name} />}
     </div>
   );
 };

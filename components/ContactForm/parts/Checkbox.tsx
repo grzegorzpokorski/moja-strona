@@ -21,6 +21,7 @@ const Checkbox = ({ name, children, error, required, register }: Props) => {
             className="w-4 h-4 rounded border-green focus:ring-green focus:ring-2 accent-green cursor-pointer inline-flex disabled:cursor-not-allowed"
             aria-required={required}
             aria-invalid={!!error}
+            aria-describedby={!!error ? `${name}-hint` : undefined}
             required={required}
             {...register}
           />
@@ -32,7 +33,7 @@ const Checkbox = ({ name, children, error, required, register }: Props) => {
           {children}
         </label>
       </div>
-      {!!error && <Error message={error.message as string} />}
+      {!!error && <Error message={error.message as string} name={name} />}
     </div>
   );
 };

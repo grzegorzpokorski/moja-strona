@@ -34,10 +34,11 @@ const Textarea = ({
         placeholder={placeholder}
         aria-required={required}
         aria-invalid={!!error}
+        aria-describedby={!!error ? `${name}-hint` : undefined}
         required={required}
         {...register}
       />
-      {!!error && <Error message={error.message as string} />}
+      {!!error && <Error message={error.message as string} name={name} />}
     </div>
   );
 };
