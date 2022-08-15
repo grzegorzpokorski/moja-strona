@@ -16,7 +16,7 @@ export const codingFeatures: BoxesListItem[] = [
     icon: (
       <FontAwesomeIcon
         icon={faMobileAlt}
-        className="font-bold text-white text-2xl icon-in-box"
+        className="font-bold text-white dark:text-zinc-800 text-2xl icon-in-box"
       />
     ),
     title: "Zakodowana mobile first, pełna responsywnośc",
@@ -33,7 +33,7 @@ export const codingFeatures: BoxesListItem[] = [
     icon: (
       <FontAwesomeIcon
         icon={faCode}
-        className="font-bold text-white text-2xl icon-in-box"
+        className="font-bold text-white dark:text-zinc-800 text-2xl icon-in-box"
       />
     ),
     title: "Semantyczny kod źródłowy",
@@ -50,7 +50,7 @@ export const codingFeatures: BoxesListItem[] = [
     icon: (
       <FontAwesomeIcon
         icon={faFileCircleCheck}
-        className="font-bold text-white text-2xl icon-in-box"
+        className="font-bold text-white dark:text-zinc-800 text-2xl icon-in-box"
       />
     ),
     title: "Modułowy, dobrze opisany kod",
@@ -67,7 +67,7 @@ export const codingFeatures: BoxesListItem[] = [
     icon: (
       <FontAwesomeIcon
         icon={faRocket}
-        className="font-bold text-white text-2xl icon-in-box"
+        className="font-bold text-white dark:text-zinc-800 text-2xl icon-in-box"
       />
     ),
     title: "Szybkie ładowanie",
@@ -85,7 +85,7 @@ export const codingFeatures: BoxesListItem[] = [
     icon: (
       <FontAwesomeIcon
         icon={faHtml5}
-        className="font-bold text-white text-2xl icon-in-box"
+        className="font-bold text-white dark:text-zinc-800 text-2xl icon-in-box"
       />
     ),
     title: "Zgondość z najnowszymi standardami",
@@ -102,7 +102,7 @@ export const codingFeatures: BoxesListItem[] = [
     icon: (
       <FontAwesomeIcon
         icon={faDesktop}
-        className="font-bold text-white text-2xl icon-in-box"
+        className="font-bold text-white dark:text-zinc-800 text-2xl icon-in-box"
       />
     ),
     title: "Kompatybilność z najnowszymi przeglądarkami",

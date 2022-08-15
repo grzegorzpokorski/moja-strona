@@ -43,4 +43,12 @@
     overflow: hidden;
     max-height: 0;
   }
+
+  .dark & {
+    &__title {
+      &::after {
+        border-top: 0.35rem solid theme("colors.zinc.200");
+      }
+    }
+  }
 }

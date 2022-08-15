@@ -25,7 +25,7 @@ const MenuItem = (item: MainMenuItemType) => {
         } ${
           item.href === currentPath
             ? "text-green"
-            : "text-gray-100 lg:text-zinc-600 hover:text-gray-300 lg:hover:text-green"
+            : "text-gray-100 lg:text-zinc-600 dark:lg:text-zinc-400 hover:dark:text-gray-300 lg:hover:text-green"
         }`}
       >
         {item.label}

@@ -23,7 +23,11 @@ const Offer = () => {
         contentType="website"
       />
       <MainHeader>
-        <Section bgColor="bg-whiteGreen" withMarginOnTop>
+        <Section
+          bgColor="bg-whiteGreen"
+          customClasses="dark:bg-zinc-900"
+          withMarginOnTop
+        >
           <Header
             subtitle="Oferta"
             title="Poznaj moją ofertę"

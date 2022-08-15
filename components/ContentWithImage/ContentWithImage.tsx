@@ -13,6 +13,7 @@ type ContentWithImageProps = {
   };
   reverse?: boolean;
   bgColor?: "bg-white" | "bg-green" | "bg-whiteGreen";
+  customClasses?: string;
 };
 
 const ContentWithImage = ({
@@ -23,9 +24,14 @@ const ContentWithImage = ({
   image,
   reverse,
   bgColor,
+  customClasses,
 }: ContentWithImageProps) => {
   return (
-    <section className={`py-16 md:py-24 ${bgColor ? bgColor : "bg-white"}`}>
+    <section
+      className={`py-16 md:py-24 ${bgColor ? bgColor : "bg-white"} ${
+        customClasses ? customClasses : ""
+      }`}
+    >
       <div
         className={`container px-3 mx-auto flex flex-col ${
           reverse ? "md:flex-row" : "md:flex-row-reverse"
@@ -36,11 +42,13 @@ const ContentWithImage = ({
             {subtitle && (
               <span className="text-green uppercase font-bold">{subtitle}</span>
             )}
-            <h2 className="font-bold text-3xl md:text-4xl text-customGray">
+            <h2 className="font-bold text-3xl md:text-4xl text-customGray dark:text-zinc-200">
               {title}
             </h2>
           </header>
-          {content && <div className="prose mt-6">{content}</div>}
+          {content && (
+            <div className="prose dark:prose-invert mt-6">{content}</div>
+          )}
           {href && (
             <footer className="mt-6">
               <Button href={href} label="Dowiedz się więcej" />

@@ -60,7 +60,7 @@ const Offer = () => {
         />
       </MainHeader>
       <Main>
-        <Section bgColor="bg-whiteGreen">
+        <Section bgColor="bg-whiteGreen" customClasses="dark:bg-zinc-700">
           <Header
             subtitle="System zarządzania treścią"
             title="Dlaczego warto korzystać z WordPresa?"
@@ -137,7 +137,11 @@ const Offer = () => {
             }
           />
         </Section>
-        <Section bgColor="bg-white" id="zalety">
+        <Section
+          bgColor="bg-white"
+          customClasses="dark:bg-zinc-900"
+          id="zalety"
+        >
           <Header
             subtitle="Zalety"
             title="Czym wyróżniają się moje strony?"
@@ -186,6 +190,7 @@ const Offer = () => {
           }}
           reverse
           bgColor="bg-whiteGreen"
+          customClasses="dark:bg-zinc-800"
         />
         <Process
           bgColor="bg-white"
@@ -269,7 +274,7 @@ const Offer = () => {
             },
           ]}
         />
-        <Section bgColor="bg-whiteGreen">
+        <Section bgColor="bg-whiteGreen" customClasses="dark:bg-zinc-800">
           <Header
             subtitle="Cennik"
             title="Poznaj moje przystępne ceny"

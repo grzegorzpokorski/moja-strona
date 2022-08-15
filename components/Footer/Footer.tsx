@@ -11,7 +11,7 @@ type FooterProps = {
 
 const Footer = ({ isHome }: FooterProps) => {
   return (
-    <footer className="py-20 bg-white border-t-2 border-greenLight">
+    <footer className="py-20 bg-white dark:bg-zinc-900 border-t-2 border-greenLight dark:border-zinc-800">
       <div className="container mx-auto px-3 flex flex-wrap flex-col md:flex-row justify-between items-center gap-6">
         <span className="md:order-2 hover:underline">
           <Logo isHome={isHome} />
@@ -19,7 +19,7 @@ const Footer = ({ isHome }: FooterProps) => {
         <nav className="md:order-1 grow basis-0">
           <FooterMenu items={footerMenu} />
         </nav>
-        <p className="basis-full text-center text-gray-500 md:order-4">
+        <p className="basis-full text-center text-gray-500 dark:text-zinc-400 md:order-4">
           Grzegorz Pokorski © {new Date().getFullYear()}. Doodles by
           doodleipsum.com. Created by Grzegorz Pokorski.
         </p>

@@ -13,7 +13,7 @@ type Props = {
 const SubmitButton = ({ sendingStatus }: Props) => {
   return (
     <button
-      className={`inline-flex items-center gap-2 transition-colors border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base text-white disabled:cursor-not-allowed ${
+      className={`inline-flex items-center gap-2 transition-colors border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base text-white dark:text-zinc-800 disabled:cursor-not-allowed ${
         sendingStatus && sendingStatus === "error"
           ? "bg-red-400 border-red-400"
           : "bg-green hover:bg-greenHover border-green"

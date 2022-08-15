@@ -13,7 +13,7 @@ export const tworzenieStronInternetowychPricing: PricingListItemType[] = [
     icon: (
       <FontAwesomeIcon
         icon={faGem}
-        className="font-bold text-white text-2xl icon-in-box"
+        className="font-bold text-white dark:text-zinc-800 text-2xl icon-in-box"
       />
     ),
     title: "Statyczna strona internetowa",
@@ -38,7 +38,7 @@ export const tworzenieStronInternetowychPricing: PricingListItemType[] = [
     icon: (
       <FontAwesomeIcon
         icon={faHandshake}
-        className="font-bold text-white text-2xl icon-in-box"
+        className="font-bold text-white dark:text-zinc-800 text-2xl icon-in-box"
       />
     ),
     title: "Landing page z WordPress CMS",
@@ -66,7 +66,7 @@ export const tworzenieStronInternetowychPricing: PricingListItemType[] = [
     icon: (
       <FontAwesomeIcon
         icon={faBriefcase}
-        className="font-bold text-white text-2xl icon-in-box"
+        className="font-bold text-white dark:text-zinc-800 text-2xl icon-in-box"
       />
     ),
     title: "Strona internetowa z WordPress CMS",

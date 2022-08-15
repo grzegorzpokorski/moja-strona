@@ -27,7 +27,7 @@ const Checkbox = ({ name, children, error, required, register }: Props) => {
         </div>
         <label
           htmlFor={name}
-          className="w-auto text-sm text-gray-500 cursor-pointer"
+          className="w-auto text-sm text-gray-500 dark:text-zinc-300 cursor-pointer"
         >
           {children}
         </label>

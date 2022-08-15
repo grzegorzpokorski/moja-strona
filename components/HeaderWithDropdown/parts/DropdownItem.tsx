@@ -8,7 +8,7 @@ type Props = {
 const DropdownItem = ({ name, active = false }: Props) => {
   return (
     <li
-      className={`px-6 py-1 ${
+      className={`px-6 py-1 dark:text-zinc-400 ${
         active ? "text-green" : "hover:text-green"
       } transition`}
     >

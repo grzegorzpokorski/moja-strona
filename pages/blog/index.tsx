@@ -28,7 +28,11 @@ const Blog = ({ posts, categories }: BlogProps) => {
       />
       <MainHeader />
       <Main>
-        <Section bgColor="bg-whiteGreen" withMarginOnTop>
+        <Section
+          bgColor="bg-whiteGreen"
+          withMarginOnTop
+          customClasses="dark:bg-zinc-900"
+        >
           <HeaderWithDropdown
             title="Artykuły, ciekawostki z świata stron internetowych i nie tylko 🔥"
             titleAsH1

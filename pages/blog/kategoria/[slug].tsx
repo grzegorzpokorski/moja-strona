@@ -30,7 +30,11 @@ const Blog = ({ posts, fullCategoryNameToPass, categories }: BlogProps) => {
       />
       <MainHeader />
       <Main>
-        <Section bgColor="bg-whiteGreen" withMarginOnTop>
+        <Section
+          bgColor="bg-whiteGreen"
+          withMarginOnTop
+          customClasses="dark:bg-zinc-900"
+        >
           <HeaderWithDropdown
             title={`Kategoria: ${fullCategoryNameToPass}`}
             titleAsH1

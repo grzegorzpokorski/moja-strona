@@ -20,7 +20,7 @@ type ProcessProps = {
 
 const Process = ({ header, steps, bgColor }: ProcessProps) => {
   return (
-    <Section bgColor={bgColor}>
+    <Section bgColor={bgColor} customClasses="dark:bg-zinc-900">
       <Header
         title={header.title}
         subtitle={header.subtitle}

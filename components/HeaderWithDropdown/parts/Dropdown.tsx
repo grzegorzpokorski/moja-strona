@@ -40,7 +40,7 @@ const Dropdown = ({ categories, initialDropdownValue }: Props) => {
         ref={dropDownRef}
       >
         <button
-          className="h-12 lg:h-16 px-6 border-2 border-zinc-400 hover:border-green bg-white rounded text-left text-zinc-600 hover:text-green dropdown__button"
+          className="h-12 lg:h-16 px-6 border-2 border-zinc-400 hover:border-green bg-white dark:bg-zinc-800 rounded text-left text-zinc-600 dark:text-zinc-400 hover:text-green dropdown__button"
           type="button"
           id="dropdownMenuButton"
           aria-expanded={isDropdownOpen}
@@ -50,7 +50,7 @@ const Dropdown = ({ categories, initialDropdownValue }: Props) => {
           {initialDropdownValue}
         </button>
         <ul
-          className={`flex flex-col py-2 lg:py-4 bg-white shadow-md z-10 rounded dropdown__menu ${
+          className={`flex flex-col py-2 lg:py-4 bg-white dark:bg-zinc-800 shadow-md z-10 rounded dropdown__menu ${
             isDropdownOpen ? "dropdown__menu--willChangeTransform" : ""
           }`}
           aria-labelledby="dropdownMenuButton"

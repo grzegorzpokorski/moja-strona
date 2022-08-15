@@ -26,9 +26,15 @@ const Services = ({ services }: ServicesProps) => {
               key={item.title}
               {...item}
               bgColor="bg-whiteGreen"
+              customClasses="dark:bg-zinc-900"
             />
           ) : (
-            <ContentWithImage key={item.title} {...item} reverse />
+            <ContentWithImage
+              key={item.title}
+              {...item}
+              reverse
+              customClasses="dark:bg-zinc-800"
+            />
           ),
         )}
     </>

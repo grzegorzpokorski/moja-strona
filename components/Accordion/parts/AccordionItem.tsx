@@ -32,10 +32,12 @@ const AccordionItem = ({
   }, [expanded, accordionContentRef]);
 
   return (
-    <div className={`flex flex-col bg-white shadow-md rounded accordion__item`}>
+    <div
+      className={`flex flex-col bg-white dark:bg-zinc-900 shadow-md rounded accordion__item`}
+    >
       <h3
         id={`${slugify(question, { lower: true })}__${uniqueId}`}
-        className="text-customGray"
+        className="text-customGray dark:text-zinc-200"
       >
         <button
           type="button"
@@ -63,7 +65,9 @@ const AccordionItem = ({
         className={`accordion__content`}
         ref={accordionContentRef}
       >
-        <div className={`prose max-w-none py-4 px-6`}>{answer}</div>
+        <div className={`prose dark:prose-invert max-w-none py-4 px-6`}>
+          {answer}
+        </div>
       </div>
     </div>
   );

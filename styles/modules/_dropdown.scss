@@ -61,4 +61,19 @@
       visibility: visible;
     }
   }
+
+  .dark & {
+    &__button {
+      &::after {
+        border-top-color: theme("colors.zinc.300");
+      }
+    }
+  }
+  .dark &--open {
+    .dropdown__button {
+      &::after {
+        border-top-color: theme("colors.green");
+      }
+    }
+  }
 }

@@ -30,7 +30,11 @@ const Blog = ({ posts, fullTagNameToPass }: BlogProps) => {
       />
       <MainHeader />
       <Main>
-        <Section bgColor="bg-whiteGreen" withMarginOnTop>
+        <Section
+          bgColor="bg-whiteGreen"
+          withMarginOnTop
+          customClasses="dark:bg-zinc-900"
+        >
           <Header title={`Tag: ${fullTagNameToPass}`} titleAsH1 />
           <PostsList posts={posts} withMarginOnTop />
         </Section>

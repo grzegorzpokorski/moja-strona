@@ -20,7 +20,7 @@ const Hamburger = ({
       onClick={handleMobileMenuIsOpen}
     >
       <span
-        className={`hamburger__icon transition ${
+        className={`bg-black dark:bg-zinc-400 before:bg-black dark:before:bg-zinc-400 after:bg-black  dark:after:bg-zinc-400 hamburger__icon transition ${
           mobileMenuIsOpen ? "hamburger__icon--menuIsOpen" : ""
         }`}
       ></span>

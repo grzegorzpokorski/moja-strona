@@ -10,7 +10,7 @@ const Content = ({ columns, content, withSpaceAbove }: ContentProps) => {
   console.log();
   return columns ? (
     <div
-      className={`w-full prose max-w-none gap-8 ${
+      className={`w-full prose dark:prose-invert max-w-none gap-8 ${
         withSpaceAbove ? "mt-8 md:mt-12" : ""
       } content content--col-${columns}`}
     >

@@ -60,7 +60,7 @@ const Offer = () => {
         />
       </MainHeader>
       <Main>
-        <Section bgColor="bg-whiteGreen">
+        <Section bgColor="bg-whiteGreen" customClasses="dark:bg-zinc-700">
           <Header
             subtitle="Projektowanie graficzne"
             title="Zaprojektuję dla Ciebie piekną, nowoczesną stronę internetową."
@@ -171,6 +171,7 @@ const Offer = () => {
           }}
           reverse
           bgColor="bg-white"
+          customClasses="dark:bg-zinc-800"
         />
         <Process
           bgColor="bg-whiteGreen"

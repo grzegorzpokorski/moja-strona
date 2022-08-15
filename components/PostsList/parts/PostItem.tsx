@@ -22,7 +22,7 @@ const PostItem = ({
   excerpt,
 }: PostFrontmatter) => {
   return (
-    <li className="bg-white drop-shadow-xl border-2 border-greenLight rounded-md">
+    <li className="bg-white dark:bg-zinc-800 drop-shadow-xl border-2 border-greenLight dark:border-zinc-700 rounded-md">
       <article>
         <Link href={`/blog/${slug}`}>
           <figure className="w-full h-72 max-h-72 overflow-hidden relative block rounded-t-md">
@@ -41,12 +41,15 @@ const PostItem = ({
                 replacement: "-",
                 lower: true,
               })}`}
-              className="hover:underline"
+              className="hover:underline dark:text-zinc-400"
             >
               <FontAwesomeIcon icon={faTag} className="mr-2 text-green" />
               {category}
             </Link>
-            <time dateTime={dayjs(date, "YYYY.MM.DD").format("YYYY-MM-DD")}>
+            <time
+              dateTime={dayjs(date, "YYYY.MM.DD").format("YYYY-MM-DD")}
+              className=" dark:text-zinc-400"
+            >
               <FontAwesomeIcon
                 icon={faCalendarDays}
                 className="mr-2 text-green"
@@ -56,13 +59,13 @@ const PostItem = ({
           </div>
           <Link
             href={`/blog/${slug}`}
-            className="text-customGray hover:text-green transition"
+            className="text-customGray dark:text-zinc-200 hover:text-green transition"
           >
             <h3 className="font-bold text-lg">{title}</h3>
           </Link>
         </header>
         <div className="p-8 pt-3 flex flex-col gap-3">
-          <p>{excerpt}</p>
+          <p className="dark:text-zinc-400">{excerpt}</p>
           {/* <p>{post.excerpt.split(" ").splice(0, 20).join(" ")} [...]</p> */}
         </div>
       </article>

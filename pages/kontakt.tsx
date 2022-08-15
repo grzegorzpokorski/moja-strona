@@ -23,7 +23,7 @@ const Pricing = () => {
       />
       <MainHeader />
       <Main withMarginOnTop>
-        <Section bgColor="bg-whiteGreen">
+        <Section bgColor="bg-whiteGreen" customClasses="dark:bg-zinc-800">
           <Header
             subtitle="Kontakt"
             title="Porozmawiajmy o Twoich potrzebach"

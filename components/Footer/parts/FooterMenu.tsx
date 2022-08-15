@@ -7,7 +7,7 @@ type FooterMenuType = {
 
 const FooterMenu = ({ items }: FooterMenuType) => {
   return (
-    <ul className="flex flex-col md:flex-row items-center gap-3">
+    <ul className="flex flex-col md:flex-row items-center gap-3 dark:text-zinc-400">
       {items &&
         items.map((item, i) => (
           <li key={`footer-nav-item-${i}`}>

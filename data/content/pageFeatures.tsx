@@ -19,7 +19,7 @@ export const pageFeatures: BoxesListItem[] = [
     icon: (
       <FontAwesomeIcon
         icon={faMobileAlt}
-        className="font-bold text-white text-2xl icon-in-box"
+        className="font-bold text-white dark:text-zinc-800 text-2xl icon-in-box"
       />
     ),
     title: "Zakodowana mobile first, pełna responsywnośc",
@@ -36,7 +36,7 @@ export const pageFeatures: BoxesListItem[] = [
     icon: (
       <FontAwesomeIcon
         icon={faCode}
-        className="font-bold text-white text-2xl icon-in-box"
+        className="font-bold text-white dark:text-zinc-800 text-2xl icon-in-box"
       />
     ),
     title: "Semantyczny kod źródłowy",
@@ -53,7 +53,7 @@ export const pageFeatures: BoxesListItem[] = [
     icon: (
       <FontAwesomeIcon
         icon={faSpellCheck}
-        className="font-bold text-white text-2xl icon-in-box"
+        className="font-bold text-white dark:text-zinc-800 text-2xl icon-in-box"
       />
     ),
     title: "Zgodność z zasadami SEO",
@@ -70,7 +70,7 @@ export const pageFeatures: BoxesListItem[] = [
     icon: (
       <FontAwesomeIcon
         icon={faBoxes}
-        className="font-bold text-white text-2xl icon-in-box"
+        className="font-bold text-white dark:text-zinc-800 text-2xl icon-in-box"
       />
     ),
     title: "Możliwość rozbudowy",
@@ -86,7 +86,7 @@ export const pageFeatures: BoxesListItem[] = [
     icon: (
       <FontAwesomeIcon
         icon={faCheckDouble}
-        className="font-bold text-white text-2xl icon-in-box"
+        className="font-bold text-white dark:text-zinc-800 text-2xl icon-in-box"
       />
     ),
     title: "Prostota zarządzania treścią",
@@ -102,7 +102,7 @@ export const pageFeatures: BoxesListItem[] = [
     icon: (
       <FontAwesomeIcon
         icon={faRocket}
-        className="font-bold text-white text-2xl icon-in-box"
+        className="font-bold text-white dark:text-zinc-800 text-2xl icon-in-box"
       />
     ),
     title: "Szybkie ładowanie",
@@ -120,7 +120,7 @@ export const pageFeatures: BoxesListItem[] = [
     icon: (
       <FontAwesomeIcon
         icon={faHtml5}
-        className="font-bold text-white text-2xl icon-in-box"
+        className="font-bold text-white dark:text-zinc-800 text-2xl icon-in-box"
       />
     ),
     title: "Zgondość z najnowszymi standardami",
@@ -137,7 +137,7 @@ export const pageFeatures: BoxesListItem[] = [
     icon: (
       <FontAwesomeIcon
         icon={faDesktop}
-        className="font-bold text-white text-2xl icon-in-box"
+        className="font-bold text-white dark:text-zinc-800 text-2xl icon-in-box"
       />
     ),
     title: "Kompatybilność z najnowszymi przeglądarkami",
@@ -153,7 +153,7 @@ export const pageFeatures: BoxesListItem[] = [
     icon: (
       <FontAwesomeIcon
         icon={faPalette}
-        className="font-bold text-white text-2xl icon-in-box"
+        className="font-bold text-white dark:text-zinc-800 text-2xl icon-in-box"
       />
     ),
     title: "Nowoczesny design",

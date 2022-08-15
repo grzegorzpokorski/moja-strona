@@ -66,7 +66,7 @@ const Offer = () => {
         />
       </MainHeader>
       <Main>
-        <Section bgColor="bg-whiteGreen">
+        <Section bgColor="bg-whiteGreen" customClasses="dark:bg-zinc-700">
           <Header
             subtitle="Kodowanie szablonów graficznych"
             title="Przekształcenie projektu graficznego w działającą stronę internetową."
@@ -158,8 +158,12 @@ const Offer = () => {
           }}
           reverse
           bgColor="bg-white"
+          customClasses="dark:bg-zinc-800"
         />
-        <Section bgColor="bg-whiteGreen">
+        <Section
+          bgColor="bg-whiteGreen"
+          customClasses="dark:bg-zinc-900 dark:border-b-2 dark:border-zinc-700"
+        >
           <Header
             subtitle="kluczowe zalety"
             title="Co wyróżnia moje statyczne strony HTML?"

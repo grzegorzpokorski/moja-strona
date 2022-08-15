@@ -74,7 +74,7 @@ const ContactForm = () => {
   return (
     <form
       noValidate
-      className={`bg-white shadow-md rounded-md px-8 py-10 border-2 border-greenLight`}
+      className={`bg-white dark:bg-zinc-900 shadow-md rounded-md px-8 py-10 border-2 border-greenLight dark:border-zinc-700`}
       onSubmit={handleSubmit(onSubmit)}
     >
       <fieldset

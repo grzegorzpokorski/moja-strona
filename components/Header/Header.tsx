@@ -29,15 +29,21 @@ const Header = ({
         <span className={`uppercase font-bold text-green`}>{subtitle}</span>
       )}
       {titleAsH1 ? (
-        <h1 className={`font-bold text-3xl md:text-4xl text-customGray`}>
+        <h1
+          className={`font-bold text-3xl md:text-4xl text-customGray dark:text-zinc-100`}
+        >
           {title}
         </h1>
       ) : (
-        <h2 className={`font-bold text-2xl md:text-3xl text-customGray`}>
+        <h2
+          className={`font-bold text-2xl md:text-3xl text-customGray dark:text-zinc-100`}
+        >
           {title}
         </h2>
       )}
-      {description && <div className="prose max-w-none">{description}</div>}
+      {description && (
+        <div className="prose dark:prose-invert max-w-none">{description}</div>
+      )}
       {children}
     </header>
   );

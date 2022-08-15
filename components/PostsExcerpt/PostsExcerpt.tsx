@@ -14,7 +14,7 @@ type PostExcerptProps = {
 
 const PostsExcerpt = ({ subtitle, title, posts, button }: PostExcerptProps) => {
   return (
-    <Section bgColor="bg-whiteGreen">
+    <Section bgColor="bg-whiteGreen" customClasses="dark:bg-zinc-900">
       <Header title={title} subtitle={subtitle} />
       <PostsList posts={posts} withMarginOnTop />
       {button && (

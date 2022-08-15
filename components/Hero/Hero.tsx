@@ -29,9 +29,9 @@ const Hero = ({
 }: HeroProps) => {
   return (
     <section
-      className={`py-12 md:py-12 ${bgColor ? bgColor : "bg-white"} ${
-        withMarginOnTop ? "mt-20 lg:mt-28" : ""
-      }`}
+      className={`py-12 md:py-12 ${
+        bgColor ? bgColor : "bg-white"
+      } dark:bg-zinc-800 ${withMarginOnTop ? "mt-20 lg:mt-28" : ""}`}
     >
       <div
         className={`container mx-auto px-3 flex flex-col md:flex-row ${
@@ -40,15 +40,17 @@ const Hero = ({
       >
         <header className="md:w-1/2 flex flex-col gap-6 text-center md:text-left items-center md:items-start">
           {titleAsH1 ? (
-            <h1 className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-customGray">
+            <h1 className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-customGray dark:text-zinc-100">
               {title}
             </h1>
           ) : (
-            <h2 className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-customGray">
+            <h2 className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-customGray dark:text-zinc-100">
               {title}
             </h2>
           )}
-          <div className="prose max-w-none">{description && description}</div>
+          <div className="prose dark:prose-invert max-w-none">
+            {description && description}
+          </div>
           {buttons && (
             <div className="flex flex-col sm:flex-row flex-wrap gap-2 justify-center md:justify-start items-center">
               {buttons.map((item, i) => (

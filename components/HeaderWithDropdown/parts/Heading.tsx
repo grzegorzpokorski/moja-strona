@@ -12,11 +12,15 @@ const Heading = ({ subtitle, title, description, titleAsH1 }: Props) => {
         <span className={`uppercase font-bold text-green`}>{subtitle}</span>
       )}
       {titleAsH1 ? (
-        <h1 className={`font-bold text-3xl md:text-4xl text-customGray`}>
+        <h1
+          className={`font-bold text-3xl md:text-4xl text-customGray dark:text-zinc-200`}
+        >
           {title}
         </h1>
       ) : (
-        <h2 className={`font-bold text-2xl md:text-3xl text-customGray`}>
+        <h2
+          className={`font-bold text-2xl md:text-3xl text-customGray dark:text-zinc-200`}
+        >
           {title}
         </h2>
       )}
