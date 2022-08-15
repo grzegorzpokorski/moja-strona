@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBehance,
   faFacebook,
+  faGithub,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -22,6 +23,11 @@ const socialMenu: SocialMenuItemType[] = [
     href: "https://linkedin.com/in/grzegorz-pokorski",
     label: "linkedin",
     icon: <FontAwesomeIcon icon={faLinkedinIn} />,
+  },
+  {
+    href: "https://github.com/grzegorzpokorski",
+    label: "github",
+    icon: <FontAwesomeIcon icon={faGithub} />,
   },
 ];
 
