@@ -44,7 +44,7 @@ npm run build
 
 ## Live 🌐
 
-[https://moja-strona-one.vercel.app/](https://moja-strona-one.vercel.app/)
+[https://grzegorzpokorski.pl/](https://grzegorzpokorski.pl/)
 
 ## Contributing
 
