@@ -49,9 +49,9 @@ const Head = ({
 }: Props) => {
   const permalink = usePermalink();
 
-  // const robotsMeta: string =
-  //   "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
-  const robotsMeta: string = "noindex, nofollow";
+  const robotsMeta: string =
+    "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
+  // const robotsMeta: string = "noindex, nofollow";
 
   const schema: Shema = {
     "@context": "https://schema.org",
