@@ -1,12 +1,8 @@
 const getISOStringFromPublicationDate = (date: string): string => {
-  const splittedDate = date.split(".");
+  const [year, month, day] = date.split(".");
 
   return new Date(
-    Date.UTC(
-      Number(splittedDate[0]), // Year
-      Number(splittedDate[1]) - 1, // Month
-      Number(splittedDate[2]), // Day
-    ),
+    Date.UTC(Number(year), Number(month) - 1, Number(day)),
   ).toISOString();
 };
 
