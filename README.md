@@ -46,6 +46,20 @@ npm run build
 
 [https://grzegorzpokorski.pl/](https://grzegorzpokorski.pl/)
 
+## Some screenshots:
+
+![](/mockups/start.png, "Home page")
+
+![](/mockups/page.png, "Single page")
+
+![](/mockups/blog.png, "Blog archive")
+
+![](/mockups/pricing.png, "Pricing page")
+
+![](/mockups/offer.png, "Offer page")
+
+![](/mockups/single.png, "Single article page")
+
 ## Contributing
 
 If you find any bug, have suggestion how to improve this project feel free to tell about it in [issues](https://github.com/grzegorzpokorski/moja-strona/issues) tab. Pull requests also are welcoming.
