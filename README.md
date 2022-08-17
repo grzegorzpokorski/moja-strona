@@ -48,17 +48,17 @@ npm run build
 
 ## Some screenshots:
 
-![](/mockups/start.png, "Home page")
+![](/mockups/start.png?raw=true "Home page")
 
-![](/mockups/page.png, "Single page")
+![](/mockups/page.png?raw=true "Single page")
 
-![](/mockups/blog.png, "Blog archive")
+![](/mockups/blog.png?raw=true "Blog archive")
 
-![](/mockups/pricing.png, "Pricing page")
+![](/mockups/pricing.png?raw=true "Pricing page")
 
-![](/mockups/offer.png, "Offer page")
+![](/mockups/offer.png?raw=true "Offer page")
 
-![](/mockups/single.png, "Single article page")
+![](/mockups/single.png?raw=true "Single article page")
 
 ## Contributing
 
