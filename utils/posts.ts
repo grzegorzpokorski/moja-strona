@@ -8,10 +8,12 @@ dayjs.extend(customParseFormat);
 
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 
+import siteUrl from "../data/seo/siteUrl";
+
 const rootPath = process.cwd();
 const postsPath = path.join(rootPath, "data", "posts");
 const mainFileName = "index.mdx";
-const featuredImageName = "featured-image.jpg";
+// const featuredImageName = "featured-image.jpg";
 
 export type PostFrontmatter = {
   title: string;
@@ -53,7 +55,7 @@ export const getPostsPaths = () => {
 export const getPostBySlug = (
   slug: string,
 ): { frontmatter: PostFrontmatter; source: string } => {
-  const featuredImageUrl = `/images/posts/${slug}/${featuredImageName}`;
+  // const featuredImageUrl = `/images/posts/${slug}/${featuredImageName}`;
   const mainFilePath = path.join(postsPath, slug, mainFileName);
   const postSource = fs.readFileSync(mainFilePath).toString();
   const { content, data } = matter(postSource);
@@ -66,8 +68,8 @@ export const getPostBySlug = (
       tags: data.tags,
       date: data.date,
       published: data.published,
-      slug: slug,
-      featuredImage: featuredImageUrl,
+      slug: data.slug,
+      featuredImage: data.featuredImage,
     },
     source: content,
   };
