@@ -5,11 +5,12 @@ import Head from "../../components/Head";
 import Banner from "../../components/Banner";
 
 import {
-  getPostBySlug,
-  getPostsPaths,
-  getPublishedPostsOrderByDate,
   PostWithCompiledSource,
   PostWithRawSource,
+  getSlugsOfPublishedPosts,
+  getPostBySlug,
+  getPublishedPosts,
+  sortPostsByPublishedDate,
 } from "../../utils/posts";
 import { serialize } from "next-mdx-remote/serialize";
 import rehypePrism from "@mapbox/rehype-prism";
@@ -37,11 +38,7 @@ const BlogPost = ({ post, relatedPosts }: BlogPostProps) => {
       <Main withMarginOnTop>
         <Post post={post} />
         {relatedPosts.length > 0 && (
-          <PostsExcerpt
-            subtitle="Posty o podobnej tematyce"
-            title="Mogą Cię zainteresować:"
-            posts={relatedPosts}
-          />
+          <PostsExcerpt subtitle="Posty o podobnej tematyce" title="Mogą Cię zainteresować:" posts={relatedPosts} />
         )}
         <Banner
           title="Zbuduj swoją ultra szybką stronę internetową ze mną!"
@@ -59,35 +56,29 @@ const BlogPost = ({ post, relatedPosts }: BlogPostProps) => {
   );
 };
 
-export const getStaticProps = async ({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) => {
-  const { frontmatter, source } = getPostBySlug(slug);
+export const getStaticProps = async ({ params: { slug } }: { params: { slug: string } }) => {
+  const { frontmatter, source } = await getPostBySlug(slug);
   const mdxSource = await serialize(source, {
     mdxOptions: {
       rehypePlugins: [rehypePrism],
     },
   });
-  const relatedPosts = getPublishedPostsOrderByDate().filter(
-    (post) =>
-      post.frontmatter.category === frontmatter.category &&
-      post.frontmatter.slug != slug,
+  const relatedPosts = (await getPublishedPosts()).filter(
+    (post) => post.frontmatter.category === frontmatter.category && post.frontmatter.slug != slug,
   );
 
   return {
     props: {
       post: { frontmatter, source: mdxSource },
-      relatedPosts: relatedPosts,
+      relatedPosts: sortPostsByPublishedDate(relatedPosts),
     },
   };
 };
 
 export const getStaticPaths = async () => {
-  const paths = getPostsPaths();
+  const slugs = await getSlugsOfPublishedPosts();
   return {
-    paths: paths,
+    paths: slugs.map((slug) => ({ params: { slug } })),
     fallback: false,
   };
 };

@@ -5,11 +5,7 @@ import HeaderWithDropdown from "../../../components/HeaderWithDropdown";
 import Main from "../../../components/Main";
 import PostsList from "../../../components/PostsList";
 import Banner from "../../../components/Banner";
-import {
-  getPublishedPostsOrderByDate,
-  getCategories,
-  PostWithRawSource,
-} from "../../../utils/posts";
+import { getCategories, getPublishedPosts, PostWithRawSource, sortPostsByPublishedDate } from "../../../utils/posts";
 import siteName from "./../../../data/seo/siteName";
 import addressSeparator from "../../../data/seo/addressSeparator";
 import slugify from "slugify";
@@ -55,19 +51,15 @@ const Blog = ({ posts, fullCategoryNameToPass, categories }: BlogProps) => {
   );
 };
 
-export const getStaticProps = async ({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) => {
-  const posts = getPublishedPostsOrderByDate().filter(
+export const getStaticProps = async ({ params: { slug } }: { params: { slug: string } }) => {
+  const posts = (await getPublishedPosts()).filter(
     (post) =>
       slugify(post.frontmatter.category, {
         replacement: "-",
         lower: true,
       }) == slug,
   );
-  const categories = getCategories();
+  const categories = await getCategories();
 
   const fullCategoryNameToPass = categories.filter(
     (cat) => slugify(cat, { replacement: "-", lower: true }) === slug,
@@ -75,7 +67,7 @@ export const getStaticProps = async ({
 
   return {
     props: {
-      posts,
+      posts: sortPostsByPublishedDate(posts),
       categories,
       fullCategoryNameToPass,
     },
@@ -83,7 +75,7 @@ export const getStaticProps = async ({
 };
 
 export const getStaticPaths = async () => {
-  const categories = getCategories();
+  const categories = await getCategories();
   const paths = categories.map((cat) => ({
     params: { slug: slugify(cat, { replacement: "-", lower: true }) },
   }));

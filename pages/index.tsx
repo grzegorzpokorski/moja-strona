@@ -20,10 +20,7 @@ import siteName from "../data/seo/siteName";
 import addressSeparator from "../data/seo/addressSeparator";
 import slogan from "../data/seo/slogan";
 
-import {
-  getPublishedPostsOrderByDate,
-  PostWithRawSource,
-} from "../utils/posts";
+import { getPublishedPosts, PostWithRawSource, sortPostsByPublishedDate } from "../utils/posts";
 
 type HomeProps = {
   newestPosts: PostWithRawSource[];
@@ -42,8 +39,8 @@ const Home = ({ newestPosts }: HomeProps) => {
           title="Projekuję oraz tworzę nowoczesne strony internetowe"
           description={
             <p>
-              Zaistniej w internecie i zrealizuj swoje cele z
-              <strong> ultra szybką</strong> 🚀 stroną internetową osiągającą
+              Zaistniej w internecie i zrealizuj swoje cele z<strong> ultra szybką</strong> 🚀 stroną internetową
+              osiągającą
               <strong> najwyższe noty</strong> 🥇 w Google PageSpeed benchmark.
             </p>
           }
@@ -72,11 +69,9 @@ const Home = ({ newestPosts }: HomeProps) => {
             title="W czym mogę Ci pomóc?"
             description={
               <p>
-                Potrzebujesz nowoczesnej, ultra szybkiej strony strony
-                internetowej aby zaistnieć w internecie? A może gotowy projekt
-                graficzny czeka na zakodowanie? Oferuję{" "}
-                <Link href={`/oferta`}>profesjonalne usługi</Link>, które pomogą
-                Ci wkroczyć na szerokie wody internetu.
+                Potrzebujesz nowoczesnej, ultra szybkiej strony strony internetowej aby zaistnieć w internecie? A może
+                gotowy projekt graficzny czeka na zakodowanie? Oferuję{" "}
+                <Link href={`/oferta`}>profesjonalne usługi</Link>, które pomogą Ci wkroczyć na szerokie wody internetu.
               </p>
             }
             centered
@@ -112,8 +107,9 @@ const Home = ({ newestPosts }: HomeProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = getPublishedPostsOrderByDate();
-  const newestPosts = posts.slice(0, 3);
+  const posts = await getPublishedPosts();
+  const sortedPosts = sortPostsByPublishedDate(posts);
+  const newestPosts = sortedPosts.slice(0, 3);
 
   return {
     props: {

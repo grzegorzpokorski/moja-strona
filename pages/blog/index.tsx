@@ -5,11 +5,7 @@ import HeaderWithDropdown from "../../components/HeaderWithDropdown";
 import Main from "../../components/Main";
 import PostsList from "../../components/PostsList";
 import Banner from "../../components/Banner";
-import {
-  getCategories,
-  getPublishedPostsOrderByDate,
-  PostWithRawSource,
-} from "../../utils/posts";
+import { getCategories, getPublishedPosts, PostWithRawSource, sortPostsByPublishedDate } from "../../utils/posts";
 import addressSeparator from "../../data/seo/addressSeparator";
 import siteName from "../../data/seo/siteName";
 
@@ -54,12 +50,12 @@ const Blog = ({ posts, categories }: BlogProps) => {
 };
 
 export const getStaticProps = async () => {
-  const posts = getPublishedPostsOrderByDate();
-  const categories = getCategories();
+  const posts = await getPublishedPosts();
+  const categories = await getCategories();
 
   return {
     props: {
-      posts: posts,
+      posts: sortPostsByPublishedDate(posts),
       categories: categories,
     },
   };

@@ -10,10 +10,7 @@ import heroImage from "../public/images/about.png";
 
 import addressSeparator from "../data/seo/addressSeparator";
 import siteName from "../data/seo/siteName";
-import {
-  getPublishedPostsOrderByDate,
-  PostWithRawSource,
-} from "../utils/posts";
+import { getPublishedPosts, PostWithRawSource, sortPostsByPublishedDate } from "../utils/posts";
 
 type AboutProps = {
   newestPosts: PostWithRawSource[];
@@ -33,17 +30,16 @@ const About = ({ newestPosts }: AboutProps) => {
           description={
             <>
               <p>
-                Działam jako freelancer, pomagając tworzyć dobrze wyglądające i
-                realizujące cele biznesowe strony internetowe.
+                Działam jako freelancer, pomagając tworzyć dobrze wyglądające i realizujące cele biznesowe strony
+                internetowe.
               </p>
               <p>
-                W wolnej chwili staram się dzielić swoją wiedzą na łamach
-                artykułów na moim <Link href="/blog">blogu</Link>.
+                W wolnej chwili staram się dzielić swoją wiedzą na łamach artykułów na moim{" "}
+                <Link href="/blog">blogu</Link>.
               </p>
               <p>
-                Jeśli interesuje Cię współpraca lub po prostu chcesz zadać
-                pytanie śmiało <Link href="/kontakt">kontaktuj się ze mną</Link>
-                .
+                Jeśli interesuje Cię współpraca lub po prostu chcesz zadać pytanie śmiało{" "}
+                <Link href="/kontakt">kontaktuj się ze mną</Link>.
               </p>
             </>
           }
@@ -95,8 +91,9 @@ const About = ({ newestPosts }: AboutProps) => {
 };
 
 export const getStaticProps = async () => {
-  const posts = getPublishedPostsOrderByDate();
-  const newestPosts = posts.slice(0, 3);
+  const posts = await getPublishedPosts();
+  const sortedPosts = sortPostsByPublishedDate(posts);
+  const newestPosts = sortedPosts.slice(0, 3);
 
   return {
     props: {
