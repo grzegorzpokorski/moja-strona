@@ -9,7 +9,7 @@ import "dayjs/locale/pl";
 dayjs.locale("pl");
 
 import slugify from "slugify";
-import { PostFrontmatter } from "../../../provider/posts";
+import { PostFrontmatter } from "../../../utils/posts";
 
 const Header = ({
   category,

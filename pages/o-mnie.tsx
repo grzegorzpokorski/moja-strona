@@ -13,7 +13,7 @@ import siteName from "../data/seo/siteName";
 import {
   getPublishedPostsOrderByDate,
   PostWithRawSource,
-} from "../provider/posts";
+} from "../utils/posts";
 
 type AboutProps = {
   newestPosts: PostWithRawSource[];

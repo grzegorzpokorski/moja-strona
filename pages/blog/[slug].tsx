@@ -10,7 +10,7 @@ import {
   getPublishedPostsOrderByDate,
   PostWithCompiledSource,
   PostWithRawSource,
-} from "../../provider/posts";
+} from "../../utils/posts";
 import { serialize } from "next-mdx-remote/serialize";
 import rehypePrism from "@mapbox/rehype-prism";
 

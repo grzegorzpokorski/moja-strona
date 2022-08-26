@@ -9,7 +9,7 @@ import {
   getPublishedPostsOrderByDate,
   getTags,
   PostWithRawSource,
-} from "../../../provider/posts";
+} from "../../../utils/posts";
 import slugify from "slugify";
 
 import addressSeparator from "../../../data/seo/addressSeparator";

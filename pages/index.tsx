@@ -23,7 +23,7 @@ import slogan from "../data/seo/slogan";
 import {
   getPublishedPostsOrderByDate,
   PostWithRawSource,
-} from "../provider/posts";
+} from "../utils/posts";
 
 type HomeProps = {
   newestPosts: PostWithRawSource[];

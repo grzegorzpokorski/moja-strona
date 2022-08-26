@@ -2,7 +2,7 @@ import Section from "../Section";
 import Header from "../Header";
 import PostsList from "../PostsList";
 import Button from "../Button";
-import { PostWithRawSource } from "../../provider/posts";
+import { PostWithRawSource } from "../../utils/posts";
 import { ButtonProps } from "../Button/Button";
 
 type PostExcerptProps = {

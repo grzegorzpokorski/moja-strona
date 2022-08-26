@@ -1,4 +1,4 @@
-import { PostWithRawSource } from "../../provider/posts";
+import { PostWithRawSource } from "../../utils/posts";
 import PostItem from "./parts/PostItem";
 
 type PostListProps = {

@@ -9,7 +9,7 @@ import {
   getPublishedPostsOrderByDate,
   getCategories,
   PostWithRawSource,
-} from "../../../provider/posts";
+} from "../../../utils/posts";
 import siteName from "./../../../data/seo/siteName";
 import addressSeparator from "../../../data/seo/addressSeparator";
 import slugify from "slugify";

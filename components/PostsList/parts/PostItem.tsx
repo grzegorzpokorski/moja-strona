@@ -11,7 +11,7 @@ import slugify from "slugify";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDays, faTag } from "@fortawesome/free-solid-svg-icons";
-import { PostFrontmatter } from "../../../provider/posts";
+import { PostFrontmatter } from "../../../utils/posts";
 
 const PostItem = ({
   slug,

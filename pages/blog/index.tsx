@@ -9,7 +9,7 @@ import {
   getCategories,
   getPublishedPostsOrderByDate,
   PostWithRawSource,
-} from "../../provider/posts";
+} from "../../utils/posts";
 import addressSeparator from "../../data/seo/addressSeparator";
 import siteName from "../../data/seo/siteName";
 

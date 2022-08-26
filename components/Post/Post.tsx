@@ -1,6 +1,6 @@
 import Header from "./parts/Header";
 import Article from "./parts/Article";
-import { PostWithCompiledSource } from "../../provider/posts";
+import { PostWithCompiledSource } from "../../utils/posts";
 
 type PostProps = {
   post: PostWithCompiledSource;
