@@ -2,14 +2,18 @@ import Link from "../../Link";
 import Button from "../../Button";
 import Dropdown from "./Dropdown";
 import { useRouter } from "next/router";
-import { MenuItemType } from "./../../../types/menu";
 
-export type MainMenuItemType = {
+export type MenuItemType = {
+  label: string;
+  href: string;
   button?: boolean;
-  childrens?: MenuItemType[];
-} & MenuItemType;
+  childrens?: {
+    label: string;
+    href: string;
+  }[];
+};
 
-const MenuItem = (item: MainMenuItemType) => {
+const MenuItem = (item: MenuItemType) => {
   const currentPath = useRouter().asPath.split("#")[0];
 
   return item.button ? (
@@ -20,9 +24,7 @@ const MenuItem = (item: MainMenuItemType) => {
     <li className={item.childrens ? `relative navbar-dropdown` : ``}>
       <Link
         href={item.href}
-        className={`transition-all ${
-          item.childrens ? "navbar-dropdown__toggle" : ""
-        } ${
+        className={`transition-all ${item.childrens ? "navbar-dropdown__toggle" : ""} ${
           item.href === currentPath
             ? "text-green"
             : "text-gray-100 lg:text-zinc-600 hover:text-gray-300 lg:hover:text-green"
@@ -30,9 +32,7 @@ const MenuItem = (item: MainMenuItemType) => {
       >
         {item.label}
       </Link>
-      {item.childrens && (
-        <Dropdown items={item.childrens} currentPath={currentPath} />
-      )}
+      {item.childrens && <Dropdown items={item.childrens} currentPath={currentPath} />}
     </li>
   );
 };

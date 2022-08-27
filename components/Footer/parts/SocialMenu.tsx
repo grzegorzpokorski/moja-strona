@@ -1,5 +1,10 @@
 import Link from "../../Link";
-import { SocialMenuItemType } from "../../../types/menu";
+
+export type SocialMenuItemType = {
+  label: string;
+  href: string;
+  icon: JSX.Element;
+};
 
 type SocialMenuProps = {
   items: SocialMenuItemType[];

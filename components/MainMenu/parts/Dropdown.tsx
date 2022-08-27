@@ -1,4 +1,4 @@
-import { MenuItemType } from "../../../types/menu";
+import { MenuItemType } from "./MenuItem";
 import Link from "../../Link";
 
 type DropdownProps = {
