@@ -29,7 +29,7 @@ export const AccordionItem = ({ heading, content, expanded = false }: AccordionI
           aria-expanded={isExpanded}
           aria-controls={`${uniqueId}-panel`}
           id={`${uniqueId}-button`}
-          className={`flex flex-row justify-between w-full font-medium text-md text-left py-4 px-6 z-10 transition motion-reduce:transition-none duration-300 rounded hover:bg-green hover:text-white ${
+          className={`flex flex-row justify-between w-full font-medium text-md text-left py-4 px-6 z-10 transition-colors motion-reduce:transition-none duration-300 rounded hover:bg-green hover:text-white ${
             isExpanded ? "bg-green text-white" : ""
           }`}
           onClick={() => setIsExpanded(!isExpanded)}
@@ -42,7 +42,7 @@ export const AccordionItem = ({ heading, content, expanded = false }: AccordionI
         id={`${uniqueId}-panel`}
         role="region"
         aria-labelledby={`${uniqueId}-button`}
-        className={`transition-[height] overflow-hidden h-0`}
+        className={`transition-[height] duration-300 overflow-hidden h-0`}
         ref={panelRef}
       >
         <div className={`prose max-w-none py-4 px-6`}>{content}</div>
