@@ -9,3 +9,5 @@ type MenuProps = {
 export const Menu = memo(({ menuItems }: MenuProps) => {
   return <>{menuItems && menuItems.map((item) => <MenuItem key={item.href} {...item} />)}</>;
 });
+
+Menu.displayName = "Menu";
