@@ -1,72 +1,52 @@
-import { useEffect, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import slugify from "slugify";
-
-export type AccordionItemType = {
-  question: string;
-  answer: JSX.Element;
-};
+import { AccordionItemType } from "../Accordion";
 
 type AccordionItemProps = {
-  expanded: boolean;
-  uniqueId: string;
-  handleClickTrigger: () => void;
+  expanded?: boolean;
 } & AccordionItemType;
 
-const AccordionItem = ({
-  question,
-  answer,
-  expanded,
-  uniqueId,
-  handleClickTrigger,
-}: AccordionItemProps) => {
-  const accordionContentRef = useRef<HTMLDivElement>(null);
+export const AccordionItem = ({ heading, content, expanded = false }: AccordionItemProps) => {
+  const [isExpanded, setIsExpanded] = useState(expanded);
+  const uniqueId = slugify(heading, { lower: true });
+  const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (expanded) {
-      accordionContentRef;
-      accordionContentRef.current!.style.maxHeight =
-        accordionContentRef.current!.scrollHeight + "px";
-    } else {
-      accordionContentRef.current!.style.maxHeight = "0";
+    if (panelRef.current instanceof HTMLDivElement) {
+      if (isExpanded) {
+        panelRef.current.style.height = panelRef.current!.scrollHeight + "px";
+      } else {
+        panelRef.current.removeAttribute("style");
+      }
     }
-  }, [expanded, accordionContentRef]);
+  }, [isExpanded]);
 
   return (
-    <div className={`flex flex-col bg-white shadow-md rounded accordion__item`}>
-      <h3
-        id={`${slugify(question, { lower: true })}__${uniqueId}`}
-        className="text-customGray"
-      >
+    <div className={`flex flex-col bg-white shadow-md rounded overflow-hidden`}>
+      <h3>
         <button
           type="button"
-          aria-expanded={expanded}
+          aria-expanded={isExpanded}
           aria-controls={`${uniqueId}-panel`}
           id={`${uniqueId}-button`}
-          onClick={() => {
-            handleClickTrigger();
-            accordionContentRef.current!.classList.add(
-              "transition-[max-height]",
-            );
-            accordionContentRef.current!.classList.add("duration-500");
-          }}
-          className={`w-full font-medium text-md text-left py-4 px-6 z-10 transition duration-300 rounded accordion__title ${
-            expanded ? "rounded-b-none accordion__title--active" : ""
+          className={`flex flex-row justify-between w-full font-medium text-md text-left py-4 px-6 z-10 transition motion-reduce:transition-none duration-300 rounded hover:bg-green hover:text-white ${
+            isExpanded ? "bg-green text-white" : ""
           }`}
+          onClick={() => setIsExpanded(!isExpanded)}
         >
-          <span>{question}</span>
+          <span>{heading}</span>
+          <span className={`${isExpanded ? 'after:content-["-"]' : 'after:content-["+"]'}`} aria-hidden={true}></span>
         </button>
       </h3>
       <div
         id={`${uniqueId}-panel`}
         role="region"
         aria-labelledby={`${uniqueId}-button`}
-        className={`accordion__content`}
-        ref={accordionContentRef}
+        className={`transition-[height] overflow-hidden h-0`}
+        ref={panelRef}
       >
-        <div className={`prose max-w-none py-4 px-6`}>{answer}</div>
+        <div className={`prose max-w-none py-4 px-6`}>{content}</div>
       </div>
     </div>
   );
 };
-
-export default AccordionItem;

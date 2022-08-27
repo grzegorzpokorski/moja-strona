@@ -1,40 +1,22 @@
-import AccordionItem, { AccordionItemType } from "./parts/AccordionItem";
-import { useState } from "react";
+import { ReactNode } from "react";
+import { AccordionItem } from "./parts/AccordionItem";
 
-type AccordionType = {
-  items: AccordionItemType[];
-  withMarginOnTop?: boolean;
-  id?: string;
+export type AccordionItemType = {
+  heading: string;
+  content: ReactNode;
 };
 
-const Accordion = ({
-  items,
-  withMarginOnTop,
-  id = "accordion",
-}: AccordionType) => {
-  const [expandedItem, setExpandedItem] = useState<string>(items[0].question);
+type AccordionProps = {
+  items: AccordionItemType[];
+  withMarginOnTop?: boolean;
+  customId?: string;
+};
 
+const Accordion = ({ items, withMarginOnTop, customId = "accordion" }: AccordionProps) => {
   return (
-    <div
-      className={`flex flex-col gap-4 mx-auto ${
-        withMarginOnTop ? "mt-12 md:mt-24" : ""
-      } accordion`}
-      id={id}
-    >
-      {items.map((item, i) => (
-        <AccordionItem
-          key={item.question}
-          {...item}
-          uniqueId={`${id}-${i}`}
-          expanded={expandedItem == item.question ? true : false}
-          handleClickTrigger={() => {
-            if (expandedItem != item.question) {
-              setExpandedItem(item.question);
-            } else {
-              setExpandedItem("");
-            }
-          }}
-        />
+    <div className={`flex flex-col gap-4 mx-auto ${withMarginOnTop ? "mt-12 md:mt-24" : ""} accordion`} id={customId}>
+      {items.map((item, idx) => (
+        <AccordionItem key={item.heading} {...item} />
       ))}
     </div>
   );

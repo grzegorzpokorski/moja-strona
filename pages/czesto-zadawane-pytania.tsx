@@ -28,8 +28,7 @@ const FAQ = () => {
             title="Często zadawane pytania"
             description={
               <p>
-                Tutaj znajdziesz odpowiedzi na najczęściej zadawane pytania.
-                Jeśli masz inne pytanie napisz do{" "}
+                Tutaj znajdziesz odpowiedzi na najczęściej zadawane pytania. Jeśli masz inne pytanie napisz do{" "}
                 <Link href="/kontakt">napisz do mnie</Link>.
               </p>
             }
@@ -37,7 +36,7 @@ const FAQ = () => {
             titleAsH1
           />
           <div className="w-full md:w-8/12 mx-auto">
-            <Accordion items={faqs} withMarginOnTop />
+            <Accordion items={faqs} withMarginOnTop customId="faqAccordion" />
           </div>
         </Section>
         <Banner
