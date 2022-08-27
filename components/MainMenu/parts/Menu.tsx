@@ -7,6 +7,5 @@ type MenuProps = {
 };
 
 export const Menu = memo(({ menuItems }: MenuProps) => {
-  console.log("render menu");
   return <>{menuItems && menuItems.map((item) => <MenuItem key={item.href} {...item} />)}</>;
 });
