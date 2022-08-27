@@ -63,7 +63,7 @@ const Home = ({ newestPosts }: HomeProps) => {
         />
       </MainHeader>
       <Main>
-        <Section bgColor="bg-whiteGreen">
+        <Section bgColor="bg-whiteGreen" id="oferta">
           <Header
             subtitle="Oferta"
             title="W czym mogę Ci pomóc?"

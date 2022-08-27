@@ -1,3 +1,4 @@
+import { getIdFromString } from "../../helpers/functions/getIdFromString";
 import Button from "../Button";
 import { ButtonProps } from "../Button/Button";
 
@@ -9,7 +10,7 @@ type BannerProps = {
 
 const Banner = ({ title, description, buttons }: BannerProps) => {
   return (
-    <section className="py-24 bg-green">
+    <section className="py-24 bg-green" id={getIdFromString(title)}>
       <div className="container px-3 mx-auto">
         <header className="w-full md:w-2/3 text-center mx-auto text-white flex flex-col gap-5">
           {title && <h2 className="text-3xl font-bold">{title}</h2>}

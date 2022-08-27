@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Image, { StaticImageData } from "next/image";
 import Button from "../Button";
+import { getIdFromString } from "../../helpers/functions/getIdFromString";
 
 type ContentWithImageProps = {
   subtitle: string;
@@ -15,17 +16,9 @@ type ContentWithImageProps = {
   bgColor?: "bg-white" | "bg-green" | "bg-whiteGreen";
 };
 
-const ContentWithImage = ({
-  subtitle,
-  title,
-  content,
-  href,
-  image,
-  reverse,
-  bgColor,
-}: ContentWithImageProps) => {
+const ContentWithImage = ({ subtitle, title, content, href, image, reverse, bgColor }: ContentWithImageProps) => {
   return (
-    <section className={`py-16 md:py-24 ${bgColor ? bgColor : "bg-white"}`}>
+    <section className={`py-16 md:py-24 ${bgColor ? bgColor : "bg-white"}`} id={getIdFromString(title)}>
       <div
         className={`container px-3 mx-auto flex flex-col ${
           reverse ? "md:flex-row" : "md:flex-row-reverse"
@@ -33,12 +26,8 @@ const ContentWithImage = ({
       >
         <div className="w-full md:w-1/2">
           <header className="text-left flex flex-col gap-4">
-            {subtitle && (
-              <span className="text-green uppercase font-bold">{subtitle}</span>
-            )}
-            <h2 className="font-bold text-3xl md:text-4xl text-customGray">
-              {title}
-            </h2>
+            {subtitle && <span className="text-green uppercase font-bold">{subtitle}</span>}
+            <h2 className="font-bold text-3xl md:text-4xl text-customGray">{title}</h2>
           </header>
           {content && <div className="prose mt-6">{content}</div>}
           {href && (
@@ -48,9 +37,7 @@ const ContentWithImage = ({
           )}
         </div>
         <picture className="w-full w-full md:w-1/2">
-          {image && (
-            <Image src={image.src} alt={image.alt} placeholder="blur" />
-          )}
+          {image && <Image src={image.src} alt={image.alt} placeholder="blur" />}
         </picture>
       </div>
     </section>

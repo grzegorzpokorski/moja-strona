@@ -20,14 +20,8 @@ export type ContactFormValues = {
 
 const ContactForm = () => {
   const validationSchema = yup.object().shape({
-    name: yup
-      .string()
-      .required("Pole jest wymagane.")
-      .min(2, "Pole powinno zawierać minimum 2 znaki."),
-    surname: yup
-      .string()
-      .required("Pole jest wymagane.")
-      .min(2, "Pole powinno zawierać minimum 2 znaki."),
+    name: yup.string().required("Pole jest wymagane.").min(2, "Pole powinno zawierać minimum 2 znaki."),
+    surname: yup.string().required("Pole jest wymagane.").min(2, "Pole powinno zawierać minimum 2 znaki."),
     email: yup
       .string()
       .required("Pole jest wymagane.")
@@ -35,14 +29,8 @@ const ContactForm = () => {
         /^[a-zA-Z0-9+.-_]+@[a-zA-Z0–9.-]+[.][a-zA-Z]{1,}$/,
         "Wprowadzony adres e-mail jest nieprawidłowy, sprawdź format (np. email@domena.com).",
       ),
-    message: yup
-      .string()
-      .required("Pole jest wymagane.")
-      .min(10, "Pole powinno zawierać minimum 10 znaków."),
-    gdpr: yup
-      .bool()
-      .oneOf([true], "Zgoda jest wymagana.")
-      .required("Zgoda jest wymagana."),
+    message: yup.string().required("Pole jest wymagane.").min(10, "Pole powinno zawierać minimum 10 znaków."),
+    gdpr: yup.bool().oneOf([true], "Zgoda jest wymagana.").required("Zgoda jest wymagana."),
   });
 
   const {
@@ -55,9 +43,7 @@ const ContactForm = () => {
     resolver: yupResolver(validationSchema),
   });
 
-  const [sendingStatus, setSendingStatus] = useState<
-    "initial" | "sending" | "sended" | "error"
-  >("initial");
+  const [sendingStatus, setSendingStatus] = useState<"initial" | "sending" | "sended" | "error">("initial");
 
   const onSubmit = async (data: ContactFormValues) => {
     setSendingStatus("sending");
@@ -76,11 +62,9 @@ const ContactForm = () => {
       noValidate
       className={`bg-white shadow-md rounded-md px-8 py-10 border-2 border-greenLight`}
       onSubmit={handleSubmit(onSubmit)}
+      id="formularz-kontaktowy"
     >
-      <fieldset
-        className={`disabled:cursor-not-allowed`}
-        disabled={sendingStatus && sendingStatus !== "initial"}
-      >
+      <fieldset className={`disabled:cursor-not-allowed`} disabled={sendingStatus && sendingStatus !== "initial"}>
         <legend className={`sr-only`}>Formularz kontaktowy</legend>
         <Input
           type="text"
@@ -117,15 +101,9 @@ const ContactForm = () => {
           error={errors.message}
           required={true}
         />
-        <Checkbox
-          name="gdpr"
-          error={errors.gdpr}
-          required={true}
-          register={register("gdpr")}
-        >
-          Wyrażam zgodę na przechowywanie przez tę witrynę przesłanych przeze
-          mnie informacji, w celu związanym z odpowiedzią na moje zapytanie. Aby
-          dowiedzieć się więcej, odwiedź{" "}
+        <Checkbox name="gdpr" error={errors.gdpr} required={true} register={register("gdpr")}>
+          Wyrażam zgodę na przechowywanie przez tę witrynę przesłanych przeze mnie informacji, w celu związanym z
+          odpowiedzią na moje zapytanie. Aby dowiedzieć się więcej, odwiedź{" "}
           <Link href={"/"} className="text-green hover:underline">
             politykę prywatności
           </Link>

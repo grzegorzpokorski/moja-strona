@@ -22,7 +22,7 @@ const FAQ = () => {
       />
       <MainHeader />
       <Main withMarginOnTop>
-        <Section bgColor="bg-whiteGreen">
+        <Section bgColor="bg-whiteGreen" id="czesto-zadawane-pytania">
           <Header
             subtitle="FAQ"
             title="Często zadawane pytania"

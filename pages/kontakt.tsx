@@ -23,27 +23,21 @@ const Pricing = () => {
       />
       <MainHeader />
       <Main withMarginOnTop>
-        <Section bgColor="bg-whiteGreen">
+        <Section bgColor="bg-whiteGreen" id="kontakt">
           <Header
             subtitle="Kontakt"
             title="Porozmawiajmy o Twoich potrzebach"
             description={
               <>
                 <p>
-                  Jeśli interesuje Cię współpraca lub po prostu chcesz zadać
-                  pytanie, nie bój się napisać na mojego maila:{" "}
-                  <Link
-                    href="mailto:mr.pokorski@gmail.com"
-                    className="font-medium"
-                  >
+                  Jeśli interesuje Cię współpraca lub po prostu chcesz zadać pytanie, nie bój się napisać na mojego
+                  maila:{" "}
+                  <Link href="mailto:mr.pokorski@gmail.com" className="font-medium">
                     mr.pokorski@gmail.com
                   </Link>{" "}
-                  lub skorzystać z formularza kontaktowego. Zachęcam do
-                  zapoznania się z{" "}
-                  <Link href="/czesto-zadawane-pytania">
-                    najczęściej zadawanymi pytaniami
-                  </Link>
-                  , gdzie być może znajdziesz odpowiedz na swoje pytanie.
+                  lub skorzystać z formularza kontaktowego. Zachęcam do zapoznania się z{" "}
+                  <Link href="/czesto-zadawane-pytania">najczęściej zadawanymi pytaniami</Link>, gdzie być może
+                  znajdziesz odpowiedz na swoje pytanie.
                 </p>
               </>
             }
@@ -56,10 +50,7 @@ const Pricing = () => {
               <ContactForm />
             </div>
             <picture className="w-full lg:w-1/2">
-              <Image
-                src={image}
-                alt="Zadowolony mężczyzna siedzi korzystając z laptopa"
-              />
+              <Image src={image} alt="Zadowolony mężczyzna siedzi korzystając z laptopa" />
             </picture>
           </div>
         </Section>

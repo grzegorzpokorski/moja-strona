@@ -4,6 +4,7 @@ import PostsList from "../PostsList";
 import Button from "../Button";
 import { PostWithRawSource } from "../../utils/posts";
 import { ButtonProps } from "../Button/Button";
+import { getIdFromString } from "../../helpers/functions/getIdFromString";
 
 type PostExcerptProps = {
   subtitle?: string;
@@ -14,7 +15,7 @@ type PostExcerptProps = {
 
 const PostsExcerpt = ({ subtitle, title, posts, button }: PostExcerptProps) => {
   return (
-    <Section bgColor="bg-whiteGreen">
+    <Section bgColor="bg-whiteGreen" id={getIdFromString(title)}>
       <Header title={title} subtitle={subtitle} />
       <PostsList posts={posts} withMarginOnTop />
       {button && (

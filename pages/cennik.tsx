@@ -22,15 +22,14 @@ const Pricing = () => {
       />
       <MainHeader />
       <Main withMarginOnTop>
-        <Section bgColor="bg-whiteGreen">
+        <Section bgColor="bg-whiteGreen" id="cennik">
           <Header
             subtitle="Cennik"
             title="Poznaj moje przystępne ceny"
             description={
               <>
                 <p>
-                  Poniżej znajdują się startowe ceny za konkretny typ projektu.
-                  Aby poznać dokładną wycenę, zachęcam do{" "}
+                  Poniżej znajdują się startowe ceny za konkretny typ projektu. Aby poznać dokładną wycenę, zachęcam do{" "}
                   <Link href="/kontakt">kontaktu</Link>.
                 </p>
               </>
@@ -38,10 +37,7 @@ const Pricing = () => {
             centered
             titleAsH1
           />
-          <PricingList
-            items={tworzenieStronInternetowychPricing}
-            withMarginOnTop
-          />
+          <PricingList items={tworzenieStronInternetowychPricing} withMarginOnTop />
         </Section>
         <Banner
           title="Zbuduj swoją ultra szybką stronę internetową ze mną!"
