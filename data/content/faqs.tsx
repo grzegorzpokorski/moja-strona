@@ -3,7 +3,7 @@ import Link from "../../components/Link";
 
 export const faqs: AccordionItemType[] = [
   {
-    heading: "Jakie typy stron wykonujesz?",
+    heading: "Jakiego rodzaju strony wykonujesz?",
     content: (
       <p>
         Specjalizuje się z realizacji stron firmowych, wizytówkowych, blogach osobistych oraz witrynach typu landing
@@ -66,7 +66,24 @@ export const faqs: AccordionItemType[] = [
     ),
   },
   {
-    heading: "Czy wystawiasz fakturę?",
+    heading: "Czy konieczne jest osobiste spotkanie, aby zrealizować projekt?",
+    content: (
+      <>
+        <p>Nie. Realizacja zlecenia jest możliwa bez konieczności osobistych spotkań.</p>
+
+        <p>
+          Wszelkie ustalenia możemy poczynić na odległość np. mailowo, czy poprzez komunikator wideo (Zoom, MS Teams).
+        </p>
+        <p>
+          Jeśli jednak chciałabyś / chciałbyś spotkać się ze mną osobiście by omówić projekt, możemy umówić się na
+          spotkanie w regionie łódzkim. Często przebywam w okolicach następujących miejscowości: Bełchatów, Wieluń,
+          Łask, Szczerców, Kleszczów, Pajęczno, Zelów, Piotrków Trybunalski.
+        </p>
+      </>
+    ),
+  },
+  {
+    heading: "W jaki sposób mogę rozliczyć się za projekt?",
     content: (
       <p>
         Realizowane projekty rozliczam poprzez umowę o dzieło lub umowę zlecenie. Istnieje możliwość wystawienia faktury
