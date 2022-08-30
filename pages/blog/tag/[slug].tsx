@@ -20,7 +20,7 @@ const Blog = ({ posts, fullTagNameToPass }: BlogProps) => {
   return (
     <>
       <Head
-        title={`${fullTagNameToPass} ${addressSeparator} ${siteName}`}
+        title={`Tag ${fullTagNameToPass} ${addressSeparator} ${siteName}`}
         description={`Wszytkie artykuły, które pojawiły się na blogu w ramach tagu "${fullTagNameToPass}".`}
         contentType="website"
       />

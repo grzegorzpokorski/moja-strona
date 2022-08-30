@@ -20,7 +20,7 @@ const Blog = ({ posts, fullCategoryNameToPass, categories }: BlogProps) => {
   return (
     <>
       <Head
-        title={`${fullCategoryNameToPass} ${addressSeparator} ${siteName}`}
+        title={`Kategoria ${fullCategoryNameToPass} ${addressSeparator} ${siteName}`}
         description={`Wszytkie artykuły, które pojawiły się na blogu w ramach kategorii "${fullCategoryNameToPass}".`}
         contentType="website"
       />
