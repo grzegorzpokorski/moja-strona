@@ -29,7 +29,7 @@ export const AccordionItem = ({ heading, content, expanded = false }: AccordionI
           aria-expanded={isExpanded}
           aria-controls={`${uniqueId}-panel`}
           id={`${uniqueId}-button`}
-          className={`flex flex-row justify-between items-center w-full font-medium text-md text-left py-4 px-6 z-10 transition-colors motion-reduce:transition-none duration-300 rounded hover:bg-green hover:text-white ${
+          className={`flex flex-row justify-between items-center gap-3 lg:gap-6 w-full font-medium text-md text-left py-4 px-6 z-10 transition-colors motion-reduce:transition-none duration-300 rounded hover:bg-green hover:text-white ${
             isExpanded ? "bg-green text-white" : ""
           }`}
           onClick={() => setIsExpanded(!isExpanded)}
