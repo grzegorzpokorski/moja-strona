@@ -1,7 +1,7 @@
 import DropdownItem from "./DropdownItem";
 
 import { useState, useEffect, useRef } from "react";
-import useOnClickAway from "../../../hooks/useOnClickAway";
+import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
 
 type Props = {
   categories: string[];
@@ -29,14 +29,12 @@ const Dropdown = ({ categories, initialDropdownValue }: Props) => {
   });
 
   const dropDownRef = useRef<HTMLDivElement>(null);
-  useOnClickAway(dropDownRef, closeDropdown);
+  useOnClickOutside(dropDownRef, closeDropdown);
 
   return (
     <div className={"w-full lg:w-4/12"}>
       <div
-        className={`flex flex-col text-left w-full shadow-md dropdown ${
-          isDropdownOpen ? "dropdown--open" : ""
-        }`}
+        className={`flex flex-col text-left w-full shadow-md dropdown ${isDropdownOpen ? "dropdown--open" : ""}`}
         ref={dropDownRef}
       >
         <button
@@ -57,11 +55,7 @@ const Dropdown = ({ categories, initialDropdownValue }: Props) => {
         >
           {categories &&
             categories.map((category) => (
-              <DropdownItem
-                key={category}
-                name={category}
-                active={category === initialDropdownValue ? true : false}
-              />
+              <DropdownItem key={category} name={category} active={category === initialDropdownValue ? true : false} />
             ))}
         </ul>
       </div>

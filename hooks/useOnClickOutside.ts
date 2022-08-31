@@ -1,8 +1,8 @@
 import { RefObject, useEffect } from "react";
 
-const useOnClickAway = (ref: RefObject<Node>, action: (event: MouseEvent | TouchEvent) => void): void => {
+export const useOnClickOutside = (ref: RefObject<Node>, action: (event: MouseEvent) => void): void => {
   useEffect(() => {
-    const handleAction = (event: MouseEvent | TouchEvent) => {
+    const handleAction = (event: MouseEvent) => {
       if (event.target instanceof Node) {
         if (!ref.current || ref.current.contains(event.target)) return;
         action(event);
@@ -16,5 +16,3 @@ const useOnClickAway = (ref: RefObject<Node>, action: (event: MouseEvent | Touch
     };
   }, [ref, action]);
 };
-
-export default useOnClickAway;

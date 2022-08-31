@@ -2,7 +2,7 @@ import { ReactNode, useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 
 import useStickyElement from "../../hooks/useStickyElement";
-import useOnClickAway from "../../hooks/useOnClickAway";
+import { useOnClickOutside } from "../../hooks/useOnClickOutside";
 
 import Logo from "../Logo";
 import Hamburger from "../Hamburger";
@@ -27,18 +27,11 @@ const MainHeader = ({ children }: MainHeaderProps) => {
   }, [pathname]);
 
   const menuContainerRef = useRef<HTMLDivElement>(null);
-  useOnClickAway(
-    menuContainerRef,
-    () => mobileMenuIsOpen && setMobileMenuIsOpen(false),
-  );
+  useOnClickOutside(menuContainerRef, () => mobileMenuIsOpen && setMobileMenuIsOpen(false));
 
   return (
     <header>
-      <nav
-        className={`fixed top-0 z-50 w-full bg-white transition-shadow duration-300 ${
-          isSticky ? "shadow-md" : ""
-        }`}
-      >
+      <nav className={`fixed top-0 z-50 w-full bg-white transition-shadow duration-300 ${isSticky ? "shadow-md" : ""}`}>
         <section
           className={`container mx-auto px-3 flex flex-row justify-between items-center transition-[height] duration-300 ${
             isSticky ? "h-16 lg:h-20" : "h-20 lg:h-28"
@@ -46,10 +39,7 @@ const MainHeader = ({ children }: MainHeaderProps) => {
         >
           <Logo isHome={isHome} isTitle={isHome} />
           <div ref={menuContainerRef}>
-            <Hamburger
-              mobileMenuIsOpen={mobileMenuIsOpen}
-              handleMobileMenuIsOpen={handleMobileMenuIsOpen}
-            />
+            <Hamburger mobileMenuIsOpen={mobileMenuIsOpen} handleMobileMenuIsOpen={handleMobileMenuIsOpen} />
             <MainMenu mobileMenuIsOpen={mobileMenuIsOpen} isSticky={isSticky} />
           </div>
         </section>
