@@ -1,3 +1,4 @@
+import { memo } from "react";
 import slugify from "slugify";
 
 type Props = {
@@ -5,13 +6,9 @@ type Props = {
   active?: boolean;
 };
 
-const DropdownItem = ({ name, active = false }: Props) => {
+const DropdownItem = memo(({ name, active = false }: Props) => {
   return (
-    <li
-      className={`px-6 py-1 ${
-        active ? "text-green" : "hover:text-green"
-      } transition`}
-    >
+    <li className={`px-6 py-1 ${active ? "text-green" : "hover:text-green"} transition`}>
       <a
         className="block dropdown__item"
         href={`/blog/kategoria/${slugify(name, {
@@ -23,6 +20,6 @@ const DropdownItem = ({ name, active = false }: Props) => {
       </a>
     </li>
   );
-};
+});
 
 export default DropdownItem;
