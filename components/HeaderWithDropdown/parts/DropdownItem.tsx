@@ -22,4 +22,6 @@ const DropdownItem = memo(({ name, active = false }: Props) => {
   );
 });
 
+DropdownItem.displayName = "DropdownItem";
+
 export default DropdownItem;
