@@ -145,9 +145,12 @@ export const getRelatedPosts = async (
     return withoutDuplicates;
   }
 
-  const restPosts = (await getPublishedPosts()).filter(
+  const publishedPosts = (await getPublishedPosts()).filter((post) => post.frontmatter.slug !== currentPostSlug);
+  const publishedPostsWithoutCurrent = publishedPosts.filter(
     (post) => !withoutDuplicates.map((item) => item.frontmatter.slug).includes(post.frontmatter.slug),
   );
 
-  return sortPostsByPublishedDate(withoutDuplicates.concat(restPosts).slice(0, numberOfPostsToReturn));
+  return sortPostsByPublishedDate(
+    withoutDuplicates.concat(publishedPostsWithoutCurrent).slice(0, numberOfPostsToReturn),
+  );
 };
