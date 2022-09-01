@@ -9,8 +9,8 @@ import {
   PostWithRawSource,
   getSlugsOfPublishedPosts,
   getPostBySlug,
-  getPublishedPosts,
   sortPostsByPublishedDate,
+  getRelatedPosts,
 } from "../../utils/posts";
 import { serialize } from "next-mdx-remote/serialize";
 import rehypePrism from "@mapbox/rehype-prism";
@@ -63,14 +63,13 @@ export const getStaticProps = async ({ params: { slug } }: { params: { slug: str
       rehypePlugins: [rehypePrism],
     },
   });
-  const relatedPosts = (await getPublishedPosts()).filter(
-    (post) => post.frontmatter.category === frontmatter.category && post.frontmatter.slug != slug,
-  );
+
+  const relatedPosts = await getRelatedPosts(slug, frontmatter.category, frontmatter.tags);
 
   return {
     props: {
       post: { frontmatter, source: mdxSource },
-      relatedPosts: sortPostsByPublishedDate(relatedPosts),
+      relatedPosts: relatedPosts,
     },
   };
 };
