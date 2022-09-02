@@ -13,18 +13,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDays, faTag } from "@fortawesome/free-solid-svg-icons";
 import { PostFrontmatter } from "../../../utils/posts";
 
-const PostItem = ({
-  slug,
-  featuredImage,
-  category,
-  date,
-  title,
-  excerpt,
-}: PostFrontmatter) => {
+const PostItem = ({ slug, featuredImage, category, date, title, excerpt }: PostFrontmatter) => {
   return (
     <li className="bg-white drop-shadow-xl border-2 border-greenLight rounded-md">
       <article>
-        <Link href={`/blog/${slug}`}>
+        <Link href={`/blog/${slug}`} aria-hidden={true} tabIndex={-1}>
           <figure className="w-full h-72 max-h-72 overflow-hidden relative block rounded-t-md">
             <Image
               src={featuredImage}
@@ -47,17 +40,11 @@ const PostItem = ({
               {category}
             </Link>
             <time dateTime={dayjs(date, "YYYY.MM.DD").format("YYYY-MM-DD")}>
-              <FontAwesomeIcon
-                icon={faCalendarDays}
-                className="mr-2 text-green"
-              />
+              <FontAwesomeIcon icon={faCalendarDays} className="mr-2 text-green" />
               {dayjs(date, "YYYY.MM.DD").format("DD MMMM YYYY")}
             </time>
           </div>
-          <Link
-            href={`/blog/${slug}`}
-            className="text-customGray hover:text-green transition"
-          >
+          <Link href={`/blog/${slug}`} className="text-customGray hover:text-green transition">
             <h3 className="font-bold text-lg">{title}</h3>
           </Link>
         </header>
