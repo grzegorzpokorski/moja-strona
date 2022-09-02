@@ -8,6 +8,7 @@ import Banner from "../../components/Banner";
 import { getCategories, getPublishedPosts, PostWithRawSource, sortPostsByPublishedDate } from "../../utils/posts";
 import addressSeparator from "../../data/seo/addressSeparator";
 import siteName from "../../data/seo/siteName";
+import Header from "../../components/Header";
 
 type BlogProps = {
   posts: PostWithRawSource[];
@@ -22,12 +23,13 @@ const Blog = ({ posts, categories }: BlogProps) => {
         description={`Wszystkie artykuły, które pojawiły się na blogu. Przeważa tematyka związana z tworzeniem stron internetowych, ale znajdzie się coś również z mniej technicznych zagadnień.`}
         contentType="website"
       />
-      <MainHeader />
+      <MainHeader>
+        <h1 className="sr-only">Blog</h1>
+      </MainHeader>
       <Main>
         <Section bgColor="bg-whiteGreen" withMarginOnTop>
           <HeaderWithDropdown
             title="Artykuły, ciekawostki z świata stron internetowych i nie tylko 🔥"
-            titleAsH1
             categories={categories}
             initialDropdownValue="Kategorie"
           />
