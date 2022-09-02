@@ -23,7 +23,7 @@ const Footer = memo(({ isHome }: FooterProps) => {
         <p className="basis-full text-center text-gray-500 md:order-4">
           Grzegorz Pokorski © {new Date().getFullYear()}. Doodles by doodleipsum.com. Created by Grzegorz Pokorski.
         </p>
-        <ul className="flex flex-row grow basis-0 gap-3 text-green md:justify-end md:order-3">
+        <ul className="flex flex-row grow basis-0 gap-4 text-green md:justify-end md:order-3 text-lg">
           <SocialMenu items={socialMenu} />
         </ul>
       </div>
