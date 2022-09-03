@@ -23,29 +23,22 @@ const Offer = () => {
         contentType="website"
       />
       <MainHeader>
+        <h1 className="sr-only">Oferta</h1>
         <Section bgColor="bg-whiteGreen" withMarginOnTop>
           <Header
             subtitle="Oferta"
             title="Poznaj moją ofertę"
             description={
               <p>
-                Można być człowiekiem renesansu. Ja jednak staram się doskonalić
-                w konkretnych specjalizacjach. Potrzebujesz nowoczesnej, ultra
-                szybkiej{" "}
-                <Link href="/oferta/tworzenie-stron-internetowych">
-                  strony strony internetowej
-                </Link>{" "}
-                aby zaistnieć w internecie? A może gotowy projekt graficzny
-                czeka na{" "}
-                <Link href="/oferta/kodowanie-projektow-graficznych">
-                  zakodowanie
-                </Link>
-                ? Oferuję profesjonalne usługi, które pomogą Ci wkroczyć na
-                szerokie wody internetu.
+                Można być człowiekiem renesansu. Ja jednak staram się doskonalić w konkretnych specjalizacjach.
+                Potrzebujesz nowoczesnej, ultra szybkiej{" "}
+                <Link href="/oferta/tworzenie-stron-internetowych">strony strony internetowej</Link> aby zaistnieć w
+                internecie? A może gotowy projekt graficzny czeka na{" "}
+                <Link href="/oferta/kodowanie-projektow-graficznych">zakodowanie</Link>? Oferuję profesjonalne usługi,
+                które pomogą Ci wkroczyć na szerokie wody internetu.
               </p>
             }
             centered
-            titleAsH1
           />
           <BoxesList items={offerList} withMarginOnTop />
         </Section>
