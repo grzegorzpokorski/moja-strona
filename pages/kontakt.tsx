@@ -37,7 +37,7 @@ const Pricing = () => {
                   </Link>{" "}
                   lub skorzystać z formularza kontaktowego. Zachęcam do zapoznania się z{" "}
                   <Link href="/czesto-zadawane-pytania">najczęściej zadawanymi pytaniami</Link>, gdzie być może
-                  znajdziesz odpowiedz na swoje pytanie.
+                  znajdziesz odpowiedź na swoje pytanie.
                 </p>
               </>
             }
