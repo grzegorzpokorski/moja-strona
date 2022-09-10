@@ -23,7 +23,9 @@ const PostItem = ({ slug, featuredImage, category, date, title, excerpt }: PostF
               src={featuredImage}
               className="object-cover object-center w-full h-full hover:scale-105 transition-all duration-300"
               fill
-              sizes="100vw"
+              sizes="(max-width: 720px) 100vw,
+              (max-width: 1140px) 50vw,
+              33vw"
               alt=""
             />
           </figure>
