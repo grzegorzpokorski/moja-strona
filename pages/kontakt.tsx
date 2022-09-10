@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import Head from "../components/Head";
 import Section from "../components/Section";
 import Header from "../components/Header";
@@ -50,7 +50,14 @@ const Pricing = () => {
               <ContactForm />
             </div>
             <picture className="w-full lg:w-1/2">
-              <Image src={image} alt="Zadowolony mężczyzna siedzi korzystając z laptopa" />
+              <Image
+                src={image}
+                alt="Zadowolony mężczyzna siedzi korzystając z laptopa"
+                height={image.height}
+                width={image.width}
+                sizes="(max-width: 960px) 100vw, 50vh"
+                className="max-w-full h-auto"
+              />
             </picture>
           </div>
         </Section>
