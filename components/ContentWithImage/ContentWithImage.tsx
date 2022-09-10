@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/future/image";
 import Button from "../Button";
 import { getIdFromString } from "../../helpers/functions/getIdFromString";
 
@@ -37,7 +37,14 @@ const ContentWithImage = ({ subtitle, title, content, href, image, reverse, bgCo
           )}
         </div>
         <picture className="w-full w-full md:w-1/2">
-          {image && <Image src={image.src} alt={image.alt} placeholder="blur" />}
+          {image && (
+            <Image
+              src={image.src}
+              alt={image.alt}
+              className="max-w-full h-auto"
+              sizes="(max-width: 720px) 100vw, 50vw"
+            />
+          )}
         </picture>
       </div>
     </section>
