@@ -1,5 +1,5 @@
 import Link from "../../Link";
-import Image from "next/image";
+import Image from "next/future/image";
 
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
@@ -21,8 +21,9 @@ const PostItem = ({ slug, featuredImage, category, date, title, excerpt }: PostF
           <figure className="w-full h-72 max-h-72 overflow-hidden relative block rounded-t-md">
             <Image
               src={featuredImage}
-              layout="fill"
               className="object-cover object-center w-full h-full hover:scale-105 transition-all duration-300"
+              fill
+              sizes="100vw"
               alt=""
             />
           </figure>
