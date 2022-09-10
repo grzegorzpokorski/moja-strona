@@ -1,7 +1,6 @@
-import Image, { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/future/image";
 import { ReactNode } from "react";
 import { ButtonProps } from "../../components/Button/Button";
-import { getIdFromString } from "../../helpers/functions/getIdFromString";
 import Button from "./../Button";
 
 type HeroProps = {
@@ -49,7 +48,13 @@ const Hero = ({ title, description, buttons, image, bgColor, titleAsH1, withMarg
           )}
         </header>
         <picture className="w-full md:w-1/2">
-          <Image src={image.src} alt={image.alt} layout="responsive" priority />
+          <Image
+            src={image.src}
+            alt={image.alt}
+            sizes="(max-width: 720px) 100vw, 50vw"
+            className="max-w-full h-auto"
+            priority
+          />
         </picture>
       </div>
     </section>
