@@ -6,7 +6,7 @@ type Props = {
   active?: boolean;
 };
 
-const DropdownItem = memo(({ name, active = false }: Props) => {
+export const DropdownItem = memo(({ name, active = false }: Props) => {
   return (
     <li className={`px-6 py-1 ${active ? "text-green" : "hover:text-green"} transition`}>
       <a
@@ -23,5 +23,3 @@ const DropdownItem = memo(({ name, active = false }: Props) => {
 });
 
 DropdownItem.displayName = "DropdownItem";
-
-export default DropdownItem;

@@ -1,11 +1,16 @@
-import Head from "../../../components/Head";
-import MainHeader from "../../../components/MainHeader";
-import Section from "../../../components/Section";
-import Header from "../../../components/Header";
-import Main from "../../../components/Main";
-import PostsList from "../../../components/PostsList";
-import Banner from "../../../components/Banner";
-import { getPublishedPosts, getTags, PostWithRawSource, sortPostsByPublishedDate } from "../../../utils/posts";
+import { Head } from "../../../components/Head/Head";
+import { MainHeader } from "../../../components/MainHeader/MainHeader";
+import { Section } from "../../../components/Section/Section";
+import { Header } from "../../../components/Header/Header";
+import { Main } from "../../../components/Main/Main";
+import { PostsList } from "../../../components/PostsList/PostsList";
+import { Banner } from "../../../components/Banner/Banner";
+import {
+  getPublishedPosts,
+  getTags,
+  PostWithRawSource,
+  sortPostsByPublishedDate,
+} from "../../../utils/posts";
 import slugify from "slugify";
 
 import addressSeparator from "../../../data/seo/addressSeparator";
@@ -48,11 +53,15 @@ const Blog = ({ posts, fullTagNameToPass }: BlogProps) => {
 
 export const getStaticProps = async ({ params: { slug } }: { params: { slug: string } }) => {
   const posts = (await getPublishedPosts()).filter((post) =>
-    post.frontmatter.tags.map((tag) => slugify(tag, { replacement: "-", lower: true })).includes(slug),
+    post.frontmatter.tags
+      .map((tag) => slugify(tag, { replacement: "-", lower: true }))
+      .includes(slug),
   );
   const tags = await getTags();
 
-  const fullTagNameToPass = tags.filter((tag) => slugify(tag, { replacement: "-", lower: true }) === slug)[0];
+  const fullTagNameToPass = tags.filter(
+    (tag) => slugify(tag, { replacement: "-", lower: true }) === slug,
+  )[0];
 
   return {
     props: {

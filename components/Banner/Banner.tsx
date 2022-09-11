@@ -1,5 +1,5 @@
 import { getIdFromString } from "../../helpers/functions/getIdFromString";
-import Button from "../Button";
+import { Button } from "../Button/Button";
 import { ButtonProps } from "../Button/Button";
 
 type BannerProps = {
@@ -8,7 +8,7 @@ type BannerProps = {
   buttons?: ButtonProps[];
 };
 
-const Banner = ({ title, description, buttons }: BannerProps) => {
+export const Banner = ({ title, description, buttons }: BannerProps) => {
   return (
     <section className="py-24 bg-green" id={getIdFromString(title)}>
       <div className="container px-3 mx-auto">
@@ -27,5 +27,3 @@ const Banner = ({ title, description, buttons }: BannerProps) => {
     </section>
   );
 };
-
-export default Banner;

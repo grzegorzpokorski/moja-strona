@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import Image, { StaticImageData } from "next/future/image";
-import Button from "../Button";
+import { Button } from "../Button/Button";
 import { getIdFromString } from "../../helpers/functions/getIdFromString";
 
 type ContentWithImageProps = {
@@ -16,9 +16,20 @@ type ContentWithImageProps = {
   bgColor?: "bg-white" | "bg-green" | "bg-whiteGreen";
 };
 
-const ContentWithImage = ({ subtitle, title, content, href, image, reverse, bgColor }: ContentWithImageProps) => {
+export const ContentWithImage = ({
+  subtitle,
+  title,
+  content,
+  href,
+  image,
+  reverse,
+  bgColor,
+}: ContentWithImageProps) => {
   return (
-    <section className={`py-16 md:py-24 ${bgColor ? bgColor : "bg-white"}`} id={getIdFromString(title)}>
+    <section
+      className={`py-16 md:py-24 ${bgColor ? bgColor : "bg-white"}`}
+      id={getIdFromString(title)}
+    >
       <div
         className={`container px-3 mx-auto flex flex-col ${
           reverse ? "md:flex-row" : "md:flex-row-reverse"
@@ -50,5 +61,3 @@ const ContentWithImage = ({ subtitle, title, content, href, image, reverse, bgCo
     </section>
   );
 };
-
-export default ContentWithImage;

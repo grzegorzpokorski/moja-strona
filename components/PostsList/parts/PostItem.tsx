@@ -1,4 +1,4 @@
-import Link from "../../Link";
+import { Link } from "../../Link/Link";
 import Image from "next/future/image";
 
 import dayjs from "dayjs";
@@ -13,7 +13,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDays, faTag } from "@fortawesome/free-solid-svg-icons";
 import { PostFrontmatter } from "../../../utils/posts";
 
-const PostItem = ({ slug, featuredImage, category, date, title, excerpt }: PostFrontmatter) => {
+export const PostItem = ({
+  slug,
+  featuredImage,
+  category,
+  date,
+  title,
+  excerpt,
+}: PostFrontmatter) => {
   return (
     <li className="bg-white drop-shadow-xl border-2 border-greenLight rounded-md">
       <article>
@@ -59,5 +66,3 @@ const PostItem = ({ slug, featuredImage, category, date, title, excerpt }: PostF
     </li>
   );
 };
-
-export default PostItem;

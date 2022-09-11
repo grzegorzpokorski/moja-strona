@@ -1,12 +1,12 @@
-import Head from "../../components/Head";
-import Services from "../../components/Services";
-import BoxesList from "../../components/BoxesList";
-import Section from "../../components/Section";
-import Header from "../../components/Header";
-import Main from "../../components/Main";
-import MainHeader from "../../components/MainHeader";
-import Link from "../../components/Link";
-import Banner from "../../components/Banner";
+import { Head } from "../../components/Head/Head";
+import { Services } from "../../components/Services/Services";
+import { BoxesList } from "../../components/BoxesList/BoxesList";
+import { Section } from "../../components/Section/Section";
+import { Header } from "../../components/Header/Header";
+import { Main } from "../../components/Main/Main";
+import { MainHeader } from "../../components/MainHeader/MainHeader";
+import { Link } from "../../components/Link/Link";
+import { Banner } from "../../components/Banner/Banner";
 
 import { offerList } from "../../data/content/offerList";
 import { servicesList } from "../../data/content/servicesList";
@@ -30,12 +30,12 @@ const Offer = () => {
             title="Poznaj moją ofertę"
             description={
               <p>
-                Można być człowiekiem renesansu. Ja jednak staram się doskonalić w konkretnych specjalizacjach.
-                Potrzebujesz nowoczesnej, ultra szybkiej{" "}
-                <Link href="/oferta/tworzenie-stron-internetowych">strony strony internetowej</Link> aby zaistnieć w
-                internecie? A może gotowy projekt graficzny czeka na{" "}
-                <Link href="/oferta/kodowanie-projektow-graficznych">zakodowanie</Link>? Oferuję profesjonalne usługi,
-                które pomogą Ci wkroczyć na szerokie wody internetu.
+                Można być człowiekiem renesansu. Ja jednak staram się doskonalić w konkretnych
+                specjalizacjach. Potrzebujesz nowoczesnej, ultra szybkiej{" "}
+                <Link href="/oferta/tworzenie-stron-internetowych">strony strony internetowej</Link>{" "}
+                aby zaistnieć w internecie? A może gotowy projekt graficzny czeka na{" "}
+                <Link href="/oferta/kodowanie-projektow-graficznych">zakodowanie</Link>? Oferuję
+                profesjonalne usługi, które pomogą Ci wkroczyć na szerokie wody internetu.
               </p>
             }
             centered

@@ -40,7 +40,7 @@ type Shema = {
   }[];
 };
 
-const Head = ({
+export const Head = ({
   title,
   description,
   contentType,
@@ -140,9 +140,7 @@ const Head = ({
 
       <meta
         property="og:image"
-        content={`${siteUrl}${
-          featuredImage ? featuredImage : "/images/default-og-image.jpg"
-        }`}
+        content={`${siteUrl}${featuredImage ? featuredImage : "/images/default-og-image.jpg"}`}
       />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
@@ -150,23 +148,9 @@ const Head = ({
 
       <meta name="twitter:card" content="summary_large_image" />
 
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/favicon-16x16.png"
-      />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
 
@@ -177,5 +161,3 @@ const Head = ({
     </HeadTag>
   );
 };
-
-export default Head;

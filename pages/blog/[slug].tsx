@@ -1,15 +1,14 @@
-import MainHeader from "../../components/MainHeader";
-import Main from "../../components/Main";
-import Post from "../../components/Post";
-import Head from "../../components/Head";
-import Banner from "../../components/Banner";
+import { MainHeader } from "../../components/MainHeader/MainHeader";
+import { Main } from "../../components/Main/Main";
+import { Post } from "../../components/Post/Post";
+import { Head } from "../../components/Head/Head";
+import { Banner } from "../../components/Banner/Banner";
 
 import {
   PostWithCompiledSource,
   PostWithRawSource,
   getSlugsOfPublishedPosts,
   getPostBySlug,
-  sortPostsByPublishedDate,
   getRelatedPosts,
 } from "../../utils/posts";
 import { serialize } from "next-mdx-remote/serialize";
@@ -17,7 +16,7 @@ import rehypePrism from "@mapbox/rehype-prism";
 
 import siteName from "./../../data/seo/siteName";
 import addressSeparator from "../../data/seo/addressSeparator";
-import PostsExcerpt from "../../components/PostsExcerpt";
+import { PostsExcerpt } from "../../components/PostsExcerpt/PostsExcerpt";
 
 type BlogPostProps = {
   post: PostWithCompiledSource;
@@ -38,7 +37,11 @@ const BlogPost = ({ post, relatedPosts }: BlogPostProps) => {
       <Main withMarginOnTop>
         <Post post={post} />
         {relatedPosts.length > 0 && (
-          <PostsExcerpt subtitle="Posty o podobnej tematyce" title="Mogą Cię zainteresować:" posts={relatedPosts} />
+          <PostsExcerpt
+            subtitle="Posty o podobnej tematyce"
+            title="Mogą Cię zainteresować:"
+            posts={relatedPosts}
+          />
         )}
         <Banner
           title="Zbuduj swoją ultra szybką stronę internetową ze mną!"

@@ -1,14 +1,18 @@
-import Head from "../../components/Head";
-import MainHeader from "../../components/MainHeader";
-import Section from "../../components/Section";
-import HeaderWithDropdown from "../../components/HeaderWithDropdown";
-import Main from "../../components/Main";
-import PostsList from "../../components/PostsList";
-import Banner from "../../components/Banner";
-import { getCategories, getPublishedPosts, PostWithRawSource, sortPostsByPublishedDate } from "../../utils/posts";
+import { Head } from "../../components/Head/Head";
+import { MainHeader } from "../../components/MainHeader/MainHeader";
+import { Section } from "../../components/Section/Section";
+import { HeaderWithDropdown } from "../../components/HeaderWithDropdown/HeaderWithDropdown";
+import { Main } from "../../components/Main/Main";
+import { PostsList } from "../../components/PostsList/PostsList";
+import { Banner } from "../../components/Banner/Banner";
+import {
+  getCategories,
+  getPublishedPosts,
+  PostWithRawSource,
+  sortPostsByPublishedDate,
+} from "../../utils/posts";
 import addressSeparator from "../../data/seo/addressSeparator";
 import siteName from "../../data/seo/siteName";
-import Header from "../../components/Header";
 
 type BlogProps = {
   posts: PostWithRawSource[];

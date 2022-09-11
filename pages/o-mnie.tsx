@@ -1,10 +1,10 @@
-import Head from "../components/Head";
-import Main from "../components/Main";
-import MainHeader from "../components/MainHeader";
-import Hero from "../components/Hero";
-import Link from "../components/Link";
-import Banner from "../components/Banner";
-import PostsExcerpt from "../components/PostsExcerpt";
+import { Head } from "../components/Head/Head";
+import { Main } from "../components/Main/Main";
+import { MainHeader } from "../components/MainHeader/MainHeader";
+import { Hero } from "../components/Hero/Hero";
+import { Link } from "../components/Link/Link";
+import { Banner } from "../components/Banner/Banner";
+import { PostsExcerpt } from "../components/PostsExcerpt/PostsExcerpt";
 
 import heroImage from "../public/images/about.png";
 
@@ -30,8 +30,8 @@ const About = ({ newestPosts }: AboutProps) => {
           description={
             <>
               <p>
-                Działam jako freelancer, pomagając tworzyć dobrze wyglądające i realizujące cele biznesowe strony
-                internetowe.
+                Działam jako freelancer, pomagając tworzyć dobrze wyglądające i realizujące cele
+                biznesowe strony internetowe.
               </p>
               <p>
                 W wolnej chwili staram się dzielić swoją wiedzą na łamach artykułów na moim{" "}

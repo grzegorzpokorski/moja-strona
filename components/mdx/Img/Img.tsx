@@ -4,10 +4,6 @@ type MdxImageProps = {
   height?: number;
 };
 
-const MdxImage = ({ alt, src }: MdxImageProps) => {
-  return (
-    <img src={src} alt={alt} width="100%" loading="lazy" decoding="async" />
-  );
+export const Image = ({ alt, src }: MdxImageProps) => {
+  return <img src={src} alt={alt} width="100%" loading="lazy" decoding="async" />;
 };
-
-export default MdxImage;

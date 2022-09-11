@@ -1,6 +1,6 @@
-import Link from "../../Link";
-import Button from "../../Button";
-import Dropdown from "./Dropdown";
+import { Link } from "../../Link/Link";
+import { Button } from "../../Button/Button";
+import { Dropdown } from "./Dropdown";
 import { useRouter } from "next/router";
 
 export type MenuItemType = {
@@ -13,7 +13,7 @@ export type MenuItemType = {
   }[];
 };
 
-const MenuItem = (item: MenuItemType) => {
+export const MenuItem = (item: MenuItemType) => {
   const currentPath = useRouter().asPath.split("#")[0];
 
   return item.button ? (
@@ -36,5 +36,3 @@ const MenuItem = (item: MenuItemType) => {
     </li>
   );
 };
-
-export default MenuItem;

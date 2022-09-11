@@ -1,5 +1,5 @@
-import Dropdown from "./parts/Dropdown";
-import Heading from "./parts/Heading";
+import { Dropdown } from "./parts/Dropdown";
+import { Heading } from "./parts/Heading";
 
 type Props = {
   subtitle?: string;
@@ -10,7 +10,7 @@ type Props = {
   initialDropdownValue: string;
 };
 
-const HeaderWithSelectCategory = ({
+export const HeaderWithDropdown = ({
   subtitle,
   title,
   description,
@@ -20,18 +20,8 @@ const HeaderWithSelectCategory = ({
 }: Props) => {
   return (
     <header className={`flex flex-col lg:flex-row gap-6 lg:gap-20`}>
-      <Heading
-        title={title}
-        subtitle={subtitle}
-        description={description}
-        titleAsH1={titleAsH1}
-      />
-      <Dropdown
-        initialDropdownValue={initialDropdownValue}
-        categories={categories}
-      />
+      <Heading title={title} subtitle={subtitle} description={description} titleAsH1={titleAsH1} />
+      <Dropdown initialDropdownValue={initialDropdownValue} categories={categories} />
     </header>
   );
 };
-
-export default HeaderWithSelectCategory;

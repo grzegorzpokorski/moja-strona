@@ -1,4 +1,4 @@
-import { ReactNode, ReactElement, FC } from "react";
+import { ReactNode, FC } from "react";
 import LinkNext from "next/link";
 
 export type LinkProps = {
@@ -8,7 +8,7 @@ export type LinkProps = {
   tabIndex?: number;
 };
 
-const Link: FC<LinkProps> = (props) => {
+export const Link: FC<LinkProps> = (props) => {
   const isInternal = props.href && (props.href.startsWith("#") || props.href.startsWith("/"));
   return isInternal ? (
     <LinkNext href={props.href}>
@@ -20,5 +20,3 @@ const Link: FC<LinkProps> = (props) => {
     </a>
   );
 };
-
-export default Link;

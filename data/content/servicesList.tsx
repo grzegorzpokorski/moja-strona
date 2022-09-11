@@ -11,23 +11,18 @@ export const servicesList: ServicesType[] = [
     content: (
       <>
         <p>
-          Wykonuję 'szyte na miarę’ strony internetowe dostosowane i
-          zaprojektowane dla konkretnej grupy docelowej oraz realizujące
-          założone przez Ciebie cele.
+          Wykonuję 'szyte na miarę’ strony internetowe dostosowane i zaprojektowane dla konkretnej
+          grupy docelowej oraz realizujące założone przez Ciebie cele.
         </p>
         <p>
-          Moją specjalnością są strony dla małych oraz średnich firm oparte na
-          autorskim motywie.{" "}
-          <strong>
-            Każda strona internetowa przygotowywana jest indywidualnie
-          </strong>
-          , aby zapewnić jak najlepsze wrażenia z użytkowania zarówno dla
-          odbiorców jak i dla administratorów gotowego serwisu.
+          Moją specjalnością są strony dla małych oraz średnich firm oparte na autorskim motywie.{" "}
+          <strong>Każda strona internetowa przygotowywana jest indywidualnie</strong>, aby zapewnić
+          jak najlepsze wrażenia z użytkowania zarówno dla odbiorców jak i dla administratorów
+          gotowego serwisu.
         </p>
         <p>
-          <strong>Rozszerz zasięg swojej firmy i wyprzedź konkurencję</strong>{" "}
-          dzięki profesjonalnie przygotowanej, ultra szybkiej stronie
-          internetowej.
+          <strong>Rozszerz zasięg swojej firmy i wyprzedź konkurencję</strong> dzięki profesjonalnie
+          przygotowanej, ultra szybkiej stronie internetowej.
         </p>
       </>
     ),
@@ -39,18 +34,15 @@ export const servicesList: ServicesType[] = [
   },
   {
     subtitle: "Kodowanie szablonów",
-    title:
-      "Kodowanie statycznych stron internetowych na podstawie projektu graficznego",
+    title: "Kodowanie statycznych stron internetowych na podstawie projektu graficznego",
     content: (
       <>
         <p>
-          Poszukujesz programisty do zakodowania Twojego szablonu graficznego?
-          Dobrze trafiłeś! Oferuję wysokiej jakości,{" "}
-          <strong>wolne od błędów</strong> i dostosowane do potrzeb usługę
-          kodowania szablonów stron internetowych. Wykorzystuje najnowsze
-          technologie, abyś mógł się cieszyć,{" "}
-          <strong>w pełni kompatybilną z najnowszymi przeglądarkami</strong>,
-          stroną internetową ✨.
+          Poszukujesz programisty do zakodowania Twojego szablonu graficznego? Dobrze trafiłeś!
+          Oferuję wysokiej jakości, <strong>wolne od błędów</strong> i dostosowane do potrzeb usługę
+          kodowania szablonów stron internetowych. Wykorzystuje najnowsze technologie, abyś mógł się
+          cieszyć, <strong>w pełni kompatybilną z najnowszymi przeglądarkami</strong>, stroną
+          internetową ✨.
         </p>
       </>
     ),
@@ -66,12 +58,10 @@ export const servicesList: ServicesType[] = [
     content: (
       <>
         <p>
-          Chodzi Ci po głowie nowy projekt? A może nudzi Cię wygląd twojej
-          strony internetowej? Chętnie przygotują dla Ciebie{" "}
-          <strong>kompleksowy projekt graficzny</strong> witryny, odpowiadający
-          Twojej wizji. Na bieżąco monitoruję zmieniające się trendy w
-          dziedzinie projektowania graficznego i wykorzystuję je w swoich
-          pracach.
+          Chodzi Ci po głowie nowy projekt? A może nudzi Cię wygląd twojej strony internetowej?
+          Chętnie przygotują dla Ciebie <strong>kompleksowy projekt graficzny</strong> witryny,
+          odpowiadający Twojej wizji. Na bieżąco monitoruję zmieniające się trendy w dziedzinie
+          projektowania graficznego i wykorzystuję je w swoich pracach.
         </p>
         <p>
           Projekty wykonuję w&nbsp;<strong>Figmie</strong>&nbsp;oraz&nbsp;

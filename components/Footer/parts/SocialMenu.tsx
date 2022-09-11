@@ -1,4 +1,4 @@
-import Link from "../../Link";
+import { Link } from "../../Link/Link";
 
 export type SocialMenuItemType = {
   label: string;
@@ -10,7 +10,7 @@ type SocialMenuProps = {
   items: SocialMenuItemType[];
 };
 
-const SocialMenu = ({ items }: SocialMenuProps) => {
+export const SocialMenu = ({ items }: SocialMenuProps) => {
   return (
     <>
       {items &&
@@ -25,5 +25,3 @@ const SocialMenu = ({ items }: SocialMenuProps) => {
     </>
   );
 };
-
-export default SocialMenu;

@@ -12,14 +12,15 @@ type AccordionProps = {
   customId?: string;
 };
 
-const Accordion = ({ items, withMarginOnTop, customId = "accordion" }: AccordionProps) => {
+export const Accordion = ({ items, withMarginOnTop, customId = "accordion" }: AccordionProps) => {
   return (
-    <div className={`flex flex-col gap-4 mx-auto ${withMarginOnTop ? "mt-12 md:mt-24" : ""} accordion`} id={customId}>
+    <div
+      className={`flex flex-col gap-4 mx-auto ${withMarginOnTop ? "mt-12 md:mt-24" : ""} accordion`}
+      id={customId}
+    >
       {items.map((item, idx) => (
         <AccordionItem key={item.heading} {...item} />
       ))}
     </div>
   );
 };
-
-export default Accordion;

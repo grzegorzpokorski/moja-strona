@@ -1,4 +1,4 @@
-import Button from "../../Button";
+import { Button } from "../../Button/Button";
 import slugify from "slugify";
 
 type TagListPros = {
@@ -6,7 +6,7 @@ type TagListPros = {
   withMarginOnTop?: boolean;
 };
 
-const TagsList = ({ tags, withMarginOnTop }: TagListPros) => {
+export const TagsList = ({ tags, withMarginOnTop }: TagListPros) => {
   return (
     <ul className={`flex flex-row flex-wrap gap-2 text-sm`}>
       {tags.map((tag) => (
@@ -25,5 +25,3 @@ const TagsList = ({ tags, withMarginOnTop }: TagListPros) => {
     </ul>
   );
 };
-
-export default TagsList;

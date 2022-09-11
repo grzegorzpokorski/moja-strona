@@ -5,7 +5,7 @@ config.autoAddCss = false;
 
 import "./../styles/style.scss";
 
-import Layout from "../components/Layout";
+import { Layout } from "../components/Layout/Layout";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (

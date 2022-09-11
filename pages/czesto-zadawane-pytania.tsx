@@ -1,11 +1,11 @@
-import Head from "../components/Head";
-import Section from "../components/Section";
-import Header from "../components/Header";
-import Main from "../components/Main";
-import MainHeader from "../components/MainHeader";
-import Link from "../components/Link";
-import Accordion from "../components/Accordion";
-import Banner from "../components/Banner";
+import { Head } from "../components/Head/Head";
+import { Section } from "../components/Section/Section";
+import { Header } from "../components/Header/Header";
+import { Main } from "../components/Main/Main";
+import { MainHeader } from "../components/MainHeader/MainHeader";
+import { Link } from "../components/Link/Link";
+import { Accordion } from "../components/Accordion/Accordion";
+import { Banner } from "../components/Banner/Banner";
 
 import addressSeparator from "../data/seo/addressSeparator";
 import siteName from "../data/seo/siteName";
@@ -28,8 +28,8 @@ const FAQ = () => {
             title="Często zadawane pytania"
             description={
               <p>
-                Tutaj znajdziesz odpowiedzi na najczęściej zadawane pytania. Jeśli masz inne pytanie napisz do{" "}
-                <Link href="/kontakt">napisz do mnie</Link>.
+                Tutaj znajdziesz odpowiedzi na najczęściej zadawane pytania. Jeśli masz inne pytanie
+                napisz do <Link href="/kontakt">napisz do mnie</Link>.
               </p>
             }
             centered

@@ -6,7 +6,7 @@ type ContentProps = {
   withSpaceAbove?: boolean;
 };
 
-const Content = ({ columns, content, withSpaceAbove }: ContentProps) => {
+export const Content = ({ columns, content, withSpaceAbove }: ContentProps) => {
   console.log();
   return columns ? (
     <div
@@ -17,14 +17,8 @@ const Content = ({ columns, content, withSpaceAbove }: ContentProps) => {
       {content}
     </div>
   ) : (
-    <div
-      className={`w-full prose max-w-none gap-8 ${
-        withSpaceAbove ? "mt-8 md:mt-12" : ""
-      }`}
-    >
+    <div className={`w-full prose max-w-none gap-8 ${withSpaceAbove ? "mt-8 md:mt-12" : ""}`}>
       {content}
     </div>
   );
 };
-
-export default Content;

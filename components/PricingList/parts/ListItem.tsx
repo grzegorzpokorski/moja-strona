@@ -1,4 +1,4 @@
-import Button from "../../Button";
+import { Button } from "../../Button/Button";
 
 export type PricingListItemType = {
   icon: JSX.Element;
@@ -8,13 +8,7 @@ export type PricingListItemType = {
   href: string;
 };
 
-const ListItem = ({
-  icon,
-  title,
-  price,
-  features,
-  href,
-}: PricingListItemType) => {
+export const ListItem = ({ icon, title, price, features, href }: PricingListItemType) => {
   return (
     <li className="w-full bg-white border-2 border-greenLight hover:border-green drop-shadow-lg rounded-md transition flex flex-col">
       <article className="p-8 flex flex-col gap-6 h-full justify-between">
@@ -27,9 +21,7 @@ const ListItem = ({
                 </span>
               </span>
             )}
-            <h3 className="text-customGray text-lg font-medium mt-3">
-              {title}
-            </h3>
+            <h3 className="text-customGray text-lg font-medium mt-3">{title}</h3>
           </header>
           <div className="flex flex-col text-center">
             <p className="border-y-2 border-zinc-200 py-2">
@@ -38,10 +30,7 @@ const ListItem = ({
             </p>
           </div>
           <div className="prose max-w-none">
-            <ul>
-              {features &&
-                features.map((feature, i) => <li key={i}>{feature}</li>)}
-            </ul>
+            <ul>{features && features.map((feature, i) => <li key={i}>{feature}</li>)}</ul>
           </div>
         </div>
         <div className="flex flex-col text-center items-center">
@@ -51,5 +40,3 @@ const ListItem = ({
     </li>
   );
 };
-
-export default ListItem;

@@ -35,7 +35,10 @@ export const AccordionItem = ({ heading, content, expanded = false }: AccordionI
           onClick={() => setIsExpanded(!isExpanded)}
         >
           <span>{heading}</span>
-          <span className={`${isExpanded ? 'after:content-["-"]' : 'after:content-["+"]'}`} aria-hidden={true}></span>
+          <span
+            className={`${isExpanded ? 'after:content-["-"]' : 'after:content-["+"]'}`}
+            aria-hidden={true}
+          ></span>
         </button>
       </h3>
       <div

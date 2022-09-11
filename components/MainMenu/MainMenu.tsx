@@ -6,7 +6,7 @@ type MainMenuProps = {
   isSticky: boolean;
 };
 
-const MainMenu = ({ mobileMenuIsOpen, isSticky }: MainMenuProps) => {
+export const MainMenu = ({ mobileMenuIsOpen, isSticky }: MainMenuProps) => {
   return (
     <ul
       id="menu"
@@ -18,5 +18,3 @@ const MainMenu = ({ mobileMenuIsOpen, isSticky }: MainMenuProps) => {
     </ul>
   );
 };
-
-export default MainMenu;

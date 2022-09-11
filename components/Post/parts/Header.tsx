@@ -1,6 +1,6 @@
-import Link from "../../Link";
+import { Link } from "../../Link/Link";
 import Image from "next/image";
-import TagsList from "./TagsList";
+import { TagsList } from "./TagsList";
 
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
@@ -11,7 +11,7 @@ dayjs.locale("pl");
 import slugify from "slugify";
 import { PostFrontmatter } from "../../../utils/posts";
 
-const Header = ({ category, date, title, tags, featuredImage }: PostFrontmatter) => {
+export const Header = ({ category, date, title, tags, featuredImage }: PostFrontmatter) => {
   return (
     <header className="pt-16 pb-8 md:pt-24 md:pb-12">
       <div className="container px-3 mx-auto">
@@ -26,7 +26,10 @@ const Header = ({ category, date, title, tags, featuredImage }: PostFrontmatter)
             >
               {category}
             </Link>
-            <span className="inline-block w-12 h-0.5 bg-customGray text-separator" aria-hidden="true"></span>
+            <span
+              className="inline-block w-12 h-0.5 bg-customGray text-separator"
+              aria-hidden="true"
+            ></span>
             <time dateTime={dayjs(date, "YYYY.MM.DD").format("YYYY-MM-DD")}>
               {dayjs(date, "YYYY.MM.DD").locale("pl").format("DD MMMM YYYY")}
             </time>
@@ -47,4 +50,3 @@ const Header = ({ category, date, title, tags, featuredImage }: PostFrontmatter)
     </header>
   );
 };
-export default Header;

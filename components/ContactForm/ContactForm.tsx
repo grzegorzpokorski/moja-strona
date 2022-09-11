@@ -4,11 +4,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { sendMessageFromContactForm } from "../../helpers/requests/sendMessageFromContactForm";
 
-import Link from "../Link";
-import Input from "./parts/Input";
-import Textarea from "./parts/Textarea";
-import Checkbox from "./parts/Checkbox";
-import SubmitButton from "./parts/SubmitButton";
+import { Link } from "../Link/Link";
+import { Input } from "./parts/Input";
+import { Textarea } from "./parts/Textarea";
+import { Checkbox } from "./parts/Checkbox";
+import { SubmitButton } from "./parts/SubmitButton";
 
 export type ContactFormValues = {
   name: string;
@@ -18,10 +18,16 @@ export type ContactFormValues = {
   gdpr: boolean;
 };
 
-const ContactForm = () => {
+export const ContactForm = () => {
   const validationSchema = yup.object().shape({
-    name: yup.string().required("Pole jest wymagane.").min(2, "Pole powinno zawierać minimum 2 znaki."),
-    surname: yup.string().required("Pole jest wymagane.").min(2, "Pole powinno zawierać minimum 2 znaki."),
+    name: yup
+      .string()
+      .required("Pole jest wymagane.")
+      .min(2, "Pole powinno zawierać minimum 2 znaki."),
+    surname: yup
+      .string()
+      .required("Pole jest wymagane.")
+      .min(2, "Pole powinno zawierać minimum 2 znaki."),
     email: yup
       .string()
       .required("Pole jest wymagane.")
@@ -29,7 +35,10 @@ const ContactForm = () => {
         /^[a-zA-Z0-9+.-_]+@[a-zA-Z0–9.-]+[.][a-zA-Z]{1,}$/,
         "Wprowadzony adres e-mail jest nieprawidłowy, sprawdź format (np. email@domena.com).",
       ),
-    message: yup.string().required("Pole jest wymagane.").min(10, "Pole powinno zawierać minimum 10 znaków."),
+    message: yup
+      .string()
+      .required("Pole jest wymagane.")
+      .min(10, "Pole powinno zawierać minimum 10 znaków."),
     gdpr: yup.bool().oneOf([true], "Zgoda jest wymagana.").required("Zgoda jest wymagana."),
   });
 
@@ -43,7 +52,9 @@ const ContactForm = () => {
     resolver: yupResolver(validationSchema),
   });
 
-  const [sendingStatus, setSendingStatus] = useState<"initial" | "sending" | "sended" | "error">("initial");
+  const [sendingStatus, setSendingStatus] = useState<"initial" | "sending" | "sended" | "error">(
+    "initial",
+  );
 
   const onSubmit = async (data: ContactFormValues) => {
     setSendingStatus("sending");
@@ -64,7 +75,10 @@ const ContactForm = () => {
       onSubmit={handleSubmit(onSubmit)}
       id="formularz-kontaktowy"
     >
-      <fieldset className={`disabled:cursor-not-allowed`} disabled={sendingStatus && sendingStatus !== "initial"}>
+      <fieldset
+        className={`disabled:cursor-not-allowed`}
+        disabled={sendingStatus && sendingStatus !== "initial"}
+      >
         <legend className={`sr-only`}>Formularz kontaktowy</legend>
         <Input
           type="text"
@@ -102,8 +116,8 @@ const ContactForm = () => {
           required={true}
         />
         <Checkbox name="gdpr" error={errors.gdpr} required={true} register={register("gdpr")}>
-          Wyrażam zgodę na przechowywanie przez tę witrynę przesłanych przeze mnie informacji, w celu związanym z
-          odpowiedzią na moje zapytanie. Aby dowiedzieć się więcej, odwiedź{" "}
+          Wyrażam zgodę na przechowywanie przez tę witrynę przesłanych przeze mnie informacji, w
+          celu związanym z odpowiedzią na moje zapytanie. Aby dowiedzieć się więcej, odwiedź{" "}
           <Link href={"/"} className="text-green hover:underline">
             politykę prywatności
           </Link>
@@ -113,5 +127,3 @@ const ContactForm = () => {
     </form>
   );
 };
-
-export default ContactForm;

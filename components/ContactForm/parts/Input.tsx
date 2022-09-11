@@ -1,5 +1,5 @@
 import { FieldError, UseFormRegisterReturn } from "react-hook-form";
-import Error from "./Error";
+import { Error } from "./Error";
 
 type Props = {
   type: "text" | "email";
@@ -11,15 +11,7 @@ type Props = {
   register: UseFormRegisterReturn<string>;
 };
 
-const Input = ({
-  type,
-  name,
-  label,
-  placeholder,
-  error,
-  required,
-  register,
-}: Props) => {
+export const Input = ({ type, name, label, placeholder, error, required, register }: Props) => {
   return (
     <div className={`w-full mb-6`}>
       <label
@@ -44,5 +36,3 @@ const Input = ({
     </div>
   );
 };
-
-export default Input;

@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/future/image";
 import { ReactNode } from "react";
 import { ButtonProps } from "../../components/Button/Button";
-import Button from "./../Button";
+import { Button } from "./../Button/Button";
 
 type HeroProps = {
   title: string;
@@ -17,10 +17,21 @@ type HeroProps = {
   imageFirst?: boolean;
 };
 
-const Hero = ({ title, description, buttons, image, bgColor, titleAsH1, withMarginOnTop, imageFirst }: HeroProps) => {
+export const Hero = ({
+  title,
+  description,
+  buttons,
+  image,
+  bgColor,
+  titleAsH1,
+  withMarginOnTop,
+  imageFirst,
+}: HeroProps) => {
   return (
     <section
-      className={`py-12 md:py-12 ${bgColor ? bgColor : "bg-white"} ${withMarginOnTop ? "mt-20 lg:mt-28" : ""}`}
+      className={`py-12 md:py-12 ${bgColor ? bgColor : "bg-white"} ${
+        withMarginOnTop ? "mt-20 lg:mt-28" : ""
+      }`}
       id="hero"
     >
       <div
@@ -60,5 +71,3 @@ const Hero = ({ title, description, buttons, image, bgColor, titleAsH1, withMarg
     </section>
   );
 };
-
-export default Hero;

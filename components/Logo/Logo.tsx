@@ -1,16 +1,13 @@
-import Link from "../Link";
+import { Link } from "../Link/Link";
 
 type LogoProps = {
   isHome?: boolean;
   isTitle?: boolean;
 };
 
-const Logo = ({ isHome, isTitle }: LogoProps) => {
+export const Logo = ({ isHome, isTitle }: LogoProps) => {
   return (
-    <Link
-      href={`${isHome ? "#" : "/"}`}
-      className="transition hover:opacity-60"
-    >
+    <Link href={`${isHome ? "#" : "/"}`} className="transition hover:opacity-60">
       {isTitle ? (
         <h1 className="text-lg font-bold">
           <span className="text-green">Grzegorz </span>
@@ -25,5 +22,3 @@ const Logo = ({ isHome, isTitle }: LogoProps) => {
     </Link>
   );
 };
-
-export default Logo;

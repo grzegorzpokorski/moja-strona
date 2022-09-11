@@ -1,4 +1,4 @@
-import DropdownItem from "./DropdownItem";
+import { DropdownItem } from "./DropdownItem";
 
 import { useState, useEffect, useRef } from "react";
 import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
@@ -8,7 +8,7 @@ type Props = {
   initialDropdownValue: string;
 };
 
-const Dropdown = ({ categories, initialDropdownValue }: Props) => {
+export const Dropdown = ({ categories, initialDropdownValue }: Props) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const closeDropdown = () => {
@@ -34,7 +34,9 @@ const Dropdown = ({ categories, initialDropdownValue }: Props) => {
   return (
     <div className={"w-full lg:w-4/12"}>
       <div
-        className={`flex flex-col text-left w-full shadow-md dropdown ${isDropdownOpen ? "dropdown--open" : ""}`}
+        className={`flex flex-col text-left w-full shadow-md dropdown ${
+          isDropdownOpen ? "dropdown--open" : ""
+        }`}
         ref={dropDownRef}
       >
         <button
@@ -55,12 +57,14 @@ const Dropdown = ({ categories, initialDropdownValue }: Props) => {
         >
           {categories &&
             categories.map((category) => (
-              <DropdownItem key={category} name={category} active={category === initialDropdownValue ? true : false} />
+              <DropdownItem
+                key={category}
+                name={category}
+                active={category === initialDropdownValue ? true : false}
+              />
             ))}
         </ul>
       </div>
     </div>
   );
 };
-
-export default Dropdown;

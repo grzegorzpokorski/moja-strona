@@ -1,16 +1,16 @@
 import { GetStaticProps } from "next";
 
-import Head from "../components/Head";
-import Main from "../components/Main";
-import MainHeader from "../components/MainHeader";
-import Hero from "../components/Hero";
-import Banner from "../components/Banner";
-import Section from "../components/Section";
-import Header from "../components/Header";
-import BoxesList from "../components/BoxesList";
-import PostsExcerpt from "../components/PostsExcerpt";
-import Services from "../components/Services";
-import Link from "../components/Link";
+import { Head } from "../components/Head/Head";
+import { Main } from "../components/Main/Main";
+import { MainHeader } from "../components/MainHeader/MainHeader";
+import { Hero } from "../components/Hero/Hero";
+import { Banner } from "../components/Banner/Banner";
+import { Section } from "../components/Section/Section";
+import { Header } from "../components/Header/Header";
+import { BoxesList } from "../components/BoxesList/BoxesList";
+import { PostsExcerpt } from "../components/PostsExcerpt/PostsExcerpt";
+import { Services } from "../components/Services/Services";
+import { Link } from "../components/Link/Link";
 
 import { offerList } from "../data/content/offerList";
 import { servicesList } from "../data/content/servicesList";
@@ -39,8 +39,8 @@ const Home = ({ newestPosts }: HomeProps) => {
           title="Projekuję oraz tworzę nowoczesne strony internetowe"
           description={
             <p>
-              Zaistniej w internecie i zrealizuj swoje cele z<strong> ultra szybką</strong> 🚀 stroną internetową
-              osiągającą
+              Zaistniej w internecie i zrealizuj swoje cele z<strong> ultra szybką</strong> 🚀
+              stroną internetową osiągającą
               <strong> najwyższe noty</strong> 🥇 w Google PageSpeed benchmark.
             </p>
           }
@@ -69,9 +69,10 @@ const Home = ({ newestPosts }: HomeProps) => {
             title="W czym mogę Ci pomóc?"
             description={
               <p>
-                Potrzebujesz nowoczesnej, ultra szybkiej strony strony internetowej aby zaistnieć w internecie? A może
-                gotowy projekt graficzny czeka na zakodowanie? Oferuję{" "}
-                <Link href={`/oferta`}>profesjonalne usługi</Link>, które pomogą Ci wkroczyć na szerokie wody internetu.
+                Potrzebujesz nowoczesnej, ultra szybkiej strony strony internetowej aby zaistnieć w
+                internecie? A może gotowy projekt graficzny czeka na zakodowanie? Oferuję{" "}
+                <Link href={`/oferta`}>profesjonalne usługi</Link>, które pomogą Ci wkroczyć na
+                szerokie wody internetu.
               </p>
             }
             centered

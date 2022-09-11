@@ -1,7 +1,7 @@
-import Section from "../Section";
-import Header from "../Header";
-import PostsList from "../PostsList";
-import Button from "../Button";
+import { Section } from "../Section/Section";
+import { Header } from "../Header/Header";
+import { PostsList } from "../PostsList/PostsList";
+import { Button } from "../Button/Button";
 import { PostWithRawSource } from "../../utils/posts";
 import { ButtonProps } from "../Button/Button";
 import { getIdFromString } from "../../helpers/functions/getIdFromString";
@@ -13,7 +13,7 @@ type PostExcerptProps = {
   button?: ButtonProps;
 };
 
-const PostsExcerpt = ({ subtitle, title, posts, button }: PostExcerptProps) => {
+export const PostsExcerpt = ({ subtitle, title, posts, button }: PostExcerptProps) => {
   return (
     <Section bgColor="bg-whiteGreen" id={getIdFromString(title)}>
       <Header title={title} subtitle={subtitle} />
@@ -26,5 +26,3 @@ const PostsExcerpt = ({ subtitle, title, posts, button }: PostExcerptProps) => {
     </Section>
   );
 };
-
-export default PostsExcerpt;

@@ -1,12 +1,8 @@
-import Button from "../../Button";
+import { Button } from "../../Button/Button";
 import siteUrl from "../../../data/seo/siteUrl";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTwitter,
-  faFacebook,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import { faTwitter, faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 type SharePostLinks = {
@@ -14,7 +10,7 @@ type SharePostLinks = {
   title: string;
 };
 
-const SharePostLinks = ({ slug, title }: SharePostLinks) => {
+export const SharePostLinks = ({ slug, title }: SharePostLinks) => {
   const postUrl = `${siteUrl}/blog/${slug}`;
 
   return (
@@ -70,5 +66,3 @@ const SharePostLinks = ({ slug, title }: SharePostLinks) => {
     </ul>
   );
 };
-
-export default SharePostLinks;

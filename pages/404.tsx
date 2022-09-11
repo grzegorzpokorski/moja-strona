@@ -1,7 +1,7 @@
-import Head from "../components/Head";
-import Main from "../components/Main";
-import MainHeader from "../components/MainHeader";
-import Hero from "../components/Hero";
+import { Head } from "../components/Head/Head";
+import { Main } from "../components/Main/Main";
+import { MainHeader } from "../components/MainHeader/MainHeader";
+import { Hero } from "../components/Hero/Hero";
 
 import addressSeparator from "../data/seo/addressSeparator";
 import siteName from "../data/seo/siteName";

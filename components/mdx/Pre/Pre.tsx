@@ -5,12 +5,10 @@ type Props = {
   children: ReactNode;
 };
 
-const MdxPre = ({ className, children }: Props) => {
+export const Pre = ({ className, children }: Props) => {
   return (
     <pre>
       <code className={className}>{children}</code>
     </pre>
   );
 };
-
-export default MdxPre;

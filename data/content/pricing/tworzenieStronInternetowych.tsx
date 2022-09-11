@@ -1,21 +1,11 @@
-import Link from "../../../components/Link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGem,
-  faHandshake,
-  faBriefcase,
-} from "@fortawesome/free-solid-svg-icons";
-
+import { Link } from "../../../components/Link/Link";
 import { PricingListItemType } from "../../../components/PricingList/parts/ListItem";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGem, faHandshake, faBriefcase } from "@fortawesome/free-solid-svg-icons";
 
 export const tworzenieStronInternetowychPricing: PricingListItemType[] = [
   {
-    icon: (
-      <FontAwesomeIcon
-        icon={faGem}
-        className="font-bold text-white text-2xl icon-in-box"
-      />
-    ),
+    icon: <FontAwesomeIcon icon={faGem} className="font-bold text-white text-2xl icon-in-box" />,
     title: "Statyczna strona internetowa",
     price: "999 pln",
     features: [
@@ -23,9 +13,7 @@ export const tworzenieStronInternetowychPricing: PricingListItemType[] = [
       <>Pełna responsywność — dostosowanie do urządzeń mobilnych</>,
       <>
         Wykonanie zgodne z{" "}
-        <Link href="/oferta/tworzenie-stron-internetowych#zalety">
-          najlepszymi standardami
-        </Link>
+        <Link href="/oferta/tworzenie-stron-internetowych#zalety">najlepszymi standardami</Link>
       </>,
       <>Optymalizacja szybkości ładowania się strony</>,
       <>Wynik w PageSpeed powyżej 85/100 (desktop)</>,
@@ -36,10 +24,7 @@ export const tworzenieStronInternetowychPricing: PricingListItemType[] = [
   },
   {
     icon: (
-      <FontAwesomeIcon
-        icon={faHandshake}
-        className="font-bold text-white text-2xl icon-in-box"
-      />
+      <FontAwesomeIcon icon={faHandshake} className="font-bold text-white text-2xl icon-in-box" />
     ),
     title: "Landing page z WordPress CMS",
     price: "1499 pln",
@@ -53,9 +38,7 @@ export const tworzenieStronInternetowychPricing: PricingListItemType[] = [
       <>Optymalizacja szybkości ładowania się strony</>,
       <>
         Wykonanie zgodne z{" "}
-        <Link href="/oferta/tworzenie-stron-internetowych#zalety">
-          najlepszymi praktykami
-        </Link>
+        <Link href="/oferta/tworzenie-stron-internetowych#zalety">najlepszymi praktykami</Link>
       </>,
       <>Wynik w PageSpeed powyżej 85/100 (desktop)</>,
       <>Ocena w GTmetrix powyżej 90%</>,
@@ -64,10 +47,7 @@ export const tworzenieStronInternetowychPricing: PricingListItemType[] = [
   },
   {
     icon: (
-      <FontAwesomeIcon
-        icon={faBriefcase}
-        className="font-bold text-white text-2xl icon-in-box"
-      />
+      <FontAwesomeIcon icon={faBriefcase} className="font-bold text-white text-2xl icon-in-box" />
     ),
     title: "Strona internetowa z WordPress CMS",
     price: "1999 pln",
@@ -81,9 +61,7 @@ export const tworzenieStronInternetowychPricing: PricingListItemType[] = [
       <>Optymalizacja szybkości ładowania się strony</>,
       <>
         Wykonanie zgodne z{" "}
-        <Link href="/oferta/tworzenie-stron-internetowych#zalety">
-          najlepszymi praktykami
-        </Link>
+        <Link href="/oferta/tworzenie-stron-internetowych#zalety">najlepszymi praktykami</Link>
       </>,
       <>Wynik w PageSpeed powyżej 85/100 (desktop)</>,
       <>Ocena w GTmetrix powyżej 90%</>,

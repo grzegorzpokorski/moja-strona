@@ -1,5 +1,5 @@
 import { FieldError, UseFormRegisterReturn } from "react-hook-form";
-import Error from "./Error";
+import { Error } from "./Error";
 
 type Props = {
   name: string;
@@ -10,14 +10,7 @@ type Props = {
   register: UseFormRegisterReturn<string>;
 };
 
-const Textarea = ({
-  name,
-  label,
-  placeholder,
-  error,
-  required,
-  register,
-}: Props) => {
+export const Textarea = ({ name, label, placeholder, error, required, register }: Props) => {
   return (
     <div className="w-full mb-6">
       <label
@@ -42,5 +35,3 @@ const Textarea = ({
     </div>
   );
 };
-
-export default Textarea;

@@ -1,12 +1,12 @@
 import Image from "next/future/image";
-import Head from "../components/Head";
-import Section from "../components/Section";
-import Header from "../components/Header";
-import Main from "../components/Main";
-import MainHeader from "../components/MainHeader";
-import Link from "../components/Link";
-import Banner from "../components/Banner";
-import ContactForm from "../components/ContactForm";
+import { Head } from "../components/Head/Head";
+import { Section } from "../components/Section/Section";
+import { Header } from "../components/Header/Header";
+import { Main } from "../components/Main/Main";
+import { MainHeader } from "../components/MainHeader/MainHeader";
+import { Link } from "../components/Link/Link";
+import { Banner } from "../components/Banner/Banner";
+import { ContactForm } from "../components/ContactForm/ContactForm";
 
 import addressSeparator from "../data/seo/addressSeparator";
 import siteName from "../data/seo/siteName";
@@ -30,14 +30,14 @@ const Pricing = () => {
             description={
               <>
                 <p>
-                  Jeśli interesuje Cię współpraca lub po prostu chcesz zadać pytanie, nie bój się napisać na mojego
-                  maila:{" "}
+                  Jeśli interesuje Cię współpraca lub po prostu chcesz zadać pytanie, nie bój się
+                  napisać na mojego maila:{" "}
                   <Link href="mailto:mr.pokorski@gmail.com" className="font-medium">
                     mr.pokorski@gmail.com
                   </Link>{" "}
                   lub skorzystać z formularza kontaktowego. Zachęcam do zapoznania się z{" "}
-                  <Link href="/czesto-zadawane-pytania">najczęściej zadawanymi pytaniami</Link>, gdzie być może
-                  znajdziesz odpowiedź na swoje pytanie.
+                  <Link href="/czesto-zadawane-pytania">najczęściej zadawanymi pytaniami</Link>,
+                  gdzie być może znajdziesz odpowiedź na swoje pytanie.
                 </p>
               </>
             }

@@ -8,7 +8,7 @@ type SectionProps = {
   id?: string;
 };
 
-const Section = ({
+export const Section = ({
   bgColor,
   children,
   withMarginOnTop,
@@ -26,5 +26,3 @@ const Section = ({
     </section>
   );
 };
-
-export default Section;

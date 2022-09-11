@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { FieldError, UseFormRegisterReturn } from "react-hook-form";
-import Error from "./Error";
+import { Error } from "./Error";
 
 type Props = {
   name: string;
@@ -10,7 +10,7 @@ type Props = {
   register: UseFormRegisterReturn<string>;
 };
 
-const Checkbox = ({ name, children, error, required, register }: Props) => {
+export const Checkbox = ({ name, children, error, required, register }: Props) => {
   return (
     <div className="flex flex-col mb-6">
       <div className="flex flex-row gap-3">
@@ -26,10 +26,7 @@ const Checkbox = ({ name, children, error, required, register }: Props) => {
             {...register}
           />
         </div>
-        <label
-          htmlFor={name}
-          className="w-auto text-sm text-gray-500 cursor-pointer"
-        >
+        <label htmlFor={name} className="w-auto text-sm text-gray-500 cursor-pointer">
           {children}
         </label>
       </div>
@@ -37,5 +34,3 @@ const Checkbox = ({ name, children, error, required, register }: Props) => {
     </div>
   );
 };
-
-export default Checkbox;

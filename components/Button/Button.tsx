@@ -1,20 +1,14 @@
-import Link from "../Link";
+import { Link } from "../Link/Link";
 
 export type ButtonProps = {
   label: string | JSX.Element;
   href: string;
   size?: "default" | "small" | "social";
-  style?:
-    | "default"
-    | "transparentGreen"
-    | "white"
-    | "transparentWhite"
-    | "tag"
-    | "whiteZinc";
+  style?: "default" | "transparentGreen" | "white" | "transparentWhite" | "tag" | "whiteZinc";
   customClasses?: string;
 };
 
-const Button = ({
+export const Button = ({
   label,
   href,
   size = "default",
@@ -52,5 +46,3 @@ const Button = ({
     </Link>
   );
 };
-
-export default Button;

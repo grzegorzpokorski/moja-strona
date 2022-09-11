@@ -1,8 +1,8 @@
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import Link from "../../Link";
-import SharePostLinks from "./SharePostLinks";
-import Img from "./../../mdx/Img";
-import Pre from "./../../mdx/Pre";
+import { Link } from "../../Link/Link";
+import { SharePostLinks } from "./SharePostLinks";
+import { Image as MdxImage } from "./../../mdx/Img/Img";
+import { Pre as MdxPre } from "./../../mdx/Pre/Pre";
 
 type ArticleProps = {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
@@ -10,11 +10,11 @@ type ArticleProps = {
   title: string;
 };
 
-const Article = ({ source, slug, title }: ArticleProps) => {
+export const Article = ({ source, slug, title }: ArticleProps) => {
   const customMdxComponents = {
     a: Link,
-    img: Img,
-    pre: Pre,
+    img: MdxImage,
+    pre: MdxPre,
   } as import("mdx/types").MDXComponents;
 
   return (
@@ -31,5 +31,3 @@ const Article = ({ source, slug, title }: ArticleProps) => {
     </article>
   );
 };
-
-export default Article;

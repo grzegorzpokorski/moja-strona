@@ -1,11 +1,11 @@
-import Head from "../components/Head";
-import Section from "../components/Section";
-import Header from "../components/Header";
-import Main from "../components/Main";
-import MainHeader from "../components/MainHeader";
-import Link from "../components/Link";
-import Banner from "../components/Banner";
-import PricingList from "../components/PricingList";
+import { Head } from "../components/Head/Head";
+import { Section } from "../components/Section/Section";
+import { Header } from "../components/Header/Header";
+import { Main } from "../components/Main/Main";
+import { MainHeader } from "../components/MainHeader/MainHeader";
+import { Link } from "../components/Link/Link";
+import { Banner } from "../components/Banner/Banner";
+import { PricingList } from "../components/PricingList/PricingList";
 
 import addressSeparator from "../data/seo/addressSeparator";
 import siteName from "../data/seo/siteName";
@@ -29,8 +29,8 @@ const Pricing = () => {
             description={
               <>
                 <p>
-                  Poniżej znajdują się startowe ceny za konkretny typ projektu. Aby poznać dokładną wycenę, zachęcam do{" "}
-                  <Link href="/kontakt">kontaktu</Link>.
+                  Poniżej znajdują się startowe ceny za konkretny typ projektu. Aby poznać dokładną
+                  wycenę, zachęcam do <Link href="/kontakt">kontaktu</Link>.
                 </p>
               </>
             }

@@ -1,4 +1,4 @@
-import Link from "../../Link";
+import { Link } from "../../Link/Link";
 
 export type FooterMenuItemType = {
   label: string;
@@ -9,7 +9,7 @@ type FooterMenuProps = {
   items: FooterMenuItemType[];
 };
 
-const FooterMenu = ({ items }: FooterMenuProps) => {
+export const FooterMenu = ({ items }: FooterMenuProps) => {
   return (
     <ul className="flex flex-col md:flex-row items-center gap-3">
       {items &&
@@ -23,5 +23,3 @@ const FooterMenu = ({ items }: FooterMenuProps) => {
     </ul>
   );
 };
-
-export default FooterMenu;

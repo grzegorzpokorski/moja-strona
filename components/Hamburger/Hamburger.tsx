@@ -3,10 +3,7 @@ type HamburgerProps = {
   handleMobileMenuIsOpen: () => void;
 };
 
-const Hamburger = ({
-  mobileMenuIsOpen,
-  handleMobileMenuIsOpen,
-}: HamburgerProps) => {
+export const Hamburger = ({ mobileMenuIsOpen, handleMobileMenuIsOpen }: HamburgerProps) => {
   const ariaLabelForOpened = "Zamknij";
   const ariaLabelForClosed = "Otwórz";
 
@@ -14,9 +11,7 @@ const Hamburger = ({
     <button
       id="hamburger"
       className={`lg:hidden hamburger`}
-      aria-label={`${
-        mobileMenuIsOpen ? ariaLabelForOpened : ariaLabelForClosed
-      } menu nawigacyjne`}
+      aria-label={`${mobileMenuIsOpen ? ariaLabelForOpened : ariaLabelForClosed} menu nawigacyjne`}
       onClick={handleMobileMenuIsOpen}
     >
       <span
@@ -27,5 +22,3 @@ const Hamburger = ({
     </button>
   );
 };
-
-export default Hamburger;
