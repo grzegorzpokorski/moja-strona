@@ -1,6 +1,8 @@
 import { Link } from "../../Link/Link";
 import { BoxesListItem } from "../../../types/types";
 
+import styles from "../boxesList.module.scss";
+
 export const ListItem = ({ icon, title, description, href }: BoxesListItem) => {
   return (
     <li className="w-full bg-white border-2 border-greenLight drop-shadow-xl rounded-md">
@@ -26,7 +28,7 @@ export const ListItem = ({ icon, title, description, href }: BoxesListItem) => {
         </header>
         {description && <div className="prose max-w-none">{description}</div>}
         {href && (
-          <Link href={href} className="text-green hover:underline custom-link">
+          <Link href={href} className={`text-green hover:underline ${styles["custom-link"]}`}>
             Dowiedz się więcej
           </Link>
         )}
