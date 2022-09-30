@@ -4,6 +4,8 @@ import { Header } from "../Header/Header";
 import { Section } from "../Section/Section";
 import { StepItem } from "./parts/StepItem";
 
+import styles from "./process.module.scss";
+
 export type StepItemType = {
   title: string;
   content: ReactNode;
@@ -28,7 +30,7 @@ export const Process = ({ header, steps, bgColor }: ProcessProps) => {
         description={header.description}
         centered
       />
-      <ul className="flex flex-col gap-6 md:gap-0 mt-16 lg:mt-24 process">
+      <ul className={`flex flex-col gap-6 md:gap-0 mt-16 lg:mt-24 process ${styles.process}`}>
         {steps && steps.map((step, i) => <StepItem key={`${i} ${step.title}`} {...step} />)}
       </ul>
     </Section>
