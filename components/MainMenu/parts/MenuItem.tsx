@@ -3,6 +3,8 @@ import { Button } from "../../Button/Button";
 import { Dropdown } from "./Dropdown";
 import { useRouter } from "next/router";
 
+import styles from "../mainMenu.module.scss";
+
 export type MenuItemType = {
   label: string;
   href: string;
@@ -17,14 +19,14 @@ export const MenuItem = (item: MenuItemType) => {
   const currentPath = useRouter().asPath.split("#")[0];
 
   return item.button ? (
-    <li className={item.childrens ? `relative navbar-dropdown` : ``}>
+    <li className={item.childrens ? `relative ${styles["navbar-dropdown"]}` : ``}>
       <Button label={item.label} href={item.href} />
     </li>
   ) : (
-    <li className={item.childrens ? `relative navbar-dropdown` : ``}>
+    <li className={item.childrens ? `relative ${styles["navbar-dropdown"]}` : ``}>
       <Link
         href={item.href}
-        className={`transition-all ${item.childrens ? "navbar-dropdown__toggle" : ""} ${
+        className={`transition-all ${item.childrens ? styles.toggle : ""} ${
           item.href === currentPath
             ? "text-green"
             : "text-gray-100 lg:text-zinc-600 hover:text-gray-300 lg:hover:text-green"

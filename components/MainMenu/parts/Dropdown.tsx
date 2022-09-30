@@ -1,6 +1,8 @@
 import { MenuItemType } from "./MenuItem";
 import { Link } from "../../Link/Link";
 
+import styles from "../mainMenu.module.scss";
+
 type DropdownProps = {
   items: MenuItemType[];
   currentPath: string;
@@ -9,7 +11,7 @@ type DropdownProps = {
 export const Dropdown = ({ items, currentPath }: DropdownProps) => {
   return (
     <ul
-      className={`relative lg:absolute mt-6 lg:mt-0 flex flex-col gap-4 border-l-2 lg:border-none border-l-green lg:rounded pl-4 lg:p-6 lg:bg-white lg:shadow-md lg:w-64 transition-opacity navbar-dropdown__menu`}
+      className={`relative lg:absolute mt-6 lg:mt-0 flex flex-col gap-4 border-l-2 lg:border-none border-l-green lg:rounded pl-4 lg:p-6 lg:bg-white lg:shadow-md lg:w-64 transition-opacity ${styles.menu}`}
     >
       {items.map((item) => (
         <li key={item.href}>
