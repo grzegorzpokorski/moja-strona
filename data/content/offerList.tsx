@@ -9,8 +9,8 @@ export const offerList: BoxesListItem[] = [
     title: "Kompleksowe tworzenie stron internetowych",
     description: (
       <p>
-        Oferuję wykonanie strony internetowej od A do Z zaczynając od projektu
-        graficznego po wdrożenie go do systemu zarządzania treścią WordPress.
+        Oferuję wykonanie strony internetowej od A do Z zaczynając od projektu graficznego po
+        wdrożenie go do systemu zarządzania treścią WordPress.
       </p>
     ),
     href: "/oferta/tworzenie-stron-internetowych",
@@ -20,9 +20,8 @@ export const offerList: BoxesListItem[] = [
     title: "Kodowanie statycznych stron internetowych",
     description: (
       <p>
-        Jeśli nie potrzebujesz aktualizować treści na stronie lub masz do
-        zakodowania projekt graficzny, chętnie zakoduję dla Ciebie statyczną
-        stronę internetową.
+        Jeśli nie potrzebujesz aktualizować treści na stronie lub masz do zakodowania projekt
+        graficzny, chętnie zakoduję dla Ciebie statyczną stronę internetową.
       </p>
     ),
     href: "/oferta/kodowanie-projektow-graficznych",
@@ -32,9 +31,8 @@ export const offerList: BoxesListItem[] = [
     title: "Projektowanie stron",
     description: (
       <p>
-        Chodzi Ci po głowie nowy projekt? A może nudzi Cię twoja stara strona
-        internetowa i chcesz ją dostosować do panujących trendów? Zapraszam,
-        zaprojektuję Twoją nową stronę internetową.
+        Chodzi Ci po głowie nowy projekt? A może nudzi Cię twoja stara strona internetowa i chcesz
+        ją dostosować do panujących trendów? Zapraszam, zaprojektuję Twoją nową stronę internetową.
       </p>
     ),
     href: "/oferta/projektowanie-stron",

@@ -1,6 +1,9 @@
 import { RefObject, useEffect } from "react";
 
-export const useOnClickOutside = (ref: RefObject<Node>, action: (event: MouseEvent) => void): void => {
+export const useOnClickOutside = (
+  ref: RefObject<Node>,
+  action: (event: MouseEvent) => void,
+): void => {
   useEffect(() => {
     const handleAction = (event: MouseEvent) => {
       if (event.target instanceof Node) {

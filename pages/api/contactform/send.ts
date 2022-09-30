@@ -21,12 +21,9 @@ const send = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
         allowedTags: [],
       })}<br>nazwisko: ${sanitizeHtml(req.body.surrname, {
         allowedTags: [],
-      })}<br>email: ${sanitizeHtml(req.body.email)}</p><p>${sanitizeHtml(
-        req.body.message,
-        {
-          allowedTags: [],
-        },
-      )}</p>`,
+      })}<br>email: ${sanitizeHtml(req.body.email)}</p><p>${sanitizeHtml(req.body.message, {
+        allowedTags: [],
+      })}</p>`,
     });
   } catch (e) {
     const error = e as Error;

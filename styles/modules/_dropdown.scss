@@ -3,8 +3,7 @@
 
   &__button {
     position: relative;
-    transition: border-color theme("transitionDuration.150"),
-      color theme("transitionDuration.150");
+    transition: border-color theme("transitionDuration.150"), color theme("transitionDuration.150");
 
     &::after {
       content: "";

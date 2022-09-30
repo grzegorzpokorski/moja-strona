@@ -57,7 +57,9 @@ export const getAllPosts = async (): Promise<PostWithRawSource[]> => {
   return Promise.all(posts);
 };
 
-export const sortPostsByPublishedDate = <T extends PostWithCompiledSource | PostWithRawSource>(posts: T[]) => {
+export const sortPostsByPublishedDate = <T extends PostWithCompiledSource | PostWithRawSource>(
+  posts: T[],
+) => {
   const sorted = posts.sort((a, b) => {
     const first = dayjs(a.frontmatter.date, "YYYY.MM.DD");
     const second = dayjs(b.frontmatter.date, "YYYY.MM.DD");
@@ -103,15 +105,21 @@ export const getTags = async () => {
 
 export const getRelatedPostsByCategory = async (currentPostSlug: string, category: string) => {
   const publishedPosts = sortPostsByPublishedDate(await getPublishedPosts());
-  const postsWithoutCurrent = publishedPosts.filter((post) => post.frontmatter.slug !== currentPostSlug);
-  const postsInGivenCategory = postsWithoutCurrent.filter((post) => post.frontmatter.category === category);
+  const postsWithoutCurrent = publishedPosts.filter(
+    (post) => post.frontmatter.slug !== currentPostSlug,
+  );
+  const postsInGivenCategory = postsWithoutCurrent.filter(
+    (post) => post.frontmatter.category === category,
+  );
 
   return postsInGivenCategory;
 };
 
 export const getRelatedPostsByTags = async (currentPostSlug: string, tags: string[]) => {
   const publishedPosts = sortPostsByPublishedDate(await getPublishedPosts());
-  const postsWithoutCurrent = publishedPosts.filter((post) => post.frontmatter.slug !== currentPostSlug);
+  const postsWithoutCurrent = publishedPosts.filter(
+    (post) => post.frontmatter.slug !== currentPostSlug,
+  );
   const postsInGivenTags = postsWithoutCurrent.filter((post) =>
     post.frontmatter.tags.some((tag) => tags.includes(tag)),
   );
@@ -138,16 +146,20 @@ export const getRelatedPosts = async (
 
   const concatenated = relatedByCategory.concat(relatedByTags);
   const withoutDuplicates = concatenated.filter(
-    (post, index) => !concatenated.map((item) => item.frontmatter.slug).includes(post.frontmatter.slug, index + 1),
+    (post, index) =>
+      !concatenated.map((item) => item.frontmatter.slug).includes(post.frontmatter.slug, index + 1),
   );
 
   if (withoutDuplicates.length >= numberOfPostsToReturn) {
     return withoutDuplicates;
   }
 
-  const publishedPosts = (await getPublishedPosts()).filter((post) => post.frontmatter.slug !== currentPostSlug);
+  const publishedPosts = (await getPublishedPosts()).filter(
+    (post) => post.frontmatter.slug !== currentPostSlug,
+  );
   const publishedPostsWithoutCurrent = publishedPosts.filter(
-    (post) => !withoutDuplicates.map((item) => item.frontmatter.slug).includes(post.frontmatter.slug),
+    (post) =>
+      !withoutDuplicates.map((item) => item.frontmatter.slug).includes(post.frontmatter.slug),
   );
 
   return sortPostsByPublishedDate(
