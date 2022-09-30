@@ -1,3 +1,5 @@
+import styles from "./hamburger.module.scss";
+
 type HamburgerProps = {
   mobileMenuIsOpen: boolean;
   handleMobileMenuIsOpen: () => void;
@@ -10,14 +12,12 @@ export const Hamburger = ({ mobileMenuIsOpen, handleMobileMenuIsOpen }: Hamburge
   return (
     <button
       id="hamburger"
-      className={`lg:hidden hamburger`}
+      className={`lg:hidden ${styles.hamburger}`}
       aria-label={`${mobileMenuIsOpen ? ariaLabelForOpened : ariaLabelForClosed} menu nawigacyjne`}
       onClick={handleMobileMenuIsOpen}
     >
       <span
-        className={`hamburger__icon transition ${
-          mobileMenuIsOpen ? "hamburger__icon--menuIsOpen" : ""
-        }`}
+        className={`${styles.icon} transition ${mobileMenuIsOpen ? styles.iconMenuIsOpen : ""}`}
       ></span>
     </button>
   );
