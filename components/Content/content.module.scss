@@ -1,0 +1,11 @@
+.content {
+  column-count: 1;
+}
+
+@for $i from 1 to 5 {
+  .col#{$i} {
+    @media (min-width: theme("screens.lg")) {
+      column-count: $i;
+    }
+  }
+}
