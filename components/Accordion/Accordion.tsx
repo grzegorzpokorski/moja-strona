@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { AccordionItem } from "./parts/AccordionItem";
+import cn from "classnames";
 
 export type AccordionItemType = {
   heading: string;
@@ -15,7 +16,7 @@ type AccordionProps = {
 export const Accordion = ({ items, withMarginOnTop, customId = "accordion" }: AccordionProps) => {
   return (
     <div
-      className={`flex flex-col gap-4 mx-auto ${withMarginOnTop ? "mt-12 md:mt-24" : ""} accordion`}
+      className={cn("flex flex-col gap-4 mx-auto", { "mt-12 md:mt-24": withMarginOnTop })}
       id={customId}
     >
       {items.map((item, idx) => (
