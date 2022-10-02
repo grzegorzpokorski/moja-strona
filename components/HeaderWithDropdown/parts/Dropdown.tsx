@@ -1,7 +1,8 @@
 import { DropdownItem } from "./DropdownItem";
-
 import { useState, useEffect, useRef } from "react";
 import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
+import cn from "classnames";
+import styles from "../headerWithDropdown.module.scss";
 
 type Props = {
   categories: string[];
@@ -32,15 +33,18 @@ export const Dropdown = ({ categories, initialDropdownValue }: Props) => {
   useOnClickOutside(dropDownRef, closeDropdown);
 
   return (
-    <div className={"w-full lg:w-4/12"}>
+    <div className={cn("w-full lg:w-4/12")}>
       <div
-        className={`flex flex-col text-left w-full shadow-md dropdown ${
-          isDropdownOpen ? "dropdown--open" : ""
-        }`}
+        className={cn("flex flex-col text-left w-full shadow-md", styles.dropdown, {
+          [styles.dropdownOpen]: isDropdownOpen,
+        })}
         ref={dropDownRef}
       >
         <button
-          className="h-12 lg:h-16 px-6 border-2 border-zinc-400 hover:border-green bg-white rounded text-left text-zinc-600 hover:text-green dropdown__button"
+          className={cn(
+            "h-12 lg:h-16 px-6 border-2 border-zinc-400 hover:border-green bg-white rounded text-left text-zinc-600 hover:text-green",
+            styles.button,
+          )}
           type="button"
           id="dropdownMenuButton"
           aria-expanded={isDropdownOpen}
@@ -50,9 +54,9 @@ export const Dropdown = ({ categories, initialDropdownValue }: Props) => {
           {initialDropdownValue}
         </button>
         <ul
-          className={`flex flex-col py-2 lg:py-4 bg-white shadow-md z-10 rounded dropdown__menu ${
-            isDropdownOpen ? "dropdown__menu--willChangeTransform" : ""
-          }`}
+          className={cn("flex flex-col py-2 lg:py-4 bg-white shadow-md z-10 rounded", styles.menu, {
+            [styles.menuWillChangeTransform]: isDropdownOpen,
+          })}
           aria-labelledby="dropdownMenuButton"
         >
           {categories &&

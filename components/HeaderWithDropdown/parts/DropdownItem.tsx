@@ -1,7 +1,7 @@
 import { Link } from "../../Link/Link";
-
 import { memo } from "react";
 import slugify from "slugify";
+import cn from "classnames";
 
 type Props = {
   name: string;
@@ -10,9 +10,15 @@ type Props = {
 
 export const DropdownItem = memo(({ name, active = false }: Props) => {
   return (
-    <li className={`px-6 py-1 ${active ? "text-green" : "hover:text-green"} transition`}>
+    <li
+      className={cn(
+        "px-6 py-1 transition",
+        { "text-green": active },
+        { "hover:text-green": !active },
+      )}
+    >
       <Link
-        className="block dropdown__item"
+        className="block"
         href={`/blog/kategoria/${slugify(name, {
           replacement: "-",
           lower: true,
