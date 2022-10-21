@@ -1,6 +1,7 @@
-import { DropdownItem } from "./DropdownItem";
 import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
+import { DropdownItem } from "./DropdownItem";
 import cn from "classnames";
 import styles from "../headerWithDropdown.module.scss";
 
@@ -11,6 +12,7 @@ type Props = {
 
 export const Dropdown = ({ categories, initialDropdownValue }: Props) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { query } = useRouter();
 
   const closeDropdown = () => {
     setIsDropdownOpen(false);
@@ -31,6 +33,10 @@ export const Dropdown = ({ categories, initialDropdownValue }: Props) => {
 
   const dropDownRef = useRef<HTMLDivElement>(null);
   useOnClickOutside(dropDownRef, closeDropdown);
+
+  useEffect(() => {
+    if (Object.keys(query).length > 0) setIsDropdownOpen(false);
+  }, [query]);
 
   return (
     <div className={cn("w-full lg:w-4/12")}>
