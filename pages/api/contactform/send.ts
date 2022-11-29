@@ -3,7 +3,8 @@ import sendgrid from "@sendgrid/mail";
 import sanitizeHtml from "sanitize-html";
 import { host } from "../../../data/seo/siteUrl";
 
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY as string);
+if (!process.env.SENDGRID_API_KEY) throw new Error("Missed Sendgrid API key");
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
 type Data = {
   error: string;
@@ -11,10 +12,14 @@ type Data = {
 
 const send = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   console.log(req);
+
+  if (!process.env.SENDGRID_MESSAGE_RECIEVER)
+    return res.status(200).json({ error: "Missed email receiver address." });
+
   try {
     await sendgrid.send({
-      to: process.env.SENDGRID_MESSAGE_RECIEVER as string,
-      from: process.env.SENDGRID_MESSAGE_RECIEVER as string,
+      to: process.env.SENDGRID_MESSAGE_RECIEVER,
+      from: process.env.SENDGRID_MESSAGE_RECIEVER,
       replyTo: sanitizeHtml(req.body.email),
       subject: `Wiadomość ze strony ${host}`,
       html: `<p>imie: ${sanitizeHtml(req.body.name, {
