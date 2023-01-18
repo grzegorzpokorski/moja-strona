@@ -6,6 +6,7 @@ export type ButtonProps = {
   size?: "default" | "small" | "social";
   style?: "default" | "transparentGreen" | "white" | "transparentWhite" | "tag" | "whiteZinc";
   customClasses?: string;
+  onClick?: () => void;
 };
 
 export const Button = ({
@@ -14,6 +15,7 @@ export const Button = ({
   size = "default",
   style = "default",
   customClasses,
+  onClick,
 }: ButtonProps) => {
   return (
     <Link
@@ -41,6 +43,7 @@ export const Button = ({
           ? "bg-white text-zinc-400 hover:text-green border-zinc-400 hover:border-green"
           : ""
       } ${customClasses ? customClasses : ""}`}
+      onClick={onClick}
     >
       {label}
     </Link>

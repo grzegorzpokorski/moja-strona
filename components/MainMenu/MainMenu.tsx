@@ -4,9 +4,10 @@ import { Menu } from "./parts/Menu";
 type MainMenuProps = {
   isMobileMenuOpen: boolean;
   isSticky: boolean;
+  closeMobileMenu: () => void;
 };
 
-export const MainMenu = ({ isMobileMenuOpen, isSticky }: MainMenuProps) => {
+export const MainMenu = ({ isMobileMenuOpen, isSticky, closeMobileMenu }: MainMenuProps) => {
   return (
     <ul
       id="menu"
@@ -14,7 +15,7 @@ export const MainMenu = ({ isMobileMenuOpen, isSticky }: MainMenuProps) => {
         isMobileMenuOpen ? "translate-x-0 lg:translate-x-0" : "translate-x-full lg:translate-x-0"
       } ${isSticky ? "top-16 lg:top-0" : "top-20 lg:top-0"}`}
     >
-      <Menu menuItems={mainMenu} />
+      <Menu menuItems={mainMenu} closeMobileMenu={closeMobileMenu} />
     </ul>
   );
 };
