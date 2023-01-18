@@ -13,13 +13,22 @@ type MainHeaderProps = {
 };
 
 export const MainHeader = ({ children }: MainHeaderProps) => {
-  const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
-  const handleMobileMenuIsOpen = () => setMobileMenuIsOpen(!mobileMenuIsOpen);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const handleMobileMenu = () => {
+    if (isMobileMenuOpen) {
+      document.body.classList.remove("overflow-hidden", "lg:overflow-y-auto");
+      setIsMobileMenuOpen(false);
+    } else {
+      document.body.classList.add("overflow-hidden", "lg:overflow-y-auto");
+      setIsMobileMenuOpen(true);
+    }
+  };
 
   const [isSticky] = useStickyElement();
 
   const [isHome, setIsHome] = useState(false);
   const { pathname } = useRouter();
+
   useEffect(() => {
     if (pathname === "/") {
       setIsHome(true);
@@ -27,7 +36,7 @@ export const MainHeader = ({ children }: MainHeaderProps) => {
   }, [pathname]);
 
   const menuContainerRef = useRef<HTMLDivElement>(null);
-  useOnClickOutside(menuContainerRef, () => mobileMenuIsOpen && setMobileMenuIsOpen(false));
+  useOnClickOutside(menuContainerRef, () => isMobileMenuOpen && handleMobileMenu());
 
   return (
     <header>
@@ -43,11 +52,8 @@ export const MainHeader = ({ children }: MainHeaderProps) => {
         >
           <Logo isHome={isHome} isTitle={isHome} />
           <div ref={menuContainerRef}>
-            <Hamburger
-              mobileMenuIsOpen={mobileMenuIsOpen}
-              handleMobileMenuIsOpen={handleMobileMenuIsOpen}
-            />
-            <MainMenu mobileMenuIsOpen={mobileMenuIsOpen} isSticky={isSticky} />
+            <Hamburger isMobileMenuOpen={isMobileMenuOpen} onClick={handleMobileMenu} />
+            <MainMenu isMobileMenuOpen={isMobileMenuOpen} isSticky={isSticky} />
           </div>
         </section>
       </nav>
