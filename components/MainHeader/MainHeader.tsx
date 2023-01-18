@@ -13,13 +13,29 @@ type MainHeaderProps = {
 };
 
 export const MainHeader = ({ children }: MainHeaderProps) => {
-  const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
-  const handleMobileMenuIsOpen = () => setMobileMenuIsOpen(!mobileMenuIsOpen);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const closeMobileMenu = () => {
+    document.body.classList.remove("overflow-hidden", "lg:overflow-y-auto");
+    setIsMobileMenuOpen(false);
+  };
+  const openMobileMenu = () => {
+    document.body.classList.add("overflow-hidden", "lg:overflow-y-auto");
+    setIsMobileMenuOpen(true);
+  };
+  const handleMobileMenu = () => {
+    if (isMobileMenuOpen) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+  };
 
   const [isSticky] = useStickyElement();
 
   const [isHome, setIsHome] = useState(false);
   const { pathname } = useRouter();
+
   useEffect(() => {
     if (pathname === "/") {
       setIsHome(true);
@@ -27,7 +43,7 @@ export const MainHeader = ({ children }: MainHeaderProps) => {
   }, [pathname]);
 
   const menuContainerRef = useRef<HTMLDivElement>(null);
-  useOnClickOutside(menuContainerRef, () => mobileMenuIsOpen && setMobileMenuIsOpen(false));
+  useOnClickOutside(menuContainerRef, () => isMobileMenuOpen && closeMobileMenu());
 
   return (
     <header>
@@ -43,11 +59,12 @@ export const MainHeader = ({ children }: MainHeaderProps) => {
         >
           <Logo isHome={isHome} isTitle={isHome} />
           <div ref={menuContainerRef}>
-            <Hamburger
-              mobileMenuIsOpen={mobileMenuIsOpen}
-              handleMobileMenuIsOpen={handleMobileMenuIsOpen}
+            <Hamburger isMobileMenuOpen={isMobileMenuOpen} onClick={handleMobileMenu} />
+            <MainMenu
+              isMobileMenuOpen={isMobileMenuOpen}
+              isSticky={isSticky}
+              closeMobileMenu={closeMobileMenu}
             />
-            <MainMenu mobileMenuIsOpen={mobileMenuIsOpen} isSticky={isSticky} />
           </div>
         </section>
       </nav>

@@ -1,11 +1,11 @@
 import styles from "./hamburger.module.scss";
 
 type HamburgerProps = {
-  mobileMenuIsOpen: boolean;
-  handleMobileMenuIsOpen: () => void;
+  isMobileMenuOpen: boolean;
+  onClick: () => void;
 };
 
-export const Hamburger = ({ mobileMenuIsOpen, handleMobileMenuIsOpen }: HamburgerProps) => {
+export const Hamburger = ({ isMobileMenuOpen, onClick }: HamburgerProps) => {
   const ariaLabelForOpened = "Zamknij";
   const ariaLabelForClosed = "Otwórz";
 
@@ -13,11 +13,11 @@ export const Hamburger = ({ mobileMenuIsOpen, handleMobileMenuIsOpen }: Hamburge
     <button
       id="hamburger"
       className={`lg:hidden ${styles.hamburger}`}
-      aria-label={`${mobileMenuIsOpen ? ariaLabelForOpened : ariaLabelForClosed} menu nawigacyjne`}
-      onClick={handleMobileMenuIsOpen}
+      aria-label={`${isMobileMenuOpen ? ariaLabelForOpened : ariaLabelForClosed} menu nawigacyjne`}
+      onClick={onClick}
     >
       <span
-        className={`${styles.icon} transition ${mobileMenuIsOpen ? styles.iconMenuIsOpen : ""}`}
+        className={`${styles.icon} transition ${isMobileMenuOpen ? styles.iconMenuIsOpen : ""}`}
       ></span>
     </button>
   );

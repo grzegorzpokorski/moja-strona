@@ -6,12 +6,13 @@ export type LinkProps = {
   children: ReactNode;
   className?: string;
   tabIndex?: number;
+  onClick?: () => void;
 };
 
 export const Link: FC<LinkProps> = (props) => {
   const isInternal = props.href && (props.href.startsWith("#") || props.href.startsWith("/"));
   return isInternal ? (
-    <LinkNext href={props.href}>
+    <LinkNext href={props.href} onClick={props.onClick}>
       <a {...props}>{props.children}</a>
     </LinkNext>
   ) : (

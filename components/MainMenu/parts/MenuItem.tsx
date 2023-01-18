@@ -15,12 +15,17 @@ export type MenuItemType = {
   }[];
 };
 
-export const MenuItem = (item: MenuItemType) => {
+type MenuItemProps = {
+  item: MenuItemType;
+  closeMobileMenu: () => void;
+};
+
+export const MenuItem = ({ item, closeMobileMenu }: MenuItemProps) => {
   const currentPath = useRouter().asPath.split("#")[0];
 
   return item.button ? (
     <li className={item.childrens ? `relative ${styles["navbar-dropdown"]}` : ``}>
-      <Button label={item.label} href={item.href} />
+      <Button label={item.label} href={item.href} onClick={closeMobileMenu} />
     </li>
   ) : (
     <li className={item.childrens ? `relative ${styles["navbar-dropdown"]}` : ``}>
@@ -31,10 +36,17 @@ export const MenuItem = (item: MenuItemType) => {
             ? "text-green"
             : "text-gray-100 lg:text-zinc-600 hover:text-gray-300 lg:hover:text-green"
         }`}
+        onClick={closeMobileMenu}
       >
         {item.label}
       </Link>
-      {item.childrens && <Dropdown items={item.childrens} currentPath={currentPath} />}
+      {item.childrens && (
+        <Dropdown
+          items={item.childrens}
+          currentPath={currentPath}
+          closeMobileMenu={closeMobileMenu}
+        />
+      )}
     </li>
   );
 };
