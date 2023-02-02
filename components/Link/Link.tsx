@@ -12,8 +12,13 @@ export type LinkProps = {
 export const Link: FC<LinkProps> = (props) => {
   const isInternal = props.href && (props.href.startsWith("#") || props.href.startsWith("/"));
   return isInternal ? (
-    <LinkNext href={props.href} onClick={props.onClick}>
-      <a {...props}>{props.children}</a>
+    <LinkNext
+      href={props.href}
+      onClick={props.onClick}
+      className={props.className}
+      tabIndex={props.tabIndex}
+    >
+      {props.children}
     </LinkNext>
   ) : (
     <a target="_blank" rel="noopener noreferrer" {...props}>

@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Image, { StaticImageData } from "next/future/image";
+import Image, { StaticImageData } from "next/image";
 import { Button } from "../Button/Button";
 import { getIdFromString } from "../../helpers/functions/getIdFromString";
 

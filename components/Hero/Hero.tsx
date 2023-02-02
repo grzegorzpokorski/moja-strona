@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/future/image";
+import Image, { StaticImageData } from "next/image";
 import { ReactNode } from "react";
 import { ButtonProps } from "../../components/Button/Button";
 import { Button } from "./../Button/Button";
