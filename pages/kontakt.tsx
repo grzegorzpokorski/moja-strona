@@ -1,4 +1,4 @@
-import Image from "next/future/image";
+import Image from "next/image";
 import { Head } from "../components/Head/Head";
 import { Section } from "../components/Section/Section";
 import { Header } from "../components/Header/Header";
