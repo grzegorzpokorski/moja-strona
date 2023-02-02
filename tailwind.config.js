@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -18,7 +20,7 @@ module.exports = {
         whiteGreen: "#f4f9f4",
       },
       fontFamily: {
-        sans: ["Rubik", "sans-serif"],
+        sans: ["var(--font-rubik)", ...defaultTheme.fontFamily.sans],
       },
       typography: (theme) => ({
         DEFAULT: {
