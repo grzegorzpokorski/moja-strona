@@ -44,8 +44,8 @@ export const Header = ({ category, date, title, tags, featuredImage }: PostFront
               alt={featuredImage.alt}
               className="object-cover object-center w-full h-full"
               sizes="(max-width: 720px) 100vw, (max-width: 1140px) 50vw, 33vw"
-              placeholder="blur"
-              blurDataURL={featuredImage.base64}
+              // placeholder="blur"
+              // blurDataURL={featuredImage.base64}
               priority
             />
           </figure>
