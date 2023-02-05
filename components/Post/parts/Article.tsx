@@ -15,7 +15,13 @@ type ArticleProps = {
 export const Article = ({ source, slug, title }: ArticleProps) => {
   const customMdxComponents = {
     a: Link,
-    img: (props: ImageProps) => <Image {...props} alt={props.alt} />,
+    img: (props: ImageProps) => (
+      <Image
+        {...props}
+        alt={props.alt}
+        sizes="(max-width: 720px) 100vw, (max-width: 1140px) 50vw, 33vw"
+      />
+    ),
     pre: MdxPre,
   } as import("mdx/types").MDXComponents;
 

@@ -42,6 +42,7 @@ export const Header = ({ category, date, title, tags, featuredImage }: PostFront
               alt=""
               className="object-cover object-center w-full h-full"
               fill
+              sizes="(max-width: 720px) 100vw, (max-width: 1140px) 50vw, 33vw"
               priority
             />
           </figure>
