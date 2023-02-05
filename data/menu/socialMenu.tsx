@@ -5,16 +5,6 @@ import { SocialMenuItemType } from "../../components/Footer/parts/SocialMenu";
 
 const socialMenu: SocialMenuItemType[] = [
   {
-    href: "https://behance.net/grzegorzpokorski",
-    label: "behance",
-    icon: <FontAwesomeIcon icon={faBehance} />,
-  },
-  {
-    href: "https://facebook.com/grzegorzpokorski.software",
-    label: "facebook",
-    icon: <FontAwesomeIcon icon={faFacebook} />,
-  },
-  {
     href: "https://linkedin.com/in/grzegorz-pokorski",
     label: "linkedin",
     icon: <FontAwesomeIcon icon={faLinkedinIn} />,
@@ -23,6 +13,16 @@ const socialMenu: SocialMenuItemType[] = [
     href: "https://github.com/grzegorzpokorski",
     label: "github",
     icon: <FontAwesomeIcon icon={faGithub} />,
+  },
+  {
+    href: "https://behance.net/grzegorzpokorski",
+    label: "behance",
+    icon: <FontAwesomeIcon icon={faBehance} />,
+  },
+  {
+    href: "https://facebook.com/grzegorzpokorski.software",
+    label: "facebook",
+    icon: <FontAwesomeIcon icon={faFacebook} />,
   },
 ];
 
