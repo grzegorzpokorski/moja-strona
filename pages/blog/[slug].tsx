@@ -13,6 +13,7 @@ import {
 } from "../../utils/posts";
 import { serialize } from "next-mdx-remote/serialize";
 import rehypePrism from "@mapbox/rehype-prism";
+import imageSize from "rehype-img-size";
 
 import siteName from "./../../data/seo/siteName";
 import addressSeparator from "../../data/seo/addressSeparator";
@@ -63,7 +64,7 @@ export const getStaticProps = async ({ params: { slug } }: { params: { slug: str
   const { frontmatter, source } = await getPostBySlug(slug);
   const mdxSource = await serialize(source, {
     mdxOptions: {
-      rehypePlugins: [rehypePrism],
+      rehypePlugins: [rehypePrism, [imageSize, { dir: "public" }]],
     },
   });
 

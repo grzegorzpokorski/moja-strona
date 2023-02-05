@@ -1,8 +1,10 @@
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { Link } from "../../Link/Link";
 import { SharePostLinks } from "./SharePostLinks";
-import { Image as MdxImage } from "./../../mdx/Img/Img";
+// import { Image as MdxImage } from "./../../mdx/Img/Img";
+import Image, { ImageProps } from "next/image";
 import { Pre as MdxPre } from "./../../mdx/Pre/Pre";
+import { DetailedHTMLProps, ImgHTMLAttributes } from "react";
 
 type ArticleProps = {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
@@ -13,7 +15,7 @@ type ArticleProps = {
 export const Article = ({ source, slug, title }: ArticleProps) => {
   const customMdxComponents = {
     a: Link,
-    img: MdxImage,
+    img: (props: ImageProps) => <Image {...props} alt={props.alt} />,
     pre: MdxPre,
   } as import("mdx/types").MDXComponents;
 
