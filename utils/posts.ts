@@ -7,6 +7,8 @@ import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 dayjs.extend(customParseFormat);
 
+import { getPlaiceholder } from "plaiceholder";
+
 export type PostFrontmatter = {
   title: string;
   excerpt: string;
@@ -14,7 +16,14 @@ export type PostFrontmatter = {
   tags: string[];
   date: string;
   published: boolean;
-  featuredImage: string;
+  featuredImage: {
+    src: string;
+    height: number;
+    width: number;
+    alt: string;
+    type?: string;
+    base64: string;
+  };
   slug: string;
 };
 
@@ -34,6 +43,7 @@ export const getPostBySlug = async (slug: string): Promise<PostWithRawSource> =>
   const postPath = path.join(postsDir, `${slug}.mdx`);
   const postSource = await fs.readFile(postPath, { encoding: "utf-8" });
   const { content, data } = matter(postSource);
+  const { base64, img } = await getPlaiceholder(data.featuredImage);
 
   return {
     frontmatter: {
@@ -43,7 +53,7 @@ export const getPostBySlug = async (slug: string): Promise<PostWithRawSource> =>
       tags: data.tags,
       date: data.date,
       published: data.published,
-      featuredImage: data.featuredImage,
+      featuredImage: { ...img, base64, alt: data.featuredImageAlt ? data.featuredImageAlt : "" },
       slug,
     },
     source: content,
