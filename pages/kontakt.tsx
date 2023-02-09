@@ -12,6 +12,8 @@ import addressSeparator from "../data/seo/addressSeparator";
 import siteName from "../data/seo/siteName";
 
 import image from "../public/images/contact.webp";
+import { SocialMenu } from "../components/Footer/parts/SocialMenu";
+import socialMenu from "../data/menu/socialMenu";
 
 const Pricing = () => {
   return (
@@ -39,6 +41,9 @@ const Pricing = () => {
                   <Link href="/czesto-zadawane-pytania">najczęściej zadawanymi pytaniami</Link>,
                   gdzie być może znajdziesz odpowiedź na swoje pytanie.
                 </p>
+                <ul className="list-none flex flex-row grow basis-0 gap-4 text-green justify-center md:order-3 text-lg p-0">
+                  <SocialMenu items={socialMenu} />
+                </ul>
               </>
             }
             centered
