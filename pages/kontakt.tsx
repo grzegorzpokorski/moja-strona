@@ -41,14 +41,14 @@ const Pricing = () => {
                   <Link href="/czesto-zadawane-pytania">najczęściej zadawanymi pytaniami</Link>,
                   gdzie być może znajdziesz odpowiedź na swoje pytanie.
                 </p>
-                <ul className="list-none flex flex-row grow basis-0 gap-4 text-green justify-center md:order-3 text-lg p-0 [&>li]:mt-5">
+                <ul className="list-none flex flex-row grow basis-0 gap-4 text-green justify-center md:order-3 text-lg p-0 [&>li]:mt-5 [&>li]:md:mt-0">
                   <SocialMenu items={socialMenu} />
                 </ul>
               </>
             }
             centered
             titleAsH1
-            customClasses={`pb-16 md:pb-24`}
+            customClasses={`pb-10 md:pb-24`}
           />
           <div className="flex flex-col lg:flex-row gap-6 items-center">
             <div className="w-full lg:w-1/2">
