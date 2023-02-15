@@ -14,14 +14,6 @@ const footerMenu: FooterMenuItemType[] = [
     label: "Blog",
   },
   {
-    href: "/czesto-zadawane-pytania",
-    label: "FAQs",
-  },
-  {
-    href: "/cennik",
-    label: "Cennik",
-  },
-  {
     href: "/kontakt",
     label: "Kontakt",
   },
