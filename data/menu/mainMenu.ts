@@ -26,11 +26,6 @@ const mainMenu: MenuItemType[] = [
     ],
   },
   {
-    href: "https://behance.net/grzegorzpokorski",
-    label: "Realizacje",
-    button: false,
-  },
-  {
     href: "/blog",
     label: "Blog",
     button: false,
