@@ -109,18 +109,15 @@ export const ContactForm = () => {
         />
         <Textarea
           name="message"
-          placeholder="Treść wiadomości / opis projektu"
-          label="Treść wiadomości / opis projektu"
+          placeholder="Treść wiadomości"
+          label="Treść wiadomości"
           register={register("message")}
           error={errors.message}
           required={true}
         />
         <Checkbox name="gdpr" error={errors.gdpr} required={true} register={register("gdpr")}>
-          Wyrażam zgodę na przechowywanie przez tę witrynę przesłanych przeze mnie informacji, w
-          celu związanym z odpowiedzią na moje zapytanie. Aby dowiedzieć się więcej, odwiedź{" "}
-          <Link href={"/"} className="text-green hover:underline">
-            politykę prywatności
-          </Link>
+          Administratorem Twoich danych jest Grzegorz Pokorski. Wyrażam zgodę na przetważanie
+          przesłanych przeze mnie informacji, w celu odpowiedzi na przesłaną wiadomość.
         </Checkbox>
         <SubmitButton sendingStatus={sendingStatus} />
       </fieldset>

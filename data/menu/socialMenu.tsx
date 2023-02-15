@@ -1,5 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBehance, faFacebook, faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import {
+  faBehance,
+  faFacebook,
+  faGithub,
+  faLinkedinIn,
+  faDiscord,
+} from "@fortawesome/free-brands-svg-icons";
 
 import { SocialMenuItemType } from "../../components/Footer/parts/SocialMenu";
 
@@ -15,14 +21,14 @@ const socialMenu: SocialMenuItemType[] = [
     icon: <FontAwesomeIcon icon={faGithub} />,
   },
   {
+    href: "https://discordapp.com/users/399347095716495360",
+    label: "discord",
+    icon: <FontAwesomeIcon icon={faDiscord} />,
+  },
+  {
     href: "https://behance.net/grzegorzpokorski",
     label: "behance",
     icon: <FontAwesomeIcon icon={faBehance} />,
-  },
-  {
-    href: "https://facebook.com/grzegorzpokorski.software",
-    label: "facebook",
-    icon: <FontAwesomeIcon icon={faFacebook} />,
   },
 ];
 

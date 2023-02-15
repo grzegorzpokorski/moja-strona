@@ -1,23 +1,12 @@
 import { GetStaticProps } from "next";
-
 import { Head } from "../components/Head/Head";
 import { Main } from "../components/Main/Main";
 import { MainHeader } from "../components/MainHeader/MainHeader";
 import { Hero } from "../components/Hero/Hero";
 import { Banner } from "../components/Banner/Banner";
-import { Section } from "../components/Section/Section";
-import { Header } from "../components/Header/Header";
-import { BoxesList } from "../components/BoxesList/BoxesList";
 import { PostsExcerpt } from "../components/PostsExcerpt/PostsExcerpt";
-import { Services } from "../components/Services/Services";
 import { Link } from "../components/Link/Link";
-
-import { offerList } from "../data/content/offerList";
-import { servicesList } from "../data/content/servicesList";
 import heroImage from "../public/images/hero.webp";
-
-import siteName from "../data/seo/siteName";
-import addressSeparator from "../data/seo/addressSeparator";
 import slogan from "../data/seo/slogan";
 
 import { getPublishedPosts, PostWithRawSource, sortPostsByPublishedDate } from "../utils/posts";
@@ -30,18 +19,19 @@ const Home = ({ newestPosts }: HomeProps) => {
   return (
     <>
       <Head
-        title={`${slogan} ${addressSeparator} ${siteName}`}
+        title={`${slogan}`}
         description={`Tworzę nowoczesne strony internetowe oraz staram się dzielić zdobywaną wiedzą z innymi na blogu.`}
         contentType="website"
       />
       <MainHeader>
         <Hero
-          title="Projekuję oraz tworzę nowoczesne strony internetowe"
+          title="Cześć, jestem Grzegorz!"
           description={
             <p>
-              Zaistniej w internecie i zrealizuj swoje cele z<strong> ultra szybką</strong> 🚀
-              stroną internetową osiągającą
-              <strong> najwyższe noty</strong> 🥇 w Google PageSpeed benchmark.
+              Jestem Frontend Developerem z wyboru oraz pasji. Nieustannie rozwijam umiejętności
+              programistyczne, aby dostarczać nowoczesne oraz wydajne strony internetowe. Zdobywaną
+              wiedzą oraz przemyśleniami staram się dzielić z innymi tutaj na moim{" "}
+              <Link href="/blog">blogu</Link>.
             </p>
           }
           buttons={[
@@ -63,7 +53,13 @@ const Home = ({ newestPosts }: HomeProps) => {
         />
       </MainHeader>
       <Main>
-        <Section bgColor="bg-whiteGreen" id="oferta">
+        <PostsExcerpt
+          title="Najnowsze aktykuły na blogu 🔥"
+          subtitle="blog"
+          posts={newestPosts}
+          button={{ label: "Zobacz wszystkie wpisy", href: "/blog" }}
+        />
+        {/* <Section bgColor="bg-whiteGreen" id="oferta">
           <Header
             subtitle="Oferta"
             title="W czym mogę Ci pomóc?"
@@ -78,14 +74,8 @@ const Home = ({ newestPosts }: HomeProps) => {
             centered
           />
           <BoxesList items={offerList} withMarginOnTop />
-        </Section>
-        <Services services={servicesList} />
-        <PostsExcerpt
-          title="Najnowsze aktykuły na blogu 🔥"
-          subtitle="blog"
-          posts={newestPosts}
-          button={{ label: "Zobacz wszystkie wpisy", href: "/blog" }}
-        />
+        </Section> */}
+        {/* <Services services={servicesList} /> */}
         <Banner
           title="Zbuduj swoją ultra szybką stronę internetową ze mną!"
           description="Chętnie pomogę zrealizować Twój projekt."

@@ -28,7 +28,7 @@ const Pricing = () => {
         <Section bgColor="bg-whiteGreen" id="kontakt">
           <Header
             subtitle="Kontakt"
-            title="Porozmawiajmy o Twoich potrzebach"
+            title="Poznajmy się!"
             description={
               <>
                 <p>
@@ -36,10 +36,9 @@ const Pricing = () => {
                   napisać na mojego maila:{" "}
                   <Link href="mailto:mr.pokorski@gmail.com" className="font-medium">
                     mr.pokorski@gmail.com
-                  </Link>{" "}
-                  lub skorzystać z formularza kontaktowego. Zachęcam do zapoznania się z{" "}
-                  <Link href="/czesto-zadawane-pytania">najczęściej zadawanymi pytaniami</Link>,
-                  gdzie być może znajdziesz odpowiedź na swoje pytanie.
+                  </Link>
+                  , zagdać na którymś z portali (linki poniżej) lub skorzystać z formularza
+                  kontaktowego.
                 </p>
                 <ul className="list-none flex flex-row grow basis-0 gap-4 text-green justify-center md:order-3 text-lg p-0 [&>li]:mt-5 [&>li]:md:mt-0">
                   <SocialMenu items={socialMenu} />

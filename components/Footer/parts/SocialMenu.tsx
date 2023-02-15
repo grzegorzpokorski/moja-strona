@@ -16,7 +16,7 @@ export const SocialMenu = ({ items }: SocialMenuProps) => {
       {items &&
         items.map((item, i) => (
           <li key={`social-nav-item-${i}`}>
-            <Link href={item.href} className="hover:text-greenHover">
+            <Link href={item.href} className="hover:text-greenHover transition-colors">
               <span className="sr-only">{item.label}</span>
               {item.icon}
             </Link>

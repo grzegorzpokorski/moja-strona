@@ -19,7 +19,7 @@ const mainMenu: MenuItemType[] = [
   {
     href: "/kontakt",
     label: "Kontakt",
-    button: true,
+    button: false,
   },
 ];
 

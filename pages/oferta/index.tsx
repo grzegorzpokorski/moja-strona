@@ -31,11 +31,10 @@ const Offer = () => {
             description={
               <p>
                 Można być człowiekiem renesansu. Ja jednak staram się doskonalić w konkretnych
-                specjalizacjach. Potrzebujesz nowoczesnej, ultra szybkiej{" "}
-                <Link href="/oferta/tworzenie-stron-internetowych">strony strony internetowej</Link>{" "}
-                aby zaistnieć w internecie? A może gotowy projekt graficzny czeka na{" "}
-                <Link href="/oferta/kodowanie-projektow-graficznych">zakodowanie</Link>? Oferuję
-                profesjonalne usługi, które pomogą Ci wkroczyć na szerokie wody internetu.
+                specjalizacjach. Potrzebujesz nowoczesnej, ultra szybkiej strony strony
+                internetowej, aby zaistnieć w internecie? A może gotowy projekt graficzny czeka na
+                zakodowanie? Oferuję profesjonalne usługi, które pomogą Ci wkroczyć na szerokie wody
+                internetu.
               </p>
             }
             centered

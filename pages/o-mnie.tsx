@@ -26,21 +26,26 @@ const About = ({ newestPosts }: AboutProps) => {
       />
       <MainHeader>
         <Hero
-          title="Cześć, jestem Grzegorz 👋"
+          title="Cześć, jestem Grzegorz!"
           description={
             <>
               <p>
-                Działam jako freelancer, pomagając tworzyć dobrze wyglądające i realizujące cele
-                biznesowe strony internetowe.
+                Jak można się domyśleć jestem frontend developerem. Uwielbiam tworzyć dobrze
+                wyglądające oraz realizujące cele biznesowe strony internetowe. Dobra strona to
+                również ta strona, która jest wydajna oraz dostępna. Dlatego nieustannie uczę sie
+                najnowszych technologi takich jak React, czy Next.js, które pozwalają na osięgnięcie
+                niesamowitych wyników.
               </p>
               <p>
-                W wolnej chwili staram się dzielić swoją wiedzą na łamach artykułów na moim{" "}
-                <Link href="/blog">blogu</Link>.
+                W wolnej chwili staram się dzielić zdobytą wiedzą oraz przemyśleniami na łamach
+                artykułów na moim <Link href="/blog">blogu</Link>, do którego odwiedzenia gorąco Cię
+                zachęcam 🙂
               </p>
               <p>
-                Jeśli interesuje Cię współpraca lub po prostu chcesz zadać pytanie śmiało{" "}
-                <Link href="/kontakt">kontaktuj się ze mną</Link>.
+                Jeśli interesuje Cię współpraca lub po prostu chcesz porozmawiać na różne tematy,
+                nie tylko programistyczne, śmiało <Link href="/kontakt">kontaktuj się ze mną</Link>!
               </p>
+              <p>PS. Poniżej znajdziesz linki, gdzie możesz mnie znaleźć 👇</p>
             </>
           }
           buttons={[
@@ -79,7 +84,7 @@ const About = ({ newestPosts }: AboutProps) => {
               style: "white",
             },
             {
-              label: "Poczytaj mój blog",
+              label: "Odwiedź mój blog",
               href: "/blog",
               style: "transparentWhite",
             },

@@ -11,8 +11,8 @@ export const servicesList: ServicesType[] = [
     content: (
       <>
         <p>
-          Wykonuję 'szyte na miarę’ strony internetowe dostosowane i zaprojektowane dla konkretnej
-          grupy docelowej oraz realizujące założone przez Ciebie cele.
+          Wykonuję &apos;szyte na miarę&apos; strony internetowe dostosowane i zaprojektowane dla
+          konkretnej grupy docelowej oraz realizujące założone przez Ciebie cele.
         </p>
         <p>
           Moją specjalnością są strony dla małych oraz średnich firm oparte na autorskim motywie.{" "}
@@ -26,7 +26,7 @@ export const servicesList: ServicesType[] = [
         </p>
       </>
     ),
-    href: "/oferta/tworzenie-stron-internetowych",
+    href: "/kontakt",
     image: {
       src: pagesImage,
       alt: "człowiek programuje stronę w biurze",
@@ -46,7 +46,7 @@ export const servicesList: ServicesType[] = [
         </p>
       </>
     ),
-    href: "/oferta/kodowanie-projektow-graficznych",
+    href: "/kontakt",
     image: {
       src: codeImage,
       alt: "szczęśliwy człowiek koduje na sofie",
@@ -69,7 +69,7 @@ export const servicesList: ServicesType[] = [
         </p>
       </>
     ),
-    href: "/oferta/projektowanie-stron",
+    href: "/kontakt",
     image: {
       src: designImage,
       alt: "człowiek biegnie z ołówkiem projektować nową stronę interneową",

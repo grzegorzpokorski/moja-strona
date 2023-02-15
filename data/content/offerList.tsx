@@ -13,7 +13,6 @@ export const offerList: BoxesListItem[] = [
         wdrożenie go do systemu zarządzania treścią WordPress.
       </p>
     ),
-    href: "/oferta/tworzenie-stron-internetowych",
   },
   {
     icon: <FontAwesomeIcon icon={faCode} />,
@@ -24,7 +23,6 @@ export const offerList: BoxesListItem[] = [
         graficzny, chętnie zakoduję dla Ciebie statyczną stronę internetową.
       </p>
     ),
-    href: "/oferta/kodowanie-projektow-graficznych",
   },
   {
     icon: <FontAwesomeIcon icon={faImages} />,
@@ -35,6 +33,5 @@ export const offerList: BoxesListItem[] = [
         ją dostosować do panujących trendów? Zapraszam, zaprojektuję Twoją nową stronę internetową.
       </p>
     ),
-    href: "/oferta/projektowanie-stron",
   },
 ];

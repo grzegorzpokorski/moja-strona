@@ -43,7 +43,7 @@ export const ContentWithImage = ({
           {content && <div className="prose mt-6">{content}</div>}
           {href && (
             <footer className="mt-6">
-              <Button href={href} label="Dowiedz się więcej" />
+              <Button href={href} label="Zapytaj o ofertę" />
             </footer>
           )}
         </div>
