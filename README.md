@@ -1,3 +1,8 @@
+This repo is currently archived and no longer maintained.
+Actual repo of my personal website connected with blog you can find here: [https://github.com/grzegorzpokorski/grzegorzpokorski.pl](https://github.com/grzegorzpokorski/grzegorzpokorski.pl)
+
+---
+
 # moja-strona
 
 Personal webpage presenting mine offer, connected with blog.
